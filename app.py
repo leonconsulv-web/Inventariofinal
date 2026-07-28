@@ -246,8 +246,14 @@ def main():
                         if not producto or not tallas_input or not colores_data:
                             st.error("❌ Faltan datos: Producto, Tallas y al menos 1 Color.")
                         else:
-                            total_vitrina = sum(sum(tallas.values()) for color in colores_data.values() for tallas in color['vitrina'].values())
-                            total_bodega = sum(sum(tallas.values()) for color in colores_data.values() for tallas in color['bodega'].values())
+                            # ----- ESTA ES LA PARTE QUE ARREGLÉ -----
+                            total_vitrina = 0
+                            total_bodega = 0
+                            
+                            # Sumar cada talla dentro de cada color
+                            for color in colores_data.values():
+                                total_vitrina += sum(color['vitrina'].values())
+                                total_bodega += sum(color['bodega'].values())
                             
                             nuevo_prod = {
                                 'ID': f"PROD_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
@@ -266,7 +272,9 @@ def main():
                             }
                             st.session_state.inventario.append(nuevo_prod)
                             guardar_inventario()
-                            st.success(f"✅ {producto} guardado!")
+                            st.success(f"✅ {producto} guardado con éxito!")
+                            # Resumen extra para confirmar
+                            st.info(f"📊 Resumen: {total_vitrina} unidades a Vitrina | {total_bodega} unidades a Bodega")
                             st.session_state.modo_edicion = None
                             st.rerun()
 
