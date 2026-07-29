@@ -1,1314 +1,562 @@
-import streamlit as st
-import pandas as pd
-import plotly.express as px
-from datetime import datetime, timedelta
+import datetime
 import json
 import os
+import pandas as pd
+import plotly.express as px
+import streamlit as st
 
-# ============================================
-# CONFIGURACIÓN
-# ============================================
+# --- CONFIGURACIÓN DE PÁGINA ---
 st.set_page_config(
-    page_title="Inventario roPacheco",
+    page_title="Inventario y Ventas - Ropa Caballero",
     page_icon="👔",
-    layout="centered",
-    initial_sidebar_state="collapsed"
+    layout="wide",
 )
 
-# Contraseña
-CONTRASENA = "michiotaku"
+# --- ARCHIVOS DE PERSISTENCIA ---
+INVENTORY_FILE = "inventory.json"
+SALES_FILE = "sales.json"
+CATEGORIES_FILE = "categories.json"
 
-# Configuración inicial
-if 'categorias_personalizadas' not in st.session_state:
-    st.session_state.categorias_personalizadas = []
-
-if 'reset_graficas_fecha' not in st.session_state:
-    st.session_state.reset_graficas_fecha = datetime.now().strftime('%Y-%m-%d')
-
-# Categorías base
-CATEGORIAS_BASE = [
-    'Camisas', 'Playeras', 'Suéteres', 'Chamarras',
-    'Pantalones', 'Shorts', 'Jeans', 'Niño'
+DEFAULT_CATEGORIES = [
+    "Camisas",
+    "Playeras",
+    "Suéteres",
+    "Chamarras",
+    "Pantalones",
+    "Shorts",
+    "Jeans",
+    "Sacos y Trajes",
+    "Niño",
 ]
 
-def obtener_todas_categorias():
-    todas = CATEGORIAS_BASE.copy()
-    todas.extend(st.session_state.categorias_personalizadas)
-    return sorted(list(set(todas)))
+DEFAULT_ADMIN_PASSWORD = "admin"  # Puedes cambiar la contraseña aquí
 
-# Inicializar estados
-if 'admin_logged_in' not in st.session_state:
-    st.session_state.admin_logged_in = False
-if 'inventario' not in st.session_state:
-    st.session_state.inventario = []
-if 'ventas_diarias' not in st.session_state:
-    st.session_state.ventas_diarias = []
-if 'caja' not in st.session_state:
-    st.session_state.caja = 0.0
-if 'modo_edicion' not in st.session_state:
-    st.session_state.modo_edicion = None
-if 'producto_editar' not in st.session_state:
-    st.session_state.producto_editar = None
-if 'mostrar_gestion_categorias' not in st.session_state:
-    st.session_state.mostrar_gestion_categorias = False
-if 'modo_mover_stock' not in st.session_state:
-    st.session_state.modo_mover_stock = None
-if 'producto_mover' not in st.session_state:
-    st.session_state.producto_mover = None
-if 'categoria_seleccionada' not in st.session_state:
-    st.session_state.categoria_seleccionada = 'Todas'
 
-# Archivo para guardar datos
-INVENTARIO_FILE = "inventario_data.json"
-CATEGORIAS_FILE = "categorias_data.json"
-
-# Columnas estándar para el DataFrame
-COLUMNAS_DF = ['ID', 'Categoria', 'Producto', 'Talla', 'Colores', 'Ubicacion', 
-               'Stock_Bodega', 'Stock_Exhibido', 'Stock_Total', 'Ventas_Total', 
-               'Precio_Sugerido', 'Precio_Venta', 'Entrada_Total']
-
-# ============================================
-# FUNCIONES DE DATOS
-# ============================================
-def crear_nuevo_producto(producto, talla, colores, categoria, stock_bodega, stock_exhibido, precio_sugerido, precio_venta):
-    """Crear un nuevo producto especificando stock por ubicación y colores múltiples"""
-    nuevo_id = f"PROD_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
-    
-    entrada_total = stock_bodega + stock_exhibido
-    stock_total = entrada_total
-    
-    if stock_bodega > stock_exhibido:
-        ubicacion_principal = "Bodega"
-    elif stock_exhibido > stock_bodega:
-        ubicacion_principal = "Exhibido"
-    else:
-        ubicacion_principal = "Exhibido"
-    
-    # Procesar colores
-    colores_lista = []
-    if colores:
-        if isinstance(colores, str):
-            colores_lista = [c.strip() for c in colores.split(',') if c.strip()]
-        elif isinstance(colores, list):
-            colores_lista = colores
-    
-    if not colores_lista:
-        colores_lista = ['Sin color']
-    
-    return {
-        'ID': nuevo_id,
-        'Categoria': categoria,
-        'Producto': producto,
-        'Talla': talla,
-        'Colores': colores_lista,
-        'Ubicacion': ubicacion_principal,
-        'Entrada_Total': entrada_total,
-        'Stock_Bodega': stock_bodega,
-        'Stock_Exhibido': stock_exhibido,
-        'Stock_Total': stock_total,
-        'Ventas_Total': 0,
-        'Precio_Sugerido': float(precio_sugerido),
-        'Precio_Venta': float(precio_venta) if precio_venta > 0 else float(precio_sugerido)
-    }
-
-def cargar_datos():
-    """Cargar todos los datos desde archivos"""
+# --- FUNCIONES DE CARGA Y GUARDADO ---
+def load_json(filename, default_data):
+    if not os.path.exists(filename):
+        save_json(filename, default_data)
+        return default_data
     try:
-        if os.path.exists(INVENTARIO_FILE):
-            with open(INVENTARIO_FILE, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-                st.session_state.inventario = data.get('inventario', [])
-                st.session_state.ventas_diarias = data.get('ventas_diarias', [])
-                st.session_state.caja = data.get('caja', 0.0)
-    except Exception as e:
-        st.error(f"Error al cargar inventario: {str(e)}")
-        st.session_state.inventario = []
-        st.session_state.ventas_diarias = []
-        st.session_state.caja = 0.0
-    
-    try:
-        if os.path.exists(CATEGORIAS_FILE):
-            with open(CATEGORIAS_FILE, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-                st.session_state.categorias_personalizadas = data.get('categorias_personalizadas', [])
-    except:
-        st.session_state.categorias_personalizadas = []
+        with open(filename, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return default_data
 
-def guardar_inventario():
-    """Guardar inventario en archivo"""
-    try:
-        data = {
-            'inventario': st.session_state.inventario,
-            'ventas_diarias': st.session_state.ventas_diarias,
-            'caja': st.session_state.caja,
-            'ultima_actualizacion': datetime.now().isoformat()
-        }
-        with open(INVENTARIO_FILE, 'w', encoding='utf-8') as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-    except Exception as e:
-        st.error(f"Error al guardar inventario: {str(e)}")
 
-def guardar_categorias():
-    """Guardar categorías personalizadas en archivo"""
-    try:
-        data = {
-            'categorias_personalizadas': st.session_state.categorias_personalizadas,
-            'ultima_actualizacion': datetime.now().isoformat()
-        }
-        with open(CATEGORIAS_FILE, 'w', encoding='utf-8') as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-    except Exception as e:
-        st.error(f"Error al guardar categorías: {str(e)}")
+def save_json(filename, data):
+    with open(filename, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
 
-def agregar_categoria_personalizada(nueva_categoria):
-    """Agregar una nueva categoría personalizada"""
-    if nueva_categoria and nueva_categoria not in obtener_todas_categorias():
-        st.session_state.categorias_personalizadas.append(nueva_categoria)
-        guardar_categorias()
-        return True
-    return False
 
-def eliminar_categoria_personalizada(categoria):
-    """Eliminar una categoría personalizada"""
-    if categoria in st.session_state.categorias_personalizadas:
-        productos_en_categoria = [p for p in st.session_state.inventario if p.get('Categoria') == categoria]
-        
-        if productos_en_categoria:
-            return False, f"No se puede eliminar. Hay {len(productos_en_categoria)} productos usando esta categoría."
-        
-        st.session_state.categorias_personalizadas.remove(categoria)
-        guardar_categorias()
-        return True, f"Categoría '{categoria}' eliminada correctamente"
-    
-    return False, "Categoría no encontrada"
+# --- INICIALIZACIÓN DEL ESTADO ---
+if "admin_authenticated" not in st.session_state:
+    st.session_state["admin_authenticated"] = False
 
-def registrar_venta(producto_id, precio_venta_real=None, color_seleccionado=None):
-    """Registrar una venta con precio de venta real y color específico"""
-    for item in st.session_state.inventario:
-        if item['ID'] == producto_id:
-            if item['Ubicacion'] == 'Exhibido':
-                stock_disponible = item['Stock_Exhibido']
-                ubicacion_venta = "exhibido"
-            else:
-                stock_disponible = item['Stock_Bodega']
-                ubicacion_venta = "bodega"
-            
-            if stock_disponible > 0:
-                if item['Ubicacion'] == 'Exhibido':
-                    item['Stock_Exhibido'] -= 1
-                else:
-                    item['Stock_Bodega'] -= 1
-                
-                item['Ventas_Total'] += 1
-                item['Stock_Total'] -= 1
-                
-                precio_final = float(precio_venta_real) if precio_venta_real else item['Precio_Venta']
-                
-                venta = {
-                    'fecha': datetime.now().isoformat(),
-                    'producto': item['Producto'],
-                    'talla': item['Talla'],
-                    'color': color_seleccionado or (item['Colores'][0] if item['Colores'] else 'Sin color'),
-                    'precio_sugerido': item['Precio_Sugerido'],
-                    'precio_venta': precio_final,
-                    'categoria': item['Categoria'],
-                    'ubicacion': item['Ubicacion'],
-                    'ubicacion_venta': ubicacion_venta
-                }
-                st.session_state.ventas_diarias.append(venta)
-                st.session_state.caja += precio_final
-                
-                guardar_inventario()
-                return True, precio_final, ubicacion_venta
-            else:
-                return False, f"No hay stock disponible en {item['Ubicacion']}", None
-    
-    return False, "Producto no encontrado", None
+inventory = load_json(INVENTORY_FILE, [])
+sales = load_json(SALES_FILE, [])
+categories = load_json(CATEGORIES_FILE, DEFAULT_CATEGORIES)
 
-def agregar_producto(nuevo_producto):
-    """Agregar nuevo producto al inventario"""
-    st.session_state.inventario.append(nuevo_producto)
-    guardar_inventario()
-    return True
 
-def eliminar_producto(producto_id):
-    """Eliminar un producto del inventario"""
-    for i, item in enumerate(st.session_state.inventario):
-        if item['ID'] == producto_id:
-            producto_eliminado = st.session_state.inventario.pop(i)
-            
-            if producto_eliminado['Ventas_Total'] > 0:
-                ventas_producto = [v for v in st.session_state.ventas_diarias 
-                                  if v.get('producto') == producto_eliminado['Producto']]
-                
-                total_ventas_producto = sum(v.get('precio_venta', 0) for v in ventas_producto)
-                st.session_state.caja -= total_ventas_producto
-                
-                if st.session_state.caja < 0:
-                    st.session_state.caja = 0
-            
-            guardar_inventario()
-            return True, f"Producto '{producto_eliminado['Producto']}' eliminado correctamente"
-    
-    return False, "Producto no encontrado"
+# --- NAVEGACIÓN Y AUTENTICACIÓN ---
+st.sidebar.title("👔 Menú Principal")
 
-def mover_stock(producto_id, cantidad, origen, destino):
-    """Mover stock entre bodega y exhibido"""
-    for item in st.session_state.inventario:
-        if item['ID'] == producto_id:
-            stock_origen = item['Stock_Bodega'] if origen == 'Bodega' else item['Stock_Exhibido']
-            
-            if stock_origen < cantidad:
-                return False, f"No hay suficiente stock en {origen} (solo hay {stock_origen})"
-            
-            if origen == 'Bodega':
-                item['Stock_Bodega'] -= cantidad
-                item['Stock_Exhibido'] += cantidad
-            else:
-                item['Stock_Exhibido'] -= cantidad
-                item['Stock_Bodega'] += cantidad
-            
-            if item['Stock_Bodega'] > item['Stock_Exhibido']:
-                item['Ubicacion'] = 'Bodega'
-            elif item['Stock_Exhibido'] > item['Stock_Bodega']:
-                item['Ubicacion'] = 'Exhibido'
-            
-            guardar_inventario()
-            return True, f"{cantidad} unidades movidas de {origen} a {destino}"
-    
-    return False, "Producto no encontrado"
+# Control de Rol
+role_option = st.sidebar.radio(
+    "Selecciona Tu Rol:", ["👷 Trabajadora (Ventas)", "👑 Administradora"]
+)
 
-def calcular_caja_total():
-    """Calcular el total de caja desde las ventas diarias"""
-    total = 0.0
-    for venta in st.session_state.ventas_diarias:
-        total += venta.get('precio_venta', 0)
-    return total
-
-def obtener_dataframe():
-    """Obtener DataFrame del inventario con todas las columnas necesarias"""
-    if not st.session_state.inventario:
-        # Si no hay productos, devolver DataFrame vacío con columnas
-        return pd.DataFrame(columns=COLUMNAS_DF)
-    
-    # Crear DataFrame con los datos existentes
-    df = pd.DataFrame(st.session_state.inventario)
-    
-    # Asegurar que todas las columnas existan
-    for col in COLUMNAS_DF:
-        if col not in df.columns:
-            if col == 'Colores':
-                df[col] = ['Sin color'] * len(df)
-            else:
-                df[col] = 0
-    
-    # Asegurar que Colores sea una lista
-    df['Colores'] = df['Colores'].apply(
-        lambda x: x if isinstance(x, list) else [x] if x and x != 'Sin color' else ['Sin color']
-    )
-    
-    return df
-
-# ============================================
-# INTERFAZ PRINCIPAL
-# ============================================
-def main():
-    st.title("Inventario roPacheco")
-    
-    cargar_datos()
-    
-    with st.expander("Información del Sistema", expanded=False):
-        st.write("""
-        **CARACTERÍSTICAS PRINCIPALES:**
-        - Stock por ubicación: Especifica cuántos van a bodega y cuántos a exhibido
-        - Doble precio: Precio sugerido y precio de venta real
-        - Mover stock: Transfiere entre ubicaciones
-        - Ventas flexibles: Precio personalizable por venta
-        - Colores múltiples: Hasta 500 colores por producto
-        """)
-    
-    st.markdown("---")
-    
-    # Obtener DataFrame con todas las columnas necesarias
-    df = obtener_dataframe()
-    
-    tab1, tab2, tab3 = st.tabs(["Registrar Ventas", "Reporte y Caja", "Gestion Inventario"])
-    
-    # ============================================
-    # TAB 1: REGISTRAR VENTAS
-    # ============================================
-    with tab1:
-        st.header("Registrar Ventas")
-        
-        if len(st.session_state.inventario) == 0:
-            st.info("No hay productos en el inventario. Ve a la pestaña 'Gestion Inventario' para agregar productos.")
-        else:
-            # Botones de categorías
-            todas_categorias = obtener_todas_categorias()
-            
-            st.subheader("Categorías")
-            
-            # Crear columnas para botones (4 por fila)
-            cols = st.columns(4)
-            
-            # Botón "Todas"
-            if cols[0].button("Todas", use_container_width=True,
-                             type="primary" if st.session_state.categoria_seleccionada == 'Todas' else "secondary"):
-                st.session_state.categoria_seleccionada = 'Todas'
+if role_option == "👑 Administradora":
+    if not st.session_state["admin_authenticated"]:
+        pwd = st.sidebar.text_input("Contraseña de Admin:", type="password")
+        if st.sidebar.button("Ingresar"):
+            if pwd == DEFAULT_ADMIN_PASSWORD:
+                st.session_state["admin_authenticated"] = True
+                st.sidebar.success("Acceso concedido")
                 st.rerun()
-            
-            # Botones para cada categoría
-            for i, cat in enumerate(todas_categorias):
-                col_idx = (i + 1) % 4
-                if cols[col_idx].button(cat, use_container_width=True,
-                                       type="primary" if st.session_state.categoria_seleccionada == cat else "secondary"):
-                    st.session_state.categoria_seleccionada = cat
-                    st.rerun()
-            
-            # Filtrar productos por categoría
-            if st.session_state.categoria_seleccionada == 'Todas':
-                filtered_df = df
             else:
-                filtered_df = df[df['Categoria'] == st.session_state.categoria_seleccionada]
-            
-            if filtered_df.empty:
-                st.info(f"No hay productos en la categoría {st.session_state.categoria_seleccionada}")
-            else:
-                st.subheader(f"Productos en {st.session_state.categoria_seleccionada}")
-                
-                for _, row in filtered_df.iterrows():
-                    # Manejar colores de forma segura
-                    colores_list = row['Colores'] if isinstance(row['Colores'], list) else ['Sin color']
-                    colores_text = ", ".join(colores_list) if colores_list else "Sin color"
-                    
-                    with st.expander(f"{row['Producto']} | Talla: {row['Talla']} | Colores: {colores_text}"):
-                        col_info1, col_info2 = st.columns(2)
-                        
-                        with col_info1:
-                            st.write(f"Categoría: {row['Categoria']}")
-                            st.write(f"Ubicación: {row['Ubicacion']}")
-                            st.write(f"Precio sugerido: ${row['Precio_Sugerido']:,.2f}")
-                            st.write(f"Precio venta: ${row['Precio_Venta']:,.2f}")
-                        
-                        with col_info2:
-                            st.write(f"Exhibido: {int(row['Stock_Exhibido'])}")
-                            st.write(f"Bodega: {int(row['Stock_Bodega'])}")
-                            st.write(f"Total: {int(row['Stock_Total'])}")
-                            st.write(f"Ventas: {int(row['Ventas_Total'])}")
-                        
-                        if row['Ubicacion'] == 'Exhibido':
-                            stock_disponible = row['Stock_Exhibido']
-                            ubicacion_texto = "exhibido"
-                        else:
-                            stock_disponible = row['Stock_Bodega']
-                            ubicacion_texto = "bodega"
-                        
-                        if stock_disponible > 0:
-                            # Selector de color
-                            color_seleccionado = None
-                            if colores_list and len(colores_list) > 0:
-                                color_seleccionado = st.selectbox(
-                                    "Color:",
-                                    colores_list,
-                                    key=f"color_{row['ID']}"
-                                )
-                            
-                            with st.form(key=f"venta_form_{row['ID']}"):
-                                col_precio1, col_precio2 = st.columns(2)
-                                with col_precio1:
-                                    precio_venta = st.number_input(
-                                        "Precio de venta ($):",
-                                        min_value=0.0,
-                                        value=float(row['Precio_Venta']),
-                                        step=0.01,
-                                        format="%.2f",
-                                        key=f"precio_venta_{row['ID']}"
-                                    )
-                                
-                                with col_precio2:
-                                    if st.form_submit_button("Vender 1 Unidad", use_container_width=True, type="primary"):
-                                        success, resultado, ubicacion = registrar_venta(row['ID'], precio_venta, color_seleccionado)
-                                        if success:
-                                            st.success(f"Vendido por ${resultado:,.2f} (desde {ubicacion})")
-                                            st.rerun()
-                                        else:
-                                            st.error(f"{resultado}")
-                        else:
-                            st.error(f"Sin stock disponible en {ubicacion_texto}")
-    
-    # ============================================
-    # TAB 2: REPORTE Y CAJA
-    # ============================================
-    with tab2:
-        st.header("Reporte y Caja")
-        
-        with st.expander("Control de Gráficas", expanded=False):
-            col_res1, col_res2 = st.columns(2)
-            with col_res1:
-                nueva_fecha_reset = st.date_input(
-                    "Próximo reset de gráficas:",
-                    value=datetime.strptime(st.session_state.reset_graficas_fecha, '%Y-%m-%d'),
-                    key="fecha_reset"
-                )
-            
-            with col_res2:
-                if st.button("Guardar Fecha", use_container_width=True):
-                    st.session_state.reset_graficas_fecha = nueva_fecha_reset.strftime('%Y-%m-%d')
-                    st.success(f"Fecha guardada: {nueva_fecha_reset.strftime('%Y-%m-%d')}")
-                
-                if st.button("Resetear Gráficas Ahora", use_container_width=True, type="secondary"):
-                    st.session_state.ventas_diarias = []
-                    guardar_inventario()
-                    st.success("Gráficas reseteadas!")
-                    st.rerun()
-        
-        if len(st.session_state.inventario) == 0:
-            st.info("No hay datos para mostrar. Agrega productos primero.")
-        else:
-            caja_total = calcular_caja_total()
-            st.session_state.caja = caja_total
-            
-            col1, col2, col3, col4 = st.columns(4)
-            
-            with col1:
-                total_ventas = df['Ventas_Total'].sum()
-                st.metric("Ventas Totales", f"{int(total_ventas)}")
-            
-            with col2:
-                st.metric("Caja Total", f"${caja_total:,.2f}")
-            
-            with col3:
-                stock_exhibido = df['Stock_Exhibido'].sum()
-                st.metric("Stock Exhibido", f"{int(stock_exhibido)}")
-            
-            with col4:
-                stock_bodega = df['Stock_Bodega'].sum()
-                st.metric("Stock Bodega", f"{int(stock_bodega)}")
-            
-            st.markdown("---")
-            
-            col1, col2 = st.columns(2)
-            
-            with col1:
-                if not df.empty:
-                    ventas_por_categoria = df.groupby('Categoria')['Ventas_Total'].sum().reset_index()
-                    if not ventas_por_categoria.empty:
-                        fig = px.pie(
-                            ventas_por_categoria, 
-                            values='Ventas_Total', 
-                            names='Categoria',
-                            title="Ventas por Categoría",
-                            color_discrete_sequence=px.colors.qualitative.Set3,
-                            hole=0.3
-                        )
-                        fig.update_traces(textposition='inside', textinfo='percent+label')
-                        st.plotly_chart(fig, use_container_width=True)
-            
-            with col2:
-                if not df.empty:
-                    stock_data = pd.DataFrame({
-                        'Ubicacion': ['Exhibido', 'Bodega'],
-                        'Stock': [int(df['Stock_Exhibido'].sum()), int(df['Stock_Bodega'].sum())]
-                    })
-                    
-                    if not stock_data.empty:
-                        fig = px.bar(
-                            stock_data,
-                            x='Ubicacion',
-                            y='Stock',
-                            title="Distribución del Stock",
-                            color='Ubicacion',
-                            text='Stock',
-                            color_discrete_map={'Exhibido': '#2E86AB', 'Bodega': '#A23B72'}
-                        )
-                        fig.update_traces(textposition='outside')
-                        st.plotly_chart(fig, use_container_width=True)
-            
-            st.markdown("---")
-            
-            st.subheader("Inventario Completo")
-            
-            col_f1, col_f2, col_f3 = st.columns(3)
-            with col_f1:
-                todas_categorias_tabla = ['Todas'] + sorted(df['Categoria'].unique().tolist())
-                filtro_categoria = st.selectbox("Filtrar categoría:", todas_categorias_tabla, key="filtro_categoria_tabla")
-            with col_f2:
-                filtro_ubicacion = st.selectbox("Filtrar ubicación:", ['Todas', 'Exhibido', 'Bodega'], key="filtro_ubicacion_tabla")
-            with col_f3:
-                ordenar_por = st.selectbox("Ordenar por:", ['Producto', 'Stock_Total', 'Ventas_Total', 'Precio_Venta'], key="ordenar_por_tabla")
-            
-            display_df = df.copy()
-            
-            if filtro_categoria != 'Todas':
-                display_df = display_df[display_df['Categoria'] == filtro_categoria]
-            
-            if filtro_ubicacion != 'Todas':
-                display_df = display_df[display_df['Ubicacion'] == filtro_ubicacion]
-            
-            if ordenar_por == 'Stock_Total':
-                display_df = display_df.sort_values('Stock_Total', ascending=False)
-            elif ordenar_por == 'Ventas_Total':
-                display_df = display_df.sort_values('Ventas_Total', ascending=False)
-            elif ordenar_por == 'Precio_Venta':
-                display_df = display_df.sort_values('Precio_Venta', ascending=False)
-            else:
-                display_df = display_df.sort_values('Producto')
-            
-            if not display_df.empty:
-                display_df_formatted = display_df.copy()
-                display_df_formatted['Precio_Sugerido'] = display_df_formatted['Precio_Sugerido'].apply(lambda x: f"${x:,.2f}")
-                display_df_formatted['Precio_Venta'] = display_df_formatted['Precio_Venta'].apply(lambda x: f"${x:,.2f}")
-                display_df_formatted['Colores'] = display_df_formatted['Colores'].apply(
-                    lambda x: ", ".join(x) if isinstance(x, list) else str(x) if x else ""
-                )
-                
-                st.dataframe(
-                    display_df_formatted[['Categoria', 'Producto', 'Talla', 'Colores', 'Ubicacion', 
-                                         'Stock_Bodega', 'Stock_Exhibido', 'Stock_Total', 
-                                         'Ventas_Total', 'Precio_Sugerido', 'Precio_Venta']],
-                    use_container_width=True,
-                    hide_index=True,
-                    column_config={
-                        'Categoria': st.column_config.TextColumn("Categoría"),
-                        'Producto': st.column_config.TextColumn("Producto"),
-                        'Talla': st.column_config.TextColumn("Talla"),
-                        'Colores': st.column_config.TextColumn("Colores"),
-                        'Ubicacion': st.column_config.TextColumn("Ubicación"),
-                        'Stock_Bodega': st.column_config.NumberColumn("Bodega", format="%d"),
-                        'Stock_Exhibido': st.column_config.NumberColumn("Exhibido", format="%d"),
-                        'Stock_Total': st.column_config.NumberColumn("Total", format="%d"),
-                        'Ventas_Total': st.column_config.NumberColumn("Ventas", format="%d"),
-                        'Precio_Sugerido': st.column_config.TextColumn("Sugerido"),
-                        'Precio_Venta': st.column_config.TextColumn("Venta")
-                    }
-                )
-            else:
-                st.info("No hay productos que coincidan con los filtros.")
-            
-            col_exp1, col_exp2, col_exp3 = st.columns(3)
-            with col_exp1:
-                if st.button("Exportar CSV", use_container_width=True, key="export_csv"):
-                    csv = df.to_csv(index=False, encoding='utf-8-sig')
-                    st.download_button(
-                        label="Descargar CSV",
-                        data=csv,
-                        file_name=f"inventario_{datetime.now().strftime('%Y%m%d_%H%M')}.csv",
-                        mime="text/csv",
-                        use_container_width=True,
-                        key="download_csv"
-                    )
-            
-            with col_exp2:
-                if st.button("Actualizar Precios", use_container_width=True, key="btn_actualizar_precios"):
-                    st.session_state.modo_edicion = 'actualizar_precios'
-                    st.rerun()
-            
-            with col_exp3:
-                if st.button("Reiniciar Caja", use_container_width=True, key="reset_caja"):
-                    st.session_state.caja = 0.0
-                    st.session_state.ventas_diarias = []
-                    for item in st.session_state.inventario:
-                        item['Ventas_Total'] = 0
-                        item['Stock_Total'] = item['Entrada_Total']
-                    guardar_inventario()
-                    st.success("Caja y ventas reiniciadas")
-                    st.rerun()
-    
-    # ============================================
-    # TAB 3: GESTIÓN INVENTARIO
-    # ============================================
-    with tab3:
-        st.header("Gestión de Inventario")
-        
-        if not st.session_state.admin_logged_in:
-            st.markdown("### Acceso Administrador")
-            
-            with st.container(border=True):
-                password = st.text_input("Contraseña:", type="password", key="password_input_admin")
-                
-                col1, col2 = st.columns([1, 3])
-                with col1:
-                    if st.button("Ingresar", type="primary", use_container_width=True, key="login_admin"):
-                        if password == CONTRASENA:
-                            st.session_state.admin_logged_in = True
-                            st.success("Acceso concedido")
-                            st.rerun()
-                        else:
-                            st.error("Contraseña incorrecta")
-        else:
-            st.success("Modo administrador activado")
-            
-            col_logout, col_cats, col_mover, col_space = st.columns([1, 1, 1, 1])
-            with col_logout:
-                if st.button("Cerrar Sesión", use_container_width=True, key="logout_admin"):
-                    st.session_state.admin_logged_in = False
-                    st.session_state.modo_edicion = None
-                    st.session_state.producto_editar = None
-                    st.session_state.mostrar_gestion_categorias = False
-                    st.session_state.modo_mover_stock = None
-                    st.rerun()
-            
-            with col_cats:
-                if st.button("Categorías", use_container_width=True, 
-                           type="primary" if st.session_state.mostrar_gestion_categorias else "secondary"):
-                    st.session_state.mostrar_gestion_categorias = not st.session_state.mostrar_gestion_categorias
-                    st.session_state.modo_edicion = None
-                    st.session_state.modo_mover_stock = None
-                    st.rerun()
-            
-            with col_mover:
-                if st.button("Mover Stock", use_container_width=True,
-                           type="primary" if st.session_state.modo_mover_stock == 'seleccionar' else "secondary"):
-                    st.session_state.modo_mover_stock = 'seleccionar'
-                    st.session_state.mostrar_gestion_categorias = False
-                    st.session_state.modo_edicion = None
-                    st.rerun()
-            
-            st.markdown("---")
-            
-            # MODO: MOVER STOCK
-            if st.session_state.modo_mover_stock == 'seleccionar':
-                st.subheader("Mover Stock entre Ubicaciones")
-                
-                if len(st.session_state.inventario) == 0:
-                    st.info("No hay productos para mover.")
-                else:
-                    productos_opciones = {f"{row['Producto']} ({row['Talla']}) - B:{row['Stock_Bodega']} | E:{row['Stock_Exhibido']}": row['ID'] 
-                                        for _, row in df.iterrows()}
-                    
-                    producto_seleccionado = st.selectbox(
-                        "Selecciona un producto para mover stock:",
-                        list(productos_opciones.keys()),
-                        key="select_mover"
-                    )
-                    
-                    if producto_seleccionado:
-                        producto_id = productos_opciones[producto_seleccionado]
-                        producto_data = next((item for item in st.session_state.inventario 
-                                            if item['ID'] == producto_id), None)
-                        
-                        if producto_data:
-                            st.session_state.producto_mover = producto_id
-                            st.session_state.modo_mover_stock = 'mover'
-                            st.rerun()
-            
-            elif st.session_state.modo_mover_stock == 'mover' and st.session_state.producto_mover:
-                producto_id = st.session_state.producto_mover
-                producto_data = next((item for item in st.session_state.inventario 
-                                    if item['ID'] == producto_id), None)
-                
-                if producto_data:
-                    st.subheader(f"Mover Stock: {producto_data['Producto']}")
-                    
-                    with st.form("form_mover_stock"):
-                        col_info1, col_info2 = st.columns(2)
-                        with col_info1:
-                            st.write(f"Stock Bodega: {producto_data['Stock_Bodega']}")
-                            st.write(f"Stock Exhibido: {producto_data['Stock_Exhibido']}")
-                            st.write(f"Ubicación actual: {producto_data['Ubicacion']}")
-                        
-                        with col_info2:
-                            direccion = st.selectbox(
-                                "Dirección del movimiento:",
-                                ["De Bodega a Exhibido", "De Exhibido a Bodega"],
-                                key="direccion_mover"
-                            )
-                            
-                            if direccion == "De Bodega a Exhibido":
-                                origen = "Bodega"
-                                destino = "Exhibido"
-                                max_cantidad = producto_data['Stock_Bodega']
-                            else:
-                                origen = "Exhibido"
-                                destino = "Bodega"
-                                max_cantidad = producto_data['Stock_Exhibido']
-                            
-                            cantidad = st.number_input(
-                                f"Cantidad a mover (máx: {max_cantidad}):",
-                                min_value=1,
-                                max_value=max_cantidad,
-                                value=1 if max_cantidad > 0 else 0,
-                                step=1,
-                                key="cantidad_mover"
-                            )
-                        
-                        col_btn1, col_btn2, col_btn3 = st.columns(3)
-                        with col_btn1:
-                            mover = st.form_submit_button("Mover Stock", type="primary", use_container_width=True)
-                        with col_btn2:
-                            cancelar = st.form_submit_button("Cancelar", use_container_width=True)
-                        
-                        if cancelar:
-                            st.session_state.modo_mover_stock = None
-                            st.session_state.producto_mover = None
-                            st.rerun()
-                        
-                        if mover and cantidad > 0:
-                            success, mensaje = mover_stock(producto_id, cantidad, origen, destino)
-                            if success:
-                                st.success(f"{mensaje}")
-                                st.session_state.modo_mover_stock = None
-                                st.session_state.producto_mover = None
-                                st.rerun()
-                            else:
-                                st.error(f"{mensaje}")
-            
-            # PANEL DE GESTIÓN DE CATEGORÍAS
-            elif st.session_state.mostrar_gestion_categorias:
-                st.subheader("Gestión de Categorías")
-                
-                col_info1, col_info2 = st.columns(2)
-                with col_info1:
-                    with st.container(border=True):
-                        st.markdown("### Categorías Existentes")
-                        todas_categorias = obtener_todas_categorias()
-                        
-                        st.write("**Categorías base:**")
-                        for cat in CATEGORIAS_BASE:
-                            st.write(f"- {cat}")
-                        
-                        if st.session_state.categorias_personalizadas:
-                            st.write("\n**Categorías personalizadas:**")
-                            for cat in st.session_state.categorias_personalizadas:
-                                st.write(f"- {cat}")
-                        else:
-                            st.info("No hay categorías personalizadas aún.")
-                
-                with col_info2:
-                    with st.container(border=True):
-                        st.markdown("### Agregar Nueva Categoría")
-                        
-                        nueva_categoria = st.text_input("Nombre de la nueva categoría:", 
-                                                      placeholder="Ej: Sudaderas, Trajes, Chalecos...")
-                        
-                        if st.button("Agregar Categoría", use_container_width=True):
-                            if nueva_categoria:
-                                if agregar_categoria_personalizada(nueva_categoria):
-                                    st.success(f"Categoría '{nueva_categoria}' agregada!")
-                                    st.rerun()
-                                else:
-                                    st.error(f"La categoría '{nueva_categoria}' ya existe.")
-                            else:
-                                st.error("Ingresa un nombre para la categoría.")
-                        
-                        st.markdown("---")
-                        
-                        st.markdown("### Eliminar Categoría Personalizada")
-                        
-                        if st.session_state.categorias_personalizadas:
-                            cat_a_eliminar = st.selectbox(
-                                "Selecciona categoría a eliminar:",
-                                st.session_state.categorias_personalizadas,
-                                key="select_cat_eliminar"
-                            )
-                            
-                            if st.button("Eliminar Categoría", use_container_width=True, type="secondary"):
-                                success, message = eliminar_categoria_personalizada(cat_a_eliminar)
-                                if success:
-                                    st.success(message)
-                                    st.rerun()
-                                else:
-                                    st.error(message)
-                        else:
-                            st.info("No hay categorías personalizadas para eliminar.")
-                
-                st.markdown("---")
-                if st.button("Volver a Gestión", use_container_width=True):
-                    st.session_state.mostrar_gestion_categorias = False
-                    st.rerun()
-            
-            # MODO: ACTUALIZAR PRECIOS
-            elif st.session_state.modo_edicion == 'actualizar_precios':
-                st.subheader("Actualizar Precios")
-                
-                if len(st.session_state.inventario) == 0:
-                    st.info("No hay productos para actualizar.")
-                else:
-                    productos_opciones = []
-                    for idx, row in df.iterrows():
-                        opcion = f"{row['Producto']} ({row['Talla']}) - Sug:${row['Precio_Sugerido']:.2f} | Ven:${row['Precio_Venta']:.2f}"
-                        productos_opciones.append((opcion, idx))
-                    
-                    opciones_texto = [op[0] for op in productos_opciones]
-                    indices = [op[1] for op in productos_opciones]
-                    
-                    seleccion_index = st.selectbox(
-                        "Selecciona un producto para actualizar precios:",
-                        range(len(opciones_texto)),
-                        format_func=lambda i: opciones_texto[i],
-                        key="select_actualizar_precios"
-                    )
-                    
-                    if seleccion_index is not None:
-                        idx_producto = indices[seleccion_index]
-                        producto_data = st.session_state.inventario[idx_producto]
-                        
-                        if producto_data:
-                            with st.form("form_actualizar_precios"):
-                                col_precio1, col_precio2 = st.columns(2)
-                                
-                                with col_precio1:
-                                    nuevo_precio_sugerido = st.number_input(
-                                        "Nuevo precio sugerido ($):",
-                                        min_value=0.0,
-                                        value=float(producto_data['Precio_Sugerido']),
-                                        step=0.01,
-                                        format="%.2f",
-                                        key="nuevo_sugerido"
-                                    )
-                                
-                                with col_precio2:
-                                    nuevo_precio_venta = st.number_input(
-                                        "Nuevo precio de venta ($):",
-                                        min_value=0.0,
-                                        value=float(producto_data['Precio_Venta']),
-                                        step=0.01,
-                                        format="%.2f",
-                                        key="nuevo_venta"
-                                    )
-                                
-                                col_btn1, col_btn2 = st.columns(2)
-                                with col_btn1:
-                                    guardar = st.form_submit_button("Actualizar Precios", type="primary", use_container_width=True)
-                                with col_btn2:
-                                    cancelar = st.form_submit_button("Cancelar", use_container_width=True)
-                                
-                                if cancelar:
-                                    st.session_state.modo_edicion = None
-                                    st.rerun()
-                                
-                                if guardar:
-                                    producto_data['Precio_Sugerido'] = float(nuevo_precio_sugerido)
-                                    producto_data['Precio_Venta'] = float(nuevo_precio_venta)
-                                    guardar_inventario()
-                                    st.success("Ambos precios actualizados")
-                                    st.session_state.modo_edicion = None
-                                    st.rerun()
-            
-            # MODO NORMAL: GESTIÓN DE PRODUCTOS
-            else:
-                st.subheader("Acciones Disponibles")
-                
-                col1, col2, col3, col4 = st.columns(4)
-                
-                with col1:
-                    if st.button("Agregar Producto", use_container_width=True, 
-                               type="primary" if st.session_state.modo_edicion == 'agregar' else "secondary"):
-                        st.session_state.modo_edicion = 'agregar'
-                        st.session_state.producto_editar = None
-                        st.rerun()
-                
-                with col2:
-                    if st.button("Editar Producto", use_container_width=True,
-                               type="primary" if st.session_state.modo_edicion == 'editar' else "secondary"):
-                        st.session_state.modo_edicion = 'editar'
-                        st.rerun()
-                
-                with col3:
-                    if st.button("Eliminar Producto", use_container_width=True,
-                               type="primary" if st.session_state.modo_edicion == 'eliminar' else "secondary"):
-                        st.session_state.modo_edicion = 'eliminar'
-                        st.rerun()
-                
-                with col4:
-                    if st.button("Ver Inventario", use_container_width=True,
-                               type="primary" if st.session_state.modo_edicion is None else "secondary"):
-                        st.session_state.modo_edicion = None
-                        st.rerun()
-                
-                st.markdown("---")
-                
-                # MODO: AGREGAR PRODUCTO
-                if st.session_state.modo_edicion == 'agregar':
-                    st.subheader("Agregar Nuevo Producto")
-                    
-                    with st.form("form_agregar_producto", clear_on_submit=True):
-                        col1, col2 = st.columns(2)
-                        
-                        with col1:
-                            todas_categorias = obtener_todas_categorias()
-                            
-                            categoria = st.selectbox("Categoría:", todas_categorias, key="cat_agregar")
-                            producto = st.text_input("Nombre del Producto*:", key="prod_agregar")
-                            talla = st.text_input("Talla*:", placeholder="M, 32, Unitalla...", key="talla_agregar")
-                            
-                            colores_input = st.text_area(
-                                "Colores* (separados por coma):", 
-                                placeholder="Negro, Azul, Rojo, Verde, Blanco...",
-                                key="colores_agregar",
-                                help="Ingresa todos los colores disponibles separados por coma"
-                            )
-                        
-                        with col2:
-                            st.markdown("### Distribución del Stock")
-                            
-                            col_stock1, col_stock2 = st.columns(2)
-                            with col_stock1:
-                                stock_bodega = st.number_input(
-                                    "Stock en Bodega:",
-                                    min_value=0,
-                                    value=0,
-                                    step=1,
-                                    key="stock_bodega_agregar"
-                                )
-                            
-                            with col_stock2:
-                                stock_exhibido = st.number_input(
-                                    "Stock en Exhibido:",
-                                    min_value=0,
-                                    value=1,
-                                    step=1,
-                                    key="stock_exhibido_agregar"
-                                )
-                            
-                            total_stock = stock_bodega + stock_exhibido
-                            if total_stock == 0:
-                                st.error("El stock total debe ser mayor a 0")
-                            else:
-                                ubicacion_principal = "Exhibido" if stock_exhibido > stock_bodega else "Bodega" if stock_bodega > stock_exhibido else "Exhibido (iguales)"
-                                st.info(f"Stock total: {total_stock} unidades")
-                                st.info(f"Ubicación principal: {ubicacion_principal}")
-                            
-                            st.markdown("### Precios")
-                            precio_sugerido = st.number_input("Precio Sugerido ($):", 
-                                                            min_value=0.0, 
-                                                            value=0.0, 
-                                                            step=0.01, 
-                                                            format="%.2f", 
-                                                            key="precio_sug_agregar")
-                            
-                            precio_venta = st.number_input("Precio Venta Inicial ($):", 
-                                                         min_value=0.0, 
-                                                         value=0.0, 
-                                                         step=0.01, 
-                                                         format="%.2f", 
-                                                         key="precio_venta_agregar")
-                        
-                        st.caption("(*) Campos obligatorios")
-                        
-                        submitted = st.form_submit_button("Agregar al Inventario", type="primary", use_container_width=True)
-                        
-                        if submitted:
-                            if not producto or not talla or not colores_input:
-                                st.error("Completa los campos obligatorios (*)")
-                            elif total_stock == 0:
-                                st.error("El stock total debe ser mayor a 0")
-                            else:
-                                nuevo_producto = crear_nuevo_producto(
-                                    producto=producto,
-                                    talla=talla,
-                                    colores=colores_input,
-                                    categoria=categoria,
-                                    stock_bodega=stock_bodega,
-                                    stock_exhibido=stock_exhibido,
-                                    precio_sugerido=precio_sugerido,
-                                    precio_venta=precio_venta if precio_venta > 0 else precio_sugerido
-                                )
-                                
-                                if agregar_producto(nuevo_producto):
-                                    st.success(f"{producto} agregado exitosamente!")
-                                    st.balloons()
-                                    st.session_state.modo_edicion = None
-                                    st.rerun()
-                
-                # MODO: EDITAR PRODUCTO
-                elif st.session_state.modo_edicion == 'editar':
-                    st.subheader("Editar Producto Existente")
-                    
-                    if len(st.session_state.inventario) == 0:
-                        st.info("No hay productos para editar.")
-                    else:
-                        productos_opciones = []
-                        for idx, row in df.iterrows():
-                            colores_text = ", ".join(row['Colores']) if row['Colores'] else "Sin color"
-                            opcion = f"{row['Producto']} ({row['Talla']}) - {colores_text[:20]}..."
-                            productos_opciones.append((opcion, idx))
-                        
-                        opciones_texto = [op[0] for op in productos_opciones]
-                        indices = [op[1] for op in productos_opciones]
-                        
-                        seleccion_index = st.selectbox(
-                            "Selecciona un producto para editar:",
-                            range(len(opciones_texto)),
-                            format_func=lambda i: opciones_texto[i],
-                            key="select_editar"
-                        )
-                        
-                        if seleccion_index is not None:
-                            idx_producto = indices[seleccion_index]
-                            producto_data = st.session_state.inventario[idx_producto]
-                            
-                            if producto_data:
-                                st.info(f"Editando: {producto_data['Producto']} - {producto_data['Talla']}")
-                                
-                                with st.form("form_editar_producto"):
-                                    col1, col2 = st.columns(2)
-                                    
-                                    with col1:
-                                        todas_categorias = obtener_todas_categorias()
-                                        
-                                        try:
-                                            cat_index = todas_categorias.index(producto_data['Categoria']) 
-                                        except ValueError:
-                                            cat_index = 0
-                                            
-                                        nueva_categoria = st.selectbox(
-                                            "Categoría:",
-                                            todas_categorias,
-                                            index=cat_index,
-                                            key="cat_editar"
-                                        )
-                                        
-                                        nuevo_producto = st.text_input("Nombre del Producto*:", 
-                                                                      value=producto_data['Producto'],
-                                                                      key="prod_editar")
-                                        
-                                        nueva_talla = st.text_input("Talla*:", 
-                                                                  value=producto_data['Talla'],
-                                                                  key="talla_editar")
-                                        
-                                        colores_actuales = ", ".join(producto_data['Colores']) if producto_data['Colores'] else ""
-                                        nuevos_colores = st.text_area(
-                                            "Colores* (separados por coma):",
-                                            value=colores_actuales,
-                                            key="colores_editar",
-                                            help="Ingresa todos los colores disponibles separados por coma"
-                                        )
-                                    
-                                    with col2:
-                                        st.markdown("### Distribución del Stock")
-                                        
-                                        stock_actual_total = producto_data['Stock_Bodega'] + producto_data['Stock_Exhibido']
-                                        ventas_actuales = producto_data['Ventas_Total']
-                                        
-                                        col_stock1, col_stock2 = st.columns(2)
-                                        with col_stock1:
-                                            nuevo_stock_bodega = st.number_input(
-                                                "Stock en Bodega:",
-                                                min_value=0,
-                                                value=int(producto_data['Stock_Bodega']),
-                                                step=1,
-                                                key="stock_bodega_editar"
-                                            )
-                                        
-                                        with col_stock2:
-                                            nuevo_stock_exhibido = st.number_input(
-                                                "Stock en Exhibido:",
-                                                min_value=0,
-                                                value=int(producto_data['Stock_Exhibido']),
-                                                step=1,
-                                                key="stock_exhibido_editar"
-                                            )
-                                        
-                                        nuevo_stock_total = nuevo_stock_bodega + nuevo_stock_exhibido
-                                        
-                                        if nuevo_stock_total < 0:
-                                            st.error("El stock total no puede ser negativo")
-                                        elif nuevo_stock_total < ventas_actuales:
-                                            st.error(f"No puedes reducir el stock por debajo de las ventas ({ventas_actuales})")
-                                        else:
-                                            if nuevo_stock_bodega > nuevo_stock_exhibido:
-                                                nueva_ubicacion = "Bodega"
-                                            elif nuevo_stock_exhibido > nuevo_stock_bodega:
-                                                nueva_ubicacion = "Exhibido"
-                                            else:
-                                                nueva_ubicacion = "Exhibido"
-                                            
-                                            st.info(f"Nuevo stock total: {nuevo_stock_total}")
-                                            st.info(f"Nueva ubicación: {nueva_ubicacion}")
-                                        
-                                        st.markdown("### Precios")
-                                        nuevo_precio_sugerido = st.number_input("Precio Sugerido ($):", 
-                                                                              min_value=0.0, 
-                                                                              value=float(producto_data['Precio_Sugerido']),
-                                                                              step=0.01,
-                                                                              format="%.2f",
-                                                                              key="precio_sug_editar")
-                                        
-                                        nuevo_precio_venta = st.number_input("Precio Venta ($):", 
-                                                                            min_value=0.0, 
-                                                                            value=float(producto_data['Precio_Venta']),
-                                                                            step=0.01,
-                                                                            format="%.2f",
-                                                                            key="precio_venta_editar")
-                                    
-                                    with st.expander("Información actual", expanded=False):
-                                        col_act1, col_act2 = st.columns(2)
-                                        with col_act1:
-                                            st.write(f"Ventas totales: {ventas_actuales}")
-                                            st.write(f"Entrada total: {producto_data['Entrada_Total']}")
-                                            st.write(f"Stock total actual: {stock_actual_total}")
-                                        with col_act2:
-                                            st.write(f"Ubicación principal: {producto_data['Ubicacion']}")
-                                            st.write(f"Bodega actual: {producto_data['Stock_Bodega']}")
-                                            st.write(f"Exhibido actual: {producto_data['Stock_Exhibido']}")
-                                    
-                                    st.caption("(*) Campos obligatorios")
-                                    
-                                    col_btn1, col_btn2, col_btn3 = st.columns(3)
-                                    
-                                    with col_btn1:
-                                        guardar = st.form_submit_button("Guardar Cambios", type="primary", use_container_width=True)
-                                    
-                                    with col_btn2:
-                                        solo_precios = st.form_submit_button("Solo Cambiar Precios", use_container_width=True)
-                                    
-                                    with col_btn3:
-                                        if st.form_submit_button("Cancelar", use_container_width=True):
-                                            st.session_state.modo_edicion = None
-                                            st.rerun()
-                                    
-                                    if solo_precios:
-                                        producto_data['Precio_Sugerido'] = float(nuevo_precio_sugerido)
-                                        producto_data['Precio_Venta'] = float(nuevo_precio_venta)
-                                        guardar_inventario()
-                                        st.success("Precios actualizados correctamente")
-                                        st.session_state.modo_edicion = None
-                                        st.rerun()
-                                    
-                                    if guardar:
-                                        if not nuevo_producto or not nueva_talla or not nuevos_colores:
-                                            st.error("Completa los campos obligatorios (*)")
-                                        elif nuevo_stock_total < 0:
-                                            st.error("El stock total no puede ser negativo")
-                                        elif nuevo_stock_total < ventas_actuales:
-                                            st.error(f"No puedes reducir el stock por debajo de las ventas ({ventas_actuales})")
-                                        else:
-                                            colores_lista = [c.strip() for c in nuevos_colores.split(',') if c.strip()]
-                                            if not colores_lista:
-                                                colores_lista = ['Sin color']
-                                            
-                                            producto_data['Categoria'] = nueva_categoria
-                                            producto_data['Producto'] = nuevo_producto
-                                            producto_data['Talla'] = nueva_talla
-                                            producto_data['Colores'] = colores_lista
-                                            producto_data['Stock_Bodega'] = nuevo_stock_bodega
-                                            producto_data['Stock_Exhibido'] = nuevo_stock_exhibido
-                                            producto_data['Stock_Total'] = nuevo_stock_total
-                                            producto_data['Precio_Sugerido'] = float(nuevo_precio_sugerido)
-                                            producto_data['Precio_Venta'] = float(nuevo_precio_venta)
-                                            producto_data['Ubicacion'] = nueva_ubicacion
-                                            producto_data['Entrada_Total'] = nuevo_stock_total + ventas_actuales
-                                            
-                                            guardar_inventario()
-                                            st.success("Producto actualizado correctamente")
-                                            st.session_state.modo_edicion = None
-                                            st.rerun()
-                
-                # MODO: ELIMINAR PRODUCTO
-                elif st.session_state.modo_edicion == 'eliminar':
-                    st.subheader("Eliminar Producto")
-                    
-                    if len(st.session_state.inventario) == 0:
-                        st.info("No hay productos para eliminar.")
-                    else:
-                        productos_eliminar = {f"{row['Producto']} ({row['Talla']}) - Ventas: {row['Ventas_Total']}": row['ID'] 
-                                            for _, row in df.iterrows()}
-                        
-                        producto_eliminar = st.selectbox(
-                            "Selecciona un producto para eliminar:",
-                            list(productos_eliminar.keys()),
-                            key="select_eliminar"
-                        )
-                        
-                        if producto_eliminar:
-                            producto_id = productos_eliminar[producto_eliminar]
-                            producto_data = next((item for item in st.session_state.inventario 
-                                                if item['ID'] == producto_id), None)
-                            
-                            if producto_data:
-                                st.warning(f"¿Estás seguro de eliminar {producto_data['Producto']}?")
-                                
-                                if producto_data['Ventas_Total'] > 0:
-                                    st.error(f"ADVERTENCIA: Este producto tiene {producto_data['Ventas_Total']} ventas registradas.")
-                                
-                                col_info1, col_info2 = st.columns(2)
-                                with col_info1:
-                                    st.write(f"Categoría: {producto_data['Categoria']}")
-                                    st.write(f"Talla: {producto_data['Talla']}")
-                                    st.write(f"Ubicación: {producto_data['Ubicacion']}")
-                                with col_info2:
-                                    colores_text = ", ".join(producto_data['Colores']) if producto_data['Colores'] else "Sin color"
-                                    st.write(f"Colores: {colores_text}")
-                                    st.write(f"Precio Venta: ${producto_data['Precio_Venta']:,.2f}")
-                                    st.write(f"Ventas: {producto_data['Ventas_Total']}")
-                                
-                                col_conf1, col_conf2, col_conf3 = st.columns([1, 1, 2])
-                                
-                                with col_conf1:
-                                    if st.button("Sí, Eliminar", type="primary", use_container_width=True):
-                                        success, message = eliminar_producto(producto_id)
-                                        if success:
-                                            st.success(message)
-                                            st.session_state.modo_edicion = None
-                                            st.rerun()
-                                        else:
-                                            st.error(message)
-                                
-                                with col_conf2:
-                                    if st.button("Cancelar", use_container_width=True):
-                                        st.session_state.modo_edicion = None
-                                        st.rerun()
-                
-                # MODO: VER INVENTARIO
-                else:
-                    st.subheader("Inventario Actual")
-                    
-                    if len(st.session_state.inventario) == 0:
-                        st.info("No hay productos en el inventario.")
-                    else:
-                        col_res1, col_res2, col_res3 = st.columns(3)
-                        with col_res1:
-                            st.metric("Total Productos", len(df))
-                        with col_res2:
-                            valor_inventario = (df['Stock_Total'] * df['Precio_Venta']).sum()
-                            st.metric("Valor Inventario", f"${valor_inventario:,.2f}")
-                        with col_res3:
-                            productos_con_stock = len(df[df['Stock_Total'] > 0])
-                            st.metric("Productos con Stock", f"{productos_con_stock}")
-                        
-                        search_inv = st.text_input("Buscar en inventario:", key="search_inv")
-                        
-                        if search_inv:
-                            filtered_inv = df[
-                                df['Producto'].str.contains(search_inv, case=False, na=False) |
-                                df['Categoria'].str.contains(search_inv, case=False, na=False) |
-                                df['Talla'].str.contains(search_inv, case=False, na=False) |
-                                df['Ubicacion'].str.contains(search_inv, case=False, na=False)
-                            ]
-                        else:
-                            filtered_inv = df
-                        
-                        if not filtered_inv.empty:
-                            display_inv = filtered_inv.copy()
-                            display_inv['Precio_Sugerido'] = display_inv['Precio_Sugerido'].apply(lambda x: f"${x:,.2f}")
-                            display_inv['Precio_Venta'] = display_inv['Precio_Venta'].apply(lambda x: f"${x:,.2f}")
-                            display_inv['Colores'] = display_inv['Colores'].apply(
-                                lambda x: ", ".join(x) if isinstance(x, list) else str(x) if x else ""
-                            )
-                            
-                            st.dataframe(
-                                display_inv[['Categoria', 'Producto', 'Talla', 'Colores', 'Ubicacion',
-                                           'Stock_Bodega', 'Stock_Exhibido', 'Stock_Total', 
-                                           'Ventas_Total', 'Precio_Sugerido', 'Precio_Venta']],
-                                use_container_width=True,
-                                hide_index=True,
-                                column_config={
-                                    'Categoria': st.column_config.TextColumn("Categoría"),
-                                    'Producto': st.column_config.TextColumn("Producto"),
-                                    'Talla': st.column_config.TextColumn("Talla"),
-                                    'Colores': st.column_config.TextColumn("Colores"),
-                                    'Ubicacion': st.column_config.TextColumn("Ubicación"),
-                                    'Stock_Bodega': st.column_config.NumberColumn("Bodega", format="%d"),
-                                    'Stock_Exhibido': st.column_config.NumberColumn("Exhibido", format="%d"),
-                                    'Stock_Total': st.column_config.NumberColumn("Total", format="%d"),
-                                    'Ventas_Total': st.column_config.NumberColumn("Ventas", format="%d"),
-                                    'Precio_Sugerido': st.column_config.TextColumn("Sugerido"),
-                                    'Precio_Venta': st.column_config.TextColumn("Venta")
-                                }
-                            )
-                        else:
-                            st.info("No hay productos que coincidan con la búsqueda.")
+                st.sidebar.error("Contraseña incorrecta")
+else:
+    st.session_state["admin_authenticated"] = False
 
-if __name__ == "__main__":
-    main()
+# Selección de Vista
+if (
+    role_option == "👑 Administradora"
+    and st.session_state["admin_authenticated"]
+):
+    menu = st.sidebar.selectbox(
+        "Módulo:",
+        [
+            "🛍️ Registrar Venta",
+            "📊 Corte de Caja y Reportes",
+            "📦 Gestión de Inventario",
+            "🏷️ Categorías",
+        ],
+    )
+else:
+    menu = st.sidebar.selectbox(
+        "Módulo:", ["🛍️ Registrar Venta", "📊 Corte de Caja"]
+    )
+
+
+# ==========================================
+# MÓDULO 1: REGISTRAR VENTA
+# ==========================================
+if menu == "🛍️ Registrar Venta":
+    st.title("🛍️ Punto de Venta")
+    st.caption("Selecciona una categoría para ver y vender productos.")
+
+    # Filtro por categorías
+    selected_cat = st.selectbox("Filtrar por Categoría:", ["Todas"] + categories)
+
+    filtered_inventory = inventory
+    if selected_cat != "Todas":
+        filtered_inventory = [
+            p for p in inventory if p.get("categoria") == selected_cat
+        ]
+
+    if not filtered_inventory:
+        st.info("No hay productos disponibles en esta categoría.")
+    else:
+        for p in filtered_inventory:
+            # Calcular stocks totales del producto
+            total_exhibido = sum(
+                var.get("exhibido", 0) for var in p.get("variantes", {}).values()
+            )
+            total_bodega = sum(
+                var.get("bodega", 0) for var in p.get("variantes", {}).values()
+            )
+
+            status_color = "🟢" if (total_exhibido + total_bodega) >= 3 else "🔴"
+
+            with st.expander(
+                f"{status_color} {p['nombre']} (Talla: {p['talla']}) - ${p['precio_sugerido']:.2f}"
+            ):
+                col1, col2 = st.columns([2, 2])
+
+                with col1:
+                    st.write(f"**Categoría:** {p['categoria']}")
+                    st.write(f"**Precio Sugerido:** ${p['precio_sugerido']:.2f}")
+
+                    # Mostrar tabla de variantes y stock
+                    var_df = []
+                    for color, stks in p.get("variantes", {}).items():
+                        var_df.append(
+                            {
+                                "Color": color,
+                                "Exhibido": stks.get("exhibido", 0),
+                                "Bodega": stks.get("bodega", 0),
+                            }
+                        )
+                    if var_df:
+                        st.dataframe(pd.DataFrame(var_df), use_container_width=True)
+
+                with col2:
+                    st.subheader("Registrar Salida")
+                    available_colors = [
+                        c
+                        for c, s in p.get("variantes", {}).items()
+                        if (s.get("exhibido", 0) + s.get("bodega", 0)) > 0
+                    ]
+
+                    if not available_colors:
+                        st.error("❌ Producto Agotado en todos los colores.")
+                    else:
+                        chosen_color = st.selectbox(
+                            f"Color para {p['id']}:",
+                            available_colors,
+                            key=f"col_{p['id']}",
+                        )
+                        sale_price = st.number_input(
+                            f"Precio Real Venta ($):",
+                            min_value=0.0,
+                            value=float(p["precio_sugerido"]),
+                            step=10.0,
+                            key=f"price_{p['id']}",
+                        )
+                        payment_method = st.selectbox(
+                            "Método de Pago:",
+                            ["Efectivo", "Tarjeta", "Transferencia"],
+                            key=f"pay_{p['id']}",
+                        )
+
+                        curr_exhibido = p["variantes"][chosen_color].get(
+                            "exhibido", 0
+                        )
+                        curr_bodega = p["variantes"][chosen_color].get(
+                            "bodega", 0
+                        )
+
+                        if st.button("Vender 1 Unidad", key=f"btn_{p['id']}"):
+                            location_used = ""
+                            # Regla: Prioridad Exhibido -> luego Bodega
+                            if curr_exhibido > 0:
+                                p["variantes"][chosen_color]["exhibido"] -= 1
+                                location_used = "Exhibido"
+                            elif curr_bodega > 0:
+                                p["variantes"][chosen_color]["bodega"] -= 1
+                                location_used = "Bodega"
+
+                            # Crear Registro de Venta
+                            new_sale = {
+                                "id_venta": f"VEN_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}",
+                                "fecha": datetime.datetime.now().strftime(
+                                    "%Y-%m-%d %H:%M:%S"
+                                ),
+                                "producto_id": p["id"],
+                                "producto_nombre": p["nombre"],
+                                "categoria": p["categoria"],
+                                "talla": p["talla"],
+                                "color": chosen_color,
+                                "precio_sugerido": p["precio_sugerido"],
+                                "precio_venta": sale_price,
+                                "precio_costo": p.get("precio_costo", 0.0),
+                                "metodo_pago": payment_method,
+                                "ubicacion_descuento": location_used,
+                            }
+
+                            sales.append(new_sale)
+                            save_json(INVENTORY_FILE, inventory)
+                            save_json(SALES_FILE, sales)
+
+                            st.success(
+                                f"✅ ¡Venta registrada! 1 unidad de {p['nombre']} ({chosen_color}) cobrada en ${sale_price:.2f} [{payment_method}]."
+                            )
+                            st.rerun()
+
+
+# ==========================================
+# MÓDULO 2: CORTE DE CAJA Y REPORTES
+# ==========================================
+elif menu in ["📊 Corte de Caja", "📊 Corte de Caja y Reportes"]:
+    st.title("📊 Corte de Caja e Historial")
+
+    today_str = datetime.datetime.now().strftime("%Y-%m-%d")
+
+    # Filtrar ventas de hoy
+    today_sales = [
+        s for s in sales if s.get("fecha", "").startswith(today_str)
+    ]
+
+    st.subheader(f"Corte del Día ({today_str})")
+
+    if not today_sales:
+        st.info("Aún no hay ventas registradas el día de hoy.")
+    else:
+        df_today = pd.DataFrame(today_sales)
+
+        total_recaudado = df_today["precio_venta"].sum()
+        total_articulos = len(df_today)
+        ganancia_estimada = (
+            df_today["precio_venta"] - df_today["precio_costo"]
+        ).sum()
+
+        m1, m2, m3 = st.columns(3)
+        m1.metric("Total Ingresos Hoy", f"${total_recaudado:,.2f}")
+        m2.metric("Prendas Vendidas", f"{total_articulos} pcs")
+        if (
+            role_option == "👑 Administradora"
+            and st.session_state["admin_authenticated"]
+        ):
+            m3.metric("Ganancia Neta Hoy", f"${ganancia_estimada:,.2f}")
+
+        st.markdown("---")
+        st.write("### Desglose por Método de Pago")
+        pay_summary = (
+            df_today.groupby("metodo_pago")["precio_venta"]
+            .agg(["sum", "count"])
+            .reset_index()
+        )
+        pay_summary.columns = ["Método", "Total ($)", "Cantidad Ventas"]
+        st.table(pay_summary)
+
+        st.write("### Detalle de Ventas de Hoy")
+        st.dataframe(
+            df_today[
+                [
+                    "fecha",
+                    "producto_nombre",
+                    "talla",
+                    "color",
+                    "precio_sugerido",
+                    "precio_venta",
+                    "metodo_pago",
+                ]
+            ],
+            use_container_width=True,
+        )
+
+    # Dashboard Completo solo para la Administradora
+    if (
+        role_option == "👑 Administradora"
+        and st.session_state["admin_authenticated"]
+        and sales
+    ):
+        st.markdown("---")
+        st.header("📈 Reportes Generales de Negocio")
+
+        df_all = pd.DataFrame(sales)
+
+        col_g1, col_g2 = st.columns(2)
+
+        with col_g1:
+            st.subheader("Ventas por Categoría")
+            cat_fig = px.pie(
+                df_all, names="categoria", values="precio_venta", hole=0.4
+            )
+            st.plotly_chart(cat_fig, use_container_width=True)
+
+        with col_g2:
+            st.subheader("Ventas por Método de Pago")
+            pay_fig = px.bar(
+                df_all,
+                x="metodo_pago",
+                y="precio_venta",
+                color="metodo_pago",
+                title="Ingresos Totales",
+            )
+            st.plotly_chart(pay_fig, use_container_width=True)
+
+        # Descargas de Reportes
+        st.subheader("📥 Exportación de Datos")
+        csv_sales = df_all.to_csv(index=False).encode("utf-8")
+        st.download_button(
+            "Descargar Historial de Ventas (CSV)",
+            data=csv_sales,
+            file_name=f"reporte_ventas_{today_str}.csv",
+            mime="text/csv",
+        )
+
+
+# ==========================================
+# MÓDULO 3: GESTIÓN DE INVENTARIO (ADMIN)
+# ==========================================
+elif menu == "📦 Gestión de Inventario":
+    st.title("📦 Gestión Integral de Inventario")
+
+    tab1, tab2, tab3 = st.tabs(
+        ["➕ Agregar Producto", "✏️ Editar / Mover Stock", "🗑️ Eliminar / Lista"]
+    )
+
+    # --- TAB 1: AGREGAR PRODUCTO ---
+    with tab1:
+        st.subheader("Nuevo Producto")
+        with st.form("form_add_product"):
+            cat = st.selectbox("Categoría:", categories)
+            name = st.text_input("Nombre del Producto (Ej: Camisa Oxford):")
+            size = st.text_input("Talla (Ej: M, 32, Unitalla):")
+
+            col_p1, col_p2 = st.columns(2)
+            cost_p = col_p1.number_input("Precio Costo ($):", min_value=0.0)
+            sugg_p = col_p2.number_input("Precio Sugerido ($):", min_value=0.0)
+
+            st.markdown("---")
+            st.write("**Variantes de Color y Stock Inicial**")
+            colors_input = st.text_input(
+                "Colores disponibles (separados por coma, Ej: Azul, Blanco, Negro):"
+            )
+
+            bodega_init = st.number_input(
+                "Stock Inicial por Color en Bodega:", min_value=0, value=5
+            )
+            exhibido_init = st.number_input(
+                "Stock Inicial por Color en Exhibición:", min_value=0, value=5
+            )
+
+            submit_add = st.form_submit_button("Guardar Producto")
+
+            if submit_add:
+                if not name or not colors_input:
+                    st.error("Por favor completa el nombre y los colores.")
+                else:
+                    color_list = [
+                        c.strip().capitalize()
+                        for c in colors_input.split(",")
+                        if c.strip()
+                    ]
+                    variantes_dict = {}
+                    for col in color_list:
+                        variantes_dict[col] = {
+                            "bodega": int(bodega_init),
+                            "exhibido": int(exhibido_init),
+                        }
+
+                    new_prod = {
+                        "id": f"PROD_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}",
+                        "categoria": cat,
+                        "nombre": name,
+                        "talla": size,
+                        "precio_costo": float(cost_p),
+                        "precio_sugerido": float(sugg_p),
+                        "variantes": variantes_dict,
+                    }
+
+                    inventory.append(new_prod)
+                    save_json(INVENTORY_FILE, inventory)
+                    st.success(
+                        f"¡Producto '{name}' registrado exitosamente!"
+                    )
+                    st.rerun()
+
+    # --- TAB 2: EDITAR / MOVER STOCK ---
+    with tab2:
+        st.subheader("Ajustar Stock y Precios")
+        if not inventory:
+            st.info("No hay productos en inventario.")
+        else:
+            prod_titles = {
+                f"{p['nombre']} (Talla: {p['talla']}) - ID: {p['id']}": p
+                for p in inventory
+            }
+            selected_prod_title = st.selectbox(
+                "Selecciona Producto a Modificar:", list(prod_titles.keys())
+            )
+            prod = prod_titles[selected_prod_title]
+
+            st.write(f"**Modificando:** {prod['nombre']}")
+
+            col_e1, col_e2 = st.columns(2)
+            new_cost = col_e1.number_input(
+                "Precio Costo ($)",
+                value=float(prod.get("precio_costo", 0.0)),
+                key="edit_cost",
+            )
+            new_sugg = col_e2.number_input(
+                "Precio Sugerido ($)",
+                value=float(prod.get("precio_sugerido", 0.0)),
+                key="edit_sugg",
+            )
+
+            st.write("---")
+            st.write("**Ajustar Stock por Color**")
+
+            updated_variantes = prod.get("variantes", {})
+            for color, stks in list(updated_variantes.items()):
+                st.markdown(f"**Color: {color}**")
+                ce1, ce2 = st.columns(2)
+                b_val = ce1.number_input(
+                    f"Bodega ({color}):",
+                    min_value=0,
+                    value=int(stks.get("bodega", 0)),
+                    key=f"eb_{prod['id']}_{color}",
+                )
+                e_val = ce2.number_input(
+                    f"Exhibido ({color}):",
+                    min_value=0,
+                    value=int(stks.get("exhibido", 0)),
+                    key=f"ee_{prod['id']}_{color}",
+                )
+                updated_variantes[color] = {"bodega": b_val, "exhibido": e_val}
+
+            # Opción para agregar nuevo color
+            new_col_name = st.text_input(
+                "Agregar un nuevo color a este producto:",
+                key=f"ncol_{prod['id']}",
+            )
+            if st.button("Añadir Color") and new_col_name:
+                updated_variantes[new_col_name.strip().capitalize()] = {
+                    "bodega": 0,
+                    "exhibido": 0,
+                }
+                save_json(INVENTORY_FILE, inventory)
+                st.rerun()
+
+            if st.button("Guardar Cambios de Producto"):
+                prod["precio_costo"] = new_cost
+                prod["precio_sugerido"] = new_sugg
+                prod["variantes"] = updated_variantes
+                save_json(INVENTORY_FILE, inventory)
+                st.success("¡Producto actualizado correctamente!")
+                st.rerun()
+
+    # --- TAB 3: ELIMINAR / VISTA GENERAL ---
+    with tab3:
+        st.subheader("Lista Completa de Inventario")
+
+        if inventory:
+            # Aplanar datos para tabla
+            flat_data = []
+            for p in inventory:
+                for color, stks in p.get("variantes", {}).items():
+                    flat_data.append(
+                        {
+                            "ID": p["id"],
+                            "Categoría": p["categoria"],
+                            "Producto": p["nombre"],
+                            "Talla": p["talla"],
+                            "Color": color,
+                            "Stock Bodega": stks.get("bodega", 0),
+                            "Stock Exhibido": stks.get("exhibido", 0),
+                            "Total": stks.get("bodega", 0)
+                            + stks.get("exhibido", 0),
+                            "Precio Costo": p.get("precio_costo", 0.0),
+                            "Precio Sugerido": p.get("precio_sugerido", 0.0),
+                        }
+                    )
+
+            df_inv = pd.DataFrame(flat_data)
+            st.dataframe(df_inv, use_container_width=True)
+
+            # Exportar inventario
+            csv_inv = df_inv.to_csv(index=False).encode("utf-8")
+            st.download_button(
+                "Descargar Inventario (CSV)",
+                data=csv_inv,
+                file_name="inventario_completo.csv",
+                mime="text/csv",
+            )
+
+            st.markdown("---")
+            st.subheader("Eliminar Producto")
+            prod_to_del = st.selectbox(
+                "Selecciona producto a borrar:",
+                [f"{p['nombre']} ({p['talla']}) - {p['id']}" for p in inventory],
+            )
+
+            if st.button("Eliminar Producto Seleccionado"):
+                target_id = prod_to_del.split(" - ")[-1]
+                inventory = [p for p in inventory if p["id"] != target_id]
+                save_json(INVENTORY_FILE, inventory)
+                st.warning("Producto eliminado del inventario.")
+                st.rerun()
+
+
+# ==========================================
+# MÓDULO 4: GESTIÓN DE CATEGORÍAS (ADMIN)
+# ==========================================
+elif menu == "🏷️ Categorías":
+    st.title("🏷️ Administración de Categorías")
+
+    st.write("### Categorías Actuales")
+    st.write(", ".join(categories))
+
+    st.markdown("---")
+    col_c1, col_c2 = st.columns(2)
+
+    with col_c1:
+        st.subheader("Agregar Categoría")
+        new_cat = st.text_input("Nombre de la nueva categoría:")
+        if st.button("Guardar Categoría"):
+            if new_cat and new_cat not in categories:
+                categories.append(new_cat.strip())
+                save_json(CATEGORIES_FILE, categories)
+                st.success(f"Categoría '{new_cat}' agregada.")
+                st.rerun()
+
+    with col_c2:
+        st.subheader("Eliminar Categoría")
+        cat_to_remove = st.selectbox("Seleccionar categoría:", categories)
+        if st.button("Eliminar Categoría"):
+            # Verificar si hay productos asociados
+            prods_in_cat = [
+                p for p in inventory if p.get("categoria") == cat_to_remove
+            ]
+            if prods_in_cat:
+                st.error(
+                    f"No se puede eliminar: Hay {len(prods_in_cat)} productos asociados a esta categoría."
+                )
+            else:
+                categories.remove(cat_to_remove)
+                save_json(CATEGORIES_FILE, categories)
+                st.success("Categoría eliminada.")
+                st.rerun()
