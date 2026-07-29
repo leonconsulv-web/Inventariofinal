@@ -54,7 +54,7 @@ def save_json(filepath, data):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 def normalize_product(prod):
-    """Garantiza compatibilidad con esquemas anteriores."""
+    """Garantiza compatibilidad con datos guardados previamente."""
     if "Variantes" in prod and isinstance(prod["Variantes"], list):
         return prod
     
@@ -84,9 +84,20 @@ def normalize_product(prod):
         "Variantes": variantes
     }
 
+def generar_excel_seguro(df, nombre_hoja="Datos"):
+    """Genera archivo Excel o cae en CSV si falta la librería openpyxl sin romper la app."""
+    try:
+        buffer = io.BytesIO()
+        with pd.ExcelWriter(buffer, engine='openpyxl') as writer:
+            df.to_excel(writer, sheet_name=nombre_hoja, index=False)
+        return buffer.getvalue(), "xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    except Exception:
+        csv_data = df.to_csv(index=False).encode('utf-8-sig')
+        return csv_data, "csv", "text/csv"
+
 init_storage()
 
-# Carga en Session State
+# Carga inicial en Session State
 if "productos" not in st.session_state:
     raw_prods = load_json(PRODUCTS_FILE)
     st.session_state.productos = [normalize_product(p) for p in raw_prods]
@@ -110,7 +121,7 @@ def sync_data():
     save_json(CAJA_FILE, st.session_state.caja)
 
 # ==========================================
-# NAVEGACIÓN PRINCIPAL (BOCETO 1)
+# NAVEGACIÓN PRINCIPAL
 # ==========================================
 st.title("Inventario de Ropa")
 
@@ -136,7 +147,7 @@ with nav_c3:
 st.divider()
 
 # ==========================================
-# VISTA 1: REGISTRAR VENTAS (BOCETO 2)
+# VISTA 1: REGISTRAR VENTAS
 # ==========================================
 if st.session_state.vista == "ventas":
     st.subheader("Registrar Ventas")
@@ -144,7 +155,6 @@ if st.session_state.vista == "ventas":
     if not st.session_state.categorias:
         st.info("No hay categorías creadas.")
     else:
-        # Botones por categoría
         cat_cols = st.columns(min(len(st.session_state.categorias), 5))
         if "cat_activa" not in st.session_state:
             st.session_state.cat_activa = st.session_state.categorias[0]
@@ -156,7 +166,7 @@ if st.session_state.vista == "ventas":
                     st.session_state.cat_activa = cat
                     st.rerun()
 
-        st.caption(f"Productos en categoría: **{st.session_state.cat_activa}**")
+        st.caption(f"Categoría seleccionada: **{st.session_state.cat_activa}**")
 
         prods_cat = [p for p in st.session_state.productos if p["Categoria"] == st.session_state.cat_activa]
         
@@ -167,16 +177,13 @@ if st.session_state.vista == "ventas":
                 with st.expander(f"📦 **{prod['Producto']}** | Precio Sugerido: ${prod['Precio_Sugerido']:.2f}", expanded=True):
                     c_col1, c_col2 = st.columns(2)
                     
-                    # Selección de variante/color
                     nombres_colores = [v["color"] for v in prod["Variantes"]]
                     with c_col1:
                         color_sel = st.selectbox("Color:", nombres_colores, key=f"sel_col_{prod['ID']}")
                     
-                    # Selección de talla
                     with c_col2:
                         talla_sel = st.selectbox("Talla:", prod["Tallas"], key=f"sel_tal_{prod['ID']}")
 
-                    # Buscar inventario de esa variante y talla
                     variante_actual = next((v for v in prod["Variantes"] if v["color"] == color_sel), None)
                     stock_exh = 0
                     stock_bod = 0
@@ -184,16 +191,14 @@ if st.session_state.vista == "ventas":
                         stock_exh = variante_actual["stock"][talla_sel].get("exhibido", 0)
                         stock_bod = variante_actual["stock"][talla_sel].get("bodega", 0)
 
-                    # Mostrar stock
                     s_col1, s_col2 = st.columns(2)
-                    s_col1.metric("Stock en Vitrina / Exhibición", stock_exh)
+                    s_col1.metric("Stock en Vitrina", stock_exh)
                     s_col2.metric("Stock en Bodega", stock_bod)
 
-                    # Formulario de venta
                     col_p1, col_p2, col_p3 = st.columns([2, 2, 2])
                     with col_p1:
                         precio_real = st.number_input(
-                            "Precio de Venta Real ($):", 
+                            "Precio Venta Real ($):", 
                             value=float(prod["Precio_Sugerido"]), 
                             step=10.0, 
                             key=f"p_real_{prod['ID']}"
@@ -202,7 +207,6 @@ if st.session_state.vista == "ventas":
                     with col_p2:
                         if stock_exh > 0 or stock_bod > 0:
                             if st.button("🛒 Vender 1 Unidad", key=f"vender_{prod['ID']}", type="primary", use_container_width=True):
-                                # Descontar primero de exhibición
                                 ubic_venta = ""
                                 if stock_exh > 0:
                                     variante_actual["stock"][talla_sel]["exhibido"] -= 1
@@ -211,7 +215,6 @@ if st.session_state.vista == "ventas":
                                     variante_actual["stock"][talla_sel]["bodega"] -= 1
                                     ubic_venta = "Bodega"
 
-                                # Registrar la venta
                                 nueva_venta = {
                                     "fecha": datetime.now().isoformat(),
                                     "producto_id": prod["ID"],
@@ -225,14 +228,14 @@ if st.session_state.vista == "ventas":
                                 }
                                 st.session_state.ventas.append(nueva_venta)
                                 sync_data()
-                                st.success(f"¡Venta realizada ({color_sel} - Talla {talla_sel})! Descontado de {ubic_venta}.")
+                                st.success(f"¡Venta realizada! ({color_sel} - Talla {talla_sel})")
                                 st.rerun()
                         else:
                             st.button("Agotado", disabled=True, use_container_width=True, key=f"dis_{prod['ID']}")
 
                     with col_p3:
                         if stock_bod > 0:
-                            if st.button("📦 Pasante de Bodega ➔ Vitrina", key=f"pass_{prod['ID']}", use_container_width=True):
+                            if st.button("📦 Bodega ➔ Vitrina", key=f"pass_{prod['ID']}", use_container_width=True):
                                 variante_actual["stock"][talla_sel]["bodega"] -= 1
                                 variante_actual["stock"][talla_sel]["exhibido"] += 1
                                 sync_data()
@@ -249,7 +252,7 @@ elif st.session_state.vista == "caja":
         c_f1, c_f2 = st.columns([3, 1])
         with c_f1:
             nuevo_fondo = st.number_input(
-                "Fondo Inicial de Caja ($):", 
+                "Fondo Inicial ($):", 
                 value=float(st.session_state.caja.get("fondo_caja", 0.0)),
                 step=50.0
             )
@@ -281,7 +284,7 @@ elif st.session_state.vista == "caja":
     k1, k2, k3, k4 = st.columns(4)
     k1.metric("Fondo Inicial", f"${fondo:,.2f}")
     k2.metric("Ventas de Hoy", f"${total_ventas:,.2f}")
-    k3.metric("Total en Caja Esperado", f"${(fondo + total_ventas):,.2f}")
+    k3.metric("Total en Caja", f"${(fondo + total_ventas):,.2f}")
     k4.metric("Diferencia por Regateo", f"-${regateo:,.2f}")
 
     st.divider()
@@ -295,12 +298,11 @@ elif st.session_state.vista == "caja":
         st.info("Sin registros de ventas.")
 
 # ==========================================
-# VISTA 3: MODO ADMINISTRADOR (BOCETOS 3 Y 4)
+# VISTA 3: MODO ADMINISTRADOR Y GESTIÓN
 # ==========================================
 elif st.session_state.vista == "admin":
     st.subheader("Modo Administrador y Gestión")
 
-    # Autenticación de contraseña
     if not st.session_state.admin_authenticated:
         pwd = st.text_input("Ingrese Contraseña de Administradora:", type="password")
         if st.button("Ingresar"):
@@ -311,7 +313,6 @@ elif st.session_state.vista == "admin":
             else:
                 st.error("Contraseña incorrecta.")
     else:
-        # Sub-menú navegación administrador (Boceto 3)
         ad_col1, ad_col2, ad_col3, ad_col4, ad_col5 = st.columns(5)
         
         with ad_col1:
@@ -352,7 +353,7 @@ elif st.session_state.vista == "admin":
                     st.success("Categoría eliminada.")
                     st.rerun()
 
-        # TAB 2: AÑADIR PRODUCTO (BOCETO 4 EXACTO)
+        # TAB 2: AÑADIR PRODUCTO
         elif st.session_state.admin_tab == "add_product":
             st.markdown("### AÑADIR PRODUCTO")
             
@@ -360,7 +361,7 @@ elif st.session_state.vista == "admin":
             with f_col1:
                 cat_sel = st.selectbox("Categoría", st.session_state.categorias)
             with f_col2:
-                nombre_prod = st.text_input("Nombre producto", placeholder="Ej: Café repelente / Sacos Slim")
+                nombre_prod = st.text_input("Nombre producto", placeholder="Ej: Café repelente")
 
             p_col1, p_col2 = st.columns(2)
             with p_col1:
@@ -368,15 +369,12 @@ elif st.session_state.vista == "admin":
             with p_col2:
                 p_venta = st.number_input("Precio Venta Base ($)", min_value=0.0, value=0.0, step=10.0)
 
-            # Tallas disponibles
             tallas_input = st.text_input(
                 "Tallas disponibles (separadas por coma):", 
-                value="CH, M, G, XG", 
-                help="Escribe las tallas separadas por comas."
+                value="S, M, G, XG"
             )
             st.caption("🔴 * Depende de las que ponga se habilitan esos por color.")
 
-            # Lista de tallas parseada
             lista_tallas = [t.strip().upper() for t in tallas_input.split(",") if t.strip()]
 
             if "num_colores" not in st.session_state:
@@ -391,7 +389,6 @@ elif st.session_state.vista == "admin":
                 st.markdown(f"🎨 **Color #{i+1}**")
                 color_name = st.text_input(f"Nombre del Color #{i+1}:", key=f"c_name_{i}")
                 
-                # Stock Vitrina
                 st.write("🟦 **Stock en Vitrina / Exhibición**")
                 cols_v = st.columns(len(lista_tallas) if lista_tallas else 1)
                 vitrina_stock = {}
@@ -400,7 +397,6 @@ elif st.session_state.vista == "admin":
                         val_v = st.number_input(f"V {t}", min_value=0, value=0, key=f"v_{i}_{t}")
                         vitrina_stock[t] = val_v
 
-                # Stock Bodega
                 st.write("🟫 **Stock en Bodega**")
                 cols_b = st.columns(len(lista_tallas) if lista_tallas else 1)
                 bodega_stock = {}
@@ -409,7 +405,6 @@ elif st.session_state.vista == "admin":
                         val_b = st.number_input(f"B {t}", min_value=0, value=0, key=f"b_{i}_{t}")
                         bodega_stock[t] = val_b
 
-                # Empaquetar variante
                 stock_combinado = {}
                 for t in lista_tallas:
                     stock_combinado[t] = {
@@ -430,7 +425,7 @@ elif st.session_state.vista == "admin":
                     st.rerun()
 
             with btn_col2:
-                if st.button("💾 Guardar Producto", type="primary"):
+                if st.button("Guardar Producto", type="primary"):
                     if not nombre_prod or not lista_tallas:
                         st.error("Por favor ingresa el nombre del producto y al menos una talla.")
                     else:
@@ -446,7 +441,7 @@ elif st.session_state.vista == "admin":
                         st.session_state.productos.append(nuevo_p)
                         sync_data()
                         st.session_state.num_colores = 1
-                        st.success("¡Producto registrado con éxito!")
+                        st.success("¡Producto guardado con éxito!")
                         st.rerun()
 
         # TAB 3: EDITAR PRODUCTOS
@@ -490,14 +485,32 @@ elif st.session_state.vista == "admin":
         elif st.session_state.admin_tab == "export":
             st.markdown("### Descargar Inventario")
             if st.session_state.productos:
-                buffer = io.BytesIO()
-                df_export = pd.DataFrame(st.session_state.productos)
-                with pd.ExcelWriter(buffer, engine='openpyxl') as writer:
-                    df_export.to_excel(writer, sheet_name='Inventario', index=False)
+                # Aplanar los datos para que en Excel salgan organizados por fila
+                filas_export = []
+                for p in st.session_state.productos:
+                    for v in p.get("Variantes", []):
+                        col_nombre = v.get("color", "Único")
+                        for t, s in v.get("stock", {}).items():
+                            filas_export.append({
+                                "Categoría": p.get("Categoria", ""),
+                                "Producto": p.get("Producto", ""),
+                                "Color": col_nombre,
+                                "Talla": t,
+                                "Precio Sugerido": p.get("Precio_Sugerido", 0.0),
+                                "Precio Venta": p.get("Precio_Venta", 0.0),
+                                "Vitrina": s.get("exhibido", 0),
+                                "Bodega": s.get("bodega", 0),
+                                "Stock Total": s.get("exhibido", 0) + s.get("bodega", 0)
+                            })
                 
+                df_exp = pd.DataFrame(filas_export)
+                bytes_data, ext, mime = generar_excel_seguro(df_exp, "Inventario")
+
                 st.download_button(
-                    label="📥 Descargar Inventario en Excel",
-                    data=buffer.getvalue(),
-                    file_name=f"Inventario_{datetime.now().strftime('%Y%m%d')}.xlsx",
-                    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                    label=f"📥 Descargar Inventario ({ext.upper()})",
+                    data=bytes_data,
+                    file_name=f"Inventario_{datetime.now().strftime('%Y%m%d')}.{ext}",
+                    mime=mime
                 )
+            else:
+                st.info("No hay datos en el inventario para descargar.")
