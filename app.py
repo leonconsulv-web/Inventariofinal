@@ -62,6 +62,11 @@ if 'categoria_seleccionada' not in st.session_state:
 INVENTARIO_FILE = "inventario_data.json"
 CATEGORIAS_FILE = "categorias_data.json"
 
+# Columnas estándar para el DataFrame
+COLUMNAS_DF = ['ID', 'Categoria', 'Producto', 'Talla', 'Colores', 'Ubicacion', 
+               'Stock_Bodega', 'Stock_Exhibido', 'Stock_Total', 'Ventas_Total', 
+               'Precio_Sugerido', 'Precio_Venta', 'Entrada_Total']
+
 # ============================================
 # FUNCIONES DE DATOS
 # ============================================
@@ -280,6 +285,30 @@ def calcular_caja_total():
         total += venta.get('precio_venta', 0)
     return total
 
+def obtener_dataframe():
+    """Obtener DataFrame del inventario con todas las columnas necesarias"""
+    if not st.session_state.inventario:
+        # Si no hay productos, devolver DataFrame vacío con columnas
+        return pd.DataFrame(columns=COLUMNAS_DF)
+    
+    # Crear DataFrame con los datos existentes
+    df = pd.DataFrame(st.session_state.inventario)
+    
+    # Asegurar que todas las columnas existan
+    for col in COLUMNAS_DF:
+        if col not in df.columns:
+            if col == 'Colores':
+                df[col] = ['Sin color'] * len(df)
+            else:
+                df[col] = 0
+    
+    # Asegurar que Colores sea una lista
+    df['Colores'] = df['Colores'].apply(
+        lambda x: x if isinstance(x, list) else [x] if x and x != 'Sin color' else ['Sin color']
+    )
+    
+    return df
+
 # ============================================
 # INTERFAZ PRINCIPAL
 # ============================================
@@ -300,14 +329,8 @@ def main():
     
     st.markdown("---")
     
-    # Crear DataFrame y asegurar columnas necesarias
-    df = pd.DataFrame(st.session_state.inventario)
-    
-    # Si el DataFrame está vacío, crear uno con las columnas necesarias
-    if df.empty:
-        df = pd.DataFrame(columns=['ID', 'Categoria', 'Producto', 'Talla', 'Colores', 'Ubicacion', 
-                                   'Stock_Bodega', 'Stock_Exhibido', 'Stock_Total', 'Ventas_Total', 
-                                   'Precio_Sugerido', 'Precio_Venta', 'Entrada_Total'])
+    # Obtener DataFrame con todas las columnas necesarias
+    df = obtener_dataframe()
     
     tab1, tab2, tab3 = st.tabs(["Registrar Ventas", "Reporte y Caja", "Gestion Inventario"])
     
@@ -317,7 +340,7 @@ def main():
     with tab1:
         st.header("Registrar Ventas")
         
-        if df.empty or len(st.session_state.inventario) == 0:
+        if len(st.session_state.inventario) == 0:
             st.info("No hay productos en el inventario. Ve a la pestaña 'Gestion Inventario' para agregar productos.")
         else:
             # Botones de categorías
@@ -354,17 +377,8 @@ def main():
                 st.subheader(f"Productos en {st.session_state.categoria_seleccionada}")
                 
                 for _, row in filtered_df.iterrows():
-                    # Manejar colores
-                    if 'Colores' in row:
-                        if isinstance(row['Colores'], list):
-                            colores_list = row['Colores']
-                        elif isinstance(row['Colores'], str):
-                            colores_list = [row['Colores']]
-                        else:
-                            colores_list = ['Sin color']
-                    else:
-                        colores_list = ['Sin color']
-                    
+                    # Manejar colores de forma segura
+                    colores_list = row['Colores'] if isinstance(row['Colores'], list) else ['Sin color']
                     colores_text = ", ".join(colores_list) if colores_list else "Sin color"
                     
                     with st.expander(f"{row['Producto']} | Talla: {row['Talla']} | Colores: {colores_text}"):
@@ -448,7 +462,7 @@ def main():
                     st.success("Gráficas reseteadas!")
                     st.rerun()
         
-        if df.empty or len(st.session_state.inventario) == 0:
+        if len(st.session_state.inventario) == 0:
             st.info("No hay datos para mostrar. Agrega productos primero.")
         else:
             caja_total = calcular_caja_total()
@@ -656,7 +670,7 @@ def main():
             if st.session_state.modo_mover_stock == 'seleccionar':
                 st.subheader("Mover Stock entre Ubicaciones")
                 
-                if df.empty or len(st.session_state.inventario) == 0:
+                if len(st.session_state.inventario) == 0:
                     st.info("No hay productos para mover.")
                 else:
                     productos_opciones = {f"{row['Producto']} ({row['Talla']}) - B:{row['Stock_Bodega']} | E:{row['Stock_Exhibido']}": row['ID'] 
@@ -807,7 +821,7 @@ def main():
             elif st.session_state.modo_edicion == 'actualizar_precios':
                 st.subheader("Actualizar Precios")
                 
-                if df.empty or len(st.session_state.inventario) == 0:
+                if len(st.session_state.inventario) == 0:
                     st.info("No hay productos para actualizar.")
                 else:
                     productos_opciones = []
@@ -1001,7 +1015,7 @@ def main():
                 elif st.session_state.modo_edicion == 'editar':
                     st.subheader("Editar Producto Existente")
                     
-                    if df.empty or len(st.session_state.inventario) == 0:
+                    if len(st.session_state.inventario) == 0:
                         st.info("No hay productos para editar.")
                     else:
                         productos_opciones = []
@@ -1185,7 +1199,7 @@ def main():
                 elif st.session_state.modo_edicion == 'eliminar':
                     st.subheader("Eliminar Producto")
                     
-                    if df.empty or len(st.session_state.inventario) == 0:
+                    if len(st.session_state.inventario) == 0:
                         st.info("No hay productos para eliminar.")
                     else:
                         productos_eliminar = {f"{row['Producto']} ({row['Talla']}) - Ventas: {row['Ventas_Total']}": row['ID'] 
@@ -1240,7 +1254,7 @@ def main():
                 else:
                     st.subheader("Inventario Actual")
                     
-                    if df.empty or len(st.session_state.inventario) == 0:
+                    if len(st.session_state.inventario) == 0:
                         st.info("No hay productos en el inventario.")
                     else:
                         col_res1, col_res2, col_res3 = st.columns(3)
