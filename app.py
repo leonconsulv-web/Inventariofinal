@@ -107,41 +107,12 @@ def crear_nuevo_producto(producto, talla, colores, categoria, stock_bodega, stoc
     }
 
 def cargar_datos():
-    """Cargar todos los datos desde archivos y migrar estructura si es necesario"""
+    """Cargar todos los datos desde archivos"""
     try:
         if os.path.exists(INVENTARIO_FILE):
             with open(INVENTARIO_FILE, 'r', encoding='utf-8') as f:
                 data = json.load(f)
-                
-                inventario_old = data.get('inventario', [])
-                inventario_new = []
-                
-                for item in inventario_old:
-                    # Migrar a nuevo formato si es necesario
-                    if 'Stock_Bodega' not in item:
-                        item_migrado = {
-                            'ID': item.get('ID', f"PROD_{datetime.now().strftime('%Y%m%d_%H%M%S')}"),
-                            'Categoria': item.get('Categoria', ''),
-                            'Producto': item.get('Producto', ''),
-                            'Talla': item.get('Talla', ''),
-                            'Colores': [item.get('Color', 'Sin color')] if item.get('Color') else ['Sin color'],
-                            'Ubicacion': 'Exhibido',
-                            'Entrada_Total': item.get('Entrada', 0),
-                            'Stock_Bodega': 0,
-                            'Stock_Exhibido': item.get('Stock', 0),
-                            'Stock_Total': item.get('Stock', 0),
-                            'Ventas_Total': item.get('Ventas', 0),
-                            'Precio_Sugerido': item.get('Precio', 0.0),
-                            'Precio_Venta': item.get('Precio', 0.0)
-                        }
-                        inventario_new.append(item_migrado)
-                    else:
-                        # Asegurar que Colores existe
-                        if 'Colores' not in item:
-                            item['Colores'] = [item.get('Color', 'Sin color')] if item.get('Color') else ['Sin color']
-                        inventario_new.append(item)
-                
-                st.session_state.inventario = inventario_new
+                st.session_state.inventario = data.get('inventario', [])
                 st.session_state.ventas_diarias = data.get('ventas_diarias', [])
                 st.session_state.caja = data.get('caja', 0.0)
     except Exception as e:
@@ -195,7 +166,7 @@ def agregar_categoria_personalizada(nueva_categoria):
 def eliminar_categoria_personalizada(categoria):
     """Eliminar una categoría personalizada"""
     if categoria in st.session_state.categorias_personalizadas:
-        productos_en_categoria = [p for p in st.session_state.inventario if p['Categoria'] == categoria]
+        productos_en_categoria = [p for p in st.session_state.inventario if p.get('Categoria') == categoria]
         
         if productos_en_categoria:
             return False, f"No se puede eliminar. Hay {len(productos_en_categoria)} productos usando esta categoría."
@@ -329,7 +300,14 @@ def main():
     
     st.markdown("---")
     
+    # Crear DataFrame y asegurar columnas necesarias
     df = pd.DataFrame(st.session_state.inventario)
+    
+    # Si el DataFrame está vacío, crear uno con las columnas necesarias
+    if df.empty:
+        df = pd.DataFrame(columns=['ID', 'Categoria', 'Producto', 'Talla', 'Colores', 'Ubicacion', 
+                                   'Stock_Bodega', 'Stock_Exhibido', 'Stock_Total', 'Ventas_Total', 
+                                   'Precio_Sugerido', 'Precio_Venta', 'Entrada_Total'])
     
     tab1, tab2, tab3 = st.tabs(["Registrar Ventas", "Reporte y Caja", "Gestion Inventario"])
     
@@ -339,8 +317,8 @@ def main():
     with tab1:
         st.header("Registrar Ventas")
         
-        if df.empty:
-            st.info("No hay productos en el inventario.")
+        if df.empty or len(st.session_state.inventario) == 0:
+            st.info("No hay productos en el inventario. Ve a la pestaña 'Gestion Inventario' para agregar productos.")
         else:
             # Botones de categorías
             todas_categorias = obtener_todas_categorias()
@@ -348,7 +326,6 @@ def main():
             st.subheader("Categorías")
             
             # Crear columnas para botones (4 por fila)
-            num_categorias = len(todas_categorias) + 1  # +1 por "Todas"
             cols = st.columns(4)
             
             # Botón "Todas"
@@ -377,7 +354,19 @@ def main():
                 st.subheader(f"Productos en {st.session_state.categoria_seleccionada}")
                 
                 for _, row in filtered_df.iterrows():
-                    colores_text = ", ".join(row['Colores']) if row['Colores'] else "Sin color"
+                    # Manejar colores
+                    if 'Colores' in row:
+                        if isinstance(row['Colores'], list):
+                            colores_list = row['Colores']
+                        elif isinstance(row['Colores'], str):
+                            colores_list = [row['Colores']]
+                        else:
+                            colores_list = ['Sin color']
+                    else:
+                        colores_list = ['Sin color']
+                    
+                    colores_text = ", ".join(colores_list) if colores_list else "Sin color"
+                    
                     with st.expander(f"{row['Producto']} | Talla: {row['Talla']} | Colores: {colores_text}"):
                         col_info1, col_info2 = st.columns(2)
                         
@@ -403,10 +392,10 @@ def main():
                         if stock_disponible > 0:
                             # Selector de color
                             color_seleccionado = None
-                            if row['Colores'] and len(row['Colores']) > 0:
+                            if colores_list and len(colores_list) > 0:
                                 color_seleccionado = st.selectbox(
                                     "Color:",
-                                    row['Colores'],
+                                    colores_list,
                                     key=f"color_{row['ID']}"
                                 )
                             
@@ -459,27 +448,9 @@ def main():
                     st.success("Gráficas reseteadas!")
                     st.rerun()
         
-        if df.empty:
-            st.info("No hay datos para mostrar.")
+        if df.empty or len(st.session_state.inventario) == 0:
+            st.info("No hay datos para mostrar. Agrega productos primero.")
         else:
-            columnas_necesarias = ['Stock_Bodega', 'Stock_Exhibido', 'Stock_Total', 
-                                 'Ventas_Total', 'Precio_Sugerido', 'Precio_Venta']
-            
-            for col in columnas_necesarias:
-                if col not in df.columns:
-                    if col == 'Stock_Bodega':
-                        df['Stock_Bodega'] = 0
-                    elif col == 'Stock_Exhibido':
-                        df['Stock_Exhibido'] = df.get('Stock', 0)
-                    elif col == 'Stock_Total':
-                        df['Stock_Total'] = df.get('Stock', 0)
-                    elif col == 'Ventas_Total':
-                        df['Ventas_Total'] = df.get('Ventas', 0)
-                    elif col == 'Precio_Sugerido':
-                        df['Precio_Sugerido'] = df.get('Precio', 0.0)
-                    elif col == 'Precio_Venta':
-                        df['Precio_Venta'] = df.get('Precio', 0.0)
-            
             caja_total = calcular_caja_total()
             st.session_state.caja = caja_total
             
@@ -573,7 +544,9 @@ def main():
                 display_df_formatted = display_df.copy()
                 display_df_formatted['Precio_Sugerido'] = display_df_formatted['Precio_Sugerido'].apply(lambda x: f"${x:,.2f}")
                 display_df_formatted['Precio_Venta'] = display_df_formatted['Precio_Venta'].apply(lambda x: f"${x:,.2f}")
-                display_df_formatted['Colores'] = display_df_formatted['Colores'].apply(lambda x: ", ".join(x) if x else "")
+                display_df_formatted['Colores'] = display_df_formatted['Colores'].apply(
+                    lambda x: ", ".join(x) if isinstance(x, list) else str(x) if x else ""
+                )
                 
                 st.dataframe(
                     display_df_formatted[['Categoria', 'Producto', 'Talla', 'Colores', 'Ubicacion', 
@@ -683,7 +656,7 @@ def main():
             if st.session_state.modo_mover_stock == 'seleccionar':
                 st.subheader("Mover Stock entre Ubicaciones")
                 
-                if df.empty:
+                if df.empty or len(st.session_state.inventario) == 0:
                     st.info("No hay productos para mover.")
                 else:
                     productos_opciones = {f"{row['Producto']} ({row['Talla']}) - B:{row['Stock_Bodega']} | E:{row['Stock_Exhibido']}": row['ID'] 
@@ -834,7 +807,7 @@ def main():
             elif st.session_state.modo_edicion == 'actualizar_precios':
                 st.subheader("Actualizar Precios")
                 
-                if df.empty:
+                if df.empty or len(st.session_state.inventario) == 0:
                     st.info("No hay productos para actualizar.")
                 else:
                     productos_opciones = []
@@ -1019,18 +992,7 @@ def main():
                                 )
                                 
                                 if agregar_producto(nuevo_producto):
-                                    ubicacion_principal = "Exhibido" if stock_exhibido > stock_bodega else "Bodega" if stock_bodega > stock_exhibido else "Exhibido"
                                     st.success(f"{producto} agregado exitosamente!")
-                                    
-                                    col_res1, col_res2 = st.columns(2)
-                                    with col_res1:
-                                        st.info(f"Bodega: {stock_bodega} unidades")
-                                    with col_res2:
-                                        st.info(f"Exhibido: {stock_exhibido} unidades")
-                                    
-                                    st.info(f"Ubicación principal: {ubicacion_principal}")
-                                    st.info(f"Colores registrados: {len(nuevo_producto['Colores'])}")
-                                    
                                     st.balloons()
                                     st.session_state.modo_edicion = None
                                     st.rerun()
@@ -1039,7 +1001,7 @@ def main():
                 elif st.session_state.modo_edicion == 'editar':
                     st.subheader("Editar Producto Existente")
                     
-                    if df.empty:
+                    if df.empty or len(st.session_state.inventario) == 0:
                         st.info("No hay productos para editar.")
                     else:
                         productos_opciones = []
@@ -1198,13 +1160,6 @@ def main():
                                         elif nuevo_stock_total < ventas_actuales:
                                             st.error(f"No puedes reducir el stock por debajo de las ventas ({ventas_actuales})")
                                         else:
-                                            if nuevo_stock_bodega > nuevo_stock_exhibido:
-                                                nueva_ubicacion = "Bodega"
-                                            elif nuevo_stock_exhibido > nuevo_stock_bodega:
-                                                nueva_ubicacion = "Exhibido"
-                                            else:
-                                                nueva_ubicacion = "Exhibido"
-                                            
                                             colores_lista = [c.strip() for c in nuevos_colores.split(',') if c.strip()]
                                             if not colores_lista:
                                                 colores_lista = ['Sin color']
@@ -1223,8 +1178,6 @@ def main():
                                             
                                             guardar_inventario()
                                             st.success("Producto actualizado correctamente")
-                                            st.info(f"Nueva ubicación principal: {nueva_ubicacion}")
-                                            st.info(f"Colores actualizados: {len(colores_lista)}")
                                             st.session_state.modo_edicion = None
                                             st.rerun()
                 
@@ -1232,7 +1185,7 @@ def main():
                 elif st.session_state.modo_edicion == 'eliminar':
                     st.subheader("Eliminar Producto")
                     
-                    if df.empty:
+                    if df.empty or len(st.session_state.inventario) == 0:
                         st.info("No hay productos para eliminar.")
                     else:
                         productos_eliminar = {f"{row['Producto']} ({row['Talla']}) - Ventas: {row['Ventas_Total']}": row['ID'] 
@@ -1287,7 +1240,7 @@ def main():
                 else:
                     st.subheader("Inventario Actual")
                     
-                    if df.empty:
+                    if df.empty or len(st.session_state.inventario) == 0:
                         st.info("No hay productos en el inventario.")
                     else:
                         col_res1, col_res2, col_res3 = st.columns(3)
@@ -1316,7 +1269,9 @@ def main():
                             display_inv = filtered_inv.copy()
                             display_inv['Precio_Sugerido'] = display_inv['Precio_Sugerido'].apply(lambda x: f"${x:,.2f}")
                             display_inv['Precio_Venta'] = display_inv['Precio_Venta'].apply(lambda x: f"${x:,.2f}")
-                            display_inv['Colores'] = display_inv['Colores'].apply(lambda x: ", ".join(x) if x else "")
+                            display_inv['Colores'] = display_inv['Colores'].apply(
+                                lambda x: ", ".join(x) if isinstance(x, list) else str(x) if x else ""
+                            )
                             
                             st.dataframe(
                                 display_inv[['Categoria', 'Producto', 'Talla', 'Colores', 'Ubicacion',
