@@ -272,33 +272,34 @@ if st.session_state.vista == "ventas":
                         else:
                             st.button("Stock insuficiente", disabled=True, use_container_width=True, key=f"dis_{prod['ID']}_{idx_p}")
 
-                    # SECCIÓN PARA MOVER STOCK DE LUGAR
-                    st.markdown("##### 🔄 Mover Stock entre Ubicaciones")
-                    mov_c1, mov_c2, mov_c3 = st.columns([2, 2, 2])
-                    with mov_c1:
-                        cant_mover = st.number_input("Piezas a mover:", min_value=1, value=1, key=f"cant_m_{prod['ID']}_{idx_p}")
-                    
-                    with mov_c2:
-                        if stock_bod >= cant_mover:
-                            if st.button(f"📦 Bodega ➔ Vitrina ({cant_mover})", key=f"pass_bv_{prod['ID']}_{idx_p}", use_container_width=True):
-                                variante_actual["stock"][talla_sel]["bodega"] -= cant_mover
-                                variante_actual["stock"][talla_sel]["exhibido"] += cant_mover
-                                sync_data()
-                                notificar(f"Se movieron {cant_mover} pieza(s) a Vitrina.")
-                                st.rerun()
-                        else:
-                            st.button("Bodega ➔ Vitrina", disabled=True, use_container_width=True, key=f"dis_bv_{prod['ID']}_{idx_p}")
+                    # RESTRICCIÓN: SOLO EL ADMINISTRADOR VE EL BOTÓN DE MOVER STOCK
+                    if st.session_state.get("admin_authenticated", False):
+                        st.markdown("##### 🔄 Mover Stock entre Ubicaciones (Solo Administradora)")
+                        mov_c1, mov_c2, mov_c3 = st.columns([2, 2, 2])
+                        with mov_c1:
+                            cant_mover = st.number_input("Piezas a mover:", min_value=1, value=1, key=f"cant_m_{prod['ID']}_{idx_p}")
+                        
+                        with mov_c2:
+                            if stock_bod >= cant_mover:
+                                if st.button(f"📦 Bodega ➔ Vitrina ({cant_mover})", key=f"pass_bv_{prod['ID']}_{idx_p}", use_container_width=True):
+                                    variante_actual["stock"][talla_sel]["bodega"] -= cant_mover
+                                    variante_actual["stock"][talla_sel]["exhibido"] += cant_mover
+                                    sync_data()
+                                    notificar(f"Se movieron {cant_mover} pieza(s) a Vitrina.")
+                                    st.rerun()
+                            else:
+                                st.button("Bodega ➔ Vitrina", disabled=True, use_container_width=True, key=f"dis_bv_{prod['ID']}_{idx_p}")
 
-                    with mov_c3:
-                        if stock_exh >= cant_mover:
-                            if st.button(f"🏷️ Vitrina ➔ Bodega ({cant_mover})", key=f"pass_vb_{prod['ID']}_{idx_p}", use_container_width=True):
-                                variante_actual["stock"][talla_sel]["exhibido"] -= cant_mover
-                                variante_actual["stock"][talla_sel]["bodega"] += cant_mover
-                                sync_data()
-                                notificar(f"Se movieron {cant_mover} pieza(s) a Bodega.")
-                                st.rerun()
-                        else:
-                            st.button("Vitrina ➔ Bodega", disabled=True, use_container_width=True, key=f"dis_vb_{prod['ID']}_{idx_p}")
+                        with mov_c3:
+                            if stock_exh >= cant_mover:
+                                if st.button(f"🏷️ Vitrina ➔ Bodega ({cant_mover})", key=f"pass_vb_{prod['ID']}_{idx_p}", use_container_width=True):
+                                    variante_actual["stock"][talla_sel]["exhibido"] -= cant_mover
+                                    variante_actual["stock"][talla_sel]["bodega"] += cant_mover
+                                    sync_data()
+                                    notificar(f"Se movieron {cant_mover} pieza(s) a Bodega.")
+                                    st.rerun()
+                            else:
+                                st.button("Vitrina ➔ Bodega", disabled=True, use_container_width=True, key=f"dis_vb_{prod['ID']}_{idx_p}")
 
 # ==========================================
 # VISTA 2: VER INVENTARIO EN PANTALLA
@@ -599,7 +600,6 @@ elif st.session_state.vista == "admin":
                     if "stock" not in var:
                         var["stock"] = {}
 
-                    # Asegurar existencia de nuevas tallas
                     for t in nuevas_tallas:
                         if t not in var["stock"]:
                             var["stock"][t] = {"exhibido": 0, "bodega": 0}
