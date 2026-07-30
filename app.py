@@ -210,29 +210,48 @@ if st.session_state.vista == "ventas":
                         stock_exh = variante_actual["stock"][talla_sel].get("exhibido", 0)
                         stock_bod = variante_actual["stock"][talla_sel].get("bodega", 0)
 
-                    s_col1, s_col2 = st.columns(2)
+                    s_col1, s_col2, s_col3 = st.columns(3)
                     s_col1.metric("Stock en Vitrina", stock_exh)
                     s_col2.metric("Stock en Bodega", stock_bod)
+                    total_disp = stock_exh + stock_bod
+                    s_col3.metric("Stock Total Disponible", total_disp)
 
+                    st.markdown("---")
+                    st.markdown("##### 🛒 Sección de Venta")
                     col_p1, col_p2, col_p3 = st.columns([2, 2, 2])
+                    
                     with col_p1:
-                        precio_real = st.number_input(
-                            "Precio Venta Real ($):", 
+                        cant_vender = st.number_input(
+                            "Piezas a vender:", 
+                            min_value=1, 
+                            max_value=max(1, total_disp), 
+                            value=1, 
+                            key=f"cant_v_{prod['ID']}_{idx_p}"
+                        )
+
+                    with col_p2:
+                        precio_unitario = st.number_input(
+                            "Precio unitario final ($):", 
                             value=float(prod["Precio_Sugerido"]), 
                             step=10.0, 
                             key=f"p_real_{prod['ID']}_{idx_p}"
                         )
                     
-                    with col_p2:
-                        if stock_exh > 0 or stock_bod > 0:
-                            if st.button("🛒 Vender 1 Unidad", key=f"vender_{prod['ID']}_{idx_p}", type="primary", use_container_width=True):
-                                ubic_venta = ""
-                                if stock_exh > 0:
-                                    variante_actual["stock"][talla_sel]["exhibido"] -= 1
-                                    ubic_venta = "Vitrina"
-                                else:
-                                    variante_actual["stock"][talla_sel]["bodega"] -= 1
-                                    ubic_venta = "Bodega"
+                    with col_p3:
+                        st.write("")
+                        st.write("")
+                        if total_disp >= cant_vender:
+                            if st.button(f"Vender {cant_vender} pieza(s)", key=f"vender_{prod['ID']}_{idx_p}", type="primary", use_container_width=True):
+                                restante = cant_vender
+                                desc_exh = min(stock_exh, restante)
+                                variante_actual["stock"][talla_sel]["exhibido"] -= desc_exh
+                                restante -= desc_exh
+
+                                desc_bod = min(stock_bod, restante)
+                                variante_actual["stock"][talla_sel]["bodega"] -= desc_bod
+                                restante -= desc_bod
+
+                                ubic_str = f"Vitrina: {desc_exh}, Bodega: {desc_bod}" if desc_exh > 0 and desc_bod > 0 else ("Vitrina" if desc_exh > 0 else "Bodega")
 
                                 nueva_venta = {
                                     "fecha": datetime.now().isoformat(),
@@ -240,26 +259,46 @@ if st.session_state.vista == "ventas":
                                     "producto": prod["Producto"],
                                     "talla": talla_sel,
                                     "color": color_sel,
-                                    "precio_sugerido": prod["Precio_Sugerido"],
-                                    "precio_venta": precio_real,
+                                    "cantidad": cant_vender,
+                                    "precio_sugerido": prod["Precio_Sugerido"] * cant_vender,
+                                    "precio_venta": precio_unitario * cant_vender,
                                     "categoria": prod["Categoria"],
-                                    "ubicacion_venta": ubic_venta
+                                    "ubicacion_venta": ubic_str
                                 }
                                 st.session_state.ventas.append(nueva_venta)
                                 sync_data()
-                                notificar(f"¡Venta realizada! ({prod['Producto']} - {color_sel} - Talla {talla_sel})")
+                                notificar(f"¡Venta registrada! ({cant_vender} pieza(s) de {prod['Producto']} - {color_sel} - Talla {talla_sel})")
                                 st.rerun()
                         else:
-                            st.button("Agotado", disabled=True, use_container_width=True, key=f"dis_{prod['ID']}_{idx_p}")
+                            st.button("Stock insuficiente", disabled=True, use_container_width=True, key=f"dis_{prod['ID']}_{idx_p}")
 
-                    with col_p3:
-                        if stock_bod > 0:
-                            if st.button("📦 Bodega ➔ Vitrina", key=f"pass_{prod['ID']}_{idx_p}", use_container_width=True):
-                                variante_actual["stock"][talla_sel]["bodega"] -= 1
-                                variante_actual["stock"][talla_sel]["exhibido"] += 1
+                    # SECCIÓN PARA MOVER STOCK DE LUGAR
+                    st.markdown("##### 🔄 Mover Stock entre Ubicaciones")
+                    mov_c1, mov_c2, mov_c3 = st.columns([2, 2, 2])
+                    with mov_c1:
+                        cant_mover = st.number_input("Piezas a mover:", min_value=1, value=1, key=f"cant_m_{prod['ID']}_{idx_p}")
+                    
+                    with mov_c2:
+                        if stock_bod >= cant_mover:
+                            if st.button(f"📦 Bodega ➔ Vitrina ({cant_mover})", key=f"pass_bv_{prod['ID']}_{idx_p}", use_container_width=True):
+                                variante_actual["stock"][talla_sel]["bodega"] -= cant_mover
+                                variante_actual["stock"][talla_sel]["exhibido"] += cant_mover
                                 sync_data()
-                                notificar(f"Se movió 1 unidad a Vitrina ({color_sel} - Talla {talla_sel}).")
+                                notificar(f"Se movieron {cant_mover} pieza(s) a Vitrina.")
                                 st.rerun()
+                        else:
+                            st.button("Bodega ➔ Vitrina", disabled=True, use_container_width=True, key=f"dis_bv_{prod['ID']}_{idx_p}")
+
+                    with mov_c3:
+                        if stock_exh >= cant_mover:
+                            if st.button(f"🏷️ Vitrina ➔ Bodega ({cant_mover})", key=f"pass_vb_{prod['ID']}_{idx_p}", use_container_width=True):
+                                variante_actual["stock"][talla_sel]["exhibido"] -= cant_mover
+                                variante_actual["stock"][talla_sel]["bodega"] += cant_mover
+                                sync_data()
+                                notificar(f"Se movieron {cant_mover} pieza(s) a Bodega.")
+                                st.rerun()
+                        else:
+                            st.button("Vitrina ➔ Bodega", disabled=True, use_container_width=True, key=f"dis_vb_{prod['ID']}_{idx_p}")
 
 # ==========================================
 # VISTA 2: VER INVENTARIO EN PANTALLA
@@ -291,7 +330,6 @@ elif st.session_state.vista == "ver_inventario":
 
         df_inv = pd.DataFrame(filas)
 
-        # Métricas principales
         k1, k2, k3, k4 = st.columns(4)
         k1.metric("Variedad de Productos", len(st.session_state.productos))
         k2.metric("Piezas en Vitrina", df_inv["Vitrina"].sum())
@@ -300,8 +338,7 @@ elif st.session_state.vista == "ver_inventario":
 
         st.divider()
 
-        # Filtro / Buscador
-        busqueda = st.text_input("🔍 Buscar por Producto, Categoría o Color:", placeholder="Ej: Café, Chamarras, M...")
+        busqueda = st.text_input("🔍 Buscar por Producto, Categoría, Color o Talla:", placeholder="Ej: Café, Chamarras, M...")
         
         if busqueda:
             term = busqueda.lower()
@@ -365,7 +402,7 @@ elif st.session_state.vista == "caja":
     st.subheader("Historial de Ventas")
     if not df_v.empty:
         st.dataframe(
-            df_v[['fecha', 'producto', 'categoria', 'talla', 'color', 'precio_sugerido', 'precio_venta', 'ubicacion_venta']], 
+            df_v[['fecha', 'producto', 'categoria', 'talla', 'color', 'cantidad', 'precio_sugerido', 'precio_venta', 'ubicacion_venta']], 
             use_container_width=True
         )
     else:
@@ -396,7 +433,7 @@ elif st.session_state.vista == "admin":
             if st.button("➕ Añadir Producto", use_container_width=True):
                 st.session_state.admin_tab = "add_product"
         with ad_col3:
-            if st.button("✏️ Editar Productos", use_container_width=True):
+            if st.button("✏️ Editar / Resurtir", use_container_width=True):
                 st.session_state.admin_tab = "edit_product"
         with ad_col4:
             if st.button("🗑️ Eliminar Producto", use_container_width=True):
@@ -520,34 +557,91 @@ elif st.session_state.vista == "admin":
                         st.session_state.productos.append(nuevo_p)
                         sync_data()
                         
-                        # Limpieza para el siguiente registro
                         st.session_state.num_colores = 1
                         st.session_state.form_version += 1
                         
                         notificar(f"¡Producto '{nombre_prod}' guardado con éxito! Ya aparece en '{cat_sel}'.")
                         st.rerun()
 
-        # TAB 3: EDITAR PRODUCTOS
+        # TAB 3: EDITAR Y RESURTIR PRODUCTOS
         elif st.session_state.admin_tab == "edit_product":
-            st.markdown("### Editar Productos")
+            st.markdown("### Editar y Resurtir Productos")
             if not st.session_state.productos:
                 st.info("Sin productos registrados.")
             else:
-                prod_opts = {f"{p['Producto']} ({p['ID']})": p["ID"] for p in st.session_state.productos}
-                p_sel_name = st.selectbox("Seleccione Producto a Editar:", list(prod_opts.keys()))
+                prod_opts = {f"{p['Producto']} ({p['Categoria']})": p["ID"] for p in st.session_state.productos}
+                p_sel_name = st.selectbox("Seleccione Producto a Editar / Resurtir:", list(prod_opts.keys()))
                 prod_obj = next(p for p in st.session_state.productos if p["ID"] == prod_opts[p_sel_name])
 
-                with st.form("form_edit"):
-                    n_nombre = st.text_input("Nombre Producto", value=prod_obj["Producto"])
-                    n_sug = st.number_input("Precio Sugerido", value=float(prod_obj["Precio_Sugerido"]))
-                    n_ven = st.number_input("Precio Venta Base", value=float(prod_obj["Precio_Venta"]))
-                    
-                    if st.form_submit_button("Actualizar"):
-                        prod_obj["Producto"] = n_nombre
-                        prod_obj["Precio_Sugerido"] = n_sug
-                        prod_obj["Precio_Venta"] = n_ven
+                st.divider()
+                st.markdown("#### Datos Generales")
+                prod_obj["Producto"] = st.text_input("Nombre del Producto:", value=prod_obj["Producto"])
+                
+                cat_idx = st.session_state.categorias.index(prod_obj["Categoria"]) if prod_obj["Categoria"] in st.session_state.categorias else 0
+                prod_obj["Categoria"] = st.selectbox("Categoría:", st.session_state.categorias, index=cat_idx)
+
+                c_e1, c_e2 = st.columns(2)
+                prod_obj["Precio_Sugerido"] = c_e1.number_input("Precio Sugerido ($)", value=float(prod_obj["Precio_Sugerido"]))
+                prod_obj["Precio_Venta"] = c_e2.number_input("Precio Venta Base ($)", value=float(prod_obj["Precio_Venta"]))
+
+                tallas_str = ", ".join(prod_obj.get("Tallas", []))
+                nuevas_tallas_str = st.text_input("Tallas disponibles (separadas por coma):", value=tallas_str)
+                nuevas_tallas = [t.strip().upper() for t in nuevas_tallas_str.split(",") if t.strip()]
+                prod_obj["Tallas"] = nuevas_tallas
+
+                st.divider()
+                st.markdown("#### 📦 Inventario y Resurtido por Color")
+
+                for idx_v, var in enumerate(prod_obj.get("Variantes", [])):
+                    st.markdown(f"🎨 **Color #{idx_v + 1}**")
+                    var["color"] = st.text_input(f"Nombre del Color:", value=var["color"], key=f"e_col_n_{prod_obj['ID']}_{idx_v}")
+
+                    if "stock" not in var:
+                        var["stock"] = {}
+
+                    # Asegurar existencia de nuevas tallas
+                    for t in nuevas_tallas:
+                        if t not in var["stock"]:
+                            var["stock"][t] = {"exhibido": 0, "bodega": 0}
+
+                    st.write("🟦 **Stock en Vitrina**")
+                    cols_v = st.columns(len(nuevas_tallas) if nuevas_tallas else 1)
+                    for idx_t, t in enumerate(nuevas_tallas):
+                        with cols_v[idx_t]:
+                            var["stock"][t]["exhibido"] = st.number_input(
+                                f"V {t}", 
+                                min_value=0, 
+                                value=int(var["stock"][t].get("exhibido", 0)),
+                                key=f"e_v_{prod_obj['ID']}_{idx_v}_{t}"
+                            )
+
+                    st.write("🟫 **Stock en Bodega**")
+                    cols_b = st.columns(len(nuevas_tallas) if nuevas_tallas else 1)
+                    for idx_t, t in enumerate(nuevas_tallas):
+                        with cols_b[idx_t]:
+                            var["stock"][t]["bodega"] = st.number_input(
+                                f"B {t}", 
+                                min_value=0, 
+                                value=int(var["stock"][t].get("bodega", 0)),
+                                key=f"e_b_{prod_obj['ID']}_{idx_v}_{t}"
+                            )
+                    st.divider()
+
+                e_b1, e_b2 = st.columns(2)
+                with e_b1:
+                    if st.button("➕ Agregar Nuevo Color a este Producto"):
+                        nuevo_col_struct = {
+                            "color": f"Color #{len(prod_obj['Variantes']) + 1}",
+                            "stock": {t: {"exhibido": 0, "bodega": 0} for t in nuevas_tallas}
+                        }
+                        prod_obj["Variantes"].append(nuevo_col_struct)
                         sync_data()
-                        notificar(f"Producto '{n_nombre}' actualizado.")
+                        st.rerun()
+
+                with e_b2:
+                    if st.button("💾 Guardar Cambios y Resurtido", type="primary"):
+                        sync_data()
+                        notificar(f"¡Producto '{prod_obj['Producto']}' actualizado y resurtido correctamente!")
                         st.rerun()
 
         # TAB 4: ELIMINAR PRODUCTO
