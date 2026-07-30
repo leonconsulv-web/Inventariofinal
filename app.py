@@ -358,25 +358,8 @@ elif st.session_state.vista == "ver_inventario":
 # VISTA 3: CORTE DE CAJA Y VENTAS DIARIAS
 # ==========================================
 elif st.session_state.vista == "caja":
-    st.subheader("Corte de Caja y Ventas Diarias")
+    st.subheader("💰 Corte de Caja y Ventas Diarias")
     
-    with st.expander("💵 Configurar Fondo de Caja Inicial", expanded=False):
-        c_f1, c_f2 = st.columns([3, 1])
-        with c_f1:
-            nuevo_fondo = st.number_input(
-                "Fondo Inicial ($):", 
-                value=float(st.session_state.caja.get("fondo_caja", 0.0)),
-                step=50.0
-            )
-        with c_f2:
-            st.write("")
-            st.write("")
-            if st.button("Guardar Fondo"):
-                st.session_state.caja["fondo_caja"] = nuevo_fondo
-                sync_data()
-                notificar("Fondo de caja actualizado.")
-                st.rerun()
-
     fondo = st.session_state.caja.get("fondo_caja", 0.0)
     
     if st.session_state.ventas:
@@ -385,29 +368,106 @@ elif st.session_state.vista == "caja":
         hoy = datetime.now().date()
         ventas_hoy = df_v[df_v['fecha_dt'].dt.date == hoy]
         
-        total_ventas = ventas_hoy['precio_venta'].sum() if not ventas_hoy.empty else 0.0
-        total_sugerido = ventas_hoy['precio_sugerido'].sum() if not ventas_hoy.empty else 0.0
-        regateo = total_sugerido - total_ventas
+        total_ventas_hoy = ventas_hoy['precio_venta'].sum() if not ventas_hoy.empty else 0.0
+        total_sugerido_hoy = ventas_hoy['precio_sugerido'].sum() if not ventas_hoy.empty else 0.0
+        regateo_hoy = total_sugerido_hoy - total_ventas_hoy
+        cant_piezas_hoy = ventas_hoy['cantidad'].sum() if not ventas_hoy.empty and 'cantidad' in ventas_hoy.columns else len(ventas_hoy)
     else:
         df_v = pd.DataFrame()
-        total_ventas = 0.0
-        regateo = 0.0
+        ventas_hoy = pd.DataFrame()
+        total_ventas_hoy = 0.0
+        total_sugerido_hoy = 0.0
+        regateo_hoy = 0.0
+        cant_piezas_hoy = 0
 
     k1, k2, k3, k4 = st.columns(4)
     k1.metric("Fondo Inicial", f"${fondo:,.2f}")
-    k2.metric("Ventas de Hoy", f"${total_ventas:,.2f}")
-    k3.metric("Total en Caja", f"${(fondo + total_ventas):,.2f}")
-    k4.metric("Diferencia por Regateo", f"-${regateo:,.2f}")
+    k2.metric("Ventas de Hoy", f"${total_ventas_hoy:,.2f}")
+    k3.metric("Total Esperado en Caja", f"${(fondo + total_ventas_hoy):,.2f}")
+    k4.metric("Descuentos / Regateo", f"-${regateo_hoy:,.2f}")
+
+    st.caption(f"Piezas vendidas hoy: **{cant_piezas_hoy}**")
 
     st.divider()
-    st.subheader("Historial de Ventas")
-    if not df_v.empty:
-        st.dataframe(
-            df_v[['fecha', 'producto', 'categoria', 'talla', 'color', 'cantidad', 'precio_sugerido', 'precio_venta', 'ubicacion_venta']], 
-            use_container_width=True
-        )
+
+    # SECCIÓN 1: CIERRE DE CAJA Y PREPARACIÓN DÍA SIGUIENTE (RESTRINGIDO A ADMINISTRADORA)
+    st.markdown("### 🌅 Cierre de Caja / Preparar Día Siguiente")
+    
+    if st.session_state.get("admin_authenticated", False):
+        with st.expander("🔑 Realizar Corte de Caja y Ajustar Fondo de Mañana", expanded=False):
+            st.info("Esta acción conserva **todo** el historial de ventas anteriores intacto para tus consultas y exportaciones a Excel.")
+            nuevo_fondo_input = st.number_input(
+                "Monto de Fondo de Caja para el día siguiente ($):", 
+                value=float(fondo),
+                step=50.0,
+                key="cierre_nuevo_fondo"
+            )
+            confirmar_cierre = st.checkbox("Confirmo que deseo realizar el corte de caja y fijar el nuevo fondo inicial.")
+            
+            if st.button("🔒 Realizar Corte de Caja y Reiniciar Día", type="primary"):
+                if confirmar_cierre:
+                    st.session_state.caja["fondo_caja"] = nuevo_fondo_input
+                    sync_data()
+                    notificar(f"¡Corte de caja realizado con éxito! Fondo fijado en ${nuevo_fondo_input:,.2f}. El historial de días anteriores sigue guardado.")
+                    st.rerun()
+                else:
+                    st.error("Por favor marca la casilla de confirmación antes de continuar.")
     else:
-        st.info("Sin registros de ventas.")
+        st.info("🔒 *La modificación del fondo de caja y la realización del corte diario están reservadas exclusivamente para la Administradora con contraseña.*")
+
+    st.divider()
+
+    # SECCIÓN 2: HISTORIAL Y DESCARGAS DE EXCEL
+    st.markdown("### 📊 Historial de Ventas y Descarga en Excel")
+
+    tab_hoy, tab_hist = st.tabs(["📅 Ventas del Día de Hoy", "📜 Historial de Días Anteriores / Completo"])
+
+    with tab_hoy:
+        if not ventas_hoy.empty:
+            st.dataframe(
+                ventas_hoy[['fecha', 'producto', 'categoria', 'talla', 'color', 'cantidad', 'precio_sugerido', 'precio_venta', 'ubicacion_venta']], 
+                use_container_width=True
+            )
+            bytes_data_hoy, ext_h, mime_h = generar_excel_seguro(ventas_hoy, "Ventas_Hoy")
+            st.download_button(
+                label=f"📥 Descargar Ventas del Día en Excel ({ext_h.upper()})",
+                data=bytes_data_hoy,
+                file_name=f"Ventas_Hoy_{datetime.now().strftime('%Y%m%d')}.{ext_h}",
+                mime=mime_h
+            )
+        else:
+            st.info("Aún no hay ventas registradas el día de hoy.")
+
+    with tab_hist:
+        if not df_v.empty:
+            st.markdown("##### Filtrar Registros")
+            fechas_disponibles = sorted(df_v['fecha_dt'].dt.date.unique(), reverse=True)
+            
+            filtro_fecha = st.multiselect(
+                "Selecciona día(s) específico(s) (deja vacío para ver todo el historial acumulado):",
+                options=fechas_disponibles,
+                format_func=lambda d: d.strftime("%d/%m/%Y")
+            )
+
+            if filtro_fecha:
+                df_filtrado = df_v[df_v['fecha_dt'].dt.date.isin(filtro_fecha)]
+            else:
+                df_filtrado = df_v
+
+            st.dataframe(
+                df_filtrado[['fecha', 'producto', 'categoria', 'talla', 'color', 'cantidad', 'precio_sugerido', 'precio_venta', 'ubicacion_venta']], 
+                use_container_width=True
+            )
+
+            bytes_data_hist, ext_hist, mime_hist = generar_excel_seguro(df_filtrado, "Historial_Ventas")
+            st.download_button(
+                label=f"📥 Descargar Ventas Filtradas/Histórico Completo ({ext_hist.upper()})",
+                data=bytes_data_hist,
+                file_name=f"Ventas_Historico_{datetime.now().strftime('%Y%m%d')}.{ext_hist}",
+                mime=mime_hist
+            )
+        else:
+            st.info("No hay historial de ventas previo.")
 
 # ==========================================
 # VISTA 4: MODO ADMINISTRADOR Y GESTIÓN
