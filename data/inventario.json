@@ -1,74 +1,17 @@
-[
-  {
-    "ID": "PROD_20260731_031114_212087",
-    "Categoria": "Chamarras",
-    "Producto": "Repelente",
-    "Precio_Sugerido": 200.0,
-    "Precio_Venta": 0.0,
-    "Tallas": [
-      "S",
-      "M",
-      "G",
-      "XG"
-    ],
-    "Variantes": [
-      {
-        "color": "Rojo",
-        "stock": {
-          "S": {
-            "exhibido": 0,
-            "bodega": 0
-          },
-          "M": {
-            "exhibido": 1,
-            "bodega": 0
-          },
-          "G": {
-            "exhibido": 0,
-            "bodega": 0
-          },
-          "XG": {
-            "exhibido": 0,
-            "bodega": 0
-          }
-        }
-      }
-    ]
-  },
-  {
-    "ID": "PROD_20260731_031622_073169",
-    "Categoria": "Chamarras",
-    "Producto": "Hsbc ",
-    "Precio_Sugerido": 0.0,
-    "Precio_Venta": 0.0,
-    "Tallas": [
-      "S",
-      "M",
-      "G",
-      "XG"
-    ],
-    "Variantes": [
-      {
-        "color": "Hwhsbs",
-        "stock": {
-          "S": {
-            "exhibido": 0,
-            "bodega": 0
-          },
-          "M": {
-            "exhibido": 2,
-            "bodega": 0
-          },
-          "G": {
-            "exhibido": 0,
-            "bodega": 0
-          },
-          "XG": {
-            "exhibido": 0,
-            "bodega": 0
-          }
-        }
-      }
-    ]
-  }
-]
+{
+  "Chamarras": [
+    {
+      "nombre": "Repelente",
+      "color": "Rojo",
+      "talla": "XL",
+      "precio": 0.0,
+      "stock_vitrina": 1,
+      "stock_bodega": 0
+    }
+  ],
+  "Jeans": [],
+  "Playeras": [],
+  "Shorts": [],
+  "Niño": [],
+  "Bermudas": []
+}
