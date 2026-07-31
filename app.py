@@ -467,6 +467,9 @@ elif st.session_state.vista == "cambios":
             dest_dev_stock = "Vitrina"
             cant_dev = 1
             precio_dev_ref = 0.0
+            p_dev_obj = None
+            col_dev_sel = "-"
+            talla_dev_sel = "-"
         else:
             cat_dev_sel = st.selectbox("Categoría devuelta:", st.session_state.categorias, key="sb_cat_dev")
             prods_dev_cat = [p for p in st.session_state.productos if p["Categoria"] == cat_dev_sel]
@@ -475,6 +478,9 @@ elif st.session_state.vista == "cambios":
                 st.info("Sin productos en esta categoría.")
                 prod_dev_str = ""
                 precio_dev_ref = 0.0
+                p_dev_obj = None
+                col_dev_sel = "-"
+                talla_dev_sel = "-"
             else:
                 opts_dev = {f"{p['Producto']} (${p['Precio_Sugerido']:.2f})": p for p in prods_dev_cat}
                 p_dev_label = st.selectbox("Producto devuelto:", list(opts_dev.keys()), key="sb_prod_dev")
@@ -490,7 +496,7 @@ elif st.session_state.vista == "cambios":
                 dest_dev_stock = st.radio("Regresar producto a:", ["Vitrina", "Bodega"], horizontal=True, key="rad_dest_dev")
                 cant_dev = st.number_input("Cantidad devuelta:", min_value=1, value=1, key="num_cant_dev")
                 
-                prod_dev_str = f"{p_dev_obj['Producto']} - {col_dev_sel} - Talla {talla_dev_sel}"
+                prod_dev_str = f"{p_dev_obj['Producto']} ({col_dev_sel} / Talla {talla_dev_sel})"
                 precio_dev_ref = float(p_dev_obj["Precio_Sugerido"]) * cant_dev
 
     with col_ent:
@@ -504,6 +510,9 @@ elif st.session_state.vista == "cambios":
             prod_ent_str = ""
             precio_ent_ref = 0.0
             stock_ent_avail = 0
+            p_ent_obj = None
+            col_ent_sel = "-"
+            talla_ent_sel = "-"
         else:
             opts_ent = {f"{p['Producto']} (${p['Precio_Sugerido']:.2f})": p for p in prods_ent_cat}
             p_ent_label = st.selectbox("Producto a entregar:", list(opts_ent.keys()), key="sb_prod_ent")
@@ -525,7 +534,7 @@ elif st.session_state.vista == "cambios":
             st.caption(f"Stock disponible en {orig_ent_stock}: **{stock_ent_avail} pieza(s)**")
             
             cant_ent = st.number_input("Cantidad a entregar:", min_value=1, value=1, key="num_cant_ent")
-            prod_ent_str = f"{p_ent_obj['Producto']} - {col_ent_sel} - Talla {talla_ent_sel}"
+            prod_ent_str = f"{p_ent_obj['Producto']} ({col_ent_sel} / Talla {talla_ent_sel})"
             precio_ent_ref = float(p_ent_obj["Precio_Sugerido"]) * cant_ent
 
     st.divider()
@@ -542,20 +551,35 @@ elif st.session_state.vista == "cambios":
     if st.button("💾 Confirmar Cambio y Actualizar Inventario", type="primary"):
         if not prod_dev_str or not prod_ent_str:
             st.warning("Asegúrate de haber seleccionado ambos productos.")
-        elif not dev_manual and stock_ent_avail < cant_ent:
+        elif not dev_manual and p_ent_obj and stock_ent_avail < cant_ent:
             st.error("No hay stock suficiente del producto a entregar.")
         else:
-            if not dev_manual:
+            # 1. Reingresar stock del producto devuelto (si está en catálogo)
+            if not dev_manual and p_dev_obj:
                 var_dev = next((v for v in p_dev_obj.get("Variantes", []) if v["color"] == col_dev_sel), None)
                 if var_dev and talla_dev_sel in var_dev.get("stock", {}):
                     key_s_dev = "exhibido" if dest_dev_stock == "Vitrina" else "bodega"
                     var_dev["stock"][talla_dev_sel][key_s_dev] += cant_dev
 
-            var_ent = next((v for v in p_ent_obj.get("Variantes", []) if v["color"] == col_ent_sel), None)
-            if var_ent and talla_ent_sel in var_ent.get("stock", {}):
-                key_s_ent = "exhibido" if orig_ent_stock == "Vitrina" else "bodega"
-                var_ent["stock"][talla_ent_sel][key_s_ent] -= cant_ent
+            # 2. Descontar stock del producto entregado
+            if p_ent_obj:
+                var_ent = next((v for v in p_ent_obj.get("Variantes", []) if v["color"] == col_ent_sel), None)
+                if var_ent and talla_ent_sel in var_ent.get("stock", {}):
+                    key_s_ent = "exhibido" if orig_ent_stock == "Vitrina" else "bodega"
+                    var_ent["stock"][talla_ent_sel][key_s_ent] -= cant_ent
 
+            # Clasificar el tipo específico de cambio para la bitácora
+            if not dev_manual and p_dev_obj and p_ent_obj and p_dev_obj.get("ID") == p_ent_obj.get("ID"):
+                if talla_dev_sel != talla_ent_sel and col_dev_sel == col_ent_sel:
+                    tipo_label = "🔄 Cambio de Talla"
+                elif col_dev_sel != col_ent_sel and talla_dev_sel == talla_ent_sel:
+                    tipo_label = "🔄 Cambio de Color"
+                else:
+                    tipo_label = "🔄 Cambio de Talla/Color"
+            else:
+                tipo_label = "🔄 Cambio de Producto"
+
+            # 3. Registro en el historial de Cambios
             registro_cambio = {
                 "fecha": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                 "devuelto": prod_dev_str,
@@ -564,8 +588,27 @@ elif st.session_state.vista == "cambios":
                 "motivo": motivo
             }
             st.session_state.cambios.append(registro_cambio)
+
+            # 4. Registro en la Bitácora / Ventas del Día (SIEMPRE APARECE, AUNQUE DIFERENCIA SEA $0)
+            desc_dif = f"Diferencia: ${diferencia_cobrada:,.2f}" if diferencia_cobrada > 0 else "Cambio sin costo ($0.00)"
+            cat_bitacora = p_ent_obj["Categoria"] if p_ent_obj else "Cambios"
+            
+            registro_venta_cambio = {
+                "fecha": datetime.now().isoformat(),
+                "producto_id": p_ent_obj["ID"] if p_ent_obj else "CAMBIO",
+                "producto": f"{tipo_label}: Entregado ({prod_ent_str}) ➔ Devuelto ({prod_dev_str})",
+                "talla": talla_ent_sel if p_ent_obj else "-",
+                "color": col_ent_sel if p_ent_obj else "-",
+                "cantidad": cant_ent,
+                "precio_sugerido": dif_estimada,
+                "precio_venta": diferencia_cobrada,
+                "categoria": cat_bitacora,
+                "ubicacion_venta": desc_dif
+            }
+            st.session_state.ventas.append(registro_venta_cambio)
+
             sync_data()
-            notificar(f"¡Cambio registrado! ({prod_dev_str} ➔ {prod_ent_str})")
+            notificar(f"¡{tipo_label} registrado! ({prod_dev_str} ➔ {prod_ent_str}) - Inventario y Bitácora actualizados.")
             st.rerun()
 
     st.divider()
@@ -633,10 +676,13 @@ elif st.session_state.vista == "apartados":
                 elif stock_ap_avail < cant_ap:
                     st.error("Stock insuficiente en el inventario para apartar esta prenda.")
                 else:
+                    # 1. Descontar stock
                     key_s_ap = "exhibido" if orig_ap_stock == "Vitrina" else "bodega"
                     var_ap["stock"][talla_ap_sel][key_s_ap] -= cant_ap
 
                     concepto_full = f"{p_ap_obj['Producto']} ({cant_ap} pza) - {col_ap_sel} - Talla {talla_ap_sel}"
+                    
+                    # 2. Registrar en la tabla de Apartados
                     nuevo_ap = {
                         "id": f"AP_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
                         "fecha": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -648,6 +694,23 @@ elif st.session_state.vista == "apartados":
                         "estado": "Pendiente" if restante_calc > 0 else "Liquidado"
                     }
                     st.session_state.apartados.append(nuevo_ap)
+
+                    # 3. Registrar Anticipo en Bitácora / Ventas del Día
+                    if anticipo_ap > 0:
+                        registro_venta_ap = {
+                            "fecha": datetime.now().isoformat(),
+                            "producto_id": nuevo_ap["id"],
+                            "producto": f"📑 Anticipo Apartado: {concepto_full} ({nom_cliente})",
+                            "talla": talla_ap_sel,
+                            "color": col_ap_sel,
+                            "cantidad": cant_ap,
+                            "precio_sugerido": anticipo_ap,
+                            "precio_venta": anticipo_ap,
+                            "categoria": "Apartados",
+                            "ubicacion_venta": f"Anticipo (Restan ${restante_calc:,.2f})"
+                        }
+                        st.session_state.ventas.append(registro_venta_ap)
+
                     sync_data()
                     notificar(f"¡Apartado creado y stock reservado para {nom_cliente}!")
                     st.rerun()
@@ -669,13 +732,32 @@ elif st.session_state.vista == "apartados":
                             st.write("")
                             st.write("")
                             if st.button("💵 Registrar Abono", key=f"btn_ab_{ap.get('id')}_{idx_ap}", type="primary"):
-                                ap["abonado"] += nuevo_abono
-                                ap["restante"] -= nuevo_abono
-                                if ap["restante"] <= 0:
-                                    ap["estado"] = "Liquidado"
-                                sync_data()
-                                notificar(f"Abono de ${nuevo_abono:,.2f} registrado para {ap.get('cliente')}.")
-                                st.rerun()
+                                if nuevo_abono > 0:
+                                    ap["abonado"] += nuevo_abono
+                                    ap["restante"] -= nuevo_abono
+                                    if ap["restante"] <= 0:
+                                        ap["estado"] = "Liquidado"
+                                    
+                                    # Registrar Abono en Bitácora / Ventas del Día
+                                    registro_venta_abono = {
+                                        "fecha": datetime.now().isoformat(),
+                                        "producto_id": ap.get("id", "ABONO"),
+                                        "producto": f"💵 Abono Apartado: {ap.get('concepto')} ({ap.get('cliente')})",
+                                        "talla": "-",
+                                        "color": "-",
+                                        "cantidad": 1,
+                                        "precio_sugerido": nuevo_abono,
+                                        "precio_venta": nuevo_abono,
+                                        "categoria": "Apartados",
+                                        "ubicacion_venta": f"Abono (Restan ${ap['restante']:,.2f})"
+                                    }
+                                    st.session_state.ventas.append(registro_venta_abono)
+
+                                    sync_data()
+                                    notificar(f"Abono de ${nuevo_abono:,.2f} registrado para {ap.get('cliente')}.")
+                                    st.rerun()
+                                else:
+                                    st.warning("El abono debe ser mayor a $0.")
         else:
             st.info("No hay prendas en apartado actualmente.")
 
@@ -760,11 +842,11 @@ elif st.session_state.vista == "caja":
 
     k1, k2, k3, k4 = st.columns(4)
     k1.metric("Fondo Inicial", f"${fondo:,.2f}")
-    k2.metric("Ventas de Hoy", f"${total_ventas_hoy:,.2f}")
+    k2.metric("Ventas / Ingresos de Hoy", f"${total_ventas_hoy:,.2f}")
     k3.metric("Total Esperado en Caja", f"${(fondo + total_ventas_hoy):,.2f}")
     k4.metric("Descuentos / Regateo", f"-${regateo_hoy:,.2f}")
 
-    st.caption(f"Piezas vendidas hoy: **{cant_piezas_hoy}**")
+    st.caption(f"Movimientos/Piezas del día: **{cant_piezas_hoy}**")
 
     st.divider()
 
@@ -794,9 +876,9 @@ elif st.session_state.vista == "caja":
 
     st.divider()
 
-    st.markdown("### 📊 Historial de Ventas y Descarga en Excel")
+    st.markdown("### 📊 Historial de Ventas / Bitácora Diaria y Descarga en Excel")
 
-    tab_hoy, tab_hist = st.tabs(["📅 Ventas del Día de Hoy", "📜 Historial de Días Anteriores / Completo"])
+    tab_hoy, tab_hist = st.tabs(["📅 Ventas / Ingresos del Día de Hoy", "📜 Historial Completo / Días Anteriores"])
 
     with tab_hoy:
         if not ventas_hoy.empty:
@@ -812,7 +894,7 @@ elif st.session_state.vista == "caja":
                 mime=mime_h
             )
         else:
-            st.info("Aún no hay ventas registradas el día de hoy.")
+            st.info("Aún no hay ventas o movimientos registrados el día de hoy.")
 
     with tab_hist:
         if not df_v.empty:
