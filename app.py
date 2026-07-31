@@ -12,7 +12,6 @@ st.set_page_config(page_title="Inventario de Ropa", page_icon="👕", layout="wi
 GITHUB_TOKEN = st.secrets.get("GITHUB_TOKEN", "")
 REPO_NAME = st.secrets.get("REPO_NAME", "")
 
-# Alerta visible si faltan las credenciales en Secrets
 if not GITHUB_TOKEN:
     st.error("⚠️ FALTA CONFIGURAR 'GITHUB_TOKEN' EN LOS SECRETS DE STREAMLIT CLOUD.")
 if not REPO_NAME:
@@ -47,8 +46,7 @@ def cargar_json(path_archivo, default_val):
     return default_val
 
 def guardar_json(path_archivo, datos, mensaje_commit="Actualización de datos"):
-    """Guarda en archivo local y sube inmediatamente a GitHub marcando errores claros."""
-    # 1. Guardar copia local
+    """Guarda en archivo local y sube inmediatamente a GitHub."""
     os.makedirs(os.path.dirname(path_archivo), exist_ok=True)
     with open(path_archivo, "w", encoding="utf-8") as f:
         json.dump(datos, f, ensure_ascii=False, indent=2)
@@ -57,10 +55,7 @@ def guardar_json(path_archivo, datos, mensaje_commit="Actualización de datos"):
         st.warning("⚠️ Guardado solo local. Faltan los Secrets de GitHub para sincronizar en la nube.")
         return False
 
-    # 2. Subir a GitHub API
     url = f"https://api.github.com/repos/{REPO_NAME}/contents/{path_archivo}"
-    
-    # Obtener el SHA actual del archivo si ya existe
     get_res = requests.get(url, headers=github_headers())
     sha = get_res.json().get("sha") if get_res.status_code == 200 else None
     
@@ -84,7 +79,7 @@ def guardar_json(path_archivo, datos, mensaje_commit="Actualización de datos"):
         st.error(f"❌ Error de sincronización GitHub [{put_res.status_code}]: {err_msg}")
         return False
 
-# --- CARGA DE DATOS INICIAL ---
+# --- CONFIGURACIÓN DE RUTAS Y ESTRUCTURAS POR DEFECTO ---
 RUTA_INV = "data/inventario.json"
 RUTA_VENTAS = "data/ventas.json"
 RUTA_APARTADOS = "data/apartados.json"
@@ -99,14 +94,38 @@ INVENTARIO_DEFAULT = {
     "Bermudas": []
 }
 
-if 'inventario' not in st.session_state:
-    st.session_state.inventario = cargar_json(RUTA_INV, INVENTARIO_DEFAULT)
-if 'ventas' not in st.session_state:
-    st.session_state.ventas = cargar_json(RUTA_VENTAS, [])
-if 'apartados' not in st.session_state:
-    st.session_state.apartados = cargar_json(RUTA_APARTADOS, [])
-if 'cambios' not in st.session_state:
-    st.session_state.cambios = cargar_json(RUTA_CAMBIOS, [])
+# --- CARGA Y VALIDACIÓN DE DATOS EN SESSION STATE ---
+inv_cargado = cargar_json(RUTA_INV, INVENTARIO_DEFAULT)
+
+# Garantizar que inventario sea estrictamente un diccionario
+if not isinstance(inv_cargado, dict):
+    inv_cargado = INVENTARIO_DEFAULT
+
+# Asegurar que todas las categorías por defecto existan dentro del diccionario
+for cat, items in INVENTARIO_DEFAULT.items():
+    if cat not in inv_cargado or not isinstance(inv_cargado[cat], list):
+        inv_cargado[cat] = []
+
+if 'inventario' not in st.session_state or not isinstance(st.session_state.inventario, dict):
+    st.session_state.inventario = inv_cargado
+
+ventas_cargadas = cargar_json(RUTA_VENTAS, [])
+if not isinstance(ventas_cargadas, list):
+    ventas_cargadas = []
+if 'ventas' not in st.session_state or not isinstance(st.session_state.ventas, list):
+    st.session_state.ventas = ventas_cargadas
+
+apartados_cargados = cargar_json(RUTA_APARTADOS, [])
+if not isinstance(apartados_cargados, list):
+    apartados_cargados = []
+if 'apartados' not in st.session_state or not isinstance(st.session_state.apartados, list):
+    st.session_state.apartados = apartados_cargados
+
+cambios_cargados = cargar_json(RUTA_CAMBIOS, [])
+if not isinstance(cambios_cargados, list):
+    cambios_cargados = []
+if 'cambios' not in st.session_state or not isinstance(st.session_state.cambios, list):
+    st.session_state.cambios = cambios_cargados
 
 # --- INTERFAZ PRINCIPAL ---
 st.title("👕 Inventario de Ropa")
@@ -176,7 +195,6 @@ if st.session_state.vista == "venta":
                 
                 st.session_state.ventas.append(registro_venta)
                 
-                # Sincronizar en GitHub
                 guardar_json(RUTA_INV, st.session_state.inventario, f"Venta de {prod_sel['nombre']}")
                 guardar_json(RUTA_VENTAS, st.session_state.ventas, "Registro de nueva venta")
                 
@@ -280,7 +298,6 @@ elif st.session_state.vista == "admin":
                 }
                 st.session_state.inventario[cat_destino].append(nuevo_item)
                 
-                # Guardado forzoso local y sincronización con GitHub
                 guardar_json(RUTA_INV, st.session_state.inventario, f"Añadido producto {nom_prod}")
                 
                 st.success(f"¡Producto '{nom_prod}' guardado con éxito! Ya aparece en '{cat_destino}'.")
