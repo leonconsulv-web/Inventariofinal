@@ -522,7 +522,24 @@
         }
       },
       {
-        "color": "Color #31",
+        "color": "Rosa",
+        "stock": {
+          "S": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Rosa oscuro",
         "stock": {
           "S": {
             "exhibido": 0,
@@ -533,13 +550,13 @@
             "bodega": 0
           },
           "G": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
       },
       {
-        "color": "Color #32",
+        "color": "Color #33",
         "stock": {
           "S": {
             "exhibido": 0,
