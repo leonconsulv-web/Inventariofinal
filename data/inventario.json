@@ -386,7 +386,24 @@
         }
       },
       {
-        "color": "Color #23",
+        "color": "Mezclilla ",
+        "stock": {
+          "S": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #24",
         "stock": {
           "S": {
             "exhibido": 0,
