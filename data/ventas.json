@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "fecha": "2026-07-31T03:13:02.570548",
+    "producto_id": "PROD_20260731_031114_212087",
+    "producto": "Repelente",
+    "talla": "G",
+    "color": "Rojo",
+    "cantidad": 1,
+    "precio_sugerido": 200.0,
+    "precio_venta": 200.0,
+    "categoria": "Chamarras",
+    "ubicacion_venta": "Vitrina"
+  }
+]
