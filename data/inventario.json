@@ -1778,5 +1778,62 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260731_225859_925993",
+    "Categoria": "Playeras",
+    "Producto": "De vestir XG",
+    "Precio_Sugerido": 189.0,
+    "Precio_Venta": 189.0,
+    "Tallas": [
+      "XG"
+    ],
+    "Variantes": [
+      {
+        "color": "Blanca ",
+        "stock": {
+          "XG": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul marino",
+        "stock": {
+          "XG": {
+            "exhibido": 3,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Rayada",
+        "stock": {
+          "XG": {
+            "exhibido": 4,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Cereza",
+        "stock": {
+          "XG": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Palo de rosa",
+        "stock": {
+          "XG": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
