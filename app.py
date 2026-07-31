@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import json
 import os
+import base64
+import urllib.request
 from datetime import datetime
 import io
 
@@ -23,37 +25,86 @@ PRODUCTS_FILE = os.path.join(DATA_DIR, "inventario.json")
 SALES_FILE = os.path.join(DATA_DIR, "ventas.json")
 CATEGORIES_FILE = os.path.join(DATA_DIR, "categorias.json")
 CAJA_FILE = os.path.join(DATA_DIR, "caja.json")
+APARTADOS_FILE = os.path.join(DATA_DIR, "apartados.json")
 
 DEFAULT_CATEGORIES = [
     "Chamarras", "Jeans", "Playeras", "Camisas", 
     "Suéteres", "Shorts", "Niño", "Bermudas", "Sacos", "Trajes"
 ]
 
+def save_to_github(filepath, data):
+    """Guarda localmente y sincroniza permanentemente con GitHub API."""
+    with open(filepath, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+        
+    if "GITHUB_TOKEN" in st.secrets and "REPO_NAME" in st.secrets:
+        try:
+            token = st.secrets["GITHUB_TOKEN"]
+            repo = st.secrets["REPO_NAME"]
+            filename = os.path.basename(filepath)
+            path_in_repo = f"data/{filename}"
+            
+            url = f"https://api.github.com/repos/{repo}/contents/{path_in_repo}"
+            headers = {
+                "Authorization": f"token {token}",
+                "Accept": "application/vnd.github.v3+json",
+                "User-Agent": "StreamlitApp"
+            }
+            
+            sha = None
+            req = urllib.request.Request(url, headers=headers)
+            try:
+                with urllib.request.urlopen(req) as response:
+                    res_data = json.loads(response.read().decode())
+                    sha = res_data.get("sha")
+            except Exception:
+                pass
+            
+            content_bytes = json.dumps(data, ensure_ascii=False, indent=2).encode("utf-8")
+            content_b64 = base64.b64encode(content_bytes).decode("utf-8")
+            
+            payload = {
+                "message": f"Auto-sync {filename} via App",
+                "content": content_b64
+            }
+            if sha:
+                payload["sha"] = sha
+                
+            req_put = urllib.request.Request(
+                url, 
+                data=json.dumps(payload).encode("utf-8"), 
+                headers=headers, 
+                method="PUT"
+            )
+            with urllib.request.urlopen(req_put) as response:
+                pass
+        except Exception as e:
+            print(f"Error sincronizando {filepath} con GitHub: {e}")
+
 def init_storage():
     if not os.path.exists(DATA_DIR):
         os.makedirs(DATA_DIR)
     if not os.path.exists(CATEGORIES_FILE):
-        save_json(CATEGORIES_FILE, DEFAULT_CATEGORIES)
+        save_to_github(CATEGORIES_FILE, DEFAULT_CATEGORIES)
     if not os.path.exists(PRODUCTS_FILE):
-        save_json(PRODUCTS_FILE, [])
+        save_to_github(PRODUCTS_FILE, [])
     if not os.path.exists(SALES_FILE):
-        save_json(SALES_FILE, [])
+        save_to_github(SALES_FILE, [])
     if not os.path.exists(CAJA_FILE):
-        save_json(CAJA_FILE, {"fondo_caja": 0.0})
+        save_to_github(CAJA_FILE, {"fondo_caja": 0.0})
+    if not os.path.exists(APARTADOS_FILE):
+        save_to_github(APARTADOS_FILE, [])
 
 def load_json(filepath):
     try:
         with open(filepath, "r", encoding="utf-8") as f:
             return json.load(f)
     except Exception:
-        return [] if "caja" not in filepath else {"fondo_caja": 0.0}
-
-def save_json(filepath, data):
-    with open(filepath, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+        if "caja" in filepath:
+            return {"fondo_caja": 0.0}
+        return []
 
 def normalize_product(prod):
-    """Garantiza compatibilidad con datos previos."""
     if "Variantes" in prod and isinstance(prod["Variantes"], list):
         return prod
     
@@ -95,7 +146,7 @@ def generar_excel_seguro(df, nombre_hoja="Datos"):
 
 init_storage()
 
-# Carga en Session State
+# Carga inicial en Session State
 if "productos" not in st.session_state:
     raw_prods = load_json(PRODUCTS_FILE)
     st.session_state.productos = [normalize_product(p) for p in raw_prods]
@@ -105,6 +156,8 @@ if "categorias" not in st.session_state:
     st.session_state.categorias = load_json(CATEGORIES_FILE)
 if "caja" not in st.session_state:
     st.session_state.caja = load_json(CAJA_FILE)
+if "apartados" not in st.session_state:
+    st.session_state.apartados = load_json(APARTADOS_FILE)
 if "vista" not in st.session_state:
     st.session_state.vista = "ventas"
 if "admin_tab" not in st.session_state:
@@ -115,10 +168,11 @@ if "form_version" not in st.session_state:
     st.session_state.form_version = 0
 
 def sync_data():
-    save_json(PRODUCTS_FILE, st.session_state.productos)
-    save_json(SALES_FILE, st.session_state.ventas)
-    save_json(CATEGORIES_FILE, st.session_state.categorias)
-    save_json(CAJA_FILE, st.session_state.caja)
+    save_to_github(PRODUCTS_FILE, st.session_state.productos)
+    save_to_github(SALES_FILE, st.session_state.ventas)
+    save_to_github(CATEGORIES_FILE, st.session_state.categorias)
+    save_to_github(CAJA_FILE, st.session_state.caja)
+    save_to_github(APARTADOS_FILE, st.session_state.apartados)
 
 def notificar(mensaje, tipo="success"):
     st.session_state["flash_msg"] = mensaje
@@ -138,28 +192,40 @@ if "flash_msg" in st.session_state and st.session_state["flash_msg"]:
 # ==========================================
 st.title("Inventario de Ropa")
 
-nav_c1, nav_c2, nav_c3, nav_c4 = st.columns(4)
+nav_c1, nav_c2, nav_c3, nav_c4, nav_c5, nav_c6 = st.columns(6)
 with nav_c1:
     btn_type = "primary" if st.session_state.vista == "ventas" else "secondary"
-    if st.button("🛒 Registrar Venta", use_container_width=True, type=btn_type):
+    if st.button("🛒 Venta", use_container_width=True, type=btn_type):
         st.session_state.vista = "ventas"
         st.rerun()
 
 with nav_c2:
-    btn_type = "primary" if st.session_state.vista == "ver_inventario" else "secondary"
-    if st.button("📋 Ver Inventario", use_container_width=True, type=btn_type):
-        st.session_state.vista = "ver_inventario"
+    btn_type = "primary" if st.session_state.vista == "cambios" else "secondary"
+    if st.button("🔄 Cambios", use_container_width=True, type=btn_type):
+        st.session_state.vista = "cambios"
         st.rerun()
 
 with nav_c3:
-    btn_type = "primary" if st.session_state.vista == "caja" else "secondary"
-    if st.button("💰 Corte de Caja", use_container_width=True, type=btn_type):
-        st.session_state.vista = "caja"
+    btn_type = "primary" if st.session_state.vista == "apartados" else "secondary"
+    if st.button("📑 Apartados", use_container_width=True, type=btn_type):
+        st.session_state.vista = "apartados"
         st.rerun()
 
 with nav_c4:
+    btn_type = "primary" if st.session_state.vista == "ver_inventario" else "secondary"
+    if st.button("📋 Inventario", use_container_width=True, type=btn_type):
+        st.session_state.vista = "ver_inventario"
+        st.rerun()
+
+with nav_c5:
+    btn_type = "primary" if st.session_state.vista == "caja" else "secondary"
+    if st.button("💰 Caja", use_container_width=True, type=btn_type):
+        st.session_state.vista = "caja"
+        st.rerun()
+
+with nav_c6:
     btn_type = "primary" if st.session_state.vista == "admin" else "secondary"
-    if st.button("🔐 Modo Administrador", use_container_width=True, type=btn_type):
+    if st.button("🔐 Admin", use_container_width=True, type=btn_type):
         st.session_state.vista = "admin"
         st.rerun()
 
@@ -272,7 +338,6 @@ if st.session_state.vista == "ventas":
                         else:
                             st.button("Stock insuficiente", disabled=True, use_container_width=True, key=f"dis_{prod['ID']}_{idx_p}")
 
-                    # RESTRICCIÓN: SOLO EL ADMINISTRADOR VE EL BOTÓN DE MOVER STOCK
                     if st.session_state.get("admin_authenticated", False):
                         st.markdown("##### 🔄 Mover Stock entre Ubicaciones (Solo Administradora)")
                         mov_c1, mov_c2, mov_c3 = st.columns([2, 2, 2])
@@ -302,7 +367,262 @@ if st.session_state.vista == "ventas":
                                 st.button("Vitrina ➔ Bodega", disabled=True, use_container_width=True, key=f"dis_vb_{prod['ID']}_{idx_p}")
 
 # ==========================================
-# VISTA 2: VER INVENTARIO EN PANTALLA
+# VISTA 2: CAMBIOS DE PRODUCTO / TALLA
+# ==========================================
+elif st.session_state.vista == "cambios":
+    st.subheader("🔄 Devoluciones y Cambios de Prenda / Talla")
+
+    if not st.session_state.productos:
+        st.info("No hay productos registrados para realizar cambios.")
+    else:
+        st.markdown("#### 1. Prenda que Regresa el Cliente (Entrada al Inventario)")
+        c_in1, c_in2, c_in3, c_in4, c_in5 = st.columns(5)
+        
+        prod_dict = {f"{p['Producto']} ({p['Categoria']})": p for p in st.session_state.productos}
+        with c_in1:
+            p_ret_name = st.selectbox("Producto devuelto:", list(prod_dict.keys()), key="ret_p")
+            p_ret = prod_dict[p_ret_name]
+        
+        cols_ret = [v["color"] for v in p_ret.get("Variantes", [])] if p_ret.get("Variantes") else ["Único"]
+        with c_in2:
+            c_ret = st.selectbox("Color devuelto:", cols_ret, key="ret_c")
+        with c_in3:
+            t_ret = st.selectbox("Talla devuelta:", p_ret.get("Tallas", ["M"]), key="ret_t")
+        with c_in4:
+            cant_ret = st.number_input("Cantidad devuelta:", min_value=1, value=1, key="ret_cant")
+        with c_in5:
+            precio_ret = st.number_input("Valor pagado devuelto ($):", value=float(p_ret["Precio_Sugerido"]) * cant_ret, step=10.0, key="ret_prec")
+
+        st.divider()
+
+        st.markdown("#### 2. Prenda Nueva que se Lleva el Cliente (Salida del Inventario)")
+        c_out1, c_out2, c_out3, c_out4, c_out5 = st.columns(5)
+        with c_out1:
+            p_new_name = st.selectbox("Producto nuevo:", list(prod_dict.keys()), key="new_p")
+            p_new = prod_dict[p_new_name]
+        
+        cols_new = [v["color"] for v in p_new.get("Variantes", [])] if p_new.get("Variantes") else ["Único"]
+        with c_out2:
+            c_new = st.selectbox("Color nuevo:", cols_new, key="new_c")
+        with c_out3:
+            t_new = st.selectbox("Talla nueva:", p_new.get("Tallas", ["M"]), key="new_t")
+        with c_out4:
+            cant_new = st.number_input("Cantidad nueva:", min_value=1, value=1, key="new_cant")
+        with c_out5:
+            precio_new = st.number_input("Precio prenda nueva ($):", value=float(p_new["Precio_Sugerido"]) * cant_new, step=10.0, key="new_prec")
+
+        var_new = next((v for v in p_new.get("Variantes", []) if v["color"] == c_new), None)
+        stock_new_exh = var_new["stock"][t_new].get("exhibido", 0) if var_new and t_new in var_new.get("stock", {}) else 0
+        stock_new_bod = var_new["stock"][t_new].get("bodega", 0) if var_new and t_new in var_new.get("stock", {}) else 0
+        total_disp_new = stock_new_exh + stock_new_bod
+
+        st.divider()
+        st.markdown("#### 3. Ajuste de Dinero en Caja")
+
+        diferencia = precio_new - precio_ret
+
+        res_col1, res_col2 = st.columns(2)
+        with res_col1:
+            st.write(f" Valor Devuelto: **${precio_ret:,.2f}**")
+            st.write(f" Valor Nuevo: **${precio_new:,.2f}**")
+            if diferencia > 0:
+                st.success(f"🔴 **El cliente debe pagar una diferencia de: ${diferencia:,.2f}**")
+            elif diferencia == 0:
+                st.info("🟢 **Cambio exacto. No hay diferencia de dinero.**")
+            else:
+                st.warning(f"🟡 **Diferencia a favor del cliente: ${abs(diferencia):,.2f}**")
+
+        with res_col2:
+            if total_disp_new >= cant_new:
+                if st.button("🔄 Procesar Cambio y Actualizar Inventario", type="primary", use_container_width=True):
+                    var_ret = next((v for v in p_ret.get("Variantes", []) if v["color"] == c_ret), None)
+                    if var_ret and t_ret in var_ret.get("stock", {}):
+                        var_ret["stock"][t_ret]["exhibido"] += cant_ret
+
+                    restante = cant_new
+                    desc_e = min(stock_new_exh, restante)
+                    var_new["stock"][t_new]["exhibido"] -= desc_e
+                    restante -= desc_e
+                    desc_b = min(stock_new_bod, restante)
+                    var_new["stock"][t_new]["bodega"] -= desc_b
+
+                    registro_cambio = {
+                        "fecha": datetime.now().isoformat(),
+                        "producto_id": p_new["ID"],
+                        "producto": f"CAMBIO: Devuelve {p_ret['Producto']} ({c_ret}-{t_ret}) x Lleva {p_new['Producto']} ({c_new}-{t_new})",
+                        "talla": t_new,
+                        "color": c_new,
+                        "cantidad": cant_new,
+                        "precio_sugerido": precio_new,
+                        "precio_venta": diferencia,
+                        "categoria": p_new["Categoria"],
+                        "ubicacion_venta": "Cambio de Prenda"
+                    }
+                    st.session_state.ventas.append(registro_cambio)
+                    sync_data()
+                    notificar("¡Cambio procesado con éxito! El inventario y la caja han sido actualizados.")
+                    st.rerun()
+            else:
+                st.button("Stock insuficiente para prenda nueva", disabled=True, use_container_width=True)
+
+# ==========================================
+# VISTA 3: APARTADOS (LAYAWAY)
+# ==========================================
+elif st.session_state.vista == "apartados":
+    st.subheader("📑 Gestión de Apartados")
+
+    tab_ap1, tab_ap2 = st.tabs(["➕ Crear Nuevo Apartado", "📋 Lista de Apartados y Abonos"])
+
+    with tab_ap1:
+        st.markdown("#### Nuevo Registro de Apartado")
+        
+        c_a1, c_a2 = st.columns(2)
+        with c_a1:
+            cliente_nombre = st.text_input("Nombre completo del cliente:", key="ap_nom")
+        with c_a2:
+            cliente_tel = st.text_input("Teléfono de contacto:", key="ap_tel")
+
+        if st.session_state.productos:
+            prod_dict_ap = {f"{p['Producto']} ({p['Categoria']})": p for p in st.session_state.productos}
+            c_p1, c_p2, c_p3, c_p4 = st.columns(4)
+            
+            with c_p1:
+                p_ap_name = st.selectbox("Producto a apartar:", list(prod_dict_ap.keys()), key="ap_p_sel")
+                p_ap = prod_dict_ap[p_ap_name]
+            
+            cols_ap = [v["color"] for v in p_ap.get("Variantes", [])] if p_ap.get("Variantes") else ["Único"]
+            with c_p2:
+                c_ap_sel = st.selectbox("Color:", cols_ap, key="ap_c_sel")
+            with c_p3:
+                t_ap_sel = st.selectbox("Talla:", p_ap.get("Tallas", ["M"]), key="ap_t_sel")
+            with c_p4:
+                cant_ap = st.number_input("Cantidad de piezas:", min_value=1, value=1, key="ap_cant")
+
+            var_ap = next((v for v in p_ap.get("Variantes", []) if v["color"] == c_ap_sel), None)
+            s_e_ap = var_ap["stock"][t_ap_sel].get("exhibido", 0) if var_ap and t_ap_sel in var_ap.get("stock", {}) else 0
+            s_b_ap = var_ap["stock"][t_ap_sel].get("bodega", 0) if var_ap and t_ap_sel in var_ap.get("stock", {}) else 0
+            tot_disp_ap = s_e_ap + s_b_ap
+
+            m_ap1, m_ap2 = st.columns(2)
+            with m_ap1:
+                precio_tot_ap = st.number_input("Precio Total del Apartado ($):", value=float(p_ap["Precio_Sugerido"]) * cant_ap, step=10.0, key="ap_prec_tot")
+            with m_ap2:
+                abono_ini = st.number_input("Abono Inicial recibido ($):", min_value=0.0, max_value=float(precio_tot_ap), value=min(100.0, float(precio_tot_ap)), step=10.0, key="ap_ab_ini")
+
+            saldo_pend = precio_tot_ap - abono_ini
+            st.info(f"Saldo Pendiente que resta pagar: **${saldo_pend:,.2f}** | Stock disponible: **{tot_disp_ap} pieza(s)**")
+
+            if tot_disp_ap >= cant_ap:
+                if st.button("💾 Guardar Apartado y Descontar Stock", type="primary"):
+                    if not cliente_nombre:
+                        st.error("Ingresa el nombre del cliente.")
+                    else:
+                        restante = cant_ap
+                        desc_e = min(s_e_ap, restante)
+                        var_ap["stock"][t_ap_sel]["exhibido"] -= desc_e
+                        restante -= desc_e
+                        desc_b = min(s_b_ap, restante)
+                        var_ap["stock"][t_ap_sel]["bodega"] -= desc_b
+
+                        nuevo_apartado = {
+                            "id": f"AP_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
+                            "fecha": datetime.now().isoformat(),
+                            "cliente": cliente_nombre,
+                            "telefono": cliente_tel,
+                            "producto": p_ap["Producto"],
+                            "color": c_ap_sel,
+                            "talla": t_ap_sel,
+                            "cantidad": cant_ap,
+                            "precio_total": precio_tot_ap,
+                            "abono_inicial": abono_ini,
+                            "saldo_pendiente": saldo_pend,
+                            "estado": "Pendiente" if saldo_pend > 0 else "Entregado",
+                            "historial_abonos": [{"fecha": datetime.now().isoformat(), "monto": abono_ini}]
+                        }
+                        st.session_state.apartados.append(nuevo_apartado)
+
+                        if abono_ini > 0:
+                            ingreso_caja = {
+                                "fecha": datetime.now().isoformat(),
+                                "producto_id": p_ap["ID"],
+                                "producto": f"ABONO APARTADO: {cliente_nombre} ({p_ap['Producto']})",
+                                "talla": t_ap_sel,
+                                "color": c_ap_sel,
+                                "cantidad": cant_ap,
+                                "precio_sugerido": abono_ini,
+                                "precio_venta": abono_ini,
+                                "categoria": p_ap["Categoria"],
+                                "ubicacion_venta": "Apartado"
+                            }
+                            st.session_state.ventas.append(ingreso_caja)
+
+                        sync_data()
+                        notificar(f"¡Apartado de {cliente_nombre} registrado correctamente!")
+                        st.rerun()
+            else:
+                st.button("Stock insuficiente para apartar", disabled=True)
+
+    with tab_ap2:
+        st.markdown("#### Lista de Apartados")
+        if not st.session_state.apartados:
+            st.info("No hay apartados registrados.")
+        else:
+            df_ap = pd.DataFrame(st.session_state.apartados)
+            busq_ap = st.text_input("🔍 Buscar apartado por Cliente o Teléfono:", placeholder="Ej: María...")
+            
+            if busq_ap:
+                df_ap_show = df_ap[df_ap['cliente'].str.lower().str.contains(busq_ap.lower()) | df_ap['telefono'].str.contains(busq_ap)]
+            else:
+                df_ap_show = df_ap
+
+            for idx, item in df_ap_show.iterrows():
+                estado_color = "🟢 Entregado" if item["estado"] == "Entregado" else "🔴 Pendiente"
+                with st.expander(f"👤 **{item['cliente']}** | {item['producto']} ({item['color']}-{item['talla']}) | {estado_color}", expanded=True):
+                    ap_c1, ap_c2, ap_c3, ap_c4 = st.columns(4)
+                    ap_c1.write(f"**Teléfono:** {item['telefono']}")
+                    ap_c2.write(f"**Total:** ${item['precio_total']:,.2f}")
+                    ap_c3.write(f"**Abonado:** ${(item['precio_total'] - item['saldo_pendiente']):,.2f}")
+                    ap_c4.write(f"**Saldo Restante:** ${item['saldo_pendiente']:,.2f}")
+
+                    if item["saldo_pendiente"] > 0:
+                        st.markdown("##### 💵 Registrar Nuevo Abono")
+                        ab_col1, ab_col2 = st.columns([2, 2])
+                        with ab_col1:
+                            monto_abono = st.number_input(
+                                "Monto a abonar ($):", 
+                                min_value=1.0, 
+                                max_value=float(item['saldo_pendiente']), 
+                                value=float(item['saldo_pendiente']), 
+                                key=f"ab_input_{item['id']}"
+                            )
+                        with ab_col2:
+                            st.write("")
+                            st.write("")
+                            if st.button("Abonar", key=f"btn_ab_{item['id']}", type="primary"):
+                                item["saldo_pendiente"] -= monto_abono
+                                item["historial_abonos"].append({"fecha": datetime.now().isoformat(), "monto": monto_abono})
+                                if item["saldo_pendiente"] <= 0:
+                                    item["estado"] = "Entregado"
+
+                                venta_abono = {
+                                    "fecha": datetime.now().isoformat(),
+                                    "producto_id": item['id'],
+                                    "producto": f"ABONO APARTADO: {item['cliente']} ({item['producto']})",
+                                    "talla": item['talla'],
+                                    "color": item['color'],
+                                    "cantidad": 1,
+                                    "precio_sugerido": monto_abono,
+                                    "precio_venta": monto_abono,
+                                    "categoria": "Apartados",
+                                    "ubicacion_venta": "Abono"
+                                }
+                                st.session_state.ventas.append(venta_abono)
+                                sync_data()
+                                notificar(f"Abono de ${monto_abono:,.2f} registrado para {item['cliente']}.")
+                                st.rerun()
+
+# ==========================================
+# VISTA 4: VER INVENTARIO EN PANTALLA
 # ==========================================
 elif st.session_state.vista == "ver_inventario":
     st.subheader("Consulta General de Inventario")
@@ -355,7 +675,7 @@ elif st.session_state.vista == "ver_inventario":
         st.dataframe(df_mostrar, use_container_width=True, height=450)
 
 # ==========================================
-# VISTA 3: CORTE DE CAJA Y VENTAS DIARIAS
+# VISTA 5: CORTE DE CAJA Y VENTAS DIARIAS
 # ==========================================
 elif st.session_state.vista == "caja":
     st.subheader("💰 Corte de Caja y Ventas Diarias")
@@ -382,15 +702,14 @@ elif st.session_state.vista == "caja":
 
     k1, k2, k3, k4 = st.columns(4)
     k1.metric("Fondo Inicial", f"${fondo:,.2f}")
-    k2.metric("Ventas de Hoy", f"${total_ventas_hoy:,.2f}")
+    k2.metric("Ventas / Entradas de Hoy", f"${total_ventas_hoy:,.2f}")
     k3.metric("Total Esperado en Caja", f"${(fondo + total_ventas_hoy):,.2f}")
     k4.metric("Descuentos / Regateo", f"-${regateo_hoy:,.2f}")
 
-    st.caption(f"Piezas vendidas hoy: **{cant_piezas_hoy}**")
+    st.caption(f"Piezas vendidas / Movimientos hoy: **{cant_piezas_hoy}**")
 
     st.divider()
 
-    # SECCIÓN 1: CIERRE DE CAJA Y PREPARACIÓN DÍA SIGUIENTE (RESTRINGIDO A ADMINISTRADORA)
     st.markdown("### 🌅 Cierre de Caja / Preparar Día Siguiente")
     
     if st.session_state.get("admin_authenticated", False):
@@ -417,7 +736,6 @@ elif st.session_state.vista == "caja":
 
     st.divider()
 
-    # SECCIÓN 2: HISTORIAL Y DESCARGAS DE EXCEL
     st.markdown("### 📊 Historial de Ventas y Descarga en Excel")
 
     tab_hoy, tab_hist = st.tabs(["📅 Ventas del Día de Hoy", "📜 Historial de Días Anteriores / Completo"])
@@ -470,7 +788,7 @@ elif st.session_state.vista == "caja":
             st.info("No hay historial de ventas previo.")
 
 # ==========================================
-# VISTA 4: MODO ADMINISTRADOR Y GESTIÓN
+# VISTA 6: MODO ADMINISTRADOR Y GESTIÓN
 # ==========================================
 elif st.session_state.vista == "admin":
     st.subheader("Modo Administrador y Gestión")
