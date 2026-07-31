@@ -556,7 +556,24 @@
         }
       },
       {
-        "color": "Color #33",
+        "color": "Verde militar",
+        "stock": {
+          "S": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #34",
         "stock": {
           "S": {
             "exhibido": 0,
