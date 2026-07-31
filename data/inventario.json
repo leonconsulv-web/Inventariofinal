@@ -573,7 +573,24 @@
         }
       },
       {
-        "color": "Color #34",
+        "color": "Bugambilia",
+        "stock": {
+          "S": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #35",
         "stock": {
           "S": {
             "exhibido": 0,
