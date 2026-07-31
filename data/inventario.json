@@ -269,7 +269,24 @@
         }
       },
       {
-        "color": "Color #14",
+        "color": "Caqui",
+        "stock": {
+          "S": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #15",
         "stock": {
           "S": {
             "exhibido": 0,
