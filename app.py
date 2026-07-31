@@ -75,7 +75,7 @@ def load_json(filepath):
         return []
 
 def save_json(filepath, data):
-    """Guarda copia local y sube los cambios inmediatamente a GitHub."""
+    """Guarda copia local y sube los cambios inmediatamente a GitHub marcando errores claros."""
     os.makedirs(os.path.dirname(filepath), exist_ok=True)
     with open(filepath, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
@@ -98,9 +98,17 @@ def save_json(filepath, data):
             if sha:
                 payload["sha"] = sha
 
-            requests.put(url, headers=github_headers(), json=payload, timeout=5)
-        except Exception:
-            pass
+            put_res = requests.put(url, headers=github_headers(), json=payload, timeout=5)
+            if put_res.status_code in [200, 201]:
+                st.session_state["last_github_status"] = f"☁️ Sincronizado correctamente: {os.path.basename(filepath)}"
+                st.session_state["github_error"] = None
+            else:
+                err_msg = put_res.json().get('message', 'Error desconocido')
+                st.session_state["github_error"] = f"Error GitHub [{put_res.status_code}]: {err_msg}"
+        except Exception as e:
+            st.session_state["github_error"] = f"Excepción al conectar con GitHub: {str(e)}"
+    else:
+        st.session_state["github_error"] = "Falta configurar GITHUB_TOKEN o REPO_NAME en los Secrets de Streamlit."
 
 def init_storage():
     if not os.path.exists(DATA_DIR):
@@ -228,7 +236,11 @@ def notificar(mensaje, tipo="success"):
     st.session_state["flash_msg"] = mensaje
     st.session_state["flash_type"] = tipo
 
-# Mostrar mensajes persistentes
+# Mostrar errores o estado de GitHub
+if st.session_state.get("github_error"):
+    st.error(f"⚠️ {st.session_state['github_error']}")
+
+# Mostrar mensajes persistentes tras rerun
 if "flash_msg" in st.session_state and st.session_state["flash_msg"]:
     if st.session_state.get("flash_type") == "error":
         st.error(st.session_state["flash_msg"])
@@ -238,7 +250,7 @@ if "flash_msg" in st.session_state and st.session_state["flash_msg"]:
     st.session_state["flash_type"] = None
 
 # ==========================================
-# NAVEGACIÓN PRINCIPAL (6 BOTONES)
+# NAVEGACIÓN PRINCIPAL
 # ==========================================
 st.title("Inventario de Ropa")
 
@@ -418,38 +430,129 @@ if st.session_state.vista == "ventas":
                                 st.button("Vitrina ➔ Bodega", disabled=True, use_container_width=True, key=f"dis_vb_{prod['ID']}_{idx_p}")
 
 # ==========================================
-# VISTA 2: REGISTRAR CAMBIOS Y DEVOLUCIONES
+# VISTA 2: REGISTRAR CAMBIOS Y DEVOLUCIONES (INTERACTIVO)
 # ==========================================
 elif st.session_state.vista == "cambios":
-    st.subheader("🔄 Registrar Cambios o Devoluciones de Talla/Producto")
+    st.subheader("🔄 Registrar Cambios o Devoluciones con Selección de Inventario")
+
+    col_dev, col_ent = st.columns(2)
+
+    # --- SECCIÓN A: PRODUCTO DEVUELTO (REINGRESA AL INVENTARIO) ---
+    with col_dev:
+        st.markdown("### 📥 1. Producto Devuelto por el Cliente")
+        
+        dev_manual = st.checkbox("¿El producto devuelto no está en catálogo?", key="cb_dev_manual")
+        
+        if dev_manual:
+            prod_dev_str = st.text_input("Escribe el producto devuelto:", placeholder="Ej: Chamarra roja antigua Talla L")
+            dest_dev_stock = "Vitrina"
+            cant_dev = 1
+            precio_dev_ref = 0.0
+        else:
+            cat_dev_sel = st.selectbox("Categoría devuelta:", st.session_state.categorias, key="sb_cat_dev")
+            prods_dev_cat = [p for p in st.session_state.productos if p["Categoria"] == cat_dev_sel]
+            
+            if not prods_dev_cat:
+                st.info("Sin productos en esta categoría.")
+                prod_dev_str = ""
+                precio_dev_ref = 0.0
+            else:
+                opts_dev = {f"{p['Producto']} (${p['Precio_Sugerido']:.2f})": p for p in prods_dev_cat}
+                p_dev_label = st.selectbox("Producto devuelto:", list(opts_dev.keys()), key="sb_prod_dev")
+                p_dev_obj = opts_dev[p_dev_label]
+                
+                col_d1, col_d2 = st.columns(2)
+                with col_d1:
+                    nombres_col_dev = [v["color"] for v in p_dev_obj.get("Variantes", [])] if p_dev_obj.get("Variantes") else ["Único"]
+                    col_dev_sel = st.selectbox("Color devuelto:", nombres_col_dev, key="sb_col_dev")
+                with col_d2:
+                    talla_dev_sel = st.selectbox("Talla devuelta:", p_dev_obj.get("Tallas", ["M"]), key="sb_tal_dev")
+                
+                dest_dev_stock = st.radio("Regresar producto a:", ["Vitrina", "Bodega"], horizontal=True, key="rad_dest_dev")
+                cant_dev = st.number_input("Cantidad devuelta:", min_value=1, value=1, key="num_cant_dev")
+                
+                prod_dev_str = f"{p_dev_obj['Producto']} - {col_dev_sel} - Talla {talla_dev_sel}"
+                precio_dev_ref = float(p_dev_obj["Precio_Sugerido"]) * cant_dev
+
+    # --- SECCIÓN B: PRODUCTO ENTREGADO (SALE DEL INVENTARIO) ---
+    with col_ent:
+        st.markdown("### 📤 2. Producto Entregado a Cambio")
+        
+        cat_ent_sel = st.selectbox("Categoría a entregar:", st.session_state.categorias, key="sb_cat_ent")
+        prods_ent_cat = [p for p in st.session_state.productos if p["Categoria"] == cat_ent_sel]
+        
+        if not prods_ent_cat:
+            st.info("Sin productos en esta categoría.")
+            prod_ent_str = ""
+            precio_ent_ref = 0.0
+            stock_ent_avail = 0
+        else:
+            opts_ent = {f"{p['Producto']} (${p['Precio_Sugerido']:.2f})": p for p in prods_ent_cat}
+            p_ent_label = st.selectbox("Producto a entregar:", list(opts_ent.keys()), key="sb_prod_ent")
+            p_ent_obj = opts_ent[p_ent_label]
+            
+            col_e1, col_e2 = st.columns(2)
+            with col_e1:
+                nombres_col_ent = [v["color"] for v in p_ent_obj.get("Variantes", [])] if p_ent_obj.get("Variantes") else ["Único"]
+                col_ent_sel = st.selectbox("Color a entregar:", nombres_col_ent, key="sb_col_ent")
+            with col_e2:
+                talla_ent_sel = st.selectbox("Talla a entregar:", p_ent_obj.get("Tallas", ["M"]), key="sb_tal_ent")
+
+            var_ent = next((v for v in p_ent_obj.get("Variantes", []) if v["color"] == col_ent_sel), None)
+            s_exh_e = var_ent["stock"][talla_ent_sel].get("exhibido", 0) if var_ent and talla_ent_sel in var_ent.get("stock", {}) else 0
+            s_bod_e = var_ent["stock"][talla_ent_sel].get("bodega", 0) if var_ent and talla_ent_sel in var_ent.get("stock", {}) else 0
+            
+            orig_ent_stock = st.radio("Descontar producto entregado de:", ["Vitrina", "Bodega"], horizontal=True, key="rad_orig_ent")
+            stock_ent_avail = s_exh_e if orig_ent_stock == "Vitrina" else s_bod_e
+            st.caption(f"Stock disponible en {orig_ent_stock}: **{stock_ent_avail} pieza(s)**")
+            
+            cant_ent = st.number_input("Cantidad a entregar:", min_value=1, value=1, key="num_cant_ent")
+            prod_ent_str = f"{p_ent_obj['Producto']} - {col_ent_sel} - Talla {talla_ent_sel}"
+            precio_ent_ref = float(p_ent_obj["Precio_Sugerido"]) * cant_ent
+
+    st.divider()
+
+    # --- SECCIÓN C: DETALLES FINANCIEROS Y CONFIRMACIÓN ---
+    st.markdown("### 💵 3. Ajuste de Cobro y Confirmación")
+    dif_estimada = max(0.0, precio_ent_ref - precio_dev_ref)
     
-    col_c1, col_c2 = st.columns(2)
-    with col_c1:
-        prod_devuelto = st.text_input("Producto/Talla Devuelta:", placeholder="Ej: Chamarra Piel - Talla M")
-    with col_c2:
-        prod_nuevo = st.text_input("Producto/Talla Entregada a Cambio:", placeholder="Ej: Chamarra Piel - Talla L")
+    col_f1, col_f2 = st.columns(2)
+    with col_f1:
+        diferencia_cobrada = st.number_input("Diferencia cobrada al cliente ($):", value=float(dif_estimada), step=10.0)
+    with col_f2:
+        motivo = st.text_input("Motivo del cambio:", placeholder="Ej: Cambio de talla por ajuste")
 
-    c_difa, c_mot = st.columns(2)
-    with c_difa:
-        diferencia_cobrada = st.number_input("Diferencia de precio cobrada ($):", value=0.0, step=10.0)
-    with c_mot:
-        motivo = st.text_input("Motivo del cambio:", placeholder="Ej: Le quedó chica la talla")
+    if st.button("💾 Confirmar Cambio y Actualizar Inventario", type="primary"):
+        if not prod_dev_str or not prod_ent_str:
+            st.warning("Asegúrate de haber seleccionado ambos productos.")
+        elif not dev_manual and stock_ent_avail < cant_ent:
+            st.error("No hay stock suficiente del producto a entregar.")
+        else:
+            # 1. Reingresar stock del producto devuelto (si no es manual)
+            if not dev_manual:
+                var_dev = next((v for v in p_dev_obj.get("Variantes", []) if v["color"] == col_dev_sel), None)
+                if var_dev and talla_dev_sel in var_dev.get("stock", {}):
+                    key_s_dev = "exhibido" if dest_dev_stock == "Vitrina" else "bodega"
+                    var_dev["stock"][talla_dev_sel][key_s_dev] += cant_dev
 
-    if st.button("💾 Guardar Cambio / Devolución", type="primary"):
-        if prod_devuelto and prod_nuevo:
+            # 2. Descontar stock del producto entregado
+            var_ent = next((v for v in p_ent_obj.get("Variantes", []) if v["color"] == col_ent_sel), None)
+            if var_ent and talla_ent_sel in var_ent.get("stock", {}):
+                key_s_ent = "exhibido" if orig_ent_stock == "Vitrina" else "bodega"
+                var_ent["stock"][talla_ent_sel][key_s_ent] -= cant_ent
+
+            # 3. Guardar registro
             registro_cambio = {
                 "fecha": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "devuelto": prod_devuelto,
-                "entregado": prod_nuevo,
+                "devuelto": prod_dev_str,
+                "entregado": prod_ent_str,
                 "diferencia": diferencia_cobrada,
                 "motivo": motivo
             }
             st.session_state.cambios.append(registro_cambio)
             sync_data()
-            notificar(f"¡Cambio registrado! ({prod_devuelto} ➔ {prod_nuevo})")
+            notificar(f"¡Cambio registrado! ({prod_dev_str} ➔ {prod_ent_str})")
             st.rerun()
-        else:
-            st.warning("Ingresa los datos del producto devuelto y el entregado.")
 
     st.divider()
     st.markdown("### 📜 Historial de Cambios")
@@ -460,43 +563,82 @@ elif st.session_state.vista == "cambios":
         st.info("No hay registros de cambios realizados.")
 
 # ==========================================
-# VISTA 3: GESTIÓN DE APARTADOS
+# VISTA 3: GESTIÓN DE APARTADOS (INTERACTIVO)
 # ==========================================
 elif st.session_state.vista == "apartados":
-    st.subheader("📑 Gestión de Apartados de Prenda")
+    st.subheader("📑 Gestión de Apartados de Prenda con Selección de Inventario")
 
     tab_nuevo_ap, tab_lista_ap = st.tabs(["➕ Crear Nuevo Apartado", "📋 Lista de Apartados Activos"])
 
     with tab_nuevo_ap:
-        col_a1, col_a2 = st.columns(2)
-        with col_a1:
-            nom_cliente = st.text_input("Nombre del Cliente:")
-            concepto_ap = st.text_input("Producto(s) apartado(s):", placeholder="Ej: Traje Caballero Azul Talla 38")
-        with col_a2:
-            precio_tot = st.number_input("Precio Total ($):", min_value=0.0, value=0.0, step=10.0)
-            anticipo_ap = st.number_input("Anticipo / Abono Inicial ($):", min_value=0.0, value=0.0, step=10.0)
+        st.markdown("### 📦 Seleccionar Producto a Apartar del Inventario")
+        
+        cat_ap_sel = st.selectbox("Categoría:", st.session_state.categorias, key="sb_cat_ap")
+        prods_ap_cat = [p for p in st.session_state.productos if p["Categoria"] == cat_ap_sel]
+        
+        if not prods_ap_cat:
+            st.info("Sin productos en esta categoría.")
+        else:
+            opts_ap = {f"{p['Producto']} (${p['Precio_Sugerido']:.2f})": p for p in prods_ap_cat}
+            p_ap_label = st.selectbox("Producto a apartar:", list(opts_ap.keys()), key="sb_prod_ap")
+            p_ap_obj = opts_ap[p_ap_label]
 
-        restante_calc = max(0.0, precio_tot - anticipo_ap)
-        st.write(f"**Monto Restante por Pagar:** `${restante_calc:,.2f}`")
+            c_ap1, c_ap2 = st.columns(2)
+            with c_ap1:
+                nombres_col_ap = [v["color"] for v in p_ap_obj.get("Variantes", [])] if p_ap_obj.get("Variantes") else ["Único"]
+                col_ap_sel = st.selectbox("Color:", nombres_col_ap, key="sb_col_ap")
+            with c_ap2:
+                talla_ap_sel = st.selectbox("Talla:", p_ap_obj.get("Tallas", ["M"]), key="sb_tal_ap")
 
-        if st.button("💾 Registrar Apartado", type="primary"):
-            if nom_cliente and concepto_ap and precio_tot > 0:
-                nuevo_ap = {
-                    "id": f"AP_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
-                    "fecha": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                    "cliente": nom_cliente,
-                    "concepto": concepto_ap,
-                    "total": precio_tot,
-                    "abonado": anticipo_ap,
-                    "restante": restante_calc,
-                    "estado": "Pendiente" if restante_calc > 0 else "Liquidado"
-                }
-                st.session_state.apartados.append(nuevo_ap)
-                sync_data()
-                notificar(f"¡Apartado registrado para {nom_cliente}!")
-                st.rerun()
-            else:
-                st.warning("Completa el cliente, producto y precio total.")
+            var_ap = next((v for v in p_ap_obj.get("Variantes", []) if v["color"] == col_ap_sel), None)
+            s_exh_a = var_ap["stock"][talla_ap_sel].get("exhibido", 0) if var_ap and talla_ap_sel in var_ap.get("stock", {}) else 0
+            s_bod_a = var_ap["stock"][talla_ap_sel].get("bodega", 0) if var_ap and talla_ap_sel in var_ap.get("stock", {}) else 0
+
+            orig_ap_stock = st.radio("Reservar y descontar stock de:", ["Vitrina", "Bodega"], horizontal=True, key="rad_orig_ap")
+            stock_ap_avail = s_exh_a if orig_ap_stock == "Vitrina" else s_bod_a
+            st.caption(f"Stock disponible en {orig_ap_stock}: **{stock_ap_avail} pieza(s)**")
+
+            cant_ap = st.number_input("Cantidad a apartar:", min_value=1, value=1, key="num_cant_ap")
+
+            st.divider()
+            st.markdown("### 👤 Datos del Cliente y Pago")
+
+            col_a1, col_a2 = st.columns(2)
+            with col_a1:
+                nom_cliente = st.text_input("Nombre del Cliente:", placeholder="Ej: Juan Pérez")
+                precio_sug_calc = float(p_ap_obj["Precio_Sugerido"]) * cant_ap
+                precio_tot = st.number_input("Precio Total ($):", min_value=0.0, value=float(precio_sug_calc), step=10.0)
+            with col_a2:
+                anticipo_ap = st.number_input("Anticipo / Abono Inicial ($):", min_value=0.0, value=0.0, step=10.0)
+                restante_calc = max(0.0, precio_tot - anticipo_ap)
+                st.write(f"**Monto Restante por Pagar:** `${restante_calc:,.2f}`")
+
+            if st.button("💾 Crear Apartado y Reservar Stock", type="primary"):
+                if not nom_cliente:
+                    st.warning("Ingresa el nombre del cliente.")
+                elif stock_ap_avail < cant_ap:
+                    st.error("Stock insuficiente en el inventario para apartar esta prenda.")
+                else:
+                    # 1. Descontar stock para reservar la prenda
+                    key_s_ap = "exhibido" if orig_ap_stock == "Vitrina" else "bodega"
+                    var_ap["stock"][talla_ap_sel][key_s_ap] -= cant_ap
+
+                    # 2. Registrar apartado
+                    concepto_full = f"{p_ap_obj['Producto']} ({cant_ap} pza) - {col_ap_sel} - Talla {talla_ap_sel}"
+                    nuevo_ap = {
+                        "id": f"AP_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
+                        "fecha": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                        "cliente": nom_cliente,
+                        "concepto": concepto_full,
+                        "total": precio_tot,
+                        "abonado": anticipo_ap,
+                        "restante": restante_calc,
+                        "estado": "Pendiente" if restante_calc > 0 else "Liquidado"
+                    }
+                    st.session_state.apartados.append(nuevo_ap)
+                    sync_data()
+                    notificar(f"¡Apartado creado y stock reservado para {nom_cliente}!")
+                    st.rerun()
 
     with tab_lista_ap:
         if st.session_state.apartados:
