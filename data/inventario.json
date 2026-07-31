@@ -1577,5 +1577,206 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260731_225508_519120",
+    "Categoria": "Playeras",
+    "Producto": "De vestir",
+    "Precio_Sugerido": 169.0,
+    "Precio_Venta": 169.0,
+    "Tallas": [
+      "CH",
+      "M",
+      "G"
+    ],
+    "Variantes": [
+      {
+        "color": "Negro",
+        "stock": {
+          "CH": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Rayada",
+        "stock": {
+          "CH": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 4,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Calaveras",
+        "stock": {
+          "CH": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Blanca",
+        "stock": {
+          "CH": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul marino",
+        "stock": {
+          "CH": {
+            "exhibido": 3,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul rey",
+        "stock": {
+          "CH": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Vino",
+        "stock": {
+          "CH": {
+            "exhibido": 3,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul cielo",
+        "stock": {
+          "CH": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Estampada",
+        "stock": {
+          "CH": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 3,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Caqui",
+        "stock": {
+          "CH": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Rosa",
+        "stock": {
+          "CH": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
