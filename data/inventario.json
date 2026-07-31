@@ -420,7 +420,24 @@
         }
       },
       {
-        "color": "Color #25",
+        "color": "Shedron",
+        "stock": {
+          "S": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #26",
         "stock": {
           "S": {
             "exhibido": 0,
@@ -437,7 +454,7 @@
         }
       },
       {
-        "color": "Color #26",
+        "color": "Color #27",
         "stock": {
           "S": {
             "exhibido": 0,
