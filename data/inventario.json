@@ -488,7 +488,24 @@
         }
       },
       {
-        "color": "Color #29",
+        "color": "Negro jaspeado",
+        "stock": {
+          "S": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #30",
         "stock": {
           "S": {
             "exhibido": 0,
@@ -505,7 +522,7 @@
         }
       },
       {
-        "color": "Color #30",
+        "color": "Color #31",
         "stock": {
           "S": {
             "exhibido": 0,
