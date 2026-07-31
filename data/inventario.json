@@ -980,10 +980,10 @@
         }
       },
       {
-        "color": "Color #26",
+        "color": "Shedron",
         "stock": {
           "XG": {
-            "exhibido": 0,
+            "exhibido": 2,
             "bodega": 0
           }
         }
