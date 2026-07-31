@@ -471,7 +471,24 @@
         }
       },
       {
-        "color": "Color #28",
+        "color": "Verde limón claro",
+        "stock": {
+          "S": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #29",
         "stock": {
           "S": {
             "exhibido": 0,
@@ -488,7 +505,7 @@
         }
       },
       {
-        "color": "Color #29",
+        "color": "Color #30",
         "stock": {
           "S": {
             "exhibido": 0,
