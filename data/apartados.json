@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "id": "AP_20260731_141053",
+    "fecha": "2026-07-31 14:10:53",
+    "cliente": "Cliente demostracion",
+    "concepto": "Para prueba",
+    "total": 60.0,
+    "abonado": 30.0,
+    "restante": 30.0,
+    "estado": "Pendiente"
+  }
+]
