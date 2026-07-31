@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "ID": "PROD_20260731_140850_471470",
+    "Categoria": "Chamarras",
+    "Producto": "Para prueba",
+    "Precio_Sugerido": 70.0,
+    "Precio_Venta": 80.0,
+    "Tallas": [
+      "S",
+      "M",
+      "G",
+      "XG"
+    ],
+    "Variantes": [
+      {
+        "color": "Pruebita",
+        "stock": {
+          "S": {
+            "exhibido": 0,
+            "bodega": 2
+          },
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 1
+          },
+          "XG": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      }
+    ]
+  }
+]
