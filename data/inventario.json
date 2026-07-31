@@ -624,7 +624,24 @@
         }
       },
       {
-        "color": "Color #37",
+        "color": "Ladrillo",
+        "stock": {
+          "S": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #38",
         "stock": {
           "S": {
             "exhibido": 0,
