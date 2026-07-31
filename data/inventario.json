@@ -437,7 +437,24 @@
         }
       },
       {
-        "color": "Color #26",
+        "color": "Azul acero",
+        "stock": {
+          "S": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #27",
         "stock": {
           "S": {
             "exhibido": 0,
@@ -454,7 +471,7 @@
         }
       },
       {
-        "color": "Color #27",
+        "color": "Color #28",
         "stock": {
           "S": {
             "exhibido": 0,
