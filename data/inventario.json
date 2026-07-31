@@ -235,7 +235,24 @@
         }
       },
       {
-        "color": "Color #12",
+        "color": "Beige",
+        "stock": {
+          "S": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #13",
         "stock": {
           "S": {
             "exhibido": 0,
