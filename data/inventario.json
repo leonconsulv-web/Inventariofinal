@@ -658,7 +658,24 @@
         }
       },
       {
-        "color": "Color #39",
+        "color": "Azul petróleo ",
+        "stock": {
+          "S": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #40",
         "stock": {
           "S": {
             "exhibido": 0,
