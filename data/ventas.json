@@ -10,5 +10,17 @@
     "precio_venta": 200.0,
     "categoria": "Chamarras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-07-31T14:42:46.594534",
+    "producto_id": "PROD_20260731_140850_471470",
+    "producto": "Para prueba",
+    "talla": "S",
+    "color": "Pruebita",
+    "cantidad": 1,
+    "precio_sugerido": 70.0,
+    "precio_venta": 80.0,
+    "categoria": "Chamarras",
+    "ubicacion_venta": "Bodega"
   }
 ]
