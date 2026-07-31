@@ -16,11 +16,11 @@
         "color": "Pruebita",
         "stock": {
           "S": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 1
           },
           "M": {
-            "exhibido": 2,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
