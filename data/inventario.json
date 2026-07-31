@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "ID": "PROD_20260731_031114_212087",
+    "Categoria": "Chamarras",
+    "Producto": "Repelente",
+    "Precio_Sugerido": 200.0,
+    "Precio_Venta": 0.0,
+    "Tallas": [
+      "S",
+      "M",
+      "G",
+      "XG"
+    ],
+    "Variantes": [
+      {
+        "color": "Rojo",
+        "stock": {
+          "S": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "XG": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      }
+    ]
+  }
+]
