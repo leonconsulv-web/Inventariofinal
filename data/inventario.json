@@ -218,7 +218,24 @@
         }
       },
       {
-        "color": "Color #11",
+        "color": "Blanco",
+        "stock": {
+          "S": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #12",
         "stock": {
           "S": {
             "exhibido": 0,
