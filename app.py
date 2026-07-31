@@ -24,9 +24,16 @@ GITHUB_TOKEN = st.secrets.get("GITHUB_TOKEN", "")
 REPO_NAME = st.secrets.get("REPO_NAME", "")
 
 def github_headers():
+    tok = GITHUB_TOKEN.strip() if GITHUB_TOKEN else ""
+    if not tok.startswith("Bearer ") and not tok.startswith("token "):
+        auth_header = f"Bearer {tok}"
+    else:
+        auth_header = tok
+        
     return {
-        "Authorization": f"token {GITHUB_TOKEN}",
-        "Accept": "application/vnd.github.v3+json"
+        "Authorization": auth_header,
+        "Accept": "application/vnd.github.v3+json",
+        "User-Agent": "Streamlit-Inventario-App"
     }
 
 # ==========================================
@@ -51,7 +58,7 @@ def load_json(filepath):
     
     if GITHUB_TOKEN and REPO_NAME:
         try:
-            url = f"https://api.github.com/repos/{REPO_NAME}/contents/{gh_path}"
+            url = f"https://api.github.com/repos/{REPO_NAME.strip()}/contents/{gh_path}"
             res = requests.get(url, headers=github_headers(), timeout=5)
             if res.status_code == 200:
                 content = res.json().get("content", "")
@@ -75,40 +82,61 @@ def load_json(filepath):
         return []
 
 def save_json(filepath, data):
-    """Guarda copia local y sube los cambios inmediatamente a GitHub marcando errores claros."""
+    """Guarda en disco local y sube a GitHub reportando el estado exacto."""
     os.makedirs(os.path.dirname(filepath), exist_ok=True)
     with open(filepath, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
-    if GITHUB_TOKEN and REPO_NAME:
-        try:
-            gh_path = filepath.replace("\\", "/")
-            url = f"https://api.github.com/repos/{REPO_NAME}/contents/{gh_path}"
-            
-            get_res = requests.get(url, headers=github_headers(), timeout=5)
-            sha = get_res.json().get("sha") if get_res.status_code == 200 else None
+    if not GITHUB_TOKEN or not REPO_NAME:
+        return False, "Sin configurar GITHUB_TOKEN o REPO_NAME en Secrets."
 
-            content_bytes = json.dumps(data, ensure_ascii=False, indent=2).encode('utf-8')
-            content_b64 = base64.b64encode(content_bytes).decode('utf-8')
+    try:
+        gh_path = filepath.replace("\\", "/")
+        url = f"https://api.github.com/repos/{REPO_NAME.strip()}/contents/{gh_path}"
+        
+        get_res = requests.get(url, headers=github_headers(), timeout=5)
+        sha = None
+        if get_res.status_code == 200:
+            sha = get_res.json().get("sha")
 
-            payload = {
-                "message": f"Auto-sync {os.path.basename(filepath)} via App",
-                "content": content_b64
-            }
-            if sha:
-                payload["sha"] = sha
+        content_bytes = json.dumps(data, ensure_ascii=False, indent=2).encode('utf-8')
+        content_b64 = base64.b64encode(content_bytes).decode('utf-8')
 
-            put_res = requests.put(url, headers=github_headers(), json=payload, timeout=5)
-            if put_res.status_code in [200, 201]:
-                st.session_state["last_github_status"] = f"☁️ Sincronizado correctamente: {os.path.basename(filepath)}"
-                st.session_state["github_error"] = None
-            else:
-                err_msg = put_res.json().get('message', 'Error desconocido')
-                st.session_state["github_error"] = f"Error GitHub [{put_res.status_code}]: {err_msg}"
-        except Exception as e:
-            st.session_state["github_error"] = f"Excepción al conectar con GitHub: {str(e)}"
+        payload = {
+            "message": f"Auto-sync {os.path.basename(filepath)} via App",
+            "content": content_b64,
+            "branch": "main"
+        }
+        if sha:
+            payload["sha"] = sha
+
+        put_res = requests.put(url, headers=github_headers(), json=payload, timeout=8)
+        
+        if put_res.status_code in [200, 201]:
+            return True, "OK"
+        else:
+            try:
+                err_detail = put_res.json().get("message", put_res.text)
+            except Exception:
+                err_detail = put_res.text
+            return False, f"GitHub [{put_res.status_code}] en {os.path.basename(filepath)}: {err_detail}"
+    except Exception as e:
+        return False, f"Excepción al conectar con GitHub: {str(e)}"
+
+def sync_data():
+    """Sincroniza todos los archivos y detecta errores de red."""
+    r1 = save_json(PRODUCTS_FILE, st.session_state.productos)
+    r2 = save_json(SALES_FILE, st.session_state.ventas)
+    r3 = save_json(CATEGORIES_FILE, st.session_state.categorias)
+    r4 = save_json(CAJA_FILE, st.session_state.caja)
+    r5 = save_json(APARTADOS_FILE, st.session_state.apartados)
+    r6 = save_json(CAMBIOS_FILE, st.session_state.cambios)
+
+    errores = [msg for status, msg in [r1, r2, r3, r4, r5, r6] if not status]
+    if errores:
+        st.session_state["github_last_error"] = " | ".join(list(set(errores)))
     else:
-        st.session_state["github_error"] = "Falta configurar GITHUB_TOKEN o REPO_NAME en los Secrets de Streamlit."
+        st.session_state["github_last_error"] = None
 
 def init_storage():
     if not os.path.exists(DATA_DIR):
@@ -224,23 +252,15 @@ if "admin_authenticated" not in st.session_state:
 if "form_version" not in st.session_state:
     st.session_state.form_version = 0
 
-def sync_data():
-    save_json(PRODUCTS_FILE, st.session_state.productos)
-    save_json(SALES_FILE, st.session_state.ventas)
-    save_json(CATEGORIES_FILE, st.session_state.categorias)
-    save_json(CAJA_FILE, st.session_state.caja)
-    save_json(APARTADOS_FILE, st.session_state.apartados)
-    save_json(CAMBIOS_FILE, st.session_state.cambios)
-
 def notificar(mensaje, tipo="success"):
     st.session_state["flash_msg"] = mensaje
     st.session_state["flash_type"] = tipo
 
-# Mostrar errores o estado de GitHub
-if st.session_state.get("github_error"):
-    st.error(f"⚠️ {st.session_state['github_error']}")
+# BANNER DE ERROR DE GITHUB SI OCURRE ALGO
+if st.session_state.get("github_last_error"):
+    st.error(f"⚠️ **Atención al sincronizar con GitHub:** {st.session_state['github_last_error']}")
 
-# Mostrar mensajes persistentes tras rerun
+# Mostrar mensajes persistentes
 if "flash_msg" in st.session_state and st.session_state["flash_msg"]:
     if st.session_state.get("flash_type") == "error":
         st.error(st.session_state["flash_msg"])
@@ -430,14 +450,13 @@ if st.session_state.vista == "ventas":
                                 st.button("Vitrina ➔ Bodega", disabled=True, use_container_width=True, key=f"dis_vb_{prod['ID']}_{idx_p}")
 
 # ==========================================
-# VISTA 2: REGISTRAR CAMBIOS Y DEVOLUCIONES (INTERACTIVO)
+# VISTA 2: REGISTRAR CAMBIOS Y DEVOLUCIONES
 # ==========================================
 elif st.session_state.vista == "cambios":
     st.subheader("🔄 Registrar Cambios o Devoluciones con Selección de Inventario")
 
     col_dev, col_ent = st.columns(2)
 
-    # --- SECCIÓN A: PRODUCTO DEVUELTO (REINGRESA AL INVENTARIO) ---
     with col_dev:
         st.markdown("### 📥 1. Producto Devuelto por el Cliente")
         
@@ -474,7 +493,6 @@ elif st.session_state.vista == "cambios":
                 prod_dev_str = f"{p_dev_obj['Producto']} - {col_dev_sel} - Talla {talla_dev_sel}"
                 precio_dev_ref = float(p_dev_obj["Precio_Sugerido"]) * cant_dev
 
-    # --- SECCIÓN B: PRODUCTO ENTREGADO (SALE DEL INVENTARIO) ---
     with col_ent:
         st.markdown("### 📤 2. Producto Entregado a Cambio")
         
@@ -512,7 +530,6 @@ elif st.session_state.vista == "cambios":
 
     st.divider()
 
-    # --- SECCIÓN C: DETALLES FINANCIEROS Y CONFIRMACIÓN ---
     st.markdown("### 💵 3. Ajuste de Cobro y Confirmación")
     dif_estimada = max(0.0, precio_ent_ref - precio_dev_ref)
     
@@ -528,20 +545,17 @@ elif st.session_state.vista == "cambios":
         elif not dev_manual and stock_ent_avail < cant_ent:
             st.error("No hay stock suficiente del producto a entregar.")
         else:
-            # 1. Reingresar stock del producto devuelto (si no es manual)
             if not dev_manual:
                 var_dev = next((v for v in p_dev_obj.get("Variantes", []) if v["color"] == col_dev_sel), None)
                 if var_dev and talla_dev_sel in var_dev.get("stock", {}):
                     key_s_dev = "exhibido" if dest_dev_stock == "Vitrina" else "bodega"
                     var_dev["stock"][talla_dev_sel][key_s_dev] += cant_dev
 
-            # 2. Descontar stock del producto entregado
             var_ent = next((v for v in p_ent_obj.get("Variantes", []) if v["color"] == col_ent_sel), None)
             if var_ent and talla_ent_sel in var_ent.get("stock", {}):
                 key_s_ent = "exhibido" if orig_ent_stock == "Vitrina" else "bodega"
                 var_ent["stock"][talla_ent_sel][key_s_ent] -= cant_ent
 
-            # 3. Guardar registro
             registro_cambio = {
                 "fecha": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                 "devuelto": prod_dev_str,
@@ -563,7 +577,7 @@ elif st.session_state.vista == "cambios":
         st.info("No hay registros de cambios realizados.")
 
 # ==========================================
-# VISTA 3: GESTIÓN DE APARTADOS (INTERACTIVO)
+# VISTA 3: GESTIÓN DE APARTADOS
 # ==========================================
 elif st.session_state.vista == "apartados":
     st.subheader("📑 Gestión de Apartados de Prenda con Selección de Inventario")
@@ -619,11 +633,9 @@ elif st.session_state.vista == "apartados":
                 elif stock_ap_avail < cant_ap:
                     st.error("Stock insuficiente en el inventario para apartar esta prenda.")
                 else:
-                    # 1. Descontar stock para reservar la prenda
                     key_s_ap = "exhibido" if orig_ap_stock == "Vitrina" else "bodega"
                     var_ap["stock"][talla_ap_sel][key_s_ap] -= cant_ap
 
-                    # 2. Registrar apartado
                     concepto_full = f"{p_ap_obj['Producto']} ({cant_ap} pza) - {col_ap_sel} - Talla {talla_ap_sel}"
                     nuevo_ap = {
                         "id": f"AP_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
