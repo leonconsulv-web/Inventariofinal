@@ -590,7 +590,24 @@
         }
       },
       {
-        "color": "Color #35",
+        "color": "Azul cielo",
+        "stock": {
+          "S": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #36",
         "stock": {
           "S": {
             "exhibido": 0,
