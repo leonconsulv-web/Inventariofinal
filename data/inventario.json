@@ -505,7 +505,24 @@
         }
       },
       {
-        "color": "Color #30",
+        "color": "Pistache",
+        "stock": {
+          "S": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #31",
         "stock": {
           "S": {
             "exhibido": 0,
@@ -522,7 +539,7 @@
         }
       },
       {
-        "color": "Color #31",
+        "color": "Color #32",
         "stock": {
           "S": {
             "exhibido": 0,
