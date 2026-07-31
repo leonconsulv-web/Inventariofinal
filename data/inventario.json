@@ -403,7 +403,24 @@
         }
       },
       {
-        "color": "Color #24",
+        "color": "Azul rey",
+        "stock": {
+          "S": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #25",
         "stock": {
           "S": {
             "exhibido": 0,
@@ -420,7 +437,7 @@
         }
       },
       {
-        "color": "Color #25",
+        "color": "Color #26",
         "stock": {
           "S": {
             "exhibido": 0,
