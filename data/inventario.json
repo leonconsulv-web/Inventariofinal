@@ -286,7 +286,24 @@
         }
       },
       {
-        "color": "Color #15",
+        "color": "Cereza",
+        "stock": {
+          "S": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #16",
         "stock": {
           "S": {
             "exhibido": 0,
