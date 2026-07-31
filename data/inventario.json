@@ -337,7 +337,24 @@
         }
       },
       {
-        "color": "Color #18",
+        "color": "Turquesa",
+        "stock": {
+          "S": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #19",
         "stock": {
           "S": {
             "exhibido": 0,
