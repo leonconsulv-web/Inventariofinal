@@ -5,13 +5,18 @@ import base64
 import requests
 from datetime import datetime
 
-# --- CONFIGURACIÓN DE PÁGINA ---
-st.set_page_config(page_title="Inventario de Ropa", page_icon="👕", layout="wide")
+# --- CONFIGURACIÓN DE LA PÁGINA ---
+st.set_page_config(
+    page_title="Inventario de Ropa",
+    page_icon="👕",
+    layout="wide"
+)
 
-# --- DIAGNÓSTICO Y CONEXIÓN A GITHUB ---
+# --- CONFIGURACIÓN Y CREDENCIALES DE GITHUB ---
 GITHUB_TOKEN = st.secrets.get("GITHUB_TOKEN", "")
 REPO_NAME = st.secrets.get("REPO_NAME", "")
 
+# Verificación inicial de credenciales
 if not GITHUB_TOKEN:
     st.error("⚠️ FALTA CONFIGURAR 'GITHUB_TOKEN' EN LOS SECRETS DE STREAMLIT CLOUD.")
 if not REPO_NAME:
@@ -24,7 +29,7 @@ def github_headers():
     }
 
 def cargar_json(path_archivo, default_val):
-    """Carga datos desde GitHub API si existe, o localmente como respaldo."""
+    """Carga datos desde GitHub API si está disponible; de lo contrario, desde archivo local."""
     if GITHUB_TOKEN and REPO_NAME:
         try:
             url = f"https://api.github.com/repos/{REPO_NAME}/contents/{path_archivo}"
@@ -46,7 +51,8 @@ def cargar_json(path_archivo, default_val):
     return default_val
 
 def guardar_json(path_archivo, datos, mensaje_commit="Actualización de datos"):
-    """Guarda en archivo local y sube inmediatamente a GitHub."""
+    """Guarda copia local y sube los cambios de inmediato a GitHub."""
+    # 1. Guardado local de respaldo
     os.makedirs(os.path.dirname(path_archivo), exist_ok=True)
     with open(path_archivo, "w", encoding="utf-8") as f:
         json.dump(datos, f, ensure_ascii=False, indent=2)
@@ -55,6 +61,7 @@ def guardar_json(path_archivo, datos, mensaje_commit="Actualización de datos"):
         st.warning("⚠️ Guardado solo local. Faltan los Secrets de GitHub para sincronizar en la nube.")
         return False
 
+    # 2. Sincronización remota con GitHub API
     url = f"https://api.github.com/repos/{REPO_NAME}/contents/{path_archivo}"
     get_res = requests.get(url, headers=github_headers())
     sha = get_res.json().get("sha") if get_res.status_code == 200 else None
@@ -72,14 +79,14 @@ def guardar_json(path_archivo, datos, mensaje_commit="Actualización de datos"):
     put_res = requests.put(url, headers=github_headers(), json=payload)
     
     if put_res.status_code in [200, 201]:
-        st.success(f"☁️ ¡Guardado y sincronizado en GitHub! ({path_archivo})")
+        st.success(f"☁️ ¡Sincronizado en GitHub con éxito! ({path_archivo})")
         return True
     else:
         err_msg = put_res.json().get("message", "Error desconocido")
-        st.error(f"❌ Error de sincronización GitHub [{put_res.status_code}]: {err_msg}")
+        st.error(f"❌ Error de sincronización en GitHub [{put_res.status_code}]: {err_msg}")
         return False
 
-# --- CONFIGURACIÓN DE RUTAS Y ESTRUCTURAS POR DEFECTO ---
+# --- RUTAS DE ARCHIVOS Y ESTRUCTURA BASE ---
 RUTA_INV = "data/inventario.json"
 RUTA_VENTAS = "data/ventas.json"
 RUTA_APARTADOS = "data/apartados.json"
@@ -97,12 +104,10 @@ INVENTARIO_DEFAULT = {
 # --- CARGA Y VALIDACIÓN DE DATOS EN SESSION STATE ---
 inv_cargado = cargar_json(RUTA_INV, INVENTARIO_DEFAULT)
 
-# Garantizar que inventario sea estrictamente un diccionario
 if not isinstance(inv_cargado, dict):
     inv_cargado = INVENTARIO_DEFAULT
 
-# Asegurar que todas las categorías por defecto existan dentro del diccionario
-for cat, items in INVENTARIO_DEFAULT.items():
+for cat in INVENTARIO_DEFAULT.keys():
     if cat not in inv_cargado or not isinstance(inv_cargado[cat], list):
         inv_cargado[cat] = []
 
@@ -127,7 +132,7 @@ if not isinstance(cambios_cargados, list):
 if 'cambios' not in st.session_state or not isinstance(st.session_state.cambios, list):
     st.session_state.cambios = cambios_cargados
 
-# --- INTERFAZ PRINCIPAL ---
+# --- NAVEGACIÓN Y MENÚ PRINCIPAL ---
 st.title("👕 Inventario de Ropa")
 
 col_menu1, col_menu2, col_menu3, col_menu4, col_menu5, col_menu6 = st.columns(6)
@@ -157,7 +162,7 @@ if btn_admin: st.session_state.vista = "admin"
 
 st.divider()
 
-# --- VISTA: REGISTRAR VENTAS ---
+# --- VISTA 1: REGISTRAR VENTAS ---
 if st.session_state.vista == "venta":
     st.subheader("Registrar Ventas")
     
@@ -169,7 +174,10 @@ if st.session_state.vista == "venta":
     if not productos:
         st.info("No hay productos registrados en esta categoría.")
     else:
-        opciones_prod = [f"{p['nombre']} | Color: {p.get('color','N/A')} | Talla: {p.get('talla','N/A')} | ${p.get('precio',0)}" for p in productos]
+        opciones_prod = [
+            f"{p['nombre']} | Color: {p.get('color','N/A')} | Talla: {p.get('talla','N/A')} | ${p.get('precio',0)}" 
+            for p in productos
+        ]
         prod_idx = st.selectbox("Selecciona producto:", range(len(opciones_prod)), format_func=lambda x: opciones_prod[x])
         
         prod_sel = productos[prod_idx]
@@ -203,7 +211,7 @@ if st.session_state.vista == "venta":
             else:
                 st.error("Stock insuficiente para realizar la venta.")
 
-# --- VISTA: CAMBIOS ---
+# --- VISTA 2: CAMBIOS O DEVOLUCIONES ---
 elif st.session_state.vista == "cambios":
     st.subheader("🔄 Registrar Cambios o Devoluciones")
     prod_devuelto = st.text_input("Producto devuelto:")
@@ -222,8 +230,10 @@ elif st.session_state.vista == "cambios":
             guardar_json(RUTA_CAMBIOS, st.session_state.cambios, "Registro de cambio de producto")
             st.success("Cambio registrado correctamente.")
             st.rerun()
+        else:
+            st.warning("Por favor completa los nombres de los productos.")
 
-# --- VISTA: APARTADOS ---
+# --- VISTA 3: APARTADOS ---
 elif st.session_state.vista == "apartados":
     st.subheader("📑 Gestión de Apartados")
     cliente = st.text_input("Nombre del cliente:")
@@ -246,18 +256,20 @@ elif st.session_state.vista == "apartados":
             guardar_json(RUTA_APARTADOS, st.session_state.apartados, "Registro de nuevo apartado")
             st.success(f"Apartado registrado para {cliente}.")
             st.rerun()
+        else:
+            st.warning("Ingresa el cliente y el concepto del apartado.")
 
     st.divider()
     st.write("### Historial de Apartados")
     if st.session_state.apartados:
         st.json(st.session_state.apartados)
 
-# --- VISTA: INVENTARIO GENERAL ---
+# --- VISTA 4: INVENTARIO GENERAL ---
 elif st.session_state.vista == "inventario":
     st.subheader("📋 Inventario General")
     st.json(st.session_state.inventario)
 
-# --- VISTA: CAJA Y VENTAS ---
+# --- VISTA 5: CAJA Y VENTAS ---
 elif st.session_state.vista == "caja":
     st.subheader("💰 Resumen de Caja")
     total_ventas = sum(v.get('total', 0) for v in st.session_state.ventas)
@@ -267,7 +279,7 @@ elif st.session_state.vista == "caja":
     if st.session_state.ventas:
         st.dataframe(st.session_state.ventas)
 
-# --- VISTA: ADMINISTRACIÓN ---
+# --- VISTA 6: ADMINISTRACIÓN ---
 elif st.session_state.vista == "admin":
     st.subheader("🔐 Panel de Administración")
     
