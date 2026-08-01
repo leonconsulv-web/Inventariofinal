@@ -1712,5 +1712,71 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_053830_429192",
+    "Categoria": "Camisas",
+    "Producto": "Waffle",
+    "Precio_Sugerido": 220.0,
+    "Precio_Venta": 220.0,
+    "Tallas": [
+      "G"
+    ],
+    "Variantes": [
+      {
+        "color": "Crema",
+        "stock": {
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul rey",
+        "stock": {
+          "G": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Negro",
+        "stock": {
+          "G": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Palo de rosa",
+        "stock": {
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Rojo",
+        "stock": {
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Blanco ",
+        "stock": {
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
