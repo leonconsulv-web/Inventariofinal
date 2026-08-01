@@ -4144,5 +4144,138 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_220435_420453",
+    "Categoria": "Pants",
+    "Producto": "Pants",
+    "Precio_Sugerido": 210.0,
+    "Precio_Venta": 210.0,
+    "Tallas": [
+      "CH",
+      "M",
+      "G"
+    ],
+    "Variantes": [
+      {
+        "color": "Negro",
+        "stock": {
+          "CH": {
+            "exhibido": 3,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 5,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 5,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Perla",
+        "stock": {
+          "CH": {
+            "exhibido": 3,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 4,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 4,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Oxford ",
+        "stock": {
+          "CH": {
+            "exhibido": 3,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 4,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul marino",
+        "stock": {
+          "CH": {
+            "exhibido": 4,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 3,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 6,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Verde",
+        "stock": {
+          "CH": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Rojo",
+        "stock": {
+          "CH": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Blanco",
+        "stock": {
+          "CH": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
