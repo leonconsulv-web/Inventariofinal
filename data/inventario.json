@@ -4325,5 +4325,56 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_221116_880305",
+    "Categoria": "Niño",
+    "Producto": "Camisa",
+    "Precio_Sugerido": 100.0,
+    "Precio_Venta": 100.0,
+    "Tallas": [
+      "4",
+      "6",
+      "8",
+      "10",
+      "12",
+      "14",
+      "16"
+    ],
+    "Variantes": [
+      {
+        "color": "Varios",
+        "stock": {
+          "4": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "6": {
+            "exhibido": 3,
+            "bodega": 0
+          },
+          "8": {
+            "exhibido": 3,
+            "bodega": 0
+          },
+          "10": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "12": {
+            "exhibido": 3,
+            "bodega": 0
+          },
+          "14": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "16": {
+            "exhibido": 5,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
