@@ -4753,5 +4753,26 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_222635_288356",
+    "Categoria": "Ofertas",
+    "Producto": "Ofertas",
+    "Precio_Sugerido": 95.0,
+    "Precio_Venta": 95.0,
+    "Tallas": [
+      "VARIAS"
+    ],
+    "Variantes": [
+      {
+        "color": "Varios",
+        "stock": {
+          "VARIAS": {
+            "exhibido": 24,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
