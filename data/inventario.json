@@ -3898,5 +3898,87 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_215309_839310",
+    "Categoria": "Jeans",
+    "Producto": "Confort 38-42",
+    "Precio_Sugerido": 300.0,
+    "Precio_Venta": 300.0,
+    "Tallas": [
+      "38",
+      "40",
+      "42"
+    ],
+    "Variantes": [
+      {
+        "color": "Azul claro",
+        "stock": {
+          "38": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "40": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "42": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul medio",
+        "stock": {
+          "38": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "40": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "42": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul oscuro",
+        "stock": {
+          "38": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "40": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "42": {
+            "exhibido": 3,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Negro",
+        "stock": {
+          "38": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "40": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "42": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
