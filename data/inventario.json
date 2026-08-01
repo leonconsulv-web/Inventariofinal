@@ -3584,5 +3584,121 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_213034_736035",
+    "Categoria": "Jeans",
+    "Producto": "Vaquero",
+    "Precio_Sugerido": 245.0,
+    "Precio_Venta": 245.0,
+    "Tallas": [
+      "28",
+      "30",
+      "32",
+      "34",
+      "36"
+    ],
+    "Variantes": [
+      {
+        "color": "Azul claro",
+        "stock": {
+          "28": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "30": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "32": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "34": {
+            "exhibido": 3,
+            "bodega": 0
+          },
+          "36": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul medio",
+        "stock": {
+          "28": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "30": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "32": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "34": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "36": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul oscuro ",
+        "stock": {
+          "28": {
+            "exhibido": 4,
+            "bodega": 0
+          },
+          "30": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "32": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "34": {
+            "exhibido": 3,
+            "bodega": 0
+          },
+          "36": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Negro",
+        "stock": {
+          "28": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "30": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "32": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "34": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "36": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
