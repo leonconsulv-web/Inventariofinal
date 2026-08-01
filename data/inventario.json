@@ -1829,7 +1829,7 @@
         "color": "Palo de rosa",
         "stock": {
           "XG": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           }
         }
