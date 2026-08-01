@@ -4028,5 +4028,121 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_215912_999189",
+    "Categoria": "Jeans",
+    "Producto": "Cargo",
+    "Precio_Sugerido": 220.0,
+    "Precio_Venta": 220.0,
+    "Tallas": [
+      "28",
+      "30",
+      "32",
+      "34",
+      "36"
+    ],
+    "Variantes": [
+      {
+        "color": "Negro ",
+        "stock": {
+          "28": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "30": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "32": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "34": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "36": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Caqui",
+        "stock": {
+          "28": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "30": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "32": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "34": {
+            "exhibido": 3,
+            "bodega": 0
+          },
+          "36": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Verde",
+        "stock": {
+          "28": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "30": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "32": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "34": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "36": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul marino",
+        "stock": {
+          "28": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "30": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "32": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "34": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "36": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
