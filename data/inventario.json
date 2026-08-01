@@ -2318,5 +2318,71 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_064022_046291",
+    "Categoria": "Pantalones de vestir",
+    "Producto": "T28",
+    "Precio_Sugerido": 220.0,
+    "Precio_Venta": 220.0,
+    "Tallas": [
+      "28"
+    ],
+    "Variantes": [
+      {
+        "color": "Negro",
+        "stock": {
+          "28": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul petróleo ",
+        "stock": {
+          "28": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Petróleo ",
+        "stock": {
+          "28": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Chocolate",
+        "stock": {
+          "28": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul mar",
+        "stock": {
+          "28": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Oxford oscuro",
+        "stock": {
+          "28": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
