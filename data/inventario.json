@@ -4277,5 +4277,53 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_220930_603983",
+    "Categoria": "Pants",
+    "Producto": "Pants XG",
+    "Precio_Sugerido": 250.0,
+    "Precio_Venta": 250.0,
+    "Tallas": [
+      "XG"
+    ],
+    "Variantes": [
+      {
+        "color": "Perla",
+        "stock": {
+          "XG": {
+            "exhibido": 3,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul marino",
+        "stock": {
+          "XG": {
+            "exhibido": 3,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Oxford ",
+        "stock": {
+          "XG": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Negro",
+        "stock": {
+          "XG": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
