@@ -1871,5 +1871,26 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_060159_648400",
+    "Categoria": "Playeras",
+    "Producto": "De vestir",
+    "Precio_Sugerido": 169.0,
+    "Precio_Venta": 169.0,
+    "Tallas": [
+      "CH"
+    ],
+    "Variantes": [
+      {
+        "color": "Vino",
+        "stock": {
+          "CH": {
+            "exhibido": 3,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
