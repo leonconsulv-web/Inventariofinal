@@ -4417,5 +4417,26 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_221311_323827",
+    "Categoria": "Playeras",
+    "Producto": "Estampadas",
+    "Precio_Sugerido": 150.0,
+    "Precio_Venta": 150.0,
+    "Tallas": [
+      "UNI"
+    ],
+    "Variantes": [
+      {
+        "color": "Color #1",
+        "stock": {
+          "UNI": {
+            "exhibido": 10,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
