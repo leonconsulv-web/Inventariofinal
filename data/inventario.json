@@ -2816,5 +2816,170 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_172200_486721",
+    "Categoria": "Pantalones de vestir",
+    "Producto": "T36",
+    "Precio_Sugerido": 220.0,
+    "Precio_Venta": 220.0,
+    "Tallas": [
+      "36"
+    ],
+    "Variantes": [
+      {
+        "color": "Casimir ($269)",
+        "stock": {
+          "36": {
+            "exhibido": 6,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Verde olivo",
+        "stock": {
+          "36": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Cemento",
+        "stock": {
+          "36": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul marino",
+        "stock": {
+          "36": {
+            "exhibido": 4,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Gris medio",
+        "stock": {
+          "36": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Gris claro",
+        "stock": {
+          "36": {
+            "exhibido": 3,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Oxford",
+        "stock": {
+          "36": {
+            "exhibido": 4,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Chocolate ",
+        "stock": {
+          "36": {
+            "exhibido": 3,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Cocoa",
+        "stock": {
+          "36": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Petróleo ",
+        "stock": {
+          "36": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul petróleo ",
+        "stock": {
+          "36": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Negro",
+        "stock": {
+          "36": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Arena",
+        "stock": {
+          "36": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Café ",
+        "stock": {
+          "36": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #15",
+        "stock": {
+          "36": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #16",
+        "stock": {
+          "36": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #17",
+        "stock": {
+          "36": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
