@@ -3980,5 +3980,53 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_215548_833381",
+    "Categoria": "Jeans",
+    "Producto": "Entubado",
+    "Precio_Sugerido": 220.0,
+    "Precio_Venta": 220.0,
+    "Tallas": [
+      "28",
+      "34",
+      "36"
+    ],
+    "Variantes": [
+      {
+        "color": "Negro",
+        "stock": {
+          "28": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "34": {
+            "exhibido": 3,
+            "bodega": 0
+          },
+          "36": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Verde",
+        "stock": {
+          "28": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "34": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "36": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
