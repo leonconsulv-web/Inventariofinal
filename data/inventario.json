@@ -3431,5 +3431,44 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_175007_231862",
+    "Categoria": "Camisas",
+    "Producto": "Manga larga 44-46",
+    "Precio_Sugerido": 299.0,
+    "Precio_Venta": 299.0,
+    "Tallas": [
+      "44",
+      "46"
+    ],
+    "Variantes": [
+      {
+        "color": "Blanco",
+        "stock": {
+          "44": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "46": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Varios",
+        "stock": {
+          "44": {
+            "exhibido": 10,
+            "bodega": 0
+          },
+          "46": {
+            "exhibido": 3,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
