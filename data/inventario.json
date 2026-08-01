@@ -3527,5 +3527,62 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_190642_565357",
+    "Categoria": "Camisas",
+    "Producto": "Camisa económica ",
+    "Precio_Sugerido": 199.0,
+    "Precio_Venta": 199.0,
+    "Tallas": [
+      "CH",
+      "M",
+      "G",
+      "XG"
+    ],
+    "Variantes": [
+      {
+        "color": "Varios",
+        "stock": {
+          "CH": {
+            "exhibido": 4,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 6,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 9,
+            "bodega": 0
+          },
+          "XG": {
+            "exhibido": 13,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Blanco",
+        "stock": {
+          "CH": {
+            "exhibido": 7,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "XG": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
