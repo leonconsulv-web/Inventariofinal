@@ -2292,5 +2292,31 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_063347_259013",
+    "Categoria": "Playeras",
+    "Producto": "Hugo boss",
+    "Precio_Sugerido": 365.0,
+    "Precio_Venta": 365.0,
+    "Tallas": [
+      "G",
+      "XG"
+    ],
+    "Variantes": [
+      {
+        "color": "Varios",
+        "stock": {
+          "G": {
+            "exhibido": 3,
+            "bodega": 0
+          },
+          "XG": {
+            "exhibido": 6,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
