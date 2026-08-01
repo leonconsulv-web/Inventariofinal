@@ -1553,5 +1553,62 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_053233_905708",
+    "Categoria": "Playeras",
+    "Producto": "De vestir",
+    "Precio_Sugerido": 169.0,
+    "Precio_Venta": 169.0,
+    "Tallas": [
+      "M"
+    ],
+    "Variantes": [
+      {
+        "color": "Azul cielo",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Rayada",
+        "stock": {
+          "M": {
+            "exhibido": 4,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Blanco",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Estampada",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul marino",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
