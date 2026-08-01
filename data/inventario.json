@@ -3137,5 +3137,80 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_173139_078610",
+    "Categoria": "Pantalones de vestir",
+    "Producto": "T40",
+    "Precio_Sugerido": 250.0,
+    "Precio_Venta": 250.0,
+    "Tallas": [
+      "40"
+    ],
+    "Variantes": [
+      {
+        "color": "Verde olivo",
+        "stock": {
+          "40": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul petróleo ",
+        "stock": {
+          "40": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Café ",
+        "stock": {
+          "40": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Gris claro",
+        "stock": {
+          "40": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Negro",
+        "stock": {
+          "40": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul marino",
+        "stock": {
+          "40": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Cemento",
+        "stock": {
+          "40": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
