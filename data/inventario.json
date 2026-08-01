@@ -4873,5 +4873,57 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_223452_302857",
+    "Categoria": "Suéteres",
+    "Producto": "Cuello V",
+    "Precio_Sugerido": 8888.0,
+    "Precio_Venta": 8888.0,
+    "Tallas": [
+      "M",
+      "G"
+    ],
+    "Variantes": [
+      {
+        "color": "Negro",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul marino",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Oxford ",
+        "stock": {
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
