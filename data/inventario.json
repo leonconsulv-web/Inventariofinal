@@ -2981,5 +2981,161 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_172745_325610",
+    "Categoria": "Pantalones de vestir",
+    "Producto": "T38",
+    "Precio_Sugerido": 230.0,
+    "Precio_Venta": 230.0,
+    "Tallas": [
+      "38"
+    ],
+    "Variantes": [
+      {
+        "color": "Casimir ($289)",
+        "stock": {
+          "38": {
+            "exhibido": 4,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Ostion",
+        "stock": {
+          "38": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Hueso",
+        "stock": {
+          "38": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Cemento",
+        "stock": {
+          "38": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Olivo",
+        "stock": {
+          "38": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Chocolate",
+        "stock": {
+          "38": {
+            "exhibido": 3,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Negro",
+        "stock": {
+          "38": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Gris claro",
+        "stock": {
+          "38": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Gris medio ",
+        "stock": {
+          "38": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Café ",
+        "stock": {
+          "38": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Gris grey",
+        "stock": {
+          "38": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Oxford",
+        "stock": {
+          "38": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Caqui",
+        "stock": {
+          "38": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Cocoa",
+        "stock": {
+          "38": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Arena",
+        "stock": {
+          "38": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul marino",
+        "stock": {
+          "38": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
