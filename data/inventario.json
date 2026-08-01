@@ -1778,5 +1778,80 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_054519_096901",
+    "Categoria": "Playeras",
+    "Producto": "De vestir",
+    "Precio_Sugerido": 169.0,
+    "Precio_Venta": 169.0,
+    "Tallas": [
+      "G"
+    ],
+    "Variantes": [
+      {
+        "color": "Vino",
+        "stock": {
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Cereza",
+        "stock": {
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Estampadas",
+        "stock": {
+          "G": {
+            "exhibido": 3,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul cielo",
+        "stock": {
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Caqui",
+        "stock": {
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Rosa",
+        "stock": {
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Rayada",
+        "stock": {
+          "G": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
