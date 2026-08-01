@@ -4376,5 +4376,46 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_221221_691088",
+    "Categoria": "Niño",
+    "Producto": "Playera",
+    "Precio_Sugerido": 90.0,
+    "Precio_Venta": 90.0,
+    "Tallas": [
+      "6",
+      "8",
+      "10",
+      "12",
+      "14"
+    ],
+    "Variantes": [
+      {
+        "color": "Varios",
+        "stock": {
+          "6": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "8": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "10": {
+            "exhibido": 3,
+            "bodega": 0
+          },
+          "12": {
+            "exhibido": 5,
+            "bodega": 0
+          },
+          "14": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
