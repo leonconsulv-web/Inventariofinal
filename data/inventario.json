@@ -5191,5 +5191,226 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_230412_019357",
+    "Categoria": "Chalecos",
+    "Producto": "Sin botón ",
+    "Precio_Sugerido": 222.0,
+    "Precio_Venta": 222.0,
+    "Tallas": [
+      "M",
+      "G"
+    ],
+    "Variantes": [
+      {
+        "color": "Cocoa",
+        "stock": {
+          "M": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Hueso",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Vino",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Gris medio",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Chocolate",
+        "stock": {
+          "M": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Negro",
+        "stock": {
+          "M": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul marino",
+        "stock": {
+          "M": {
+            "exhibido": 3,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Café ",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Caqui",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Ladrillo",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Verde",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul petroleo",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Perla",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Oxford ",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Arena",
+        "stock": {
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Chocolate oscuro",
+        "stock": {
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
