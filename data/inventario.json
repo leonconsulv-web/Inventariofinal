@@ -1469,5 +1469,89 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_052958_165941",
+    "Categoria": "Playeras",
+    "Producto": "De vestir",
+    "Precio_Sugerido": 169.0,
+    "Precio_Venta": 169.0,
+    "Tallas": [
+      "CH"
+    ],
+    "Variantes": [
+      {
+        "color": "Negro",
+        "stock": {
+          "CH": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Rayada",
+        "stock": {
+          "CH": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Calaveras",
+        "stock": {
+          "CH": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Blanco",
+        "stock": {
+          "CH": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul marino",
+        "stock": {
+          "CH": {
+            "exhibido": 3,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul rey",
+        "stock": {
+          "CH": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul cielo",
+        "stock": {
+          "CH": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Estampada",
+        "stock": {
+          "CH": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
