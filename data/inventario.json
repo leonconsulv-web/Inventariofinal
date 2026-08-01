@@ -3269,5 +3269,53 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_173717_984714",
+    "Categoria": "Camisas",
+    "Producto": "Manga corta",
+    "Precio_Sugerido": 159.0,
+    "Precio_Venta": 159.0,
+    "Tallas": [
+      "CH",
+      "M",
+      "G"
+    ],
+    "Variantes": [
+      {
+        "color": "Blanco",
+        "stock": {
+          "CH": {
+            "exhibido": 3,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 3,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Varios",
+        "stock": {
+          "CH": {
+            "exhibido": 16,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 21,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 20,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
