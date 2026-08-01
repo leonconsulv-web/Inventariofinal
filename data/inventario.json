@@ -2384,5 +2384,125 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_064643_767617",
+    "Categoria": "Pantalones de vestir",
+    "Producto": "T30",
+    "Precio_Sugerido": 220.0,
+    "Precio_Venta": 220.0,
+    "Tallas": [
+      "30"
+    ],
+    "Variantes": [
+      {
+        "color": "Casimir ($269)",
+        "stock": {
+          "30": {
+            "exhibido": 3,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Gris medio",
+        "stock": {
+          "30": {
+            "exhibido": 3,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Oxford oscuro",
+        "stock": {
+          "30": {
+            "exhibido": 3,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Chocolate",
+        "stock": {
+          "30": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul marino",
+        "stock": {
+          "30": {
+            "exhibido": 3,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Arena",
+        "stock": {
+          "30": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Caqui",
+        "stock": {
+          "30": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Cocoa",
+        "stock": {
+          "30": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Petróleo ",
+        "stock": {
+          "30": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Café ",
+        "stock": {
+          "30": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Gris grey",
+        "stock": {
+          "30": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Verde oscuro ",
+        "stock": {
+          "30": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
