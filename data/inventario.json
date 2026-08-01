@@ -4705,5 +4705,53 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_222435_654986",
+    "Categoria": "Playeras",
+    "Producto": "De color manga larga",
+    "Precio_Sugerido": 95.0,
+    "Precio_Venta": 95.0,
+    "Tallas": [
+      "UNI"
+    ],
+    "Variantes": [
+      {
+        "color": "Negro",
+        "stock": {
+          "UNI": {
+            "exhibido": 9,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Blanca",
+        "stock": {
+          "UNI": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul marino",
+        "stock": {
+          "UNI": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul medio",
+        "stock": {
+          "UNI": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
