@@ -5075,5 +5075,121 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_224623_542700",
+    "Categoria": "Suéteres",
+    "Producto": "Cierre completo",
+    "Precio_Sugerido": 88.0,
+    "Precio_Venta": 88.0,
+    "Tallas": [
+      "M",
+      "G",
+      "XG"
+    ],
+    "Variantes": [
+      {
+        "color": "Negro",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "XG": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Oxford ",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XG": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Perla",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "XG": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul marino ",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XG": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Arena",
+        "stock": {
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "XG": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Cocoa",
+        "stock": {
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "XG": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
