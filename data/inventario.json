@@ -3317,5 +3317,44 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_174000_994264",
+    "Categoria": "Camisas",
+    "Producto": "Manga corta  XG-XXG",
+    "Precio_Sugerido": 215.0,
+    "Precio_Venta": 215.0,
+    "Tallas": [
+      "XG",
+      "XXG"
+    ],
+    "Variantes": [
+      {
+        "color": "Blanco",
+        "stock": {
+          "XG": {
+            "exhibido": 3,
+            "bodega": 0
+          },
+          "XXG": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Varios",
+        "stock": {
+          "XG": {
+            "exhibido": 15,
+            "bodega": 0
+          },
+          "XXG": {
+            "exhibido": 3,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
