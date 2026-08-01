@@ -3356,5 +3356,80 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_174554_726937",
+    "Categoria": "Camisas",
+    "Producto": "Manga larga",
+    "Precio_Sugerido": 269.0,
+    "Precio_Venta": 269.0,
+    "Tallas": [
+      "32",
+      "34",
+      "36",
+      "38",
+      "40",
+      "42"
+    ],
+    "Variantes": [
+      {
+        "color": "Blanco ($289)",
+        "stock": {
+          "32": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "34": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "36": {
+            "exhibido": 3,
+            "bodega": 0
+          },
+          "38": {
+            "exhibido": 3,
+            "bodega": 0
+          },
+          "40": {
+            "exhibido": 3,
+            "bodega": 0
+          },
+          "42": {
+            "exhibido": 3,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Varios",
+        "stock": {
+          "32": {
+            "exhibido": 13,
+            "bodega": 0
+          },
+          "34": {
+            "exhibido": 13,
+            "bodega": 0
+          },
+          "36": {
+            "exhibido": 13,
+            "bodega": 0
+          },
+          "38": {
+            "exhibido": 18,
+            "bodega": 0
+          },
+          "40": {
+            "exhibido": 14,
+            "bodega": 0
+          },
+          "42": {
+            "exhibido": 21,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
