@@ -3212,5 +3212,62 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260801_173346_010371",
+    "Categoria": "Pantalones de vestir",
+    "Producto": "T42",
+    "Precio_Sugerido": 250.0,
+    "Precio_Venta": 250.0,
+    "Tallas": [
+      "42"
+    ],
+    "Variantes": [
+      {
+        "color": "Negro",
+        "stock": {
+          "42": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Café ",
+        "stock": {
+          "42": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Gris medio",
+        "stock": {
+          "42": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Oxford",
+        "stock": {
+          "42": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Grus claro",
+        "stock": {
+          "42": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
