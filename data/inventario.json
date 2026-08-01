@@ -2117,14 +2117,14 @@
         }
       },
       {
-        "color": "Color #10",
+        "color": "Verde seco",
         "stock": {
           "CH": {
             "exhibido": 0,
             "bodega": 0
           },
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
@@ -2132,7 +2132,7 @@
             "bodega": 0
           },
           "XG": {
-            "exhibido": 0,
+            "exhibido": 2,
             "bodega": 0
           }
         }
