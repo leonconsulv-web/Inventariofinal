@@ -8,5 +8,15 @@
     "abonado": 30.0,
     "restante": 30.0,
     "estado": "Pendiente"
+  },
+  {
+    "id": "AP_20260802_015357",
+    "fecha": "2026-08-02 01:53:57",
+    "cliente": "Gaby",
+    "concepto": "Prueba para gabi (1 pza) - Rojo - Talla S",
+    "total": 100.0,
+    "abonado": 20.0,
+    "restante": 80.0,
+    "estado": "Pendiente"
   }
 ]
