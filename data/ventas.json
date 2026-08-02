@@ -34,5 +34,17 @@
     "precio_venta": 230.0,
     "categoria": "Shorts",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-02T01:51:46.489521",
+    "producto_id": "PROD_20260802_014716_875003",
+    "producto": "🔄 Cambio de Talla: Entregado (Prueba para gabi (Rojo / Talla XG)) ➔ Devuelto (Prueba para gabi (Rojo / Talla S))",
+    "talla": "XG",
+    "color": "Rojo",
+    "cantidad": 1,
+    "precio_sugerido": 0.0,
+    "precio_venta": 10.0,
+    "categoria": "Shorts",
+    "ubicacion_venta": "Diferencia: $10.00"
   }
 ]
