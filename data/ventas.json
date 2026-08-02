@@ -22,5 +22,17 @@
     "precio_venta": 80.0,
     "categoria": "Chamarras",
     "ubicacion_venta": "Bodega"
+  },
+  {
+    "fecha": "2026-08-02T01:48:30.912071",
+    "producto_id": "PROD_20260802_014716_875003",
+    "producto": "Prueba para gabi",
+    "talla": "S",
+    "color": "Rojo",
+    "cantidad": 1,
+    "precio_sugerido": 250.0,
+    "precio_venta": 230.0,
+    "categoria": "Shorts",
+    "ubicacion_venta": "Vitrina"
   }
 ]
