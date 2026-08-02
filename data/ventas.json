@@ -58,5 +58,17 @@
     "precio_venta": 20.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Anticipo (Restan $80.00)"
+  },
+  {
+    "fecha": "2026-08-02T01:54:55.472906",
+    "producto_id": "AP_20260802_015357",
+    "producto": "💵 Abono Apartado: Prueba para gabi (1 pza) - Rojo - Talla S (Gaby)",
+    "talla": "-",
+    "color": "-",
+    "cantidad": 1,
+    "precio_sugerido": 10.0,
+    "precio_venta": 10.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Abono (Restan $70.00)"
   }
 ]
