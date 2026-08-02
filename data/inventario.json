@@ -5521,7 +5521,7 @@
         "color": "Rojo",
         "stock": {
           "S": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           },
           "M": {
