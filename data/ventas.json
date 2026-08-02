@@ -46,5 +46,17 @@
     "precio_venta": 10.0,
     "categoria": "Shorts",
     "ubicacion_venta": "Diferencia: $10.00"
+  },
+  {
+    "fecha": "2026-08-02T01:53:57.108598",
+    "producto_id": "AP_20260802_015357",
+    "producto": "📑 Anticipo Apartado: Prueba para gabi (1 pza) - Rojo - Talla S (Gaby)",
+    "talla": "S",
+    "color": "Rojo",
+    "cantidad": 1,
+    "precio_sugerido": 20.0,
+    "precio_venta": 20.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Anticipo (Restan $80.00)"
   }
 ]
