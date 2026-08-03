@@ -274,5 +274,17 @@
     "precio_venta": 170.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-03T18:58:12.317547",
+    "producto_id": "PROD_20260801_052523_639895",
+    "producto": "Waffle",
+    "talla": "M",
+    "color": "Vino",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
