@@ -1103,7 +1103,7 @@
         "color": "Verde militar",
         "stock": {
           "XXG": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -1139,7 +1139,7 @@
         "color": "Azul petróleo ",
         "stock": {
           "XXG": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -1158,6 +1158,15 @@
         "stock": {
           "XXG": {
             "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #19",
+        "stock": {
+          "XXG": {
+            "exhibido": 0,
             "bodega": 0
           }
         }
