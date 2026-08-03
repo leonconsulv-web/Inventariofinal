@@ -670,5 +670,17 @@
     "precio_venta": 20.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Anticipo (Restan $230.00)"
+  },
+  {
+    "fecha": "2026-08-03T20:53:08.955179",
+    "producto_id": "AP_20260803_205236",
+    "producto": "💵 Abono Apartado: Prueba para gabi (1 pza) - Negro - Talla M (Vale pacheco)",
+    "talla": "-",
+    "color": "-",
+    "cantidad": 1,
+    "precio_sugerido": 100.0,
+    "precio_venta": 100.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Abono (Restan $130.00)"
   }
 ]
