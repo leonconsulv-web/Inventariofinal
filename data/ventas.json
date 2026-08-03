@@ -214,5 +214,17 @@
     "precio_venta": 95.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-03T18:54:03.205004",
+    "producto_id": "PROD_20260801_053558_224627",
+    "producto": "Waffle",
+    "talla": "XG",
+    "color": "Azul cielo",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
