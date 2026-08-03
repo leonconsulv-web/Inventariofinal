@@ -154,5 +154,17 @@
     "precio_venta": 139.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-03T18:40:47.630593",
+    "producto_id": "PROD_20260801_215912_999189",
+    "producto": "Cargo",
+    "talla": "28",
+    "color": "Caqui",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Jeans",
+    "ubicacion_venta": "Vitrina"
   }
 ]
