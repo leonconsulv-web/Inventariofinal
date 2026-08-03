@@ -18,5 +18,15 @@
     "abonado": 30.0,
     "restante": 70.0,
     "estado": "Pendiente"
+  },
+  {
+    "id": "AP_20260803_205236",
+    "fecha": "2026-08-03 20:52:36",
+    "cliente": "Vale pacheco",
+    "concepto": "Prueba para gabi (1 pza) - Negro - Talla M",
+    "total": 250.0,
+    "abonado": 20.0,
+    "restante": 230.0,
+    "estado": "Pendiente"
   }
 ]
