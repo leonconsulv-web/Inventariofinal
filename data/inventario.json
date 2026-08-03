@@ -1148,7 +1148,7 @@
         "color": "Tabaco",
         "stock": {
           "XXG": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -1163,10 +1163,10 @@
         }
       },
       {
-        "color": "Color #19",
+        "color": "Cemento",
         "stock": {
           "XXG": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
