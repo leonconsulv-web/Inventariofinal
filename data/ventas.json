@@ -442,5 +442,17 @@
     "precio_venta": 330.0,
     "categoria": "Suéteres",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-03T19:16:53.622911",
+    "producto_id": "PROD_20260801_052523_639895",
+    "producto": "Waffle",
+    "talla": "M",
+    "color": "Azul cielo",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
