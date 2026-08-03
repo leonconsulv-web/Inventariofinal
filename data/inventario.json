@@ -5566,11 +5566,11 @@
         "color": "Rojo",
         "stock": {
           "S": {
-            "exhibido": 0,
+            "exhibido": 2,
             "bodega": 0
           },
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
