@@ -658,5 +658,17 @@
     "precio_venta": 0.0,
     "categoria": "Shorts",
     "ubicacion_venta": "Cambio sin costo ($0.00)"
+  },
+  {
+    "fecha": "2026-08-03T20:52:36.763178",
+    "producto_id": "AP_20260803_205236",
+    "producto": "📑 Anticipo Apartado: Prueba para gabi (1 pza) - Negro - Talla M (Vale pacheco)",
+    "talla": "M",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 20.0,
+    "precio_venta": 20.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Anticipo (Restan $230.00)"
   }
 ]
