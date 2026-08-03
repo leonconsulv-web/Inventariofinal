@@ -5843,5 +5843,53 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260803_200037_486671",
+    "Categoria": "Chamarras",
+    "Producto": "Mercado",
+    "Precio_Sugerido": 389.0,
+    "Precio_Venta": 389.0,
+    "Tallas": [
+      "S",
+      "M",
+      "G"
+    ],
+    "Variantes": [
+      {
+        "color": "Marino",
+        "stock": {
+          "S": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Negro",
+        "stock": {
+          "S": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
