@@ -1929,6 +1929,24 @@
             "bodega": 0
           }
         }
+      },
+      {
+        "color": "Azul cielo",
+        "stock": {
+          "XG": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #4",
+        "stock": {
+          "XG": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
       }
     ]
   },
