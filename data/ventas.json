@@ -178,5 +178,17 @@
     "precio_venta": 220.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-03T18:50:01.431319",
+    "producto_id": "PROD_20260801_064643_767617",
+    "producto": "T30",
+    "talla": "30",
+    "color": "Verde oscuro ",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Vitrina"
   }
 ]
