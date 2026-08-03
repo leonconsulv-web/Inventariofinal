@@ -526,5 +526,17 @@
     "precio_venta": 520.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-03T19:26:21.185080",
+    "producto_id": "PROD_20260731_184657_367258",
+    "producto": "Polo",
+    "talla": "M",
+    "color": "Blanco",
+    "cantidad": 2,
+    "precio_sugerido": 270.0,
+    "precio_venta": 260.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
