@@ -106,5 +106,17 @@
     "precio_venta": 135.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-03T18:37:11.219149",
+    "producto_id": "PROD_20260801_214804_719643",
+    "producto": "Confort",
+    "talla": "28",
+    "color": "Azul oscuro",
+    "cantidad": 1,
+    "precio_sugerido": 275.0,
+    "precio_venta": 275.0,
+    "categoria": "Jeans",
+    "ubicacion_venta": "Vitrina"
   }
 ]
