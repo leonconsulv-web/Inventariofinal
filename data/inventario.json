@@ -5943,5 +5943,26 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260803_200302_707583",
+    "Categoria": "Chamarras",
+    "Producto": "Ether fury",
+    "Precio_Sugerido": 469.0,
+    "Precio_Venta": 469.0,
+    "Tallas": [
+      "M"
+    ],
+    "Variantes": [
+      {
+        "color": "Negro",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
