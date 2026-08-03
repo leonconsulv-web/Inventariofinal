@@ -2988,6 +2988,15 @@
             "bodega": 0
           }
         }
+      },
+      {
+        "color": "Color #18",
+        "stock": {
+          "36": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
       }
     ]
   },
