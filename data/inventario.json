@@ -2076,7 +2076,7 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
@@ -2093,7 +2093,7 @@
         "color": "Blanca",
         "stock": {
           "CH": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           },
           "M": {
@@ -2114,7 +2114,7 @@
         "color": "Azul rey",
         "stock": {
           "CH": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "M": {
@@ -2139,7 +2139,7 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           },
           "G": {
