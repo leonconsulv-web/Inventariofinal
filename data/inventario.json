@@ -5683,5 +5683,35 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260803_195153_924104",
+    "Categoria": "Chamarras",
+    "Producto": "Calvin permeable XL",
+    "Precio_Sugerido": 459.0,
+    "Precio_Venta": 459.0,
+    "Tallas": [
+      "XG"
+    ],
+    "Variantes": [
+      {
+        "color": "Café ",
+        "stock": {
+          "XG": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul marino",
+        "stock": {
+          "XG": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
