@@ -202,5 +202,17 @@
     "precio_venta": 95.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-03T18:52:55.145984",
+    "producto_id": "PROD_20260801_222435_654986",
+    "producto": "De color manga larga",
+    "talla": "UNI",
+    "color": "Azul marino",
+    "cantidad": 1,
+    "precio_sugerido": 95.0,
+    "precio_venta": 95.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
