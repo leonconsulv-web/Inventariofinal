@@ -634,5 +634,17 @@
     "precio_venta": 220.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-03T20:47:49.804307",
+    "producto_id": "PROD_20260802_014716_875003",
+    "producto": "Prueba para gabi",
+    "talla": "M",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 250.0,
+    "precio_venta": 0.0,
+    "categoria": "Shorts",
+    "ubicacion_venta": "Vitrina"
   }
 ]
