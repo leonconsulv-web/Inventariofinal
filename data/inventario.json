@@ -5964,5 +5964,26 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260803_200341_141138",
+    "Categoria": "Chamarras",
+    "Producto": "Ether reflejante",
+    "Precio_Sugerido": 389.0,
+    "Precio_Venta": 389.0,
+    "Tallas": [
+      "S"
+    ],
+    "Variantes": [
+      {
+        "color": "Gris",
+        "stock": {
+          "S": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
