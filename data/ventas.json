@@ -94,5 +94,17 @@
     "precio_venta": 95.0,
     "categoria": "Ofertas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-03T18:36:31.718466",
+    "producto_id": "PROD_20260731_184657_367258",
+    "producto": "Polo",
+    "talla": "G",
+    "color": "Blanco",
+    "cantidad": 1,
+    "precio_sugerido": 135.0,
+    "precio_venta": 135.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
