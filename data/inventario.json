@@ -1103,7 +1103,7 @@
         "color": "Verde militar",
         "stock": {
           "XXG": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           }
         }
