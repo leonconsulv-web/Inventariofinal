@@ -382,5 +382,17 @@
     "precio_venta": 200.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-03T19:06:38.497413",
+    "producto_id": "PROD_20260731_221128_097174",
+    "producto": "Polos XXL",
+    "talla": "XXG",
+    "color": "Azul acero",
+    "cantidad": 1,
+    "precio_sugerido": 210.0,
+    "precio_venta": 200.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
