@@ -6166,5 +6166,26 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260803_203328_122593",
+    "Categoria": "Jeans",
+    "Producto": "Jogger",
+    "Precio_Sugerido": 220.0,
+    "Precio_Venta": 220.0,
+    "Tallas": [
+      "28"
+    ],
+    "Variantes": [
+      {
+        "color": "Camuflaje",
+        "stock": {
+          "28": {
+            "exhibido": 4,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
