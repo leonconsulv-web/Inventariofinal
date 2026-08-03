@@ -358,5 +358,17 @@
     "precio_venta": 290.0,
     "categoria": "Chalecos",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-03T19:05:28.847486",
+    "producto_id": "PROD_20260801_190642_565357",
+    "producto": "Camisa económica ",
+    "talla": "M",
+    "color": "Varios",
+    "cantidad": 1,
+    "precio_sugerido": 199.0,
+    "precio_venta": 199.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
