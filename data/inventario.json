@@ -5891,5 +5891,57 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260803_200215_269736",
+    "Categoria": "Chamarras",
+    "Producto": "Ether doble vista",
+    "Precio_Sugerido": 499.0,
+    "Precio_Venta": 499.0,
+    "Tallas": [
+      "M",
+      "G"
+    ],
+    "Variantes": [
+      {
+        "color": "Negro",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Petróleo ",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #3",
+        "stock": {
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
