@@ -166,5 +166,17 @@
     "precio_venta": 220.0,
     "categoria": "Jeans",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-03T18:49:32.478190",
+    "producto_id": "PROD_20260801_064022_046291",
+    "producto": "T28",
+    "talla": "28",
+    "color": "Oxford oscuro",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Vitrina"
   }
 ]
