@@ -466,5 +466,17 @@
     "precio_venta": 159.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-03T19:22:16.544778",
+    "producto_id": "PROD_20260801_065749_649710",
+    "producto": "T34",
+    "talla": "34",
+    "color": "Casimir ($269)",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 260.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Vitrina"
   }
 ]
