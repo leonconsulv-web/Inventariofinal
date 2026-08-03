@@ -490,5 +490,17 @@
     "precio_venta": 240.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-03T19:23:08.581795",
+    "producto_id": "PROD_20260801_065749_649710",
+    "producto": "T34",
+    "talla": "34",
+    "color": "Arena",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 240.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Vitrina"
   }
 ]
