@@ -5566,7 +5566,7 @@
         "color": "Rojo",
         "stock": {
           "S": {
-            "exhibido": 2,
+            "exhibido": 1,
             "bodega": 0
           },
           "M": {
@@ -5591,7 +5591,7 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
