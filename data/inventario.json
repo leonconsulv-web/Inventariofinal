@@ -5584,14 +5584,14 @@
         }
       },
       {
-        "color": "Color #2",
+        "color": "Negro",
         "stock": {
           "S": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
