@@ -190,5 +190,17 @@
     "precio_venta": 220.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-03T18:51:03.191440",
+    "producto_id": "PROD_20260801_222435_654986",
+    "producto": "De color manga larga",
+    "talla": "UNI",
+    "color": "Azul medio",
+    "cantidad": 1,
+    "precio_sugerido": 95.0,
+    "precio_venta": 95.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
