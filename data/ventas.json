@@ -286,5 +286,17 @@
     "precio_venta": 220.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-03T18:59:16.459774",
+    "producto_id": "PROD_20260801_062018_927740",
+    "producto": "Deportiva ",
+    "talla": "M",
+    "color": "Oxford",
+    "cantidad": 1,
+    "precio_sugerido": 139.0,
+    "precio_venta": 131.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
