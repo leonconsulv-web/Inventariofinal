@@ -5795,5 +5795,53 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260803_195735_246132",
+    "Categoria": "Chamarras",
+    "Producto": "Repelente XL",
+    "Precio_Sugerido": 399.0,
+    "Precio_Venta": 399.0,
+    "Tallas": [
+      "XG"
+    ],
+    "Variantes": [
+      {
+        "color": "Azul Marino",
+        "stock": {
+          "XG": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Negro ",
+        "stock": {
+          "XG": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Oxford",
+        "stock": {
+          "XG": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Tricolor",
+        "stock": {
+          "XG": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
