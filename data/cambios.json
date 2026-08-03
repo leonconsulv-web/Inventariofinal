@@ -26,5 +26,12 @@
     "entregado": "Prueba para gabi (Rojo / Talla XG)",
     "diferencia": 10.0,
     "motivo": ""
+  },
+  {
+    "fecha": "2026-08-03 20:50:47",
+    "devuelto": "Prueba para gabi (Negro / Talla M)",
+    "entregado": "Prueba para gabi (Rojo / Talla S)",
+    "diferencia": 0.0,
+    "motivo": ""
   }
 ]
