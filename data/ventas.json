@@ -322,5 +322,17 @@
     "precio_venta": 220.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-03T19:03:02.553517",
+    "producto_id": "PROD_20260801_224623_542700",
+    "producto": "Cierre completo",
+    "talla": "XG",
+    "color": "Arena",
+    "cantidad": 1,
+    "precio_sugerido": 88.0,
+    "precio_venta": 380.0,
+    "categoria": "Suéteres",
+    "ubicacion_venta": "Vitrina"
   }
 ]
