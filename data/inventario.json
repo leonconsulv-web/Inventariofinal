@@ -2943,7 +2943,16 @@
         }
       },
       {
-        "color": "Color #15",
+        "color": "Blanco",
+        "stock": {
+          "34": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #16",
         "stock": {
           "34": {
             "exhibido": 0,
