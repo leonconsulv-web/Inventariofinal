@@ -2620,6 +2620,15 @@
             "bodega": 0
           }
         }
+      },
+      {
+        "color": "Color #13",
+        "stock": {
+          "30": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
       }
     ]
   },
