@@ -3048,7 +3048,7 @@
         "color": "Negro",
         "stock": {
           "36": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -3057,7 +3057,7 @@
         "color": "Arena",
         "stock": {
           "36": {
-            "exhibido": 2,
+            "exhibido": 3,
             "bodega": 0
           }
         }
