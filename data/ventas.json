@@ -1066,5 +1066,17 @@
     "precio_venta": 170.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-04 17:08:06",
+    "producto_id": "PROD_20260804_170549_699167",
+    "producto": "Sacos",
+    "talla": "38",
+    "color": "Negro ",
+    "cantidad": 1,
+    "precio_sugerido": 690.0,
+    "precio_venta": 680.0,
+    "categoria": "Sacos",
+    "ubicacion_venta": "Vitrina"
   }
 ]
