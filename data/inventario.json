@@ -1991,6 +1991,15 @@
             "bodega": 0
           }
         }
+      },
+      {
+        "color": "Color #5",
+        "stock": {
+          "XG": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
       }
     ]
   },
