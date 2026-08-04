@@ -6364,5 +6364,26 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260804_005850_852151",
+    "Categoria": "Chamarras",
+    "Producto": "Mezclilla",
+    "Precio_Sugerido": 11111.0,
+    "Precio_Venta": 0.0,
+    "Tallas": [
+      "XG"
+    ],
+    "Variantes": [
+      {
+        "color": "Negro",
+        "stock": {
+          "XG": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
