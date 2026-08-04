@@ -2763,7 +2763,7 @@
         "color": "Negro",
         "stock": {
           "32": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -2796,10 +2796,10 @@
         }
       },
       {
-        "color": "Color #19",
+        "color": "Blanco",
         "stock": {
           "32": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
