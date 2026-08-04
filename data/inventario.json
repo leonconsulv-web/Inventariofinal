@@ -919,7 +919,7 @@
         "color": "Café ",
         "stock": {
           "XG": {
-            "exhibido": 2,
+            "exhibido": 3,
             "bodega": 0
           }
         }
@@ -1001,6 +1001,15 @@
         "stock": {
           "XG": {
             "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #27",
+        "stock": {
+          "XG": {
+            "exhibido": 0,
             "bodega": 0
           }
         }
