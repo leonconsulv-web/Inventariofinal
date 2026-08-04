@@ -91,7 +91,7 @@ def load_json(filepath):
     if "categorias" in filepath:
         return DEFAULT_CATEGORIES
     elif "caja" in filepath:
-        return {"fondo_caja": 0.0}
+        return {"fondo_caja": 0.0, "ultima_fecha_corte": "2000-01-01 00:00:00"}
     else:
         return []
 
@@ -162,7 +162,7 @@ def init_storage():
     if not os.path.exists(SALES_FILE):
         save_json(SALES_FILE, [])
     if not os.path.exists(CAJA_FILE):
-        save_json(CAJA_FILE, {"fondo_caja": 0.0})
+        save_json(CAJA_FILE, {"fondo_caja": 0.0, "ultima_fecha_corte": "2000-01-01 00:00:00"})
     if not os.path.exists(APARTADOS_FILE):
         save_json(APARTADOS_FILE, [])
     if not os.path.exists(CAMBIOS_FILE):
@@ -823,15 +823,17 @@ elif st.session_state.vista == "ver_inventario":
 # VISTA 5: CORTE DE CAJA Y VENTAS DIARIAS
 # ==========================================
 elif st.session_state.vista == "caja":
-    st.subheader("💰 Corte de Caja y Ventas Diarias")
+    st.subheader("💰 Corte de Caja y Ventas del Turno Actual")
     
     fondo = st.session_state.caja.get("fondo_caja", 0.0)
+    ultima_corte_str = st.session_state.caja.get("ultima_fecha_corte", "2000-01-01 00:00:00")
     
     if st.session_state.ventas:
         df_v = pd.DataFrame(st.session_state.ventas)
         df_v['fecha_dt'] = pd.to_datetime(df_v['fecha'])
-        hoy_local = obtener_hora_local().date()
-        ventas_hoy = df_v[df_v['fecha_dt'].dt.date == hoy_local]
+        
+        ultima_corte_dt = pd.to_datetime(ultima_corte_str)
+        ventas_hoy = df_v[df_v['fecha_dt'] > ultima_corte_dt]
         
         total_ventas_hoy = ventas_hoy['precio_venta'].sum() if not ventas_hoy.empty else 0.0
         total_sugerido_hoy = ventas_hoy['precio_sugerido'].sum() if not ventas_hoy.empty else 0.0
@@ -847,43 +849,46 @@ elif st.session_state.vista == "caja":
 
     k1, k2, k3, k4 = st.columns(4)
     k1.metric("Fondo Inicial", f"${fondo:,.2f}")
-    k2.metric("Ventas / Ingresos de Hoy", f"${total_ventas_hoy:,.2f}")
+    k2.metric("Ventas / Ingresos del Turno", f"${total_ventas_hoy:,.2f}")
     k3.metric("Total Esperado en Caja", f"${(fondo + total_ventas_hoy):,.2f}")
     k4.metric("Descuentos / Regateo", f"-${regateo_hoy:,.2f}")
 
-    st.caption(f"Movimientos/Piezas del día: **{cant_piezas_hoy}**")
+    if ultima_corte_str != "2000-01-01 00:00:00":
+        st.caption(f"⏱️ Último corte registrado el: **{ultima_corte_str}** | Movimientos acumulados desde ese corte: **{cant_piezas_hoy}**")
 
     st.divider()
 
-    st.markdown("### 🌅 Cierre de Caja / Preparar Día Siguiente")
+    st.markdown("### 🌅 Cierre de Turno / Realizar Corte de Caja")
     
     if st.session_state.get("admin_authenticated", False):
-        with st.expander("🔑 Realizar Corte de Caja y Ajustar Fondo de Mañana", expanded=False):
-            st.info("Esta acción conserva **todo** el historial de ventas anteriores intacto para tus consultas y exportaciones a Excel.")
+        with st.expander("🔑 Realizar Corte de Caja y Reiniciar Ventas del Turno", expanded=True):
+            st.info("Al presionar este botón se guardará la hora del corte, la consola de ventas se reiniciará a **$0.00** y todo el historial quedará archivado de forma segura.")
             nuevo_fondo_input = st.number_input(
-                "Monto de Fondo de Caja para el día siguiente ($):", 
+                "Monto de Fondo de Caja para el siguiente turno/día ($):", 
                 value=float(fondo),
                 step=50.0,
                 key="cierre_nuevo_fondo"
             )
-            confirmar_cierre = st.checkbox("Confirmo que deseo realizar el corte de caja y fijar el nuevo fondo inicial.")
+            confirmar_cierre = st.checkbox("Confirmo que deseo realizar el corte de caja y reiniciar la consola a $0.00.")
             
-            if st.button("🔒 Realizar Corte de Caja y Reiniciar Día", type="primary"):
+            if st.button("🔒 Realizar Corte de Caja y Reiniciar Turno", type="primary"):
                 if confirmar_cierre:
+                    ahora_str = obtener_hora_local().strftime("%Y-%m-%d %H:%M:%S")
                     st.session_state.caja["fondo_caja"] = nuevo_fondo_input
+                    st.session_state.caja["ultima_fecha_corte"] = ahora_str
                     sync_data()
-                    notificar(f"¡Corte de caja realizado con éxito! Fondo fijado en ${nuevo_fondo_input:,.2f}. El historial de días anteriores sigue guardado.")
+                    notificar(f"¡Corte de caja realizado! Consola reiniciada a $0.00. Nuevo fondo: ${nuevo_fondo_input:,.2f}.")
                     st.rerun()
                 else:
                     st.error("Por favor marca la casilla de confirmación antes de continuar.")
     else:
-        st.info("🔒 *La modificación del fondo de caja y la realización del corte diario están reservadas exclusivamente para la Administradora con contraseña.*")
+        st.info("🔒 *La modificación del fondo de caja y la realización del corte están reservadas exclusivamente para la Administradora con contraseña.*")
 
     st.divider()
 
-    st.markdown("### 📊 Historial de Ventas / Bitácora Diaria y Descarga en Excel")
+    st.markdown("### 📊 Historial de Ventas / Bitácora y Descarga en Excel")
 
-    tab_hoy, tab_hist = st.tabs(["📅 Ventas / Ingresos del Día de Hoy", "📜 Historial Completo / Días Anteriores"])
+    tab_hoy, tab_hist = st.tabs(["📅 Ventas del Turno Actual", "📜 Historial Completo (Todos los Turnos)"])
 
     with tab_hoy:
         if not ventas_hoy.empty:
@@ -891,19 +896,19 @@ elif st.session_state.vista == "caja":
                 ventas_hoy[['fecha', 'producto', 'categoria', 'talla', 'color', 'cantidad', 'precio_sugerido', 'precio_venta', 'ubicacion_venta']], 
                 use_container_width=True
             )
-            bytes_data_hoy, ext_h, mime_h = generar_excel_seguro(ventas_hoy, "Ventas_Hoy")
+            bytes_data_hoy, ext_h, mime_h = generar_excel_seguro(ventas_hoy, "Ventas_Turno")
             st.download_button(
-                label=f"📥 Descargar Ventas del Día en Excel ({ext_h.upper()})",
+                label=f"📥 Descargar Ventas del Turno en Excel ({ext_h.upper()})",
                 data=bytes_data_hoy,
-                file_name=f"Ventas_Hoy_{obtener_hora_local().strftime('%Y%m%d')}.{ext_h}",
+                file_name=f"Ventas_Turno_{obtener_hora_local().strftime('%Y%m%d_%H%M%S')}.{ext_h}",
                 mime=mime_h
             )
         else:
-            st.info("Aún no hay ventas o movimientos registrados el día de hoy.")
+            st.info("Consola en $0.00. Aún no hay ventas o movimientos registrados desde el último corte.")
 
     with tab_hist:
         if not df_v.empty:
-            st.markdown("##### Filtrar Registros")
+            st.markdown("##### Filtrar Registros por Fecha")
             fechas_disponibles = sorted(df_v['fecha_dt'].dt.date.unique(), reverse=True)
             
             filtro_fecha = st.multiselect(
