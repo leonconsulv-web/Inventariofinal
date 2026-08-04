@@ -964,7 +964,7 @@
         "color": "Verde militar",
         "stock": {
           "XG": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -1006,7 +1006,16 @@
         }
       },
       {
-        "color": "Color #27",
+        "color": "Palo de rosa",
+        "stock": {
+          "XG": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #28",
         "stock": {
           "XG": {
             "exhibido": 0,
