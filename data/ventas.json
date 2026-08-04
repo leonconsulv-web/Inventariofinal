@@ -922,5 +922,17 @@
     "precio_venta": 270.0,
     "categoria": "Jeans",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-04T20:12:21.597571",
+    "producto_id": "PROD_20260801_214804_719643",
+    "producto": "Confort",
+    "talla": "34",
+    "color": "Azul medio",
+    "cantidad": 1,
+    "precio_sugerido": 275.0,
+    "precio_venta": 275.0,
+    "categoria": "Jeans",
+    "ubicacion_venta": "Vitrina"
   }
 ]
