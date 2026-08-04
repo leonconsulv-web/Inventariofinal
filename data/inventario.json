@@ -3651,19 +3651,19 @@
         "color": "Varios",
         "stock": {
           "CH": {
-            "exhibido": 1,
+            "exhibido": 6,
             "bodega": 0
           },
           "M": {
-            "exhibido": 1,
+            "exhibido": 8,
             "bodega": 0
           },
           "G": {
-            "exhibido": 2,
+            "exhibido": 12,
             "bodega": 0
           },
           "XG": {
-            "exhibido": 5,
+            "exhibido": 7,
             "bodega": 0
           }
         }
