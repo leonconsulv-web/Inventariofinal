@@ -6585,5 +6585,26 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260804_023045_467094",
+    "Categoria": "Niño",
+    "Producto": "Short",
+    "Precio_Sugerido": 50.0,
+    "Precio_Venta": 50.0,
+    "Tallas": [
+      "VARIAS"
+    ],
+    "Variantes": [
+      {
+        "color": "Varios",
+        "stock": {
+          "VARIAS": {
+            "exhibido": 10,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
