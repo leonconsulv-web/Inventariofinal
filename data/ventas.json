@@ -946,5 +946,17 @@
     "precio_venta": 135.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-04 15:30:35",
+    "producto_id": "PROD_20260801_172200_486721",
+    "producto": "🔄 Cambio de Producto: Entregado (T36 (Oxford / Talla 36)) ➔ Devuelto (T34 (Oxford / Talla 34))",
+    "talla": "36",
+    "color": "Oxford",
+    "cantidad": 1,
+    "precio_sugerido": 0.0,
+    "precio_venta": 0.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Cambio sin costo ($0.00)"
   }
 ]
