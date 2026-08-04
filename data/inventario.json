@@ -6414,5 +6414,41 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260804_020339_350633",
+    "Categoria": "Playeras",
+    "Producto": "Pedrería ",
+    "Precio_Sugerido": 8888.0,
+    "Precio_Venta": 8888.0,
+    "Tallas": [
+      "S",
+      "M",
+      "G",
+      "XG"
+    ],
+    "Variantes": [
+      {
+        "color": "Negro",
+        "stock": {
+          "S": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "XG": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
