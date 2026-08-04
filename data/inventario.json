@@ -168,7 +168,7 @@
         "color": "Vino",
         "stock": {
           "S": {
-            "exhibido": 2,
+            "exhibido": 1,
             "bodega": 0
           },
           "M": {
@@ -253,7 +253,7 @@
         "color": "Cereza",
         "stock": {
           "S": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           },
           "M": {
