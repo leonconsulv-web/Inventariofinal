@@ -994,5 +994,17 @@
     "precio_venta": 299.0,
     "categoria": "Chalecos",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-04 15:56:06",
+    "producto_id": "PROD_20260803_201656_960630",
+    "producto": "Mezclilla",
+    "talla": "M",
+    "color": "Gris",
+    "cantidad": 1,
+    "precio_sugerido": 0.0,
+    "precio_venta": 299.0,
+    "categoria": "Chalecos",
+    "ubicacion_venta": "Vitrina"
   }
 ]
