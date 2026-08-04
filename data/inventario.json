@@ -6501,5 +6501,53 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260804_021254_075607",
+    "Categoria": "Camisas",
+    "Producto": "Waffle",
+    "Precio_Sugerido": 220.0,
+    "Precio_Venta": 220.0,
+    "Tallas": [
+      "M"
+    ],
+    "Variantes": [
+      {
+        "color": "Beige",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul marino ",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Verde militar",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Olivo",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
