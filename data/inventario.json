@@ -6480,5 +6480,26 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260804_021140_244046",
+    "Categoria": "Camisas",
+    "Producto": "Waffle",
+    "Precio_Sugerido": 220.0,
+    "Precio_Venta": 220.0,
+    "Tallas": [
+      "CH"
+    ],
+    "Variantes": [
+      {
+        "color": "Azul marino",
+        "stock": {
+          "CH": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
