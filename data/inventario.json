@@ -6208,5 +6208,83 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260804_000036_098761",
+    "Categoria": "Playeras",
+    "Producto": "Polo manga larga",
+    "Precio_Sugerido": 199.0,
+    "Precio_Venta": 199.0,
+    "Tallas": [
+      "M",
+      "G"
+    ],
+    "Variantes": [
+      {
+        "color": "Azul petróleo ",
+        "stock": {
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Blanco",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Verde militar",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Verde cemento",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Verde olivo",
+        "stock": {
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
