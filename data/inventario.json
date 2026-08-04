@@ -6606,5 +6606,121 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260804_170549_699167",
+    "Categoria": "Sacos",
+    "Producto": "Sacos",
+    "Precio_Sugerido": 690.0,
+    "Precio_Venta": 690.0,
+    "Tallas": [
+      "36",
+      "38",
+      "40",
+      "42",
+      "44"
+    ],
+    "Variantes": [
+      {
+        "color": "Azul marino",
+        "stock": {
+          "36": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "38": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "40": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "42": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "44": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Oxford",
+        "stock": {
+          "36": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "38": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "40": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "42": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "44": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul eléctrico ",
+        "stock": {
+          "36": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "38": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "40": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "42": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "44": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Negro ",
+        "stock": {
+          "36": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "38": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "40": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "42": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "44": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
