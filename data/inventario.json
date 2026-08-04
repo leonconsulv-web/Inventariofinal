@@ -70,7 +70,7 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           },
           "G": {
@@ -80,14 +80,14 @@
         }
       },
       {
-        "color": "Roja",
+        "color": "Rojo",
         "stock": {
           "S": {
             "exhibido": 2,
             "bodega": 0
           },
           "M": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           },
           "G": {
@@ -168,7 +168,7 @@
         "color": "Vino",
         "stock": {
           "S": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           },
           "M": {
@@ -189,7 +189,7 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 0,
+            "exhibido": 2,
             "bodega": 0
           },
           "G": {
@@ -359,7 +359,7 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 2,
+            "exhibido": 3,
             "bodega": 0
           },
           "G": {
@@ -393,7 +393,7 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 2,
+            "exhibido": 3,
             "bodega": 0
           },
           "G": {
@@ -495,7 +495,7 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 2,
+            "exhibido": 3,
             "bodega": 0
           },
           "G": {
@@ -546,7 +546,7 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
@@ -563,7 +563,7 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
@@ -580,7 +580,7 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           },
           "G": {
@@ -641,14 +641,14 @@
         }
       },
       {
-        "color": "Verde Océano",
+        "color": "Océano",
         "stock": {
           "S": {
             "exhibido": 0,
             "bodega": 0
           },
           "M": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           },
           "G": {
@@ -738,6 +738,23 @@
           },
           "G": {
             "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #44",
+        "stock": {
+          "S": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
             "bodega": 0
           }
         }
