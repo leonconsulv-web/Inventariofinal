@@ -1207,10 +1207,10 @@
         }
       },
       {
-        "color": "Color #20",
+        "color": "Menta",
         "stock": {
           "XXG": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
