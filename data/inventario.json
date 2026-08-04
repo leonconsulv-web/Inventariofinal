@@ -1984,7 +1984,7 @@
         }
       },
       {
-        "color": "Nergo",
+        "color": "Negro",
         "stock": {
           "XG": {
             "exhibido": 1,
@@ -1993,10 +1993,10 @@
         }
       },
       {
-        "color": "Color #5",
+        "color": "Azul marino",
         "stock": {
           "XG": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
