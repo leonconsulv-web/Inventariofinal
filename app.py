@@ -2,10 +2,24 @@ import streamlit as st
 import pandas as pd
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 import io
 import base64
 import requests
+
+try:
+    import zoneinfo
+except ImportError:
+    zoneinfo = None
+
+def obtener_hora_local():
+    """Obtiene la fecha y hora actual en la zona horaria de México (America/Mexico_City / UTC-6)."""
+    if zoneinfo:
+        try:
+            return datetime.now(zoneinfo.ZoneInfo("America/Mexico_City"))
+        except Exception:
+            pass
+    return datetime.utcnow() - timedelta(hours=6)
 
 # ==========================================
 # CONFIGURACIÓN DE LA PÁGINA
@@ -200,7 +214,7 @@ def normalize_product(prod):
     precio_ven = float(prod.get("Precio_Venta") or prod.get("precio") or 0.0)
 
     return {
-        "ID": str(prod.get("ID", f"PROD_{datetime.now().strftime('%Y%m%d_%H%M%S_%f')}")),
+        "ID": str(prod.get("ID", f"PROD_{obtener_hora_local().strftime('%Y%m%d_%H%M%S_%f')}")),
         "Categoria": str(categoria),
         "Producto": str(nombre),
         "Precio_Sugerido": precio_sug,
@@ -403,7 +417,7 @@ if st.session_state.vista == "ventas":
                                 ubic_str = f"Vitrina: {desc_exh}, Bodega: {desc_bod}" if desc_exh > 0 and desc_bod > 0 else ("Vitrina" if desc_exh > 0 else "Bodega")
 
                                 nueva_venta = {
-                                    "fecha": datetime.now().isoformat(),
+                                    "fecha": obtener_hora_local().strftime("%Y-%m-%d %H:%M:%S"),
                                     "producto_id": prod["ID"],
                                     "producto": prod["Producto"],
                                     "talla": talla_sel,
@@ -554,21 +568,18 @@ elif st.session_state.vista == "cambios":
         elif not dev_manual and p_ent_obj and stock_ent_avail < cant_ent:
             st.error("No hay stock suficiente del producto a entregar.")
         else:
-            # 1. Reingresar stock del producto devuelto (si está en catálogo)
             if not dev_manual and p_dev_obj:
                 var_dev = next((v for v in p_dev_obj.get("Variantes", []) if v["color"] == col_dev_sel), None)
                 if var_dev and talla_dev_sel in var_dev.get("stock", {}):
                     key_s_dev = "exhibido" if dest_dev_stock == "Vitrina" else "bodega"
                     var_dev["stock"][talla_dev_sel][key_s_dev] += cant_dev
 
-            # 2. Descontar stock del producto entregado
             if p_ent_obj:
                 var_ent = next((v for v in p_ent_obj.get("Variantes", []) if v["color"] == col_ent_sel), None)
                 if var_ent and talla_ent_sel in var_ent.get("stock", {}):
                     key_s_ent = "exhibido" if orig_ent_stock == "Vitrina" else "bodega"
                     var_ent["stock"][talla_ent_sel][key_s_ent] -= cant_ent
 
-            # Clasificar el tipo específico de cambio para la bitácora
             if not dev_manual and p_dev_obj and p_ent_obj and p_dev_obj.get("ID") == p_ent_obj.get("ID"):
                 if talla_dev_sel != talla_ent_sel and col_dev_sel == col_ent_sel:
                     tipo_label = "🔄 Cambio de Talla"
@@ -579,9 +590,8 @@ elif st.session_state.vista == "cambios":
             else:
                 tipo_label = "🔄 Cambio de Producto"
 
-            # 3. Registro en el historial de Cambios
             registro_cambio = {
-                "fecha": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "fecha": obtener_hora_local().strftime("%Y-%m-%d %H:%M:%S"),
                 "devuelto": prod_dev_str,
                 "entregado": prod_ent_str,
                 "diferencia": diferencia_cobrada,
@@ -589,12 +599,11 @@ elif st.session_state.vista == "cambios":
             }
             st.session_state.cambios.append(registro_cambio)
 
-            # 4. Registro en la Bitácora / Ventas del Día (SIEMPRE APARECE, AUNQUE DIFERENCIA SEA $0)
             desc_dif = f"Diferencia: ${diferencia_cobrada:,.2f}" if diferencia_cobrada > 0 else "Cambio sin costo ($0.00)"
             cat_bitacora = p_ent_obj["Categoria"] if p_ent_obj else "Cambios"
             
             registro_venta_cambio = {
-                "fecha": datetime.now().isoformat(),
+                "fecha": obtener_hora_local().strftime("%Y-%m-%d %H:%M:%S"),
                 "producto_id": p_ent_obj["ID"] if p_ent_obj else "CAMBIO",
                 "producto": f"{tipo_label}: Entregado ({prod_ent_str}) ➔ Devuelto ({prod_dev_str})",
                 "talla": talla_ent_sel if p_ent_obj else "-",
@@ -676,16 +685,14 @@ elif st.session_state.vista == "apartados":
                 elif stock_ap_avail < cant_ap:
                     st.error("Stock insuficiente en el inventario para apartar esta prenda.")
                 else:
-                    # 1. Descontar stock
                     key_s_ap = "exhibido" if orig_ap_stock == "Vitrina" else "bodega"
                     var_ap["stock"][talla_ap_sel][key_s_ap] -= cant_ap
 
                     concepto_full = f"{p_ap_obj['Producto']} ({cant_ap} pza) - {col_ap_sel} - Talla {talla_ap_sel}"
                     
-                    # 2. Registrar en la tabla de Apartados
                     nuevo_ap = {
-                        "id": f"AP_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
-                        "fecha": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                        "id": f"AP_{obtener_hora_local().strftime('%Y%m%d_%H%M%S')}",
+                        "fecha": obtener_hora_local().strftime("%Y-%m-%d %H:%M:%S"),
                         "cliente": nom_cliente,
                         "concepto": concepto_full,
                         "total": precio_tot,
@@ -695,10 +702,9 @@ elif st.session_state.vista == "apartados":
                     }
                     st.session_state.apartados.append(nuevo_ap)
 
-                    # 3. Registrar Anticipo en Bitácora / Ventas del Día
                     if anticipo_ap > 0:
                         registro_venta_ap = {
-                            "fecha": datetime.now().isoformat(),
+                            "fecha": obtener_hora_local().strftime("%Y-%m-%d %H:%M:%S"),
                             "producto_id": nuevo_ap["id"],
                             "producto": f"📑 Anticipo Apartado: {concepto_full} ({nom_cliente})",
                             "talla": talla_ap_sel,
@@ -738,9 +744,8 @@ elif st.session_state.vista == "apartados":
                                     if ap["restante"] <= 0:
                                         ap["estado"] = "Liquidado"
                                     
-                                    # Registrar Abono en Bitácora / Ventas del Día
                                     registro_venta_abono = {
-                                        "fecha": datetime.now().isoformat(),
+                                        "fecha": obtener_hora_local().strftime("%Y-%m-%d %H:%M:%S"),
                                         "producto_id": ap.get("id", "ABONO"),
                                         "producto": f"💵 Abono Apartado: {ap.get('concepto')} ({ap.get('cliente')})",
                                         "talla": "-",
@@ -825,8 +830,8 @@ elif st.session_state.vista == "caja":
     if st.session_state.ventas:
         df_v = pd.DataFrame(st.session_state.ventas)
         df_v['fecha_dt'] = pd.to_datetime(df_v['fecha'])
-        hoy = datetime.now().date()
-        ventas_hoy = df_v[df_v['fecha_dt'].dt.date == hoy]
+        hoy_local = obtener_hora_local().date()
+        ventas_hoy = df_v[df_v['fecha_dt'].dt.date == hoy_local]
         
         total_ventas_hoy = ventas_hoy['precio_venta'].sum() if not ventas_hoy.empty else 0.0
         total_sugerido_hoy = ventas_hoy['precio_sugerido'].sum() if not ventas_hoy.empty else 0.0
@@ -890,7 +895,7 @@ elif st.session_state.vista == "caja":
             st.download_button(
                 label=f"📥 Descargar Ventas del Día en Excel ({ext_h.upper()})",
                 data=bytes_data_hoy,
-                file_name=f"Ventas_Hoy_{datetime.now().strftime('%Y%m%d')}.{ext_h}",
+                file_name=f"Ventas_Hoy_{obtener_hora_local().strftime('%Y%m%d')}.{ext_h}",
                 mime=mime_h
             )
         else:
@@ -921,7 +926,7 @@ elif st.session_state.vista == "caja":
             st.download_button(
                 label=f"📥 Descargar Ventas Filtradas/Histórico Completo ({ext_hist.upper()})",
                 data=bytes_data_hist,
-                file_name=f"Ventas_Historico_{datetime.now().strftime('%Y%m%d')}.{ext_hist}",
+                file_name=f"Ventas_Historico_{obtener_hora_local().strftime('%Y%m%d')}.{ext_hist}",
                 mime=mime_hist
             )
         else:
@@ -1064,7 +1069,7 @@ elif st.session_state.vista == "admin":
                         st.rerun()
                     else:
                         nuevo_p = {
-                            "ID": f"PROD_{datetime.now().strftime('%Y%m%d_%H%M%S_%f')}",
+                            "ID": f"PROD_{obtener_hora_local().strftime('%Y%m%d_%H%M%S_%f')}",
                             "Categoria": cat_sel,
                             "Producto": nombre_prod,
                             "Precio_Sugerido": float(p_sugerido),
@@ -1203,7 +1208,7 @@ elif st.session_state.vista == "admin":
                 st.download_button(
                     label=f"📥 Descargar Inventario ({ext.upper()})",
                     data=bytes_data,
-                    file_name=f"Inventario_{datetime.now().strftime('%Y%m%d')}.{ext}",
+                    file_name=f"Inventario_{obtener_hora_local().strftime('%Y%m%d')}.{ext}",
                     mime=mime
                 )
             else:
