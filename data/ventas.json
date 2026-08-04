@@ -1042,5 +1042,17 @@
     "precio_venta": 185.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-04 16:00:28",
+    "producto_id": "PROD_20260804_000036_098761",
+    "producto": "Polo manga larga",
+    "talla": "G",
+    "color": "Verde olivo",
+    "cantidad": 1,
+    "precio_sugerido": 199.0,
+    "precio_venta": 185.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
