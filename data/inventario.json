@@ -669,7 +669,7 @@
             "bodega": 0
           },
           "G": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           }
         }
@@ -784,7 +784,7 @@
         "color": "Azul acero",
         "stock": {
           "XG": {
-            "exhibido": 2,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -1969,7 +1969,7 @@
         "color": "Vino",
         "stock": {
           "XG": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           }
         }
@@ -2937,7 +2937,7 @@
         "color": "Oxford",
         "stock": {
           "34": {
-            "exhibido": 3,
+            "exhibido": 4,
             "bodega": 0
           }
         }
@@ -3012,7 +3012,7 @@
         "color": "Azul marino",
         "stock": {
           "36": {
-            "exhibido": 3,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -3039,7 +3039,7 @@
         "color": "Oxford",
         "stock": {
           "36": {
-            "exhibido": 4,
+            "exhibido": 3,
             "bodega": 0
           }
         }
@@ -3048,7 +3048,7 @@
         "color": "Chocolate ",
         "stock": {
           "36": {
-            "exhibido": 3,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -3474,7 +3474,7 @@
             "bodega": 0
           },
           "G": {
-            "exhibido": 15,
+            "exhibido": 14,
             "bodega": 0
           }
         }
@@ -6201,7 +6201,7 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           },
           "G": {
@@ -6243,7 +6243,7 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           },
           "G": {
@@ -6389,7 +6389,7 @@
         "color": "Blanco",
         "stock": {
           "M": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           },
           "G": {
@@ -6402,7 +6402,7 @@
         "color": "Verde militar",
         "stock": {
           "M": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           },
           "G": {
@@ -6432,7 +6432,7 @@
             "bodega": 0
           },
           "G": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           }
         }
@@ -6601,6 +6601,263 @@
         "stock": {
           "VARIAS": {
             "exhibido": 10,
+            "bodega": 0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "ID": "PROD_20260804_170549_699167",
+    "Categoria": "Sacos",
+    "Producto": "Sacos",
+    "Precio_Sugerido": 690.0,
+    "Precio_Venta": 690.0,
+    "Tallas": [
+      "36",
+      "38",
+      "40",
+      "42",
+      "44"
+    ],
+    "Variantes": [
+      {
+        "color": "Azul marino",
+        "stock": {
+          "36": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "38": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "40": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "42": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "44": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Oxford",
+        "stock": {
+          "36": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "38": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "40": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "42": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "44": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul eléctrico ",
+        "stock": {
+          "36": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "38": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "40": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "42": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "44": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Negro ",
+        "stock": {
+          "36": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "38": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "40": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "42": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "44": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "ID": "PROD_20260804_172035_505050",
+    "Categoria": "Chalecos",
+    "Producto": "De vestir",
+    "Precio_Sugerido": 195.0,
+    "Precio_Venta": 195.0,
+    "Tallas": [
+      "S",
+      "M",
+      "G",
+      "XG"
+    ],
+    "Variantes": [
+      {
+        "color": "Gris medio",
+        "stock": {
+          "S": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "XG": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul marino",
+        "stock": {
+          "S": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "XG": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Eléctrico ",
+        "stock": {
+          "S": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "XG": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Gris claro",
+        "stock": {
+          "S": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XG": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Negro",
+        "stock": {
+          "S": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 2,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "XG": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Cocoa",
+        "stock": {
+          "S": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "XG": {
+            "exhibido": 1,
             "bodega": 0
           }
         }
