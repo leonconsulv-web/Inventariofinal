@@ -1825,7 +1825,7 @@
         "color": "Palo de rosa",
         "stock": {
           "G": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           }
         }
