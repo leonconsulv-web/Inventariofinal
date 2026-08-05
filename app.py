@@ -830,13 +830,19 @@ elif st.session_state.vista == "caja":
     
     if st.session_state.ventas:
         df_v = pd.DataFrame(st.session_state.ventas)
-        df_v['fecha_dt'] = pd.to_datetime(df_v['fecha'])
+        if 'fecha' in df_v.columns and not df_v.empty:
+            fechas_limpias = df_v['fecha'].astype(str).str.replace('T', ' ').str.split('.').str[0]
+            df_v['fecha_dt'] = pd.to_datetime(fechas_limpias, errors='coerce')
+            
+            corte_limpio = str(ultima_corte_str).replace('T', ' ').split('.')[0]
+            ultima_corte_dt = pd.to_datetime(corte_limpio, errors='coerce')
+                
+            ventas_hoy = df_v[df_v['fecha_dt'] > ultima_corte_dt]
+        else:
+            ventas_hoy = pd.DataFrame()
         
-        ultima_corte_dt = pd.to_datetime(ultima_corte_str)
-        ventas_hoy = df_v[df_v['fecha_dt'] > ultima_corte_dt]
-        
-        total_ventas_hoy = ventas_hoy['precio_venta'].sum() if not ventas_hoy.empty else 0.0
-        total_sugerido_hoy = ventas_hoy['precio_sugerido'].sum() if not ventas_hoy.empty else 0.0
+        total_ventas_hoy = ventas_hoy['precio_venta'].sum() if not ventas_hoy.empty and 'precio_venta' in ventas_hoy.columns else 0.0
+        total_sugerido_hoy = ventas_hoy['precio_sugerido'].sum() if not ventas_hoy.empty and 'precio_sugerido' in ventas_hoy.columns else 0.0
         regateo_hoy = total_sugerido_hoy - total_ventas_hoy
         cant_piezas_hoy = ventas_hoy['cantidad'].sum() if not ventas_hoy.empty and 'cantidad' in ventas_hoy.columns else len(ventas_hoy)
     else:
@@ -892,8 +898,9 @@ elif st.session_state.vista == "caja":
 
     with tab_hoy:
         if not ventas_hoy.empty:
+            cols_m = [c for c in ['fecha', 'producto', 'categoria', 'talla', 'color', 'cantidad', 'precio_sugerido', 'precio_venta', 'ubicacion_venta'] if c in ventas_hoy.columns]
             st.dataframe(
-                ventas_hoy[['fecha', 'producto', 'categoria', 'talla', 'color', 'cantidad', 'precio_sugerido', 'precio_venta', 'ubicacion_venta']], 
+                ventas_hoy[cols_m], 
                 use_container_width=True
             )
             bytes_data_hoy, ext_h, mime_h = generar_excel_seguro(ventas_hoy, "Ventas_Turno")
@@ -907,9 +914,9 @@ elif st.session_state.vista == "caja":
             st.info("Consola en $0.00. Aún no hay ventas o movimientos registrados desde el último corte.")
 
     with tab_hist:
-        if not df_v.empty:
+        if not df_v.empty and 'fecha_dt' in df_v.columns:
             st.markdown("##### Filtrar Registros por Fecha")
-            fechas_disponibles = sorted(df_v['fecha_dt'].dt.date.unique(), reverse=True)
+            fechas_disponibles = sorted(df_v['fecha_dt'].dt.date.dropna().unique(), reverse=True)
             
             filtro_fecha = st.multiselect(
                 "Selecciona día(s) específico(s) (deja vacío para ver todo el historial acumulado):",
@@ -922,8 +929,9 @@ elif st.session_state.vista == "caja":
             else:
                 df_filtrado = df_v
 
+            cols_m_h = [c for c in ['fecha', 'producto', 'categoria', 'talla', 'color', 'cantidad', 'precio_sugerido', 'precio_venta', 'ubicacion_venta'] if c in df_filtrado.columns]
             st.dataframe(
-                df_filtrado[['fecha', 'producto', 'categoria', 'talla', 'color', 'cantidad', 'precio_sugerido', 'precio_venta', 'ubicacion_venta']], 
+                df_filtrado[cols_m_h], 
                 use_container_width=True
             )
 
