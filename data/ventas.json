@@ -1126,5 +1126,17 @@
     "precio_venta": 135.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-07 11:19:26",
+    "producto_id": "PROD_20260801_061207_448129",
+    "producto": "Waffle",
+    "talla": "XG",
+    "color": "Azul marino",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
