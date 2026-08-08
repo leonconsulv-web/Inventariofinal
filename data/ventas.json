@@ -1210,5 +1210,17 @@
     "precio_venta": 95.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-07 19:32:28",
+    "producto_id": "PROD_20260801_065328_509129",
+    "producto": "T32",
+    "talla": "32",
+    "color": "Casimir ($269)",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 260.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Vitrina"
   }
 ]
