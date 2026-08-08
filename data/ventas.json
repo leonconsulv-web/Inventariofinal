@@ -1198,5 +1198,17 @@
     "precio_venta": 130.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-07 19:30:43",
+    "producto_id": "PROD_20260801_063149_951164",
+    "producto": "Deportiva económica ",
+    "talla": "CH",
+    "color": "Perla",
+    "cantidad": 1,
+    "precio_sugerido": 95.0,
+    "precio_venta": 95.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
