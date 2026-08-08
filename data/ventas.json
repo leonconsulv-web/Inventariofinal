@@ -1330,5 +1330,17 @@
     "precio_venta": 220.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-08 17:36:36",
+    "producto_id": "PROD_20260804_021254_075607",
+    "producto": "Waffle",
+    "talla": "M",
+    "color": "Beige",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
