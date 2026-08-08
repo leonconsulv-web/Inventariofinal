@@ -1258,5 +1258,17 @@
     "precio_venta": 35.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Diferencia: $35.00"
+  },
+  {
+    "fecha": "2026-08-08 12:45:55",
+    "producto_id": "PROD_20260731_200228_133616",
+    "producto": "Polo grandes",
+    "talla": "XG",
+    "color": "Roja",
+    "cantidad": 1,
+    "precio_sugerido": 170.0,
+    "precio_venta": 160.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
