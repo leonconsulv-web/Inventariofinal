@@ -1318,5 +1318,17 @@
     "precio_venta": 60.0,
     "categoria": "Bermudas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-08 14:24:50",
+    "producto_id": "PROD_20260801_052523_639895",
+    "producto": "Waffle",
+    "talla": "M",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
