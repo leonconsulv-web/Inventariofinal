@@ -1498,7 +1498,7 @@
         "color": "Verde militar",
         "stock": {
           "M": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -4239,11 +4239,11 @@
             "bodega": 0
           },
           "30": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           },
           "32": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "34": {
