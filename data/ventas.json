@@ -1246,5 +1246,17 @@
     "precio_venta": 220.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-08 11:38:10",
+    "producto_id": "PROD_20260731_200228_133616",
+    "producto": "🔄 Cambio de Producto: Entregado (Polo grandes (Oxford / Talla XG)) ➔ Devuelto (Polo (Negro / Talla G))",
+    "talla": "XG",
+    "color": "Oxford",
+    "cantidad": 1,
+    "precio_sugerido": 35.0,
+    "precio_venta": 35.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Diferencia: $35.00"
   }
 ]
