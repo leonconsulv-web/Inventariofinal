@@ -1414,5 +1414,17 @@
     "precio_venta": 318.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-09 12:54:02",
+    "producto_id": "PROD_20260803_195735_246132",
+    "producto": "Repelente XL",
+    "talla": "XG",
+    "color": "Negro ",
+    "cantidad": 1,
+    "precio_sugerido": 399.0,
+    "precio_venta": 389.0,
+    "categoria": "Chamarras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
