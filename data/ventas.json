@@ -1354,5 +1354,17 @@
     "precio_venta": 95.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-08 18:40:39",
+    "producto_id": "PROD_20260801_220435_420453",
+    "producto": "Pants",
+    "talla": "G",
+    "color": "Azul marino",
+    "cantidad": 1,
+    "precio_sugerido": 210.0,
+    "precio_venta": 200.0,
+    "categoria": "Pants",
+    "ubicacion_venta": "Vitrina"
   }
 ]
