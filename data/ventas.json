@@ -1438,5 +1438,17 @@
     "precio_venta": 700.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-09 12:57:35",
+    "producto_id": "PROD_20260801_190451_318220",
+    "producto": "Shorts ",
+    "talla": "G",
+    "color": "Varios",
+    "cantidad": 1,
+    "precio_sugerido": 60.0,
+    "precio_venta": 60.0,
+    "categoria": "Bermudas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
