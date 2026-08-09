@@ -1402,5 +1402,17 @@
     "precio_venta": 60.0,
     "categoria": "Bermudas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-09 12:51:46",
+    "producto_id": "PROD_20260804_020339_350633",
+    "producto": "Pedrería ",
+    "talla": "XG",
+    "color": "Negro",
+    "cantidad": 2,
+    "precio_sugerido": 17776.0,
+    "precio_venta": 318.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
