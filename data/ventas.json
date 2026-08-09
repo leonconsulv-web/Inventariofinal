@@ -1426,5 +1426,17 @@
     "precio_venta": 389.0,
     "categoria": "Chamarras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-09 12:56:45",
+    "producto_id": "PROD_20260801_063347_259013",
+    "producto": "Hugo boss",
+    "talla": "XG",
+    "color": "Varios",
+    "cantidad": 2,
+    "precio_sugerido": 730.0,
+    "precio_venta": 700.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
