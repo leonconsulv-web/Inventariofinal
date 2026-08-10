@@ -2631,10 +2631,10 @@
         }
       },
       {
-        "color": "Color #14",
+        "color": "Negro",
         "stock": {
           "30": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
