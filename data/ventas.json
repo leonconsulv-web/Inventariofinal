@@ -1546,5 +1546,17 @@
     "precio_venta": 289.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-10 13:24:27",
+    "producto_id": "PROD_20260801_063347_259013",
+    "producto": "Hugo boss",
+    "talla": "XG",
+    "color": "Varios",
+    "cantidad": 3,
+    "precio_sugerido": 1095.0,
+    "precio_venta": 1050.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
