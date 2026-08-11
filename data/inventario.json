@@ -2451,7 +2451,7 @@
         "color": "Negro",
         "stock": {
           "28": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -2494,6 +2494,15 @@
       },
       {
         "color": "Oxford oscuro",
+        "stock": {
+          "28": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #7",
         "stock": {
           "28": {
             "exhibido": 0,
