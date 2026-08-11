@@ -1594,5 +1594,17 @@
     "precio_venta": 210.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-10 19:12:36",
+    "producto_id": "PROD_20260801_215309_839310",
+    "producto": "🔄 Cambio de Producto: Entregado (Confort 38-42 (Azul claro / Talla 40)) ➔ Devuelto (T38 (Casimir ($289) / Talla 38))",
+    "talla": "40",
+    "color": "Azul claro",
+    "cantidad": 1,
+    "precio_sugerido": 70.0,
+    "precio_venta": 11.0,
+    "categoria": "Jeans",
+    "ubicacion_venta": "Diferencia: $11.00"
   }
 ]
