@@ -1630,5 +1630,17 @@
     "precio_venta": 139.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-11 16:27:52",
+    "producto_id": "PROD_20260801_065328_509129",
+    "producto": "T32",
+    "talla": "32",
+    "color": "Negro",
+    "cantidad": 3,
+    "precio_sugerido": 660.0,
+    "precio_venta": 633.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Vitrina"
   }
 ]
