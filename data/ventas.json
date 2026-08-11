@@ -1582,5 +1582,17 @@
     "precio_venta": 210.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-10 19:08:04",
+    "producto_id": "PROD_20260801_053558_224627",
+    "producto": "Waffle",
+    "talla": "XG",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 210.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
