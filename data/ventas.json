@@ -1654,5 +1654,17 @@
     "precio_venta": 199.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-11 16:30:00",
+    "producto_id": "PROD_20260801_190642_565357",
+    "producto": "Camisa económica ",
+    "talla": "G",
+    "color": "Varios",
+    "cantidad": 1,
+    "precio_sugerido": 199.0,
+    "precio_venta": 199.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
