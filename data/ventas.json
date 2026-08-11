@@ -1726,5 +1726,17 @@
     "precio_venta": 170.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-11 17:47:40",
+    "producto_id": "PROD_20260801_222250_362647",
+    "producto": "De color",
+    "talla": "G",
+    "color": "Oxford",
+    "cantidad": 1,
+    "precio_sugerido": 95.0,
+    "precio_venta": 95.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
