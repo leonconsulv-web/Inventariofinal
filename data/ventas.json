@@ -1558,5 +1558,17 @@
     "precio_venta": 1050.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-10 19:04:37",
+    "producto_id": "PROD_20260801_064022_046291",
+    "producto": "T28",
+    "talla": "28",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 210.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Vitrina"
   }
 ]
