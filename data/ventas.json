@@ -1786,5 +1786,17 @@
     "precio_venta": 0.0,
     "categoria": "Suéteres",
     "ubicacion_venta": "Cambio sin costo ($0.00)"
+  },
+  {
+    "fecha": "2026-08-11 17:57:10",
+    "producto_id": "PROD_20260804_020339_350633",
+    "producto": "🔄 Cambio de Talla: Entregado (Pedrería  (Negro / Talla G)) ➔ Devuelto (Pedrería  (Negro / Talla M))",
+    "talla": "G",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 0.0,
+    "precio_venta": 0.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Cambio sin costo ($0.00)"
   }
 ]
