@@ -6028,7 +6028,7 @@
         "color": "Tricolor",
         "stock": {
           "XG": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
