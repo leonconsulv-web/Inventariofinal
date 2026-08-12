@@ -1405,7 +1405,7 @@
         "color": "Verde olivo",
         "stock": {
           "CH": {
-            "exhibido": 2,
+            "exhibido": 3,
             "bodega": 0
           }
         }
@@ -1732,7 +1732,7 @@
         "color": "Vino",
         "stock": {
           "XG": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -1750,7 +1750,7 @@
         "color": "Verde olivo",
         "stock": {
           "XG": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -1759,7 +1759,7 @@
         "color": "Negro",
         "stock": {
           "XG": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -1786,7 +1786,7 @@
         "color": "Crema",
         "stock": {
           "XG": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -1816,7 +1816,7 @@
         "color": "Crema",
         "stock": {
           "G": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -1834,7 +1834,7 @@
         "color": "Negro",
         "stock": {
           "G": {
-            "exhibido": 2,
+            "exhibido": 3,
             "bodega": 0
           }
         }
@@ -1861,7 +1861,7 @@
         "color": "Blanco ",
         "stock": {
           "G": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -2014,7 +2014,7 @@
         "color": "Azul marino",
         "stock": {
           "XG": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -6546,7 +6546,7 @@
         "color": "Azul marino",
         "stock": {
           "G": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
