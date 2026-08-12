@@ -1810,5 +1810,17 @@
     "precio_venta": 189.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-12 11:25:12",
+    "producto_id": "PROD_20260801_063149_951164",
+    "producto": "Deportiva económica ",
+    "talla": "CH",
+    "color": "Azul marino",
+    "cantidad": 1,
+    "precio_sugerido": 95.0,
+    "precio_venta": 90.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
