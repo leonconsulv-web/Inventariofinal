@@ -1798,5 +1798,17 @@
     "precio_venta": 0.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Cambio sin costo ($0.00)"
+  },
+  {
+    "fecha": "2026-08-11 21:34:38",
+    "producto_id": "PROD_20260731_225859_925993",
+    "producto": "De vestir XG",
+    "talla": "XG",
+    "color": "Estampada",
+    "cantidad": 1,
+    "precio_sugerido": 189.0,
+    "precio_venta": 189.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
