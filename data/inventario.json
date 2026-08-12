@@ -1024,7 +1024,16 @@
         }
       },
       {
-        "color": "Color #29",
+        "color": "Cemento ",
+        "stock": {
+          "XG": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #30",
         "stock": {
           "XG": {
             "exhibido": 0,
