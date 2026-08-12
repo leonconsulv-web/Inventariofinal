@@ -892,7 +892,7 @@
         "color": "Roja",
         "stock": {
           "XG": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -1019,6 +1019,15 @@
         "stock": {
           "XG": {
             "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #29",
+        "stock": {
+          "XG": {
+            "exhibido": 0,
             "bodega": 0
           }
         }
