@@ -1870,5 +1870,17 @@
     "precio_venta": 60.0,
     "categoria": "Bermudas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-13 14:48:02",
+    "producto_id": "PROD_20260801_220435_420453",
+    "producto": "Pants",
+    "talla": "M",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 210.0,
+    "precio_venta": 200.0,
+    "categoria": "Pants",
+    "ubicacion_venta": "Vitrina"
   }
 ]
