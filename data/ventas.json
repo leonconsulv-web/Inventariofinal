@@ -1942,5 +1942,17 @@
     "precio_venta": 210.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-13 19:55:55",
+    "producto_id": "PROD_20260801_174554_726937",
+    "producto": "Manga larga",
+    "talla": "36",
+    "color": "Varios",
+    "cantidad": 1,
+    "precio_sugerido": 269.0,
+    "precio_venta": 260.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
