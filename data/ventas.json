@@ -1906,5 +1906,17 @@
     "precio_venta": 210.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-13 18:11:09",
+    "producto_id": "PROD_20260801_174554_726937",
+    "producto": "Manga larga",
+    "talla": "34",
+    "color": "Varios",
+    "cantidad": 1,
+    "precio_sugerido": 269.0,
+    "precio_venta": 250.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
