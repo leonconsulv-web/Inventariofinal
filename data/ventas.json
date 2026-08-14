@@ -2002,5 +2002,17 @@
     "precio_venta": 159.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-14 15:57:02",
+    "producto_id": "PROD_20260801_173717_984714",
+    "producto": "Manga corta",
+    "talla": "M",
+    "color": "Varios",
+    "cantidad": 2,
+    "precio_sugerido": 318.0,
+    "precio_venta": 618.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
