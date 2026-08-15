@@ -2122,5 +2122,17 @@
     "precio_venta": 139.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-15 11:10:58",
+    "producto_id": "PROD_20260801_063149_951164",
+    "producto": "Deportiva económica ",
+    "talla": "M",
+    "color": "Verde",
+    "cantidad": 1,
+    "precio_sugerido": 95.0,
+    "precio_venta": 95.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
