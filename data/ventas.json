@@ -2182,5 +2182,17 @@
     "precio_venta": 150.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-15 11:21:43",
+    "producto_id": "PROD_20260731_200228_133616",
+    "producto": "Polo grandes",
+    "talla": "XG",
+    "color": "Café ",
+    "cantidad": 1,
+    "precio_sugerido": 170.0,
+    "precio_venta": 150.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
