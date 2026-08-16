@@ -2410,5 +2410,17 @@
     "precio_venta": 210.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-16 14:03:07",
+    "producto_id": "PROD_20260801_172200_486721",
+    "producto": "T36",
+    "talla": "36",
+    "color": "Oxford",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 210.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Vitrina"
   }
 ]
