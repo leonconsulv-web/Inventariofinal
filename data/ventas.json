@@ -2518,5 +2518,17 @@
     "precio_venta": 300.0,
     "categoria": "Jeans",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-16 16:57:19",
+    "producto_id": "PROD_20260801_220930_603983",
+    "producto": "Pants XG",
+    "talla": "XG",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 250.0,
+    "precio_venta": 250.0,
+    "categoria": "Pants",
+    "ubicacion_venta": "Vitrina"
   }
 ]
