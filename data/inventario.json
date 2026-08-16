@@ -329,7 +329,7 @@
             "bodega": 0
           },
           "G": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -1543,7 +1543,7 @@
         "color": "Crema",
         "stock": {
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -3818,7 +3818,7 @@
             "bodega": 0
           },
           "36": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -3860,15 +3860,15 @@
             "bodega": 0
           },
           "32": {
-            "exhibido": 0,
-            "bodega": 0
-          },
-          "34": {
             "exhibido": 2,
             "bodega": 0
           },
+          "34": {
+            "exhibido": 3,
+            "bodega": 3
+          },
           "36": {
-            "exhibido": 1,
+            "exhibido": 3,
             "bodega": 0
           }
         }
@@ -3889,7 +3889,7 @@
             "bodega": 0
           },
           "34": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "36": {
@@ -4364,7 +4364,7 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 4,
+            "exhibido": 6,
             "bodega": 0
           },
           "G": {
@@ -4381,7 +4381,7 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 3,
+            "exhibido": 4,
             "bodega": 0
           },
           "G": {
@@ -4415,7 +4415,7 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 3,
+            "exhibido": 4,
             "bodega": 0
           },
           "G": {
@@ -4436,7 +4436,7 @@
             "bodega": 0
           },
           "G": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
