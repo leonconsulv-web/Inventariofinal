@@ -2374,5 +2374,17 @@
     "precio_venta": 35.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Diferencia: $35.00"
+  },
+  {
+    "fecha": "2026-08-16 13:57:13",
+    "producto_id": "PROD_20260731_200228_133616",
+    "producto": "🔄 Cambio de Producto: Entregado (Polo grandes (Azul marino  / Talla XG)) ➔ Devuelto (Polo (Azul marino / Talla G))",
+    "talla": "XG",
+    "color": "Azul marino ",
+    "cantidad": 1,
+    "precio_sugerido": 35.0,
+    "precio_venta": 0.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Cambio sin costo ($0.00)"
   }
 ]
