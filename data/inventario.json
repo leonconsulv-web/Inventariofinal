@@ -1040,6 +1040,15 @@
             "bodega": 0
           }
         }
+      },
+      {
+        "color": "Color #31",
+        "stock": {
+          "XG": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
       }
     ]
   },
