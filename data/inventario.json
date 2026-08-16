@@ -2,7 +2,7 @@
   {
     "ID": "PROD_20260731_184657_367258",
     "Categoria": "Playeras",
-    "Producto": "Polo",
+    "Producto": "",
     "Precio_Sugerido": 135.0,
     "Precio_Venta": 135.0,
     "Tallas": [
@@ -19,7 +19,7 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           },
           "G": {
@@ -1037,6 +1037,15 @@
         "stock": {
           "XG": {
             "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Azul marino ",
+        "stock": {
+          "XG": {
+            "exhibido": 2,
             "bodega": 0
           }
         }
