@@ -6908,5 +6908,26 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260816_173532_941904",
+    "Categoria": "Chamarras",
+    "Producto": "Sudaderas",
+    "Precio_Sugerido": 199.0,
+    "Precio_Venta": 199.0,
+    "Tallas": [
+      "UNI"
+    ],
+    "Variantes": [
+      {
+        "color": "Varios",
+        "stock": {
+          "UNI": {
+            "exhibido": 5,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
