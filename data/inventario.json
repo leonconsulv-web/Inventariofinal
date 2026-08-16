@@ -329,7 +329,7 @@
             "bodega": 0
           },
           "G": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           }
         }
@@ -3860,11 +3860,11 @@
             "bodega": 0
           },
           "32": {
-            "exhibido": 2,
+            "exhibido": 0,
             "bodega": 0
           },
           "34": {
-            "exhibido": 3,
+            "exhibido": 2,
             "bodega": 0
           },
           "36": {
