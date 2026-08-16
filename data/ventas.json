@@ -2530,5 +2530,17 @@
     "precio_venta": 250.0,
     "categoria": "Pants",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-16 16:58:25",
+    "producto_id": "PROD_20260801_222250_362647",
+    "producto": "De color",
+    "talla": "XG",
+    "color": "Azul marino",
+    "cantidad": 1,
+    "precio_sugerido": 95.0,
+    "precio_venta": 95.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
