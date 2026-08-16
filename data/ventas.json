@@ -2338,5 +2338,17 @@
     "precio_venta": 200.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-15 20:06:32",
+    "producto_id": "PROD_20260801_065328_509129",
+    "producto": "T32",
+    "talla": "32",
+    "color": "Café ",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 200.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Vitrina"
   }
 ]
