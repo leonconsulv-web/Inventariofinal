@@ -2446,5 +2446,17 @@
     "precio_venta": 75.0,
     "categoria": "Ofertas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-16 16:32:59",
+    "producto_id": "PROD_20260801_222635_288356",
+    "producto": "Ofertas",
+    "talla": "VARIAS",
+    "color": "Varios",
+    "cantidad": 1,
+    "precio_sugerido": 95.0,
+    "precio_venta": 75.0,
+    "categoria": "Ofertas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
