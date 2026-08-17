@@ -2554,5 +2554,17 @@
     "precio_venta": 210.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-16 19:12:52",
+    "producto_id": "PROD_20260816_173532_941904",
+    "producto": "Sudaderas",
+    "talla": "UNI",
+    "color": "Varios",
+    "cantidad": 1,
+    "precio_sugerido": 199.0,
+    "precio_venta": 189.0,
+    "categoria": "Chamarras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
