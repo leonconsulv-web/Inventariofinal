@@ -2614,5 +2614,17 @@
     "precio_venta": 245.0,
     "categoria": "Jeans",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-17 15:53:22",
+    "producto_id": "PROD_20260801_222250_362647",
+    "producto": "De color",
+    "talla": "M",
+    "color": "Oxford",
+    "cantidad": 1,
+    "precio_sugerido": 95.0,
+    "precio_venta": 90.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
