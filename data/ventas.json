@@ -2638,5 +2638,17 @@
     "precio_venta": 199.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-17 18:33:50",
+    "producto_id": "PROD_20260804_021254_075607",
+    "producto": "Waffle",
+    "talla": "M",
+    "color": "Verde militar",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
