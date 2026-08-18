@@ -6615,7 +6615,7 @@
         "color": "Verde militar",
         "stock": {
           "M": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           }
         }
