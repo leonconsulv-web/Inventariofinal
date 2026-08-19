@@ -2734,5 +2734,17 @@
     "precio_venta": 199.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-18 19:36:51",
+    "producto_id": "PROD_20260731_184657_367258",
+    "producto": "Polo",
+    "talla": "G",
+    "color": "Cereza",
+    "cantidad": 1,
+    "precio_sugerido": 135.0,
+    "precio_venta": 130.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
