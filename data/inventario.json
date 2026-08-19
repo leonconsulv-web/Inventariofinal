@@ -3515,7 +3515,7 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 17,
+            "exhibido": 18,
             "bodega": 0
           },
           "G": {
@@ -4976,7 +4976,7 @@
         "color": "Varios",
         "stock": {
           "VARIAS": {
-            "exhibido": 16,
+            "exhibido": 15,
             "bodega": 0
           }
         }
