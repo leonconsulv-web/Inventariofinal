@@ -2686,5 +2686,17 @@
     "precio_venta": 130.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-18 19:30:44",
+    "producto_id": "PROD_20260801_222635_288356",
+    "producto": "🔄 Cambio de Producto: Entregado (Ofertas (Varios / Talla VARIAS)) ➔ Devuelto (Manga corta (Varios / Talla M))",
+    "talla": "VARIAS",
+    "color": "Varios",
+    "cantidad": 1,
+    "precio_sugerido": 0.0,
+    "precio_venta": 0.0,
+    "categoria": "Ofertas",
+    "ubicacion_venta": "Cambio sin costo ($0.00)"
   }
 ]
