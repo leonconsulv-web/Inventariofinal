@@ -2938,5 +2938,17 @@
     "precio_venta": 220.0,
     "categoria": "Pants",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-19 17:12:52",
+    "producto_id": "PROD_20260801_172745_325610",
+    "producto": "T38",
+    "talla": "38",
+    "color": "Cocoa",
+    "cantidad": 1,
+    "precio_sugerido": 230.0,
+    "precio_venta": 220.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Vitrina"
   }
 ]
