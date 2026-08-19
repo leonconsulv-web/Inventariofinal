@@ -2830,5 +2830,17 @@
     "precio_venta": 60.0,
     "categoria": "Bermudas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-18 21:41:11",
+    "producto_id": "PROD_20260801_214804_719643",
+    "producto": "Confort",
+    "talla": "34",
+    "color": "Azul claro",
+    "cantidad": 2,
+    "precio_sugerido": 550.0,
+    "precio_venta": 520.0,
+    "categoria": "Jeans",
+    "ubicacion_venta": "Vitrina"
   }
 ]
