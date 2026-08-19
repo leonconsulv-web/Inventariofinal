@@ -2878,5 +2878,17 @@
     "precio_venta": 210.0,
     "categoria": "Pants",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-19 12:43:52",
+    "producto_id": "PROD_20260801_220435_420453",
+    "producto": "Pants",
+    "talla": "M",
+    "color": "Azul marino",
+    "cantidad": 1,
+    "precio_sugerido": 210.0,
+    "precio_venta": 210.0,
+    "categoria": "Pants",
+    "ubicacion_venta": "Vitrina"
   }
 ]
