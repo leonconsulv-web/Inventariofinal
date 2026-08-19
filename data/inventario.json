@@ -1322,7 +1322,7 @@
   {
     "ID": "PROD_20260801_051906_646266",
     "Categoria": "Camisas",
-    "Producto": "Waffle Ch",
+    "Producto": "Waffle",
     "Precio_Sugerido": 220.0,
     "Precio_Venta": 220.0,
     "Tallas": [
@@ -1469,7 +1469,7 @@
   {
     "ID": "PROD_20260801_052523_639895",
     "Categoria": "Camisas",
-    "Producto": "Waffle M",
+    "Producto": "Waffle",
     "Precio_Sugerido": 220.0,
     "Precio_Venta": 220.0,
     "Tallas": [
@@ -4071,7 +4071,7 @@
             "bodega": 0
           },
           "34": {
-            "exhibido": 2,
+            "exhibido": 1,
             "bodega": 0
           },
           "36": {
