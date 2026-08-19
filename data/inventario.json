@@ -261,7 +261,7 @@
             "bodega": 0
           },
           "G": {
-            "exhibido": 2,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -363,7 +363,7 @@
             "bodega": 0
           },
           "G": {
-            "exhibido": 2,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -448,7 +448,7 @@
             "bodega": 0
           },
           "G": {
-            "exhibido": 2,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -955,7 +955,7 @@
         "color": "Azul oceano",
         "stock": {
           "XG": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           }
         }
@@ -2691,7 +2691,7 @@
         "color": "Casimir ($269)",
         "stock": {
           "32": {
-            "exhibido": 4,
+            "exhibido": 3,
             "bodega": 0
           }
         }
@@ -2736,7 +2736,7 @@
         "color": "Azul marino",
         "stock": {
           "32": {
-            "exhibido": 3,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -3515,7 +3515,7 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 17,
+            "exhibido": 18,
             "bodega": 0
           },
           "G": {
@@ -3774,7 +3774,7 @@
         "color": "Blanco",
         "stock": {
           "CH": {
-            "exhibido": 7,
+            "exhibido": 6,
             "bodega": 0
           },
           "M": {
@@ -4976,7 +4976,7 @@
         "color": "Varios",
         "stock": {
           "VARIAS": {
-            "exhibido": 16,
+            "exhibido": 15,
             "bodega": 0
           }
         }

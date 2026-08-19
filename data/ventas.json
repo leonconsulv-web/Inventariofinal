@@ -2686,5 +2686,101 @@
     "precio_venta": 130.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-18 19:30:44",
+    "producto_id": "PROD_20260801_222635_288356",
+    "producto": "🔄 Cambio de Producto: Entregado (Ofertas (Varios / Talla VARIAS)) ➔ Devuelto (Manga corta (Varios / Talla M))",
+    "talla": "VARIAS",
+    "color": "Varios",
+    "cantidad": 1,
+    "precio_sugerido": 0.0,
+    "precio_venta": 0.0,
+    "categoria": "Ofertas",
+    "ubicacion_venta": "Cambio sin costo ($0.00)"
+  },
+  {
+    "fecha": "2026-08-18 19:32:47",
+    "producto_id": "PROD_20260801_065328_509129",
+    "producto": "T32",
+    "talla": "32",
+    "color": "Casimir ($269)",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 265.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-18 19:33:47",
+    "producto_id": "PROD_20260801_065328_509129",
+    "producto": "T32",
+    "talla": "32",
+    "color": "Azul marino",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-18 19:35:17",
+    "producto_id": "PROD_20260801_190642_565357",
+    "producto": "Camisa económica ",
+    "talla": "CH",
+    "color": "Blanco",
+    "cantidad": 1,
+    "precio_sugerido": 199.0,
+    "precio_venta": 199.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-18 19:36:51",
+    "producto_id": "PROD_20260731_184657_367258",
+    "producto": "Polo",
+    "talla": "G",
+    "color": "Cereza",
+    "cantidad": 1,
+    "precio_sugerido": 135.0,
+    "precio_venta": 130.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-18 19:37:39",
+    "producto_id": "PROD_20260731_184657_367258",
+    "producto": "Polo",
+    "talla": "G",
+    "color": "Cemento",
+    "cantidad": 1,
+    "precio_sugerido": 135.0,
+    "precio_venta": 130.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-18 19:38:07",
+    "producto_id": "PROD_20260731_184657_367258",
+    "producto": "Polo",
+    "talla": "G",
+    "color": "Azul acero",
+    "cantidad": 1,
+    "precio_sugerido": 135.0,
+    "precio_venta": 130.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-18 19:38:45",
+    "producto_id": "PROD_20260731_200228_133616",
+    "producto": "Polo grandes",
+    "talla": "XG",
+    "color": "Azul oceano",
+    "cantidad": 1,
+    "precio_sugerido": 170.0,
+    "precio_venta": 170.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
