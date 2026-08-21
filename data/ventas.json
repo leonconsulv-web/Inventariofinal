@@ -3118,5 +3118,17 @@
     "precio_venta": 220.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-21 17:06:58",
+    "producto_id": "PROD_20260801_053830_429192",
+    "producto": "Waffle G",
+    "talla": "G",
+    "color": "Rojo",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
