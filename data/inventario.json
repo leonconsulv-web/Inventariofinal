@@ -3774,19 +3774,19 @@
         "color": "Blanco",
         "stock": {
           "CH": {
-            "exhibido": 5,
+            "exhibido": 7,
             "bodega": 0
           },
           "M": {
-            "exhibido": 2,
+            "exhibido": 5,
             "bodega": 0
           },
           "G": {
-            "exhibido": 1,
+            "exhibido": 3,
             "bodega": 0
           },
           "XG": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
