@@ -3046,5 +3046,17 @@
     "precio_venta": 220.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-21 03:24:20",
+    "producto_id": "PROD_20260801_063149_951164",
+    "producto": "Deportiva económica ",
+    "talla": "G",
+    "color": "Blanco",
+    "cantidad": 1,
+    "precio_sugerido": 95.0,
+    "precio_venta": 95.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
