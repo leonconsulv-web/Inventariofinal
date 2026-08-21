@@ -3058,5 +3058,17 @@
     "precio_venta": 95.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-21 03:25:13",
+    "producto_id": "PROD_20260801_190642_565357",
+    "producto": "Camisa económica ",
+    "talla": "CH",
+    "color": "Blanco",
+    "cantidad": 1,
+    "precio_sugerido": 199.0,
+    "precio_venta": 199.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
