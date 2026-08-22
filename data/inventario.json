@@ -829,7 +829,7 @@
         "color": "Vino",
         "stock": {
           "XG": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -1046,6 +1046,15 @@
         "stock": {
           "XG": {
             "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #32",
+        "stock": {
+          "XG": {
+            "exhibido": 0,
             "bodega": 0
           }
         }
