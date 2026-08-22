@@ -1036,7 +1036,7 @@
         "color": "Verde oliva",
         "stock": {
           "XG": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -1060,7 +1060,16 @@
         }
       },
       {
-        "color": "Color #33",
+        "color": "Cereza ",
+        "stock": {
+          "XG": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #34",
         "stock": {
           "XG": {
             "exhibido": 0,
