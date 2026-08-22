@@ -2023,7 +2023,7 @@
         "color": "Vino",
         "stock": {
           "XG": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -2041,7 +2041,7 @@
         "color": "Negro",
         "stock": {
           "XG": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
