@@ -3154,5 +3154,17 @@
     "precio_venta": 490.0,
     "categoria": "Jeans",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-22 00:02:05",
+    "producto_id": "PROD_20260801_064643_767617",
+    "producto": "T30",
+    "talla": "30",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Vitrina"
   }
 ]
