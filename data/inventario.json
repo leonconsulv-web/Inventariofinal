@@ -6624,7 +6624,7 @@
         "color": "Beige",
         "stock": {
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -6642,7 +6642,7 @@
         "color": "Verde militar",
         "stock": {
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -6652,6 +6652,15 @@
         "stock": {
           "M": {
             "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #5",
+        "stock": {
+          "M": {
+            "exhibido": 0,
             "bodega": 0
           }
         }
