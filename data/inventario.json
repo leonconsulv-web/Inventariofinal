@@ -775,7 +775,7 @@
         "color": "Oxford",
         "stock": {
           "XG": {
-            "exhibido": 0,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -793,7 +793,7 @@
         "color": "Mezclilla ",
         "stock": {
           "XG": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -892,7 +892,7 @@
         "color": "Roja",
         "stock": {
           "XG": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -901,7 +901,7 @@
         "color": "Azul cielo",
         "stock": {
           "XG": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -955,7 +955,7 @@
         "color": "Azul oceano",
         "stock": {
           "XG": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -973,7 +973,7 @@
         "color": "Verde mar",
         "stock": {
           "XG": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -991,7 +991,7 @@
         "color": "Azul rey",
         "stock": {
           "XG": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -1045,7 +1045,7 @@
         "color": "Azul marino ",
         "stock": {
           "XG": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -1069,10 +1069,10 @@
         }
       },
       {
-        "color": "Color #34",
+        "color": "Tabaco ",
         "stock": {
           "XG": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
