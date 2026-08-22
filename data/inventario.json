@@ -6666,10 +6666,10 @@
         }
       },
       {
-        "color": "Color #6",
+        "color": "Petróleo ",
         "stock": {
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
