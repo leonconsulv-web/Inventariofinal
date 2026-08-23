@@ -3190,5 +3190,17 @@
     "precio_venta": 210.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-22 20:07:59",
+    "producto_id": "PROD_20260801_190451_318220",
+    "producto": "Shorts ",
+    "talla": "CH",
+    "color": "Varios",
+    "cantidad": 1,
+    "precio_sugerido": 60.0,
+    "precio_venta": 60.0,
+    "categoria": "Bermudas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
