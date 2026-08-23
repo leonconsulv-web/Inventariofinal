@@ -3250,5 +3250,17 @@
     "precio_venta": 135.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-22 20:12:40",
+    "producto_id": "PROD_20260731_184657_367258",
+    "producto": "Polo",
+    "talla": "M",
+    "color": "Azul acero",
+    "cantidad": 1,
+    "precio_sugerido": 135.0,
+    "precio_venta": 135.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
