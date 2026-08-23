@@ -3298,5 +3298,17 @@
     "precio_venta": 278.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-22 20:16:15",
+    "producto_id": "PROD_20260801_062018_927740",
+    "producto": "Deportiva ",
+    "talla": "M",
+    "color": "Azul marino ",
+    "cantidad": 1,
+    "precio_sugerido": 139.0,
+    "precio_venta": 139.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
