@@ -5327,10 +5327,10 @@
         }
       },
       {
-        "color": "Color #9",
+        "color": "Perla",
         "stock": {
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
