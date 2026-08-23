@@ -3226,5 +3226,17 @@
     "precio_venta": 200.0,
     "categoria": "Pants",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-22 20:09:52",
+    "producto_id": "PROD_20260801_222635_288356",
+    "producto": "Ofertas",
+    "talla": "VARIAS",
+    "color": "Varios",
+    "cantidad": 1,
+    "precio_sugerido": 95.0,
+    "precio_venta": 50.0,
+    "categoria": "Ofertas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
