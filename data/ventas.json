@@ -3214,5 +3214,17 @@
     "precio_venta": 200.0,
     "categoria": "Pants",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-22 20:08:59",
+    "producto_id": "PROD_20260801_220435_420453",
+    "producto": "Pants",
+    "talla": "CH",
+    "color": "Oxford ",
+    "cantidad": 1,
+    "precio_sugerido": 210.0,
+    "precio_venta": 200.0,
+    "categoria": "Pants",
+    "ubicacion_venta": "Vitrina"
   }
 ]
