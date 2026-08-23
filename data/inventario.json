@@ -5108,10 +5108,10 @@
         }
       },
       {
-        "color": "Color #6",
+        "color": "Cocoa",
         "stock": {
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
