@@ -3262,5 +3262,17 @@
     "precio_venta": 135.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-22 20:13:14",
+    "producto_id": "PROD_20260801_065749_649710",
+    "producto": "T34",
+    "talla": "34",
+    "color": "Oxford",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Vitrina"
   }
 ]
