@@ -3286,5 +3286,17 @@
     "precio_venta": 159.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-22 20:15:14",
+    "producto_id": "PROD_20260801_062018_927740",
+    "producto": "Deportiva ",
+    "talla": "M",
+    "color": "Perla",
+    "cantidad": 2,
+    "precio_sugerido": 278.0,
+    "precio_venta": 278.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
