@@ -3322,5 +3322,17 @@
     "precio_venta": 210.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-23 18:17:17",
+    "producto_id": "PROD_20260801_215912_999189",
+    "producto": "Cargo",
+    "talla": "34",
+    "color": "Caqui",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Jeans",
+    "ubicacion_venta": "Vitrina"
   }
 ]
