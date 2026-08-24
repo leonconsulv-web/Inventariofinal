@@ -3346,5 +3346,17 @@
     "precio_venta": 270.0,
     "categoria": "Jeans",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-24 13:00:31",
+    "producto_id": "PROD_20260801_173717_984714",
+    "producto": "Manga corta",
+    "talla": "G",
+    "color": "Varios",
+    "cantidad": 1,
+    "precio_sugerido": 159.0,
+    "precio_venta": 150.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
