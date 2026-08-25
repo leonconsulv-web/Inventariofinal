@@ -3394,5 +3394,17 @@
     "precio_venta": 120.0,
     "categoria": "Bermudas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-24 21:12:54",
+    "producto_id": "PROD_20260801_222635_288356",
+    "producto": "Ofertas",
+    "talla": "VARIAS",
+    "color": "Varios",
+    "cantidad": 3,
+    "precio_sugerido": 285.0,
+    "precio_venta": 0.0,
+    "categoria": "Ofertas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
