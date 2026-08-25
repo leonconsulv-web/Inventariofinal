@@ -3382,5 +3382,17 @@
     "precio_venta": 289.0,
     "categoria": "Chalecos",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-24 18:28:51",
+    "producto_id": "PROD_20260801_190451_318220",
+    "producto": "Shorts ",
+    "talla": "G",
+    "color": "Varios",
+    "cantidad": 2,
+    "precio_sugerido": 120.0,
+    "precio_venta": 120.0,
+    "categoria": "Bermudas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
