@@ -3969,7 +3969,7 @@
         "color": "Azul medio",
         "stock": {
           "38": {
-            "exhibido": 4,
+            "exhibido": 3,
             "bodega": 0
           },
           "40": {
@@ -4077,7 +4077,7 @@
             "bodega": 0
           },
           "36": {
-            "exhibido": 4,
+            "exhibido": 5,
             "bodega": 0
           }
         }
