@@ -3490,5 +3490,17 @@
     "precio_venta": 25.0,
     "categoria": "Jeans",
     "ubicacion_venta": "Diferencia: $25.00"
+  },
+  {
+    "fecha": "2026-08-25 20:35:06",
+    "producto_id": "PROD_20260801_215309_839310",
+    "producto": "🔄 Cambio de Producto: Entregado (Confort 38-42 (Azul claro / Talla 38)) ➔ Devuelto (Vaquero 38-42 (Azul medio / Talla 38))",
+    "talla": "38",
+    "color": "Azul claro",
+    "cantidad": 1,
+    "precio_sugerido": 0.0,
+    "precio_venta": 0.0,
+    "categoria": "Jeans",
+    "ubicacion_venta": "Cambio sin costo ($0.00)"
   }
 ]
