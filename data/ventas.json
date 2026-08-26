@@ -3478,5 +3478,17 @@
     "precio_venta": 230.0,
     "categoria": "Jeans",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-25 20:31:31",
+    "producto_id": "PROD_20260801_213340_891138",
+    "producto": "🔄 Cambio de Producto: Entregado (Vaquero 38-42 (Azul medio / Talla 38)) ➔ Devuelto (Confort (Azul medio / Talla 36))",
+    "talla": "38",
+    "color": "Azul medio",
+    "cantidad": 1,
+    "precio_sugerido": 25.0,
+    "precio_venta": 25.0,
+    "categoria": "Jeans",
+    "ubicacion_venta": "Diferencia: $25.00"
   }
 ]
