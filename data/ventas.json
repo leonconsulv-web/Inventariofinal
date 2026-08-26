@@ -3430,5 +3430,17 @@
     "precio_venta": 269.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-25 19:17:50",
+    "producto_id": "PROD_20260801_172745_325610",
+    "producto": "T38",
+    "talla": "38",
+    "color": "Casimir ($289)",
+    "cantidad": 1,
+    "precio_sugerido": 230.0,
+    "precio_venta": 280.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Vitrina"
   }
 ]
