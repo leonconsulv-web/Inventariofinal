@@ -3574,5 +3574,17 @@
     "precio_venta": 230.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-26 19:05:28",
+    "producto_id": "PROD_20260804_000036_098761",
+    "producto": "Polo manga larga",
+    "talla": "M",
+    "color": "Verde cemento",
+    "cantidad": 1,
+    "precio_sugerido": 199.0,
+    "precio_venta": 199.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
