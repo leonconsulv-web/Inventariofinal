@@ -3538,5 +3538,17 @@
     "precio_venta": 159.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-26 19:02:46",
+    "producto_id": "PROD_20260801_213034_736035",
+    "producto": "Vaquero",
+    "talla": "36",
+    "color": "Azul medio",
+    "cantidad": 1,
+    "precio_sugerido": 245.0,
+    "precio_venta": 230.0,
+    "categoria": "Jeans",
+    "ubicacion_venta": "Vitrina"
   }
 ]
