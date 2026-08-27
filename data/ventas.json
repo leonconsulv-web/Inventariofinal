@@ -3586,5 +3586,17 @@
     "precio_venta": 199.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-26 19:13:37",
+    "producto_id": "PROD_20260801_172200_486721",
+    "producto": "🔄 Cambio de Producto: Entregado (T36 (Casimir ($269) / Talla 36)) ➔ Devuelto (T32 (Casimir ($269) / Talla 32))",
+    "talla": "36",
+    "color": "Casimir ($269)",
+    "cantidad": 1,
+    "precio_sugerido": 0.0,
+    "precio_venta": 0.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Cambio sin costo ($0.00)"
   }
 ]
