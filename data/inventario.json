@@ -6328,11 +6328,11 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "XG": {
@@ -6345,7 +6345,7 @@
         "color": "Azul claro",
         "stock": {
           "S": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "M": {
