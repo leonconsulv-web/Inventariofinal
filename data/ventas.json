@@ -3682,5 +3682,17 @@
     "precio_venta": 250.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-28 17:13:01",
+    "producto_id": "PROD_20260731_221128_097174",
+    "producto": "🔄 Cambio de Color: Entregado (Polos XXL (Azul rey / Talla XXG)) ➔ Devuelto (Polos XXL (Oxford / Talla XXG))",
+    "talla": "XXG",
+    "color": "Azul rey",
+    "cantidad": 1,
+    "precio_sugerido": 0.0,
+    "precio_venta": 0.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Cambio sin costo ($0.00)"
   }
 ]
