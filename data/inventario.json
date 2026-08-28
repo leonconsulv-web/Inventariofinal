@@ -3366,7 +3366,16 @@
         "color": "Azul marino",
         "stock": {
           "38": {
-            "exhibido": 1,
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #17",
+        "stock": {
+          "38": {
+            "exhibido": 0,
             "bodega": 0
           }
         }
