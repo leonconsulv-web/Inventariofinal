@@ -3646,5 +3646,17 @@
     "precio_venta": 210.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-28 17:09:37",
+    "producto_id": "PROD_20260731_221128_097174",
+    "producto": "Polos XXL",
+    "talla": "XXG",
+    "color": "Oxford",
+    "cantidad": 1,
+    "precio_sugerido": 210.0,
+    "precio_venta": 210.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
