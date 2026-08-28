@@ -2718,7 +2718,7 @@
         "color": "Casimir ($269)",
         "stock": {
           "32": {
-            "exhibido": 3,
+            "exhibido": 4,
             "bodega": 0
           }
         }
@@ -2736,7 +2736,7 @@
         "color": "Arena",
         "stock": {
           "32": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -2772,7 +2772,7 @@
         "color": "Oxford",
         "stock": {
           "32": {
-            "exhibido": 4,
+            "exhibido": 5,
             "bodega": 0
           }
         }
@@ -2808,7 +2808,7 @@
         "color": "Café ",
         "stock": {
           "32": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -2835,7 +2835,7 @@
         "color": "Gris claro ",
         "stock": {
           "32": {
-            "exhibido": 2,
+            "exhibido": 4,
             "bodega": 0
           }
         }
@@ -2862,7 +2862,7 @@
         "color": "Gris medio",
         "stock": {
           "32": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -2871,7 +2871,7 @@
         "color": "Caqui",
         "stock": {
           "32": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
