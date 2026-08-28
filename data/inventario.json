@@ -2661,7 +2661,7 @@
         "color": "Café ",
         "stock": {
           "30": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -2697,7 +2697,7 @@
         "color": "Negro",
         "stock": {
           "30": {
-            "exhibido": 0,
+            "exhibido": 2,
             "bodega": 0
           }
         }
