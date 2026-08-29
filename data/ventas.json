@@ -3742,5 +3742,17 @@
     "precio_venta": 380.0,
     "categoria": "Chamarras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-29 17:23:39",
+    "producto_id": "PROD_20260801_065749_649710",
+    "producto": "T34",
+    "talla": "34",
+    "color": "Cemento ",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Vitrina"
   }
 ]
