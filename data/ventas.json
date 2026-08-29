@@ -3718,5 +3718,17 @@
     "precio_venta": 200.0,
     "categoria": "Pants",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-28 20:22:28",
+    "producto_id": "PROD_20260801_065749_649710",
+    "producto": "T34",
+    "talla": "34",
+    "color": "Azul marino",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 210.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Vitrina"
   }
 ]
