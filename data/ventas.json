@@ -3694,5 +3694,17 @@
     "precio_venta": 0.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Cambio sin costo ($0.00)"
+  },
+  {
+    "fecha": "2026-08-28 20:21:10",
+    "producto_id": "PROD_20260801_222635_288356",
+    "producto": "Ofertas",
+    "talla": "VARIAS",
+    "color": "Varios",
+    "cantidad": 1,
+    "precio_sugerido": 95.0,
+    "precio_venta": 50.0,
+    "categoria": "Ofertas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
