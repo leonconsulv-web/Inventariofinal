@@ -3754,5 +3754,17 @@
     "precio_venta": 220.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-29 17:24:49",
+    "producto_id": "PROD_20260804_172035_505050",
+    "producto": "De vestir",
+    "talla": "S",
+    "color": "Azul marino",
+    "cantidad": 1,
+    "precio_sugerido": 195.0,
+    "precio_venta": 190.0,
+    "categoria": "Chalecos",
+    "ubicacion_venta": "Vitrina"
   }
 ]
