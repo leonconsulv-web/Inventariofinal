@@ -3982,5 +3982,29 @@
     "precio_venta": 135.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-30 17:26:29",
+    "producto_id": "PROD_20260801_213034_736035",
+    "producto": "Vaquero",
+    "talla": "32",
+    "color": "Azul oscuro ",
+    "cantidad": 1,
+    "precio_sugerido": 245.0,
+    "precio_venta": 245.0,
+    "categoria": "Jeans",
+    "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-30 17:26:48",
+    "producto_id": "PROD_20260801_190451_318220",
+    "producto": "Shorts ",
+    "talla": "G",
+    "color": "Varios",
+    "cantidad": 1,
+    "precio_sugerido": 60.0,
+    "precio_venta": 60.0,
+    "categoria": "Bermudas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
