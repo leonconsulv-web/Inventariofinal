@@ -35,8 +35,8 @@
     "cliente": "Cliente cristian",
     "concepto": "Sin botón  (1 pza) - Azul marino - Talla M",
     "total": 289.0,
-    "abonado": 100.0,
-    "restante": 189.0,
-    "estado": "Pendiente"
+    "abonado": 289.0,
+    "restante": 0.0,
+    "estado": "Liquidado"
   }
 ]
