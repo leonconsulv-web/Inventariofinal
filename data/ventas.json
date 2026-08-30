@@ -3874,5 +3874,17 @@
     "precio_venta": 150.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-29 20:46:24",
+    "producto_id": "PROD_20260801_065749_649710",
+    "producto": "T34",
+    "talla": "34",
+    "color": "Negro ",
+    "cantidad": 2,
+    "precio_sugerido": 440.0,
+    "precio_venta": 440.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Vitrina"
   }
 ]
