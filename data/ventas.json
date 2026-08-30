@@ -3790,5 +3790,17 @@
     "precio_venta": 200.0,
     "categoria": "Pants",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-29 19:51:36",
+    "producto_id": "AP_20260809_193216",
+    "producto": "💵 Abono Apartado: Sin botón  (1 pza) - Azul marino - Talla M (Cliente cristian)",
+    "talla": "-",
+    "color": "-",
+    "cantidad": 1,
+    "precio_sugerido": 189.0,
+    "precio_venta": 189.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Abono (Restan $0.00)"
   }
 ]
