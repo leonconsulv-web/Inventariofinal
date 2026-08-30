@@ -3958,5 +3958,17 @@
     "precio_venta": 220.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-30 17:25:10",
+    "producto_id": "PROD_20260801_053558_224627",
+    "producto": "Waffle XG",
+    "talla": "XG",
+    "color": "Verde olivo",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
