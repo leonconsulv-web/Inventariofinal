@@ -3838,5 +3838,17 @@
     "precio_venta": 220.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-29 20:04:52",
+    "producto_id": "PROD_20260801_060159_648400",
+    "producto": "De vestir",
+    "talla": "CH",
+    "color": "Vino",
+    "cantidad": 1,
+    "precio_sugerido": 169.0,
+    "precio_venta": 160.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
