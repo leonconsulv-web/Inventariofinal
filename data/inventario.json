@@ -4405,7 +4405,7 @@
         "color": "Negro",
         "stock": {
           "CH": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           },
           "M": {
@@ -4439,7 +4439,7 @@
         "color": "Oxford ",
         "stock": {
           "CH": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "M": {
@@ -4473,7 +4473,7 @@
         "color": "Verde",
         "stock": {
           "CH": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           },
           "M": {
