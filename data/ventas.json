@@ -3802,5 +3802,17 @@
     "precio_venta": 189.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Abono (Restan $0.00)"
+  },
+  {
+    "fecha": "2026-08-29 19:54:43",
+    "producto_id": "PROD_20260801_174554_726937",
+    "producto": "Manga larga",
+    "talla": "36",
+    "color": "Varios",
+    "cantidad": 1,
+    "precio_sugerido": 269.0,
+    "precio_venta": 269.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
