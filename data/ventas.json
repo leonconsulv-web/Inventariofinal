@@ -3814,5 +3814,17 @@
     "precio_venta": 269.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-29 19:55:43",
+    "producto_id": "PROD_20260801_224121_661789",
+    "producto": "Medio cierre",
+    "talla": "M",
+    "color": "Azul marino",
+    "cantidad": 1,
+    "precio_sugerido": 339.0,
+    "precio_venta": 339.0,
+    "categoria": "Suéteres",
+    "ubicacion_venta": "Vitrina"
   }
 ]
