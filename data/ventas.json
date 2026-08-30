@@ -3886,5 +3886,17 @@
     "precio_venta": 440.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-29 20:46:59",
+    "producto_id": "PROD_20260731_200228_133616",
+    "producto": "Polo grandes",
+    "talla": "XG",
+    "color": "Blanca",
+    "cantidad": 2,
+    "precio_sugerido": 340.0,
+    "precio_venta": 340.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
