@@ -4090,5 +4090,17 @@
     "precio_venta": 210.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-31 20:27:50",
+    "producto_id": "PROD_20260801_065328_509129",
+    "producto": "🔄 Cambio de Producto: Entregado (T32 (Petróleo  / Talla 32)) ➔ Devuelto (T30 (Petróleo  / Talla 30))",
+    "talla": "32",
+    "color": "Petróleo ",
+    "cantidad": 1,
+    "precio_sugerido": 0.0,
+    "precio_venta": 0.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Cambio sin costo ($0.00)"
   }
 ]
