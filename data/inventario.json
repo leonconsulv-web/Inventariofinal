@@ -5473,7 +5473,7 @@
   {
     "ID": "PROD_20260801_230412_019357",
     "Categoria": "Chalecos",
-    "Producto": "Sin botón ",
+    "Producto": "Con",
     "Precio_Sugerido": 289.0,
     "Precio_Venta": 289.0,
     "Tallas": [
@@ -5695,8 +5695,8 @@
     "ID": "PROD_20260801_231025_387354",
     "Categoria": "Chalecos",
     "Producto": "Con botón ",
-    "Precio_Sugerido": 3333.0,
-    "Precio_Venta": 333.0,
+    "Precio_Sugerido": 289.0,
+    "Precio_Venta": 289.0,
     "Tallas": [
       "M",
       "G"
