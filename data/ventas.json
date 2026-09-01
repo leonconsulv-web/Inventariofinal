@@ -4054,5 +4054,17 @@
     "precio_venta": 210.0,
     "categoria": "Pants",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-08-31 20:24:51",
+    "producto_id": "PROD_20260803_202815_331728",
+    "producto": "Mezclilla",
+    "talla": "S",
+    "color": "Azul oscuro",
+    "cantidad": 1,
+    "precio_sugerido": 389.0,
+    "precio_venta": 380.0,
+    "categoria": "Chamarras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
