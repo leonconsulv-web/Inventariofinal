@@ -4114,5 +4114,17 @@
     "precio_venta": 0.0,
     "categoria": "Chalecos",
     "ubicacion_venta": "Cambio sin costo ($0.00)"
+  },
+  {
+    "fecha": "2026-09-01 16:56:17",
+    "producto_id": "PROD_20260801_190451_318220",
+    "producto": "Shorts ",
+    "talla": "G",
+    "color": "Varios",
+    "cantidad": 1,
+    "precio_sugerido": 60.0,
+    "precio_venta": 60.0,
+    "categoria": "Bermudas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
