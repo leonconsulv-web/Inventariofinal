@@ -4102,5 +4102,17 @@
     "precio_venta": 0.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Cambio sin costo ($0.00)"
+  },
+  {
+    "fecha": "2026-09-01 13:54:31",
+    "producto_id": "PROD_20260801_230412_019357",
+    "producto": "🔄 Cambio de Color: Entregado (Sin botón  (Gris medio / Talla M)) ➔ Devuelto (Sin botón  (Azul marino / Talla M))",
+    "talla": "M",
+    "color": "Gris medio",
+    "cantidad": 1,
+    "precio_sugerido": 0.0,
+    "precio_venta": 0.0,
+    "categoria": "Chalecos",
+    "ubicacion_venta": "Cambio sin costo ($0.00)"
   }
 ]
