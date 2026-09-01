@@ -4150,5 +4150,17 @@
     "precio_venta": 139.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-01 16:59:19",
+    "producto_id": "PROD_20260801_230412_019357",
+    "producto": "Sin botón ",
+    "talla": "M",
+    "color": "Verde",
+    "cantidad": 1,
+    "precio_sugerido": 222.0,
+    "precio_venta": 289.0,
+    "categoria": "Chalecos",
+    "ubicacion_venta": "Vitrina"
   }
 ]
