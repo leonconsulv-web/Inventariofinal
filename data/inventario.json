@@ -5524,7 +5524,7 @@
         "color": "Gris medio",
         "stock": {
           "M": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           },
           "G": {
@@ -5563,7 +5563,7 @@
         "color": "Azul marino",
         "stock": {
           "M": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           },
           "G": {
