@@ -5615,7 +5615,7 @@
         "color": "Verde",
         "stock": {
           "M": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           },
           "G": {
