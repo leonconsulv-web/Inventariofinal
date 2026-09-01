@@ -4126,5 +4126,17 @@
     "precio_venta": 60.0,
     "categoria": "Bermudas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-01 16:56:56",
+    "producto_id": "PROD_20260803_195630_771677",
+    "producto": "Repelente",
+    "talla": "M",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 389.0,
+    "precio_venta": 380.0,
+    "categoria": "Chamarras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
