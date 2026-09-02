@@ -4186,5 +4186,17 @@
     "precio_venta": 230.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-01 19:55:59",
+    "producto_id": "PROD_20260801_173139_078610",
+    "producto": "T40",
+    "talla": "40",
+    "color": "Azul petróleo ",
+    "cantidad": 1,
+    "precio_sugerido": 250.0,
+    "precio_venta": 250.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Vitrina"
   }
 ]
