@@ -2179,7 +2179,7 @@
         "color": "Perla",
         "stock": {
           "CH": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           },
           "M": {
