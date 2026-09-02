@@ -4198,5 +4198,17 @@
     "precio_venta": 250.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-01 20:31:16",
+    "producto_id": "PROD_20260801_065749_649710",
+    "producto": "🔄 Cambio de Producto: Entregado (T34 (Negro  / Talla 34)) ➔ Devuelto (T32 (Negro / Talla 32))",
+    "talla": "34",
+    "color": "Negro ",
+    "cantidad": 1,
+    "precio_sugerido": 0.0,
+    "precio_venta": 0.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Cambio sin costo ($0.00)"
   }
 ]
