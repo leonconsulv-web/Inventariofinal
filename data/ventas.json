@@ -4210,5 +4210,17 @@
     "precio_venta": 0.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Cambio sin costo ($0.00)"
+  },
+  {
+    "fecha": "2026-09-01 20:32:34",
+    "producto_id": "PROD_20260801_172745_325610",
+    "producto": "🔄 Cambio de Color: Entregado (T38 (Negro / Talla 38)) ➔ Devuelto (T38 (Cemento / Talla 38))",
+    "talla": "38",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 0.0,
+    "precio_venta": 0.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Cambio sin costo ($0.00)"
   }
 ]
