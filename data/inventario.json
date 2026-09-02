@@ -3258,7 +3258,7 @@
         "color": "Cemento",
         "stock": {
           "38": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -3285,7 +3285,7 @@
         "color": "Negro",
         "stock": {
           "38": {
-            "exhibido": 2,
+            "exhibido": 1,
             "bodega": 0
           }
         }
