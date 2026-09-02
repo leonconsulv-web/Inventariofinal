@@ -4162,5 +4162,17 @@
     "precio_venta": 289.0,
     "categoria": "Chalecos",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-01 19:54:12",
+    "producto_id": "PROD_20260801_062018_927740",
+    "producto": "Deportiva ",
+    "talla": "CH",
+    "color": "Azul marino ",
+    "cantidad": 1,
+    "precio_sugerido": 139.0,
+    "precio_venta": 139.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
