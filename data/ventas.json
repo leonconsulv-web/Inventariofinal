@@ -4174,5 +4174,17 @@
     "precio_venta": 139.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-01 19:55:35",
+    "producto_id": "PROD_20260801_172745_325610",
+    "producto": "T38",
+    "talla": "38",
+    "color": "Cemento",
+    "cantidad": 1,
+    "precio_sugerido": 230.0,
+    "precio_venta": 230.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Vitrina"
   }
 ]
