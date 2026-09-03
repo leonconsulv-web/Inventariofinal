@@ -4330,5 +4330,17 @@
     "precio_venta": 20.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Diferencia: $20.00"
+  },
+  {
+    "fecha": "2026-09-03 15:46:12",
+    "producto_id": "PROD_20260801_065328_509129",
+    "producto": "T32",
+    "talla": "32",
+    "color": "Gris medio",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Vitrina"
   }
 ]
