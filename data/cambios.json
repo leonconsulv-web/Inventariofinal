@@ -131,5 +131,12 @@
     "entregado": "T38 (Negro / Talla 38)",
     "diferencia": 0.0,
     "motivo": "Color "
+  },
+  {
+    "fecha": "2026-09-02 20:21:34",
+    "devuelto": "T38 (Negro / Talla 38)",
+    "entregado": "T40 (Negro / Talla 40)",
+    "diferencia": 20.0,
+    "motivo": "Talla "
   }
 ]
