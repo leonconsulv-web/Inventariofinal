@@ -4318,5 +4318,17 @@
     "precio_venta": 230.0,
     "categoria": "Jeans",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-02 20:21:34",
+    "producto_id": "PROD_20260801_173139_078610",
+    "producto": "🔄 Cambio de Producto: Entregado (T40 (Negro / Talla 40)) ➔ Devuelto (T38 (Negro / Talla 38))",
+    "talla": "40",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 20.0,
+    "precio_venta": 20.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Diferencia: $20.00"
   }
 ]
