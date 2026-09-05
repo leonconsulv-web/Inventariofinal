@@ -4450,5 +4450,17 @@
     "precio_venta": 159.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-05 16:31:05",
+    "producto_id": "PROD_20260801_222250_362647",
+    "producto": "De color",
+    "talla": "M",
+    "color": "Verde",
+    "cantidad": 1,
+    "precio_sugerido": 95.0,
+    "precio_venta": 95.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
