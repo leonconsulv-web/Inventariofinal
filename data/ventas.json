@@ -4426,5 +4426,17 @@
     "precio_venta": 220.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-05 16:27:24",
+    "producto_id": "PROD_20260801_053233_905708",
+    "producto": "De vestir",
+    "talla": "M",
+    "color": "Estampada",
+    "cantidad": 1,
+    "precio_sugerido": 169.0,
+    "precio_venta": 169.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
