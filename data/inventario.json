@@ -5546,7 +5546,7 @@
         "color": "Vino",
         "stock": {
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
@@ -5559,7 +5559,7 @@
         "color": "Gris medio",
         "stock": {
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
@@ -5650,7 +5650,7 @@
         "color": "Verde",
         "stock": {
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
@@ -5663,7 +5663,7 @@
         "color": "Azul petroleo",
         "stock": {
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
