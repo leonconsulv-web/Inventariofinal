@@ -2056,7 +2056,16 @@
         }
       },
       {
-        "color": "Color #6",
+        "color": "Olivo",
+        "stock": {
+          "XG": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #7",
         "stock": {
           "XG": {
             "exhibido": 0,
