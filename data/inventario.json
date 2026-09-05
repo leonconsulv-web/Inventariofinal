@@ -1507,7 +1507,7 @@
         "color": "Negro",
         "stock": {
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -1552,7 +1552,7 @@
         "color": "Verde militar",
         "stock": {
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -2003,7 +2003,7 @@
   {
     "ID": "PROD_20260801_061207_448129",
     "Categoria": "Camisas",
-    "Producto": "Waffle XG",
+    "Producto": "Waffle",
     "Precio_Sugerido": 220.0,
     "Precio_Venta": 220.0,
     "Tallas": [
