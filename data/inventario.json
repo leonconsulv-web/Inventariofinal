@@ -5220,7 +5220,7 @@
         "color": "Oxford ",
         "stock": {
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
@@ -5305,7 +5305,7 @@
         "color": "Negro",
         "stock": {
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
