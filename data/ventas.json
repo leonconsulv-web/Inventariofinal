@@ -4498,5 +4498,17 @@
     "precio_venta": 139.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-05 19:00:40",
+    "producto_id": "AP_20260905_190040",
+    "producto": "📑 Anticipo Apartado: Mezclilla (1 pza) - Gris - Talla G (Rafael )",
+    "talla": "G",
+    "color": "Gris",
+    "cantidad": 1,
+    "precio_sugerido": 100.0,
+    "precio_venta": 100.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Anticipo (Restan $289.00)"
   }
 ]
