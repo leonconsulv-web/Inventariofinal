@@ -48,5 +48,15 @@
     "abonado": 100.0,
     "restante": 289.0,
     "estado": "Pendiente"
+  },
+  {
+    "id": "AP_20260905_190119",
+    "fecha": "2026-09-05 19:01:19",
+    "cliente": "Rafael ",
+    "concepto": "Mezclilla (1 pza) - Azul oscuro - Talla G",
+    "total": 389.0,
+    "abonado": 100.0,
+    "restante": 289.0,
+    "estado": "Pendiente"
   }
 ]
