@@ -4510,5 +4510,17 @@
     "precio_venta": 100.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Anticipo (Restan $289.00)"
+  },
+  {
+    "fecha": "2026-09-05 19:01:19",
+    "producto_id": "AP_20260905_190119",
+    "producto": "📑 Anticipo Apartado: Mezclilla (1 pza) - Azul oscuro - Talla G (Rafael )",
+    "talla": "G",
+    "color": "Azul oscuro",
+    "cantidad": 1,
+    "precio_sugerido": 100.0,
+    "precio_venta": 100.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Anticipo (Restan $289.00)"
   }
 ]
