@@ -6700,10 +6700,10 @@
         }
       },
       {
-        "color": "Color #2",
+        "color": "Vino",
         "stock": {
           "CH": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
