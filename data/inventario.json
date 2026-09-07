@@ -3750,15 +3750,15 @@
         "color": "Varios",
         "stock": {
           "CH": {
-            "exhibido": 2,
+            "exhibido": 5,
             "bodega": 0
           },
           "M": {
-            "exhibido": 4,
+            "exhibido": 6,
             "bodega": 0
           },
           "G": {
-            "exhibido": 5,
+            "exhibido": 11,
             "bodega": 0
           },
           "XG": {
