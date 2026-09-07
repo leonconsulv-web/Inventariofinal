@@ -4534,5 +4534,17 @@
     "precio_venta": 210.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-07 13:35:09",
+    "producto_id": "PROD_20260801_213034_736035",
+    "producto": "Vaquero",
+    "talla": "32",
+    "color": "Azul claro",
+    "cantidad": 1,
+    "precio_sugerido": 245.0,
+    "precio_venta": 235.0,
+    "categoria": "Jeans",
+    "ubicacion_venta": "Vitrina"
   }
 ]
