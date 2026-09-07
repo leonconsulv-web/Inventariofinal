@@ -6698,6 +6698,15 @@
             "bodega": 0
           }
         }
+      },
+      {
+        "color": "Color #2",
+        "stock": {
+          "CH": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
       }
     ]
   },
