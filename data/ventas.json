@@ -4558,5 +4558,17 @@
     "precio_venta": 235.0,
     "categoria": "Jeans",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-07 13:38:10",
+    "producto_id": "PROD_20260801_231025_387354",
+    "producto": "Con botón ",
+    "talla": "G",
+    "color": "Azul marino",
+    "cantidad": 1,
+    "precio_sugerido": 289.0,
+    "precio_venta": 290.0,
+    "categoria": "Chalecos",
+    "ubicacion_venta": "Vitrina"
   }
 ]
