@@ -4630,5 +4630,17 @@
     "precio_venta": 0.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Cambio sin costo ($0.00)"
+  },
+  {
+    "fecha": "2026-09-07 14:47:35",
+    "producto_id": "PROD_20260801_213034_736035",
+    "producto": "Vaquero",
+    "talla": "32",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 245.0,
+    "precio_venta": 240.0,
+    "categoria": "Jeans",
+    "ubicacion_venta": "Vitrina"
   }
 ]
