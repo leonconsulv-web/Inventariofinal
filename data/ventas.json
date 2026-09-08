@@ -4666,5 +4666,17 @@
     "precio_venta": 299.0,
     "categoria": "Chalecos",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-08 16:32:15",
+    "producto_id": "PROD_20260801_215912_999189",
+    "producto": "Cargo",
+    "talla": "36",
+    "color": "Caqui",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 210.0,
+    "categoria": "Jeans",
+    "ubicacion_venta": "Vitrina"
   }
 ]
