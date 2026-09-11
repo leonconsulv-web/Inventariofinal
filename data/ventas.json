@@ -4798,5 +4798,17 @@
     "precio_venta": 250.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-10 20:00:44",
+    "producto_id": "AP_20260910_200044",
+    "producto": "📑 Anticipo Apartado: Mezclilla (1 pza) - Azul oscuro - Talla S (Jesús Sánchez )",
+    "talla": "S",
+    "color": "Azul oscuro",
+    "cantidad": 1,
+    "precio_sugerido": 50.0,
+    "precio_venta": 50.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Anticipo (Restan $249.00)"
   }
 ]
