@@ -58,5 +58,15 @@
     "abonado": 100.0,
     "restante": 289.0,
     "estado": "Pendiente"
+  },
+  {
+    "id": "AP_20260910_200044",
+    "fecha": "2026-09-10 20:00:44",
+    "cliente": "Jesús Sánchez ",
+    "concepto": "Mezclilla (1 pza) - Azul oscuro - Talla S",
+    "total": 299.0,
+    "abonado": 50.0,
+    "restante": 249.0,
+    "estado": "Pendiente"
   }
 ]
