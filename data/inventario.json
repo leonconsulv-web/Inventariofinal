@@ -1594,10 +1594,10 @@
         }
       },
       {
-        "color": "Color #11",
+        "color": "Olivo",
         "stock": {
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
