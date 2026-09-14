@@ -5170,5 +5170,17 @@
     "precio_venta": 230.0,
     "categoria": "Jeans",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-14 17:12:15",
+    "producto_id": "PROD_20260801_222435_654986",
+    "producto": "De color manga larga",
+    "talla": "UNI",
+    "color": "Gris perla",
+    "cantidad": 1,
+    "precio_sugerido": 95.0,
+    "precio_venta": 95.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
