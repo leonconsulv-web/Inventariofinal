@@ -4246,7 +4246,7 @@
         "color": "Negro",
         "stock": {
           "38": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           },
           "40": {
