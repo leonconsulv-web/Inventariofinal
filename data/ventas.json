@@ -5146,5 +5146,17 @@
     "precio_venta": 139.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-14 17:09:00",
+    "producto_id": "PROD_20260801_062018_927740",
+    "producto": "Deportiva ",
+    "talla": "M",
+    "color": "Rojo",
+    "cantidad": 1,
+    "precio_sugerido": 139.0,
+    "precio_venta": 139.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
