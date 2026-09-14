@@ -4834,5 +4834,17 @@
     "precio_venta": 150.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-14 16:30:35",
+    "producto_id": "PROD_20260801_230412_019357",
+    "producto": "Sin botón ",
+    "talla": "G",
+    "color": "Azul petroleo",
+    "cantidad": 1,
+    "precio_sugerido": 289.0,
+    "precio_venta": 340.0,
+    "categoria": "Chalecos",
+    "ubicacion_venta": "Vitrina"
   }
 ]
