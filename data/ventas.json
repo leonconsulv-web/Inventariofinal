@@ -4942,5 +4942,17 @@
     "precio_venta": 130.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-14 16:44:20",
+    "producto_id": "PROD_20260801_062018_927740",
+    "producto": "Deportiva ",
+    "talla": "G",
+    "color": "Azul rey",
+    "cantidad": 1,
+    "precio_sugerido": 139.0,
+    "precio_venta": 130.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
