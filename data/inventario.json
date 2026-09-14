@@ -1837,10 +1837,10 @@
         }
       },
       {
-        "color": "Color #11",
+        "color": "Caqui",
         "stock": {
           "XG": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
