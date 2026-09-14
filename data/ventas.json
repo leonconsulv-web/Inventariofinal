@@ -5194,5 +5194,17 @@
     "precio_venta": 300.0,
     "categoria": "Jeans",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-14 17:14:06",
+    "producto_id": "PROD_20260801_174000_994264",
+    "producto": "Manga corta  XG-XXG",
+    "talla": "XG",
+    "color": "Varios",
+    "cantidad": 2,
+    "precio_sugerido": 430.0,
+    "precio_venta": 300.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
