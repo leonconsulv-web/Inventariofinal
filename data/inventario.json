@@ -5031,6 +5031,15 @@
             "bodega": 0
           }
         }
+      },
+      {
+        "color": "Color #5",
+        "stock": {
+          "UNI": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
       }
     ]
   },
