@@ -5110,5 +5110,17 @@
     "precio_venta": 130.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-14 17:06:45",
+    "producto_id": "PROD_20260801_052523_639895",
+    "producto": "Waffle M",
+    "talla": "M",
+    "color": "Olivo",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 210.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
