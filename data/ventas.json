@@ -4810,5 +4810,17 @@
     "precio_venta": 50.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Anticipo (Restan $249.00)"
+  },
+  {
+    "fecha": "2026-09-14 16:28:06",
+    "producto_id": "PROD_20260801_062018_927740",
+    "producto": "Deportiva ",
+    "talla": "CH",
+    "color": "Blanca",
+    "cantidad": 1,
+    "precio_sugerido": 139.0,
+    "precio_venta": 139.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
