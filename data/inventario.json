@@ -5033,10 +5033,10 @@
         }
       },
       {
-        "color": "Color #5",
+        "color": "Gris perla",
         "stock": {
           "UNI": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
