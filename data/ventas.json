@@ -5218,5 +5218,17 @@
     "precio_venta": 135.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-14 17:15:01",
+    "producto_id": "PROD_20260801_213034_736035",
+    "producto": "Vaquero",
+    "talla": "30",
+    "color": "Azul claro",
+    "cantidad": 1,
+    "precio_sugerido": 245.0,
+    "precio_venta": 245.0,
+    "categoria": "Jeans",
+    "ubicacion_venta": "Vitrina"
   }
 ]
