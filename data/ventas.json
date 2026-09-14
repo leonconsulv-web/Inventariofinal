@@ -4870,5 +4870,17 @@
     "precio_venta": 95.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-14 16:37:04",
+    "producto_id": "AP_20260905_190040",
+    "producto": "💵 Abono Apartado: Mezclilla (1 pza) - Gris - Talla G (Rafael )",
+    "talla": "-",
+    "color": "-",
+    "cantidad": 1,
+    "precio_sugerido": 100.0,
+    "precio_venta": 100.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Abono (Restan $189.00)"
   }
 ]
