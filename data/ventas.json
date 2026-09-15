@@ -5290,5 +5290,17 @@
     "precio_venta": 230.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-15 17:13:25",
+    "producto_id": "PROD_20260801_215309_839310",
+    "producto": "Confort 38-42",
+    "talla": "42",
+    "color": "Azul oscuro",
+    "cantidad": 1,
+    "precio_sugerido": 300.0,
+    "precio_venta": 300.0,
+    "categoria": "Jeans",
+    "ubicacion_venta": "Vitrina"
   }
 ]
