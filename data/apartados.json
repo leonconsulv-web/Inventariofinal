@@ -65,8 +65,8 @@
     "cliente": "Jesús Sánchez ",
     "concepto": "Mezclilla (1 pza) - Azul oscuro - Talla S",
     "total": 299.0,
-    "abonado": 50.0,
-    "restante": 249.0,
-    "estado": "Pendiente"
+    "abonado": 299.0,
+    "restante": 0.0,
+    "estado": "Liquidado"
   }
 ]
