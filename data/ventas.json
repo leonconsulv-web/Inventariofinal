@@ -5338,5 +5338,17 @@
     "precio_venta": 220.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-15 17:24:04",
+    "producto_id": "PROD_20260801_172200_486721",
+    "producto": "🔄 Cambio de Color: Entregado (T36 (Oxford / Talla 36)) ➔ Devuelto (T36 (Gris medio / Talla 36))",
+    "talla": "36",
+    "color": "Oxford",
+    "cantidad": 1,
+    "precio_sugerido": 0.0,
+    "precio_venta": 0.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Cambio sin costo ($0.00)"
   }
 ]
