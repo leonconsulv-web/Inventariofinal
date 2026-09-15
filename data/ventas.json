@@ -5266,5 +5266,17 @@
     "precio_venta": 268.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-15 14:52:24",
+    "producto_id": "AP_20260910_200044",
+    "producto": "💵 Abono Apartado: Mezclilla (1 pza) - Azul oscuro - Talla S (Jesús Sánchez )",
+    "talla": "-",
+    "color": "-",
+    "cantidad": 1,
+    "precio_sugerido": 249.0,
+    "precio_venta": 249.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Abono (Restan $0.00)"
   }
 ]
