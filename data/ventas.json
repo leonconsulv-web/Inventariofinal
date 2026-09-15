@@ -5326,5 +5326,17 @@
     "precio_venta": 135.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-15 17:14:54",
+    "producto_id": "PROD_20260801_053558_224627",
+    "producto": "Waffle XG",
+    "talla": "XG",
+    "color": "Blanco",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
