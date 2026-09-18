@@ -6798,7 +6798,16 @@
         }
       },
       {
-        "color": "Color #5",
+        "color": "Caqui",
+        "stock": {
+          "CH": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #6",
         "stock": {
           "CH": {
             "exhibido": 0,
