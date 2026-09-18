@@ -6646,10 +6646,10 @@
         }
       },
       {
-        "color": "Color #6",
+        "color": "Negra",
         "stock": {
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
