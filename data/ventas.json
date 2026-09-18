@@ -5494,5 +5494,17 @@
     "precio_venta": 339.0,
     "categoria": "Suéteres",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-18 17:21:49",
+    "producto_id": "PROD_20260801_224623_542700",
+    "producto": "Cierre completo",
+    "talla": "G",
+    "color": "Perla",
+    "cantidad": 1,
+    "precio_sugerido": 339.0,
+    "precio_venta": 339.0,
+    "categoria": "Suéteres",
+    "ubicacion_venta": "Vitrina"
   }
 ]
