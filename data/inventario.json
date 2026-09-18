@@ -7166,5 +7166,62 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260918_170924_479005",
+    "Categoria": "Chamarras",
+    "Producto": "Pacorro ",
+    "Precio_Sugerido": 369.0,
+    "Precio_Venta": 369.0,
+    "Tallas": [
+      "CH",
+      "M",
+      "G",
+      "XL"
+    ],
+    "Variantes": [
+      {
+        "color": "Verde",
+        "stock": {
+          "CH": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XL": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Camel ",
+        "stock": {
+          "CH": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XL": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
