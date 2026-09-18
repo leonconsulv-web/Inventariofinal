@@ -1279,10 +1279,10 @@
         }
       },
       {
-        "color": "Color #22",
+        "color": "Azul marino ",
         "stock": {
           "XXG": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
