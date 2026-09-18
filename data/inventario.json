@@ -7166,5 +7166,35 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260918_164647_031852",
+    "Categoria": "Playeras",
+    "Producto": "Polo manga larga XL",
+    "Precio_Sugerido": 0.0,
+    "Precio_Venta": 0.0,
+    "Tallas": [
+      "XL"
+    ],
+    "Variantes": [
+      {
+        "color": "Cemento ",
+        "stock": {
+          "XL": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Olivo ",
+        "stock": {
+          "XL": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
