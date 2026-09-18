@@ -7119,5 +7119,26 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20260918_164107_209740",
+    "Categoria": "Playeras",
+    "Producto": "Polo XXXL",
+    "Precio_Sugerido": 0.0,
+    "Precio_Venta": 0.0,
+    "Tallas": [
+      "XXXL"
+    ],
+    "Variantes": [
+      {
+        "color": "Olivo",
+        "stock": {
+          "XXXL": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
