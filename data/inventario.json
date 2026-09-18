@@ -1270,7 +1270,16 @@
         }
       },
       {
-        "color": "Color #21",
+        "color": "Blanco ",
+        "stock": {
+          "XXG": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #22",
         "stock": {
           "XXG": {
             "exhibido": 0,
