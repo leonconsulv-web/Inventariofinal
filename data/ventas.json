@@ -5446,5 +5446,17 @@
     "precio_venta": 130.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-18 17:04:16",
+    "producto_id": "PROD_20260801_173139_078610",
+    "producto": "🔄 Cambio de Producto: Entregado (T40 (Negro / Talla 40)) ➔ Devuelto (T38 (Negro / Talla 38))",
+    "talla": "40",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 20.0,
+    "precio_venta": 20.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Diferencia: $20.00"
   }
 ]
