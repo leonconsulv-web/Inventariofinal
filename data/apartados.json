@@ -68,5 +68,15 @@
     "abonado": 299.0,
     "restante": 0.0,
     "estado": "Liquidado"
+  },
+  {
+    "id": "AP_20260918_170517",
+    "fecha": "2026-09-18 17:05:17",
+    "cliente": "Matilde Mendoza ",
+    "concepto": "Repelente (1 pza) - Negro - Talla M",
+    "total": 389.0,
+    "abonado": 50.0,
+    "restante": 339.0,
+    "estado": "Pendiente"
   }
 ]
