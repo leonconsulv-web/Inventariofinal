@@ -5458,5 +5458,17 @@
     "precio_venta": 20.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Diferencia: $20.00"
+  },
+  {
+    "fecha": "2026-09-18 17:05:17",
+    "producto_id": "AP_20260918_170517",
+    "producto": "📑 Anticipo Apartado: Repelente (1 pza) - Negro - Talla M (Matilde Mendoza )",
+    "talla": "M",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 50.0,
+    "precio_venta": 50.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Anticipo (Restan $339.00)"
   }
 ]
