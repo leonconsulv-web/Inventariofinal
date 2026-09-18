@@ -784,7 +784,7 @@
         "color": "Azul acero",
         "stock": {
           "XG": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -874,7 +874,7 @@
         "color": "Lila",
         "stock": {
           "XG": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -883,7 +883,7 @@
         "color": "Blanca",
         "stock": {
           "XG": {
-            "exhibido": 2,
+            "exhibido": 3,
             "bodega": 0
           }
         }
@@ -910,7 +910,7 @@
         "color": "Negro",
         "stock": {
           "XG": {
-            "exhibido": 0,
+            "exhibido": 2,
             "bodega": 0
           }
         }
