@@ -6768,7 +6768,16 @@
         }
       },
       {
-        "color": "Color #3",
+        "color": "Negro ",
+        "stock": {
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #4",
         "stock": {
           "G": {
             "exhibido": 0,
