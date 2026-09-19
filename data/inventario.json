@@ -2754,10 +2754,10 @@
         }
       },
       {
-        "color": "Color #8",
+        "color": "Gris medio",
         "stock": {
           "28": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
