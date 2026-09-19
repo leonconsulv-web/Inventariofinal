@@ -2077,7 +2077,7 @@
         "color": "Azul cielo",
         "stock": {
           "XG": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -2114,6 +2114,15 @@
         "stock": {
           "XG": {
             "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #8",
+        "stock": {
+          "XG": {
+            "exhibido": 0,
             "bodega": 0
           }
         }
