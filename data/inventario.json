@@ -6786,10 +6786,10 @@
         }
       },
       {
-        "color": "Color #5",
+        "color": "Azul cielo ",
         "stock": {
           "G": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
