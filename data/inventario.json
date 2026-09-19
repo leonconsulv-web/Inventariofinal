@@ -5144,7 +5144,7 @@
         "color": "Negro",
         "stock": {
           "UNI": {
-            "exhibido": 6,
+            "exhibido": 9,
             "bodega": 0
           }
         }
@@ -5153,7 +5153,7 @@
         "color": "Blanca",
         "stock": {
           "UNI": {
-            "exhibido": 2,
+            "exhibido": 3,
             "bodega": 0
           }
         }
@@ -5178,6 +5178,15 @@
       },
       {
         "color": "Gris perla",
+        "stock": {
+          "UNI": {
+            "exhibido": 4,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #6",
         "stock": {
           "UNI": {
             "exhibido": 0,
