@@ -1525,7 +1525,7 @@
         "color": "Negro",
         "stock": {
           "M": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -1561,7 +1561,7 @@
         "color": "Azul petróleo ",
         "stock": {
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -1570,7 +1570,7 @@
         "color": "Verde militar",
         "stock": {
           "M": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -1615,7 +1615,7 @@
         "color": "Olivo",
         "stock": {
           "M": {
-            "exhibido": 0,
+            "exhibido": 2,
             "bodega": 0
           }
         }
