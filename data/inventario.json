@@ -6196,7 +6196,8 @@
     "Tallas": [
       "S",
       "M",
-      "G"
+      "G",
+      "XL"
     ],
     "Variantes": [
       {
@@ -6211,6 +6212,10 @@
             "bodega": 0
           },
           "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XL": {
             "exhibido": 0,
             "bodega": 0
           }
@@ -6230,6 +6235,10 @@
           "G": {
             "exhibido": 0,
             "bodega": 0
+          },
+          "XL": {
+            "exhibido": 0,
+            "bodega": 0
           }
         }
       },
@@ -6247,6 +6256,10 @@
           "G": {
             "exhibido": 1,
             "bodega": 0
+          },
+          "XL": {
+            "exhibido": 0,
+            "bodega": 0
           }
         }
       },
@@ -6262,6 +6275,10 @@
             "bodega": 0
           },
           "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XL": {
             "exhibido": 0,
             "bodega": 0
           }
@@ -6281,6 +6298,10 @@
           "G": {
             "exhibido": 1,
             "bodega": 0
+          },
+          "XL": {
+            "exhibido": 0,
+            "bodega": 0
           }
         }
       },
@@ -6298,21 +6319,29 @@
           "G": {
             "exhibido": 1,
             "bodega": 0
+          },
+          "XL": {
+            "exhibido": 0,
+            "bodega": 0
           }
         }
       },
       {
-        "color": "Color #7",
+        "color": "Verde",
         "stock": {
           "S": {
             "exhibido": 0,
             "bodega": 0
           },
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "XL": {
             "exhibido": 0,
             "bodega": 0
           }
