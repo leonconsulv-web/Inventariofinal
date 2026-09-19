@@ -166,5 +166,12 @@
     "entregado": "T40 (Negro / Talla 40)",
     "diferencia": 20.0,
     "motivo": ""
+  },
+  {
+    "fecha": "2026-09-18 18:30:39",
+    "devuelto": "T32 (Blanco / Talla 32)",
+    "entregado": "T34 (Blanco / Talla 34)",
+    "diferencia": 0.0,
+    "motivo": ""
   }
 ]
