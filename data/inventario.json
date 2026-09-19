@@ -2080,7 +2080,28 @@
         }
       },
       {
-        "color": "Color #3",
+        "color": "Negro",
+        "stock": {
+          "CH": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XL": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #4",
         "stock": {
           "CH": {
             "exhibido": 0,
