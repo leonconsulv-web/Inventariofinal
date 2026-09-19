@@ -2934,7 +2934,7 @@
         "color": "Blanco",
         "stock": {
           "32": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -3081,7 +3081,7 @@
         "color": "Blanco",
         "stock": {
           "34": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           }
         }
