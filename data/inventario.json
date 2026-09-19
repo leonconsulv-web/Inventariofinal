@@ -5162,7 +5162,7 @@
         "color": "Azul marino",
         "stock": {
           "UNI": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -5186,7 +5186,16 @@
         }
       },
       {
-        "color": "Color #6",
+        "color": "Vino ",
+        "stock": {
+          "UNI": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #7",
         "stock": {
           "UNI": {
             "exhibido": 0,
