@@ -5578,5 +5578,17 @@
     "precio_venta": 220.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-19 14:01:59",
+    "producto_id": "PROD_20260804_021140_244046",
+    "producto": "Waffle Ch",
+    "talla": "CH",
+    "color": "Azul marino",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
