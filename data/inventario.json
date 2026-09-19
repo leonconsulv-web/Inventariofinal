@@ -2086,7 +2086,7 @@
         "color": "Negro",
         "stock": {
           "XG": {
-            "exhibido": 3,
+            "exhibido": 4,
             "bodega": 0
           }
         }
@@ -2104,7 +2104,7 @@
         "color": "Olivo",
         "stock": {
           "XG": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -2119,7 +2119,16 @@
         }
       },
       {
-        "color": "Color #8",
+        "color": "Verde militar ",
+        "stock": {
+          "XG": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #9",
         "stock": {
           "XG": {
             "exhibido": 0,
