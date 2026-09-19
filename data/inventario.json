@@ -2892,10 +2892,10 @@
         }
       },
       {
-        "color": "Color #15",
+        "color": "Cemento ",
         "stock": {
           "30": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
