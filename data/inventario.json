@@ -3171,7 +3171,7 @@
         "color": "Chocolate",
         "stock": {
           "34": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -3240,7 +3240,16 @@
         }
       },
       {
-        "color": "Color #17",
+        "color": "Perla",
+        "stock": {
+          "34": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #18",
         "stock": {
           "34": {
             "exhibido": 0,
