@@ -4743,7 +4743,7 @@
         "color": "Oxford ",
         "stock": {
           "XG": {
-            "exhibido": 2,
+            "exhibido": 3,
             "bodega": 0
           }
         }
@@ -4753,6 +4753,15 @@
         "stock": {
           "XG": {
             "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #5",
+        "stock": {
+          "XG": {
+            "exhibido": 0,
             "bodega": 0
           }
         }
