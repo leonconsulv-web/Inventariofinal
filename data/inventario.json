@@ -1630,10 +1630,10 @@
         }
       },
       {
-        "color": "Color #13",
+        "color": "Azul marino ",
         "stock": {
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
