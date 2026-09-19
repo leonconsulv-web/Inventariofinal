@@ -5614,5 +5614,17 @@
     "precio_venta": 100.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Abono (Restan $89.00)"
+  },
+  {
+    "fecha": "2026-09-19 14:04:54",
+    "producto_id": "AP_20260905_190119",
+    "producto": "💵 Abono Apartado: Mezclilla (1 pza) - Azul oscuro - Talla G (Rafael )",
+    "talla": "-",
+    "color": "-",
+    "cantidad": 1,
+    "precio_sugerido": 100.0,
+    "precio_venta": 100.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Abono (Restan $89.00)"
   }
 ]
