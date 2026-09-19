@@ -5518,5 +5518,17 @@
     "precio_venta": 0.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Cambio sin costo ($0.00)"
+  },
+  {
+    "fecha": "2026-09-18 19:03:33",
+    "producto_id": "PROD_20260801_223452_302857",
+    "producto": "Cuello V",
+    "talla": "G",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 339.0,
+    "precio_venta": 330.0,
+    "categoria": "Suéteres",
+    "ubicacion_venta": "Vitrina"
   }
 ]
