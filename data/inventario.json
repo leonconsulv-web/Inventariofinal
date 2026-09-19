@@ -3126,7 +3126,7 @@
         "color": "Petróleo ",
         "stock": {
           "34": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -3198,7 +3198,7 @@
         "color": "Cemento ",
         "stock": {
           "34": {
-            "exhibido": 1,
+            "exhibido": 3,
             "bodega": 0
           }
         }
@@ -3234,7 +3234,16 @@
         "color": "Negro ",
         "stock": {
           "34": {
-            "exhibido": 1,
+            "exhibido": 3,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #17",
+        "stock": {
+          "34": {
+            "exhibido": 0,
             "bodega": 0
           }
         }
