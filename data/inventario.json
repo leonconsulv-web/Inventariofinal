@@ -5195,10 +5195,10 @@
         }
       },
       {
-        "color": "Color #7",
+        "color": "Verde ",
         "stock": {
           "UNI": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
