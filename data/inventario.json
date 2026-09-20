@@ -4053,11 +4053,11 @@
         "color": "Blanco",
         "stock": {
           "CH": {
-            "exhibido": 7,
+            "exhibido": 8,
             "bodega": 0
           },
           "M": {
-            "exhibido": 5,
+            "exhibido": 6,
             "bodega": 0
           },
           "G": {
