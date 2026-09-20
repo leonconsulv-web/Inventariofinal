@@ -3723,7 +3723,7 @@
         "color": "Oxford",
         "stock": {
           "42": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -3733,6 +3733,15 @@
         "stock": {
           "42": {
             "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #6",
+        "stock": {
+          "42": {
+            "exhibido": 0,
             "bodega": 0
           }
         }
