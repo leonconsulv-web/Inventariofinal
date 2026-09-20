@@ -2694,7 +2694,7 @@
         "color": "Negro",
         "stock": {
           "28": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
