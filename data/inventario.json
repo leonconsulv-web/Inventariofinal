@@ -7608,7 +7608,8 @@
       "CH",
       "M",
       "G",
-      "XG"
+      "XG",
+      "2XG"
     ],
     "Variantes": [
       {
@@ -7627,6 +7628,10 @@
             "bodega": 0
           },
           "XG": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "2XG": {
             "exhibido": 0,
             "bodega": 0
           }
@@ -7650,6 +7655,10 @@
           "XG": {
             "exhibido": 0,
             "bodega": 0
+          },
+          "2XG": {
+            "exhibido": 0,
+            "bodega": 0
           }
         }
       },
@@ -7669,6 +7678,10 @@
             "bodega": 0
           },
           "XG": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "2XG": {
             "exhibido": 0,
             "bodega": 0
           }
@@ -7692,6 +7705,10 @@
           "XG": {
             "exhibido": 0,
             "bodega": 0
+          },
+          "2XG": {
+            "exhibido": 0,
+            "bodega": 0
           }
         }
       },
@@ -7711,6 +7728,10 @@
             "bodega": 0
           },
           "XG": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "2XG": {
             "exhibido": 0,
             "bodega": 0
           }
