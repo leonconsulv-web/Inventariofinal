@@ -5650,5 +5650,17 @@
     "precio_venta": 289.0,
     "categoria": "Chalecos",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-19 19:15:04",
+    "producto_id": "PROD_20260801_052523_639895",
+    "producto": "Waffle M",
+    "talla": "M",
+    "color": "Azul marino ",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
