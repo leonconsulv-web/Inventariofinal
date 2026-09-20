@@ -3747,10 +3747,10 @@
         }
       },
       {
-        "color": "Color #7",
+        "color": "Petróleo ",
         "stock": {
           "42": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
