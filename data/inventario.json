@@ -2326,15 +2326,15 @@
         "color": "Azul marino ",
         "stock": {
           "CH": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           },
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "XG": {
@@ -2368,7 +2368,7 @@
         "color": "Perla",
         "stock": {
           "CH": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "M": {
@@ -2435,15 +2435,15 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 2,
+            "exhibido": 3,
             "bodega": 0
           },
           "G": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "XG": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -2460,7 +2460,7 @@
             "bodega": 0
           },
           "G": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "XG": {
@@ -2470,18 +2470,18 @@
         }
       },
       {
-        "color": "Color #11",
+        "color": "Acero",
         "stock": {
           "CH": {
             "exhibido": 0,
             "bodega": 0
           },
           "M": {
-            "exhibido": 0,
+            "exhibido": 2,
             "bodega": 0
           },
           "G": {
-            "exhibido": 0,
+            "exhibido": 2,
             "bodega": 0
           },
           "XG": {
