@@ -3729,7 +3729,7 @@
         }
       },
       {
-        "color": "Grus claro",
+        "color": "Gris claro",
         "stock": {
           "42": {
             "exhibido": 1,
@@ -3738,7 +3738,16 @@
         }
       },
       {
-        "color": "Color #6",
+        "color": "Gris medio ",
+        "stock": {
+          "42": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #7",
         "stock": {
           "42": {
             "exhibido": 0,
