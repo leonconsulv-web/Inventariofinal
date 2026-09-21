@@ -5758,5 +5758,17 @@
     "precio_venta": 245.0,
     "categoria": "Jeans",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-20 19:39:01",
+    "producto_id": "PROD_20260801_190642_565357",
+    "producto": "Camisa económica ",
+    "talla": "XG",
+    "color": "Varios",
+    "cantidad": 1,
+    "precio_sugerido": 199.0,
+    "precio_venta": 215.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
