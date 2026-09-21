@@ -5782,5 +5782,17 @@
     "precio_venta": 300.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-21 17:59:38",
+    "producto_id": "PROD_20260801_061207_448129",
+    "producto": "Waffle XG",
+    "talla": "XG",
+    "color": "Beige",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
