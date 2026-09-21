@@ -5722,5 +5722,17 @@
     "precio_venta": 130.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-20 19:36:57",
+    "producto_id": "PROD_20260731_184657_367258",
+    "producto": "Polo",
+    "talla": "S",
+    "color": "Perla",
+    "cantidad": 1,
+    "precio_sugerido": 135.0,
+    "precio_venta": 130.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
