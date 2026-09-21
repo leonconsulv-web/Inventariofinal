@@ -946,7 +946,7 @@
         "color": "Rosa",
         "stock": {
           "XG": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           }
         }
