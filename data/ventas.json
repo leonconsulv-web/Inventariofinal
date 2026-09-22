@@ -5830,5 +5830,17 @@
     "precio_venta": 150.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-21 18:03:08",
+    "producto_id": "PROD_20260801_214804_719643",
+    "producto": "Confort",
+    "talla": "32",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 275.0,
+    "precio_venta": 270.0,
+    "categoria": "Jeans",
+    "ubicacion_venta": "Vitrina"
   }
 ]
