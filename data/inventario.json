@@ -5352,7 +5352,8 @@
     "Tallas": [
       "M",
       "G",
-      "XG"
+      "XG",
+      "UNITALLA"
     ],
     "Variantes": [
       {
@@ -5367,6 +5368,10 @@
             "bodega": 0
           },
           "XG": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "UNITALLA": {
             "exhibido": 0,
             "bodega": 0
           }
@@ -5386,6 +5391,10 @@
           "XG": {
             "exhibido": 0,
             "bodega": 0
+          },
+          "UNITALLA": {
+            "exhibido": 0,
+            "bodega": 0
           }
         }
       },
@@ -5401,6 +5410,10 @@
             "bodega": 0
           },
           "XG": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "UNITALLA": {
             "exhibido": 0,
             "bodega": 0
           }
@@ -5420,6 +5433,10 @@
           "XG": {
             "exhibido": 0,
             "bodega": 0
+          },
+          "UNITALLA": {
+            "exhibido": 0,
+            "bodega": 0
           }
         }
       },
@@ -5437,6 +5454,10 @@
           "XG": {
             "exhibido": 1,
             "bodega": 0
+          },
+          "UNITALLA": {
+            "exhibido": 0,
+            "bodega": 0
           }
         }
       },
@@ -5452,6 +5473,10 @@
             "bodega": 0
           },
           "XG": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "UNITALLA": {
             "exhibido": 0,
             "bodega": 0
           }
@@ -5471,11 +5496,15 @@
           "XG": {
             "exhibido": 0,
             "bodega": 0
+          },
+          "UNITALLA": {
+            "exhibido": 0,
+            "bodega": 0
           }
         }
       },
       {
-        "color": "Color #8",
+        "color": "Combinado ",
         "stock": {
           "M": {
             "exhibido": 0,
@@ -5486,6 +5515,10 @@
             "bodega": 0
           },
           "XG": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "UNITALLA": {
             "exhibido": 0,
             "bodega": 0
           }
