@@ -2832,7 +2832,7 @@
         "color": "Gris medio",
         "stock": {
           "30": {
-            "exhibido": 3,
+            "exhibido": 4,
             "bodega": 0
           }
         }
@@ -2859,7 +2859,7 @@
         "color": "Azul marino",
         "stock": {
           "30": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -2895,7 +2895,7 @@
         "color": "Petróleo ",
         "stock": {
           "30": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -2940,7 +2940,7 @@
         "color": "Negro",
         "stock": {
           "30": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -2949,7 +2949,7 @@
         "color": "Cemento ",
         "stock": {
           "30": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
