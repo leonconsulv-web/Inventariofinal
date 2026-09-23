@@ -7108,7 +7108,7 @@
         "color": "Azul marino",
         "stock": {
           "CH": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -7154,6 +7154,15 @@
         "stock": {
           "CH": {
             "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #7",
+        "stock": {
+          "CH": {
+            "exhibido": 0,
             "bodega": 0
           }
         }
