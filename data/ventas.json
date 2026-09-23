@@ -5962,5 +5962,17 @@
     "precio_venta": 230.0,
     "categoria": "Jeans",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-22 19:15:53",
+    "producto_id": "PROD_20260731_200228_133616",
+    "producto": "Polo grandes",
+    "talla": "XG",
+    "color": "Verde oliva",
+    "cantidad": 1,
+    "precio_sugerido": 170.0,
+    "precio_venta": 170.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
