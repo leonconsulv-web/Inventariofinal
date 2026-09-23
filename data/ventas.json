@@ -5950,5 +5950,17 @@
     "precio_venta": 269.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-22 19:15:16",
+    "producto_id": "PROD_20260801_213034_736035",
+    "producto": "Vaquero",
+    "talla": "34",
+    "color": "Azul oscuro ",
+    "cantidad": 1,
+    "precio_sugerido": 245.0,
+    "precio_venta": 230.0,
+    "categoria": "Jeans",
+    "ubicacion_venta": "Vitrina"
   }
 ]
