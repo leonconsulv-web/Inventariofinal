@@ -7159,10 +7159,10 @@
         }
       },
       {
-        "color": "Color #7",
+        "color": "Militar ",
         "stock": {
           "CH": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
