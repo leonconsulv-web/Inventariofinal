@@ -5914,5 +5914,17 @@
     "precio_venta": 400.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-22 19:11:10",
+    "producto_id": "PROD_20260801_172200_486721",
+    "producto": "T36",
+    "talla": "36",
+    "color": "Azul marino",
+    "cantidad": 2,
+    "precio_sugerido": 440.0,
+    "precio_venta": 400.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Vitrina"
   }
 ]
