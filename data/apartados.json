@@ -75,8 +75,8 @@
     "cliente": "Matilde Mendoza ",
     "concepto": "Repelente (1 pza) - Negro - Talla M",
     "total": 389.0,
-    "abonado": 50.0,
-    "restante": 339.0,
-    "estado": "Pendiente"
+    "abonado": 389.0,
+    "restante": 0.0,
+    "estado": "Liquidado"
   }
 ]
