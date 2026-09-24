@@ -5998,5 +5998,17 @@
     "precio_venta": 20.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Diferencia: $20.00"
+  },
+  {
+    "fecha": "2026-09-24 13:16:20",
+    "producto_id": "AP_20260918_170517",
+    "producto": "💵 Abono Apartado: Repelente (1 pza) - Negro - Talla M (Matilde Mendoza )",
+    "talla": "-",
+    "color": "-",
+    "cantidad": 1,
+    "precio_sugerido": 339.0,
+    "precio_venta": 339.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Abono (Restan $0.00)"
   }
 ]
