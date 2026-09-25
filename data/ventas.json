@@ -6154,5 +6154,17 @@
     "precio_venta": 50.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Anticipo (Restan $319.00)"
+  },
+  {
+    "fecha": "2026-09-24 19:53:37",
+    "producto_id": "PROD_20260801_224121_661789",
+    "producto": "Medio cierre",
+    "talla": "M",
+    "color": "Oxford ",
+    "cantidad": 1,
+    "precio_sugerido": 339.0,
+    "precio_venta": 339.0,
+    "categoria": "Suéteres",
+    "ubicacion_venta": "Vitrina"
   }
 ]
