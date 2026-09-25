@@ -6214,5 +6214,17 @@
     "precio_venta": 220.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-25 16:55:57",
+    "producto_id": "PROD_20260801_221116_880305",
+    "producto": "Camisa",
+    "talla": "10",
+    "color": "Varios",
+    "cantidad": 1,
+    "precio_sugerido": 100.0,
+    "precio_venta": 110.0,
+    "categoria": "Niño",
+    "ubicacion_venta": "Vitrina"
   }
 ]
