@@ -6070,5 +6070,17 @@
     "precio_venta": 220.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-24 19:17:28",
+    "producto_id": "PROD_20260801_221221_691088",
+    "producto": "Playera",
+    "talla": "12",
+    "color": "Varios",
+    "cantidad": 1,
+    "precio_sugerido": 90.0,
+    "precio_venta": 50.0,
+    "categoria": "Niño",
+    "ubicacion_venta": "Vitrina"
   }
 ]
