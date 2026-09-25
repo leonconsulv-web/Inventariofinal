@@ -6130,5 +6130,17 @@
     "precio_venta": 275.0,
     "categoria": "Jeans",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-24 19:38:26",
+    "producto_id": "PROD_20260731_200228_133616",
+    "producto": "Polo grandes",
+    "talla": "XG",
+    "color": "Azul marino ",
+    "cantidad": 1,
+    "precio_sugerido": 170.0,
+    "precio_venta": 170.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
