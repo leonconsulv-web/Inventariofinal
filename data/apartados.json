@@ -78,5 +78,15 @@
     "abonado": 389.0,
     "restante": 0.0,
     "estado": "Liquidado"
+  },
+  {
+    "id": "AP_20260924_193955",
+    "fecha": "2026-09-24 19:39:55",
+    "cliente": "Paz",
+    "concepto": "Pacorro  (1 pza) - Camel  - Talla M",
+    "total": 369.0,
+    "abonado": 50.0,
+    "restante": 319.0,
+    "estado": "Pendiente"
   }
 ]
