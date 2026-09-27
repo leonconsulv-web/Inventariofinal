@@ -6298,5 +6298,17 @@
     "precio_venta": 220.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-26 20:12:49",
+    "producto_id": "AP_20260926_201249",
+    "producto": "📑 Anticipo Apartado: Sin botón  (1 pza) - Negro - Talla M (Evelia Lozano )",
+    "talla": "M",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 50.0,
+    "precio_venta": 50.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Anticipo (Restan $239.00)"
   }
 ]
