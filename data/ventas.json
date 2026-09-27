@@ -6418,5 +6418,17 @@
     "precio_venta": 200.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-27 14:38:47",
+    "producto_id": "PROD_20260919_230224_850455",
+    "producto": "Deportivas manga larga ",
+    "talla": "M",
+    "color": "Negra",
+    "cantidad": 1,
+    "precio_sugerido": 0.0,
+    "precio_venta": 160.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
