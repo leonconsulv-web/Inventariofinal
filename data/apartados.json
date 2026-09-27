@@ -88,5 +88,15 @@
     "abonado": 50.0,
     "restante": 319.0,
     "estado": "Pendiente"
+  },
+  {
+    "id": "AP_20260926_201249",
+    "fecha": "2026-09-26 20:12:49",
+    "cliente": "Evelia Lozano ",
+    "concepto": "Sin botón  (1 pza) - Negro - Talla M",
+    "total": 289.0,
+    "abonado": 50.0,
+    "restante": 239.0,
+    "estado": "Pendiente"
   }
 ]
