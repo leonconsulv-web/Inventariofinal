@@ -6334,5 +6334,17 @@
     "precio_venta": 135.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-27 14:32:17",
+    "producto_id": "PROD_20260801_220435_420453",
+    "producto": "Pants",
+    "talla": "M",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 210.0,
+    "precio_venta": 210.0,
+    "categoria": "Pants",
+    "ubicacion_venta": "Vitrina"
   }
 ]
