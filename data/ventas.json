@@ -6442,5 +6442,17 @@
     "precio_venta": 200.0,
     "categoria": "Pants",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-27 15:07:52",
+    "producto_id": "PROD_20260919_230224_850455",
+    "producto": "Deportivas manga larga ",
+    "talla": "M",
+    "color": "Oxford ",
+    "cantidad": 1,
+    "precio_sugerido": 0.0,
+    "precio_venta": 150.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
