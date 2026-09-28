@@ -6574,5 +6574,17 @@
     "precio_venta": 220.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-28 17:39:00",
+    "producto_id": "PROD_20260801_222635_288356",
+    "producto": "Ofertas",
+    "talla": "VARIAS",
+    "color": "Varios",
+    "cantidad": 3,
+    "precio_sugerido": 285.0,
+    "precio_venta": 285.0,
+    "categoria": "Ofertas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
