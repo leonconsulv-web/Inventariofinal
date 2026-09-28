@@ -6538,5 +6538,17 @@
     "precio_venta": 0.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Cambio sin costo ($0.00)"
+  },
+  {
+    "fecha": "2026-09-28 16:28:37",
+    "producto_id": "PROD_20260801_051906_646266",
+    "producto": "Waffle Ch",
+    "talla": "CH",
+    "color": "Azul rey",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 210.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
