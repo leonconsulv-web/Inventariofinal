@@ -2194,7 +2194,7 @@
         "color": "Negro",
         "stock": {
           "XG": {
-            "exhibido": 6,
+            "exhibido": 7,
             "bodega": 0
           }
         }
@@ -2212,7 +2212,7 @@
         "color": "Olivo",
         "stock": {
           "XG": {
-            "exhibido": 3,
+            "exhibido": 2,
             "bodega": 0
           }
         }
