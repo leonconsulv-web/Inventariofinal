@@ -6598,5 +6598,17 @@
     "precio_venta": 325.0,
     "categoria": "Suéteres",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-29 17:22:11",
+    "producto_id": "PROD_20260801_174554_726937",
+    "producto": "Manga larga",
+    "talla": "36",
+    "color": "Blanco ($289)",
+    "cantidad": 1,
+    "precio_sugerido": 269.0,
+    "precio_venta": 269.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
