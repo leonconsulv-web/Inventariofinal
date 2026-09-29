@@ -6610,5 +6610,17 @@
     "precio_venta": 269.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-29 17:22:44",
+    "producto_id": "PROD_20260801_230412_019357",
+    "producto": "Sin botón ",
+    "talla": "M",
+    "color": "Gris medio",
+    "cantidad": 1,
+    "precio_sugerido": 289.0,
+    "precio_venta": 289.0,
+    "categoria": "Chalecos",
+    "ubicacion_venta": "Vitrina"
   }
 ]
