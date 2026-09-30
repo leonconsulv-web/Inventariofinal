@@ -6658,5 +6658,17 @@
     "precio_venta": 95.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-09-30 14:51:08",
+    "producto_id": "PROD_20260801_063149_951164",
+    "producto": "Deportiva económica ",
+    "talla": "G",
+    "color": "Azul marino",
+    "cantidad": 1,
+    "precio_sugerido": 95.0,
+    "precio_venta": 95.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
