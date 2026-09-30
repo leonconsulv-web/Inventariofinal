@@ -3937,7 +3937,7 @@
         "color": "Varios",
         "stock": {
           "32": {
-            "exhibido": 12,
+            "exhibido": 7,
             "bodega": 0
           },
           "34": {
@@ -3949,15 +3949,15 @@
             "bodega": 0
           },
           "38": {
-            "exhibido": 16,
+            "exhibido": 14,
             "bodega": 0
           },
           "40": {
-            "exhibido": 19,
+            "exhibido": 17,
             "bodega": 0
           },
           "42": {
-            "exhibido": 17,
+            "exhibido": 16,
             "bodega": 0
           }
         }
