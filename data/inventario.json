@@ -4077,19 +4077,19 @@
         "color": "Varios",
         "stock": {
           "CH": {
-            "exhibido": 3,
+            "exhibido": 0,
             "bodega": 0
           },
           "M": {
-            "exhibido": 4,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
-            "exhibido": 7,
+            "exhibido": 5,
             "bodega": 0
           },
           "XG": {
-            "exhibido": 10,
+            "exhibido": 8,
             "bodega": 0
           }
         }
