@@ -7018,5 +7018,17 @@
     "precio_venta": 0.0,
     "categoria": "Chalecos",
     "ubicacion_venta": "Cambio sin costo ($0.00)"
+  },
+  {
+    "fecha": "2026-10-03 17:31:57",
+    "producto_id": "PROD_20260919_230224_850455",
+    "producto": "Deportivas manga larga ",
+    "talla": "XG",
+    "color": "Azul marino ",
+    "cantidad": 1,
+    "precio_sugerido": 0.0,
+    "precio_venta": 180.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
