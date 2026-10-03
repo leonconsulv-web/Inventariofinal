@@ -6970,5 +6970,17 @@
     "precio_venta": 210.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-02 20:26:06",
+    "producto_id": "PROD_20260801_172745_325610",
+    "producto": "T38",
+    "talla": "38",
+    "color": "Gris claro",
+    "cantidad": 1,
+    "precio_sugerido": 230.0,
+    "precio_venta": 210.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Vitrina"
   }
 ]
