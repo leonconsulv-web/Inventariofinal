@@ -6790,5 +6790,17 @@
     "precio_venta": 220.0,
     "categoria": "Pants",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-02 20:08:29",
+    "producto_id": "PROD_20260731_184657_367258",
+    "producto": "Polo",
+    "talla": "G",
+    "color": "Cemento",
+    "cantidad": 1,
+    "precio_sugerido": 135.0,
+    "precio_venta": 135.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
