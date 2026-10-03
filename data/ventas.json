@@ -7006,5 +7006,17 @@
     "precio_venta": 0.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Cambio sin costo ($0.00)"
+  },
+  {
+    "fecha": "2026-10-03 14:03:30",
+    "producto_id": "PROD_20260801_230412_019357",
+    "producto": "🔄 Cambio de Talla: Entregado (Sin botón  (Azul petroleo / Talla M)) ➔ Devuelto (Sin botón  (Azul petroleo / Talla G))",
+    "talla": "M",
+    "color": "Azul petroleo",
+    "cantidad": 1,
+    "precio_sugerido": 0.0,
+    "precio_venta": 0.0,
+    "categoria": "Chalecos",
+    "ubicacion_venta": "Cambio sin costo ($0.00)"
   }
 ]
