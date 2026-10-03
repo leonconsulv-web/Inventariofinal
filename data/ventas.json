@@ -6898,5 +6898,17 @@
     "precio_venta": 135.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-02 20:20:32",
+    "producto_id": "PROD_20260801_173346_010371",
+    "producto": "T42",
+    "talla": "42",
+    "color": "Petróleo ",
+    "cantidad": 1,
+    "precio_sugerido": 250.0,
+    "precio_venta": 250.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Vitrina"
   }
 ]
