@@ -7114,5 +7114,17 @@
     "precio_venta": 100.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Abono (Restan $139.00)"
+  },
+  {
+    "fecha": "2026-10-03 18:21:56",
+    "producto_id": "AP_20260905_190040",
+    "producto": "💵 Abono Apartado: Mezclilla (1 pza) - Gris - Talla G (Rafael )",
+    "talla": "-",
+    "color": "-",
+    "cantidad": 1,
+    "precio_sugerido": 89.0,
+    "precio_venta": 89.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Abono (Restan $0.00)"
   }
 ]
