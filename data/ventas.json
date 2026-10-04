@@ -7102,5 +7102,17 @@
     "precio_venta": 199.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-03 18:19:54",
+    "producto_id": "AP_20260926_201249",
+    "producto": "💵 Abono Apartado: Sin botón  (1 pza) - Negro - Talla M (Evelia Lozano )",
+    "talla": "-",
+    "color": "-",
+    "cantidad": 1,
+    "precio_sugerido": 100.0,
+    "precio_venta": 100.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Abono (Restan $139.00)"
   }
 ]
