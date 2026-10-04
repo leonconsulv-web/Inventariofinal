@@ -7078,5 +7078,17 @@
     "precio_venta": 220.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-03 18:17:40",
+    "producto_id": "PROD_20260731_221128_097174",
+    "producto": "Polos XXL",
+    "talla": "XXG",
+    "color": "Olivo",
+    "cantidad": 1,
+    "precio_sugerido": 210.0,
+    "precio_venta": 210.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
