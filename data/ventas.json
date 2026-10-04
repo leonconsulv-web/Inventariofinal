@@ -7162,5 +7162,17 @@
     "precio_venta": 160.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-03 18:27:09",
+    "producto_id": "PROD_20260801_051906_646266",
+    "producto": "Waffle Ch",
+    "talla": "CH",
+    "color": "Palo de rosa",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
