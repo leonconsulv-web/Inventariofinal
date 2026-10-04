@@ -7138,5 +7138,17 @@
     "precio_venta": 89.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Abono (Restan $0.00)"
+  },
+  {
+    "fecha": "2026-10-03 18:24:23",
+    "producto_id": "AP_20261003_182423",
+    "producto": "📑 Anticipo Apartado: Calvin permeable XL (1 pza) - Azul marino - Talla XG (Yesica González )",
+    "talla": "XG",
+    "color": "Azul marino",
+    "cantidad": 1,
+    "precio_sugerido": 150.0,
+    "precio_venta": 150.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Anticipo (Restan $309.00)"
   }
 ]
