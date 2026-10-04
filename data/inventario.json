@@ -1512,7 +1512,7 @@
         "color": "Palo de rosa",
         "stock": {
           "CH": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           }
         }
