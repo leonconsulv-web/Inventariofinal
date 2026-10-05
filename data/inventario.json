@@ -1413,7 +1413,7 @@
         "color": "Azul cielo",
         "stock": {
           "CH": {
-            "exhibido": 3,
+            "exhibido": 4,
             "bodega": 0
           }
         }
@@ -1422,7 +1422,7 @@
         "color": "Negro",
         "stock": {
           "CH": {
-            "exhibido": 0,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -1431,7 +1431,7 @@
         "color": "Verde militar",
         "stock": {
           "CH": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -1476,7 +1476,7 @@
         "color": "Verde olivo",
         "stock": {
           "CH": {
-            "exhibido": 3,
+            "exhibido": 4,
             "bodega": 0
           }
         }
@@ -1494,7 +1494,7 @@
         "color": "Caqui",
         "stock": {
           "CH": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -1512,7 +1512,7 @@
         "color": "Palo de rosa",
         "stock": {
           "CH": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -1527,10 +1527,10 @@
         }
       },
       {
-        "color": "Color #16",
+        "color": "Azul marino ",
         "stock": {
           "CH": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
