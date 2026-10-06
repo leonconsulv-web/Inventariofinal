@@ -7354,5 +7354,17 @@
     "precio_venta": 339.0,
     "categoria": "Suéteres",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-05 20:11:42",
+    "producto_id": "PROD_20260801_222635_288356",
+    "producto": "Ofertas",
+    "talla": "VARIAS",
+    "color": "Varios",
+    "cantidad": 2,
+    "precio_sugerido": 190.0,
+    "precio_venta": 185.0,
+    "categoria": "Ofertas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
