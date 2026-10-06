@@ -7207,10 +7207,10 @@
         }
       },
       {
-        "color": "Color #6",
+        "color": "Cemento",
         "stock": {
           "G": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
