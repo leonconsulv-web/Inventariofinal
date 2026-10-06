@@ -7438,5 +7438,17 @@
     "precio_venta": 265.0,
     "categoria": "Jeans",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-06 14:21:56",
+    "producto_id": "PROD_20260801_221221_691088",
+    "producto": "Playera",
+    "talla": "14",
+    "color": "Varios",
+    "cantidad": 1,
+    "precio_sugerido": 90.0,
+    "precio_venta": 60.0,
+    "categoria": "Niño",
+    "ubicacion_venta": "Vitrina"
   }
 ]
