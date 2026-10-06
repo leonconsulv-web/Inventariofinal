@@ -7450,5 +7450,17 @@
     "precio_venta": 60.0,
     "categoria": "Niño",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-06 14:22:11",
+    "producto_id": "PROD_20260804_023045_467094",
+    "producto": "Short",
+    "talla": "VARIAS",
+    "color": "Varios",
+    "cantidad": 1,
+    "precio_sugerido": 50.0,
+    "precio_venta": 50.0,
+    "categoria": "Niño",
+    "ubicacion_venta": "Vitrina"
   }
 ]
