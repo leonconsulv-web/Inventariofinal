@@ -5791,14 +5791,14 @@
         }
       },
       {
-        "color": "Color #10",
+        "color": "Arena",
         "stock": {
           "M": {
             "exhibido": 0,
             "bodega": 0
           },
           "G": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "XG": {
