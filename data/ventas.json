@@ -7234,5 +7234,17 @@
     "precio_venta": 0.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Cambio sin costo ($0.00)"
+  },
+  {
+    "fecha": "2026-10-05 19:52:42",
+    "producto_id": "PROD_20260801_224623_542700",
+    "producto": "Cierre completo",
+    "talla": "M",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 339.0,
+    "precio_venta": 330.0,
+    "categoria": "Suéteres",
+    "ubicacion_venta": "Vitrina"
   }
 ]
