@@ -7318,5 +7318,17 @@
     "precio_venta": 0.0,
     "categoria": "Chalecos",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-05 20:02:00",
+    "producto_id": "PROD_20260803_195630_771677",
+    "producto": "Repelente",
+    "talla": "M",
+    "color": "Reflejante",
+    "cantidad": 1,
+    "precio_sugerido": 389.0,
+    "precio_venta": 380.0,
+    "categoria": "Chamarras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
