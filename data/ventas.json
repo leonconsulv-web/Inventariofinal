@@ -7474,5 +7474,17 @@
     "precio_venta": 350.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-06 19:24:48",
+    "producto_id": "PROD_20260801_224623_542700",
+    "producto": "Cierre completo",
+    "talla": "G",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 339.0,
+    "precio_venta": 339.0,
+    "categoria": "Suéteres",
+    "ubicacion_venta": "Vitrina"
   }
 ]
