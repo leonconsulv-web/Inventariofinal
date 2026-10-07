@@ -95,9 +95,9 @@
     "cliente": "Evelia Lozano ",
     "concepto": "Sin botón  (1 pza) - Negro - Talla M",
     "total": 289.0,
-    "abonado": 150.0,
-    "restante": 139.0,
-    "estado": "Pendiente"
+    "abonado": 289.0,
+    "restante": 0.0,
+    "estado": "Liquidado"
   },
   {
     "id": "AP_20261003_182423",
