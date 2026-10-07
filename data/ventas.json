@@ -7486,5 +7486,17 @@
     "precio_venta": 339.0,
     "categoria": "Suéteres",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-06 20:23:06",
+    "producto_id": "AP_20260926_201249",
+    "producto": "💵 Abono Apartado: Sin botón  (1 pza) - Negro - Talla M (Evelia Lozano )",
+    "talla": "-",
+    "color": "-",
+    "cantidad": 1,
+    "precio_sugerido": 139.0,
+    "precio_venta": 139.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Abono (Restan $0.00)"
   }
 ]
