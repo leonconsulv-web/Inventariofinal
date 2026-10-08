@@ -7534,5 +7534,17 @@
     "precio_venta": 440.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-07 20:17:52",
+    "producto_id": "PROD_20260731_184657_367258",
+    "producto": "Polo",
+    "talla": "M",
+    "color": "Océano",
+    "cantidad": 1,
+    "precio_sugerido": 135.0,
+    "precio_venta": 135.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
