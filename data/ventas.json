@@ -7558,5 +7558,17 @@
     "precio_venta": 135.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-08 13:51:02",
+    "producto_id": "PROD_20260803_201656_960630",
+    "producto": "🔄 Cambio de Talla/Color: Entregado (Mezclilla (Negro / Talla G)) ➔ Devuelto (Mezclilla (Azul oscuro / Talla M))",
+    "talla": "G",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 0.0,
+    "precio_venta": 0.0,
+    "categoria": "Chalecos",
+    "ubicacion_venta": "Cambio sin costo ($0.00)"
   }
 ]
