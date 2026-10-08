@@ -7498,5 +7498,17 @@
     "precio_venta": 139.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Abono (Restan $0.00)"
+  },
+  {
+    "fecha": "2026-10-07 20:13:11",
+    "producto_id": "PROD_20260801_174000_994264",
+    "producto": "Manga corta  XG-XXG",
+    "talla": "XG",
+    "color": "Varios",
+    "cantidad": 2,
+    "precio_sugerido": 430.0,
+    "precio_venta": 300.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
