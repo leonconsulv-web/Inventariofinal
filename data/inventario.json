@@ -8010,7 +8010,7 @@
         }
       },
       {
-        "color": "Color #6",
+        "color": "Oxford ",
         "stock": {
           "S": {
             "exhibido": 0,
@@ -8025,7 +8025,7 @@
             "bodega": 0
           },
           "XG": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
