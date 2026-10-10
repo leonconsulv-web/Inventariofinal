@@ -7786,5 +7786,17 @@
     "precio_venta": 410.0,
     "categoria": "Chamarras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-10 12:03:27",
+    "producto_id": "AP_20261010_120327",
+    "producto": "📑 Anticipo Apartado: Deportivas manga larga  (1 pza) - Roja - Talla G (Victor Hernández )",
+    "talla": "G",
+    "color": "Roja",
+    "cantidad": 1,
+    "precio_sugerido": 50.0,
+    "precio_venta": 50.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Anticipo (Restan $110.00)"
   }
 ]
