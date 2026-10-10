@@ -7774,5 +7774,17 @@
     "precio_venta": 275.0,
     "categoria": "Chalecos",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-10 12:01:11",
+    "producto_id": "PROD_20260930_152130_643823",
+    "producto": "Malboro ",
+    "talla": "G",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 410.0,
+    "precio_venta": 410.0,
+    "categoria": "Chamarras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
