@@ -7654,5 +7654,17 @@
     "precio_venta": 220.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-10 11:34:29",
+    "producto_id": "PROD_20260801_213034_736035",
+    "producto": "Vaquero",
+    "talla": "36",
+    "color": "Azul oscuro ",
+    "cantidad": 1,
+    "precio_sugerido": 245.0,
+    "precio_venta": 230.0,
+    "categoria": "Jeans",
+    "ubicacion_venta": "Vitrina"
   }
 ]
