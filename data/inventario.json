@@ -3050,7 +3050,7 @@
         "color": "Oxford",
         "stock": {
           "32": {
-            "exhibido": 4,
+            "exhibido": 5,
             "bodega": 0
           }
         }
@@ -3122,7 +3122,7 @@
         "color": "Negro",
         "stock": {
           "32": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
