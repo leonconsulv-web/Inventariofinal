@@ -7738,5 +7738,17 @@
     "precio_venta": 275.0,
     "categoria": "Jeans",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-10 11:47:12",
+    "producto_id": "PROD_20260801_213340_891138",
+    "producto": "Vaquero 38-42",
+    "talla": "42",
+    "color": "Azul oscuro",
+    "cantidad": 1,
+    "precio_sugerido": 300.0,
+    "precio_venta": 300.0,
+    "categoria": "Jeans",
+    "ubicacion_venta": "Vitrina"
   }
 ]
