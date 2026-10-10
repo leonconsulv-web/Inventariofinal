@@ -108,5 +108,15 @@
     "abonado": 150.0,
     "restante": 309.0,
     "estado": "Pendiente"
+  },
+  {
+    "id": "AP_20261010_120327",
+    "fecha": "2026-10-10 12:03:27",
+    "cliente": "Victor Hernández ",
+    "concepto": "Deportivas manga larga  (1 pza) - Roja - Talla G",
+    "total": 160.0,
+    "abonado": 50.0,
+    "restante": 110.0,
+    "estado": "Pendiente"
   }
 ]
