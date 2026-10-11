@@ -7822,5 +7822,17 @@
     "precio_venta": 330.0,
     "categoria": "Suéteres",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-11 12:55:07",
+    "producto_id": "PROD_20260801_061207_448129",
+    "producto": "Waffle XG",
+    "talla": "XG",
+    "color": "Olivo",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
