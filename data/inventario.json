@@ -3506,7 +3506,7 @@
         "color": "Hueso",
         "stock": {
           "36": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
