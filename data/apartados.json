@@ -105,9 +105,9 @@
     "cliente": "Yesica González ",
     "concepto": "Calvin permeable XL (1 pza) - Azul marino - Talla XG",
     "total": 459.0,
-    "abonado": 150.0,
-    "restante": 309.0,
-    "estado": "Pendiente"
+    "abonado": 459.0,
+    "restante": 0.0,
+    "estado": "Liquidado"
   },
   {
     "id": "AP_20261010_120327",
