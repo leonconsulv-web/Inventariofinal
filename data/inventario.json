@@ -8088,5 +8088,41 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20261010_181417_207476",
+    "Categoria": "Chalecos",
+    "Producto": "Pacorro",
+    "Precio_Sugerido": 349.0,
+    "Precio_Venta": 349.0,
+    "Tallas": [
+      "S",
+      "M",
+      "G",
+      "XG"
+    ],
+    "Variantes": [
+      {
+        "color": "Negro",
+        "stock": {
+          "S": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "XG": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
