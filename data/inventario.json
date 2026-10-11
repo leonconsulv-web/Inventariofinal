@@ -6770,7 +6770,10 @@
     "Precio_Sugerido": 469.0,
     "Precio_Venta": 469.0,
     "Tallas": [
-      "M"
+      "CH",
+      "M",
+      "G",
+      "XL"
     ],
     "Variantes": [
       {
@@ -6779,6 +6782,18 @@
           "M": {
             "exhibido": 1,
             "bodega": 0
+          },
+          "CH": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XL": {
+            "exhibido": 0,
+            "bodega": 0
           }
         }
       },
@@ -6786,16 +6801,40 @@
         "color": "Roja",
         "stock": {
           "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "CH": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XL": {
             "exhibido": 0,
             "bodega": 0
           }
         }
       },
       {
-        "color": "Color #3",
+        "color": "Verde",
         "stock": {
           "M": {
             "exhibido": 0,
+            "bodega": 0
+          },
+          "CH": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XL": {
+            "exhibido": 1,
             "bodega": 0
           }
         }
