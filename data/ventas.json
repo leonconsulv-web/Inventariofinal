@@ -7810,5 +7810,17 @@
     "precio_venta": 160.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-11 12:54:03",
+    "producto_id": "PROD_20260801_224121_661789",
+    "producto": "Medio cierre",
+    "talla": "M",
+    "color": "Gris medio",
+    "cantidad": 1,
+    "precio_sugerido": 339.0,
+    "precio_venta": 330.0,
+    "categoria": "Suéteres",
+    "ubicacion_venta": "Vitrina"
   }
 ]
