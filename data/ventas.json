@@ -7798,5 +7798,17 @@
     "precio_venta": 50.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Anticipo (Restan $110.00)"
+  },
+  {
+    "fecha": "2026-10-11 12:51:58",
+    "producto_id": "PROD_20260731_200228_133616",
+    "producto": "Polo grandes",
+    "talla": "XG",
+    "color": "Roja",
+    "cantidad": 1,
+    "precio_sugerido": 170.0,
+    "precio_venta": 160.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
