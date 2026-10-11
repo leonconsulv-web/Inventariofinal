@@ -7846,5 +7846,17 @@
     "precio_venta": 275.0,
     "categoria": "Jeans",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-11 12:57:27",
+    "producto_id": "PROD_20260930_152442_284172",
+    "producto": "Gamusa",
+    "talla": "M",
+    "color": "Miel",
+    "cantidad": 1,
+    "precio_sugerido": 410.0,
+    "precio_venta": 410.0,
+    "categoria": "Chamarras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
