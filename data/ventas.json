@@ -7954,5 +7954,17 @@
     "precio_venta": 200.0,
     "categoria": "Pants",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-13 14:31:03",
+    "producto_id": "AP_20261010_120327",
+    "producto": "💵 Abono Apartado: Deportivas manga larga  (1 pza) - Roja - Talla G (Victor Hernández )",
+    "talla": "-",
+    "color": "-",
+    "cantidad": 1,
+    "precio_sugerido": 110.0,
+    "precio_venta": 110.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Abono (Restan $0.00)"
   }
 ]
