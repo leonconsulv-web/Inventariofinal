@@ -115,8 +115,8 @@
     "cliente": "Victor Hernández ",
     "concepto": "Deportivas manga larga  (1 pza) - Roja - Talla G",
     "total": 160.0,
-    "abonado": 50.0,
-    "restante": 110.0,
-    "estado": "Pendiente"
+    "abonado": 160.0,
+    "restante": 0.0,
+    "estado": "Liquidado"
   }
 ]
