@@ -8062,5 +8062,17 @@
     "precio_venta": 95.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-14 14:07:05",
+    "producto_id": "PROD_20260801_230412_019357",
+    "producto": "🔄 Cambio de Talla/Color: Entregado (Sin botón  (Negro / Talla M)) ➔ Devuelto (Sin botón  (Azul marino / Talla G))",
+    "talla": "M",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 0.0,
+    "precio_venta": 0.0,
+    "categoria": "Chalecos",
+    "ubicacion_venta": "Cambio sin costo ($0.00)"
   }
 ]
