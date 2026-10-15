@@ -3044,10 +3044,10 @@
         }
       },
       {
-        "color": "Color #16",
+        "color": "Azul petróleo ",
         "stock": {
           "30": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
