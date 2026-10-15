@@ -3410,10 +3410,10 @@
         }
       },
       {
-        "color": "Color #19",
+        "color": "Verde olivo ",
         "stock": {
           "34": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
