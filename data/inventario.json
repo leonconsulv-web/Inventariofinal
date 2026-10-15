@@ -8325,14 +8325,14 @@
         }
       },
       {
-        "color": "Color #3",
+        "color": "Blanco",
         "stock": {
           "S": {
             "exhibido": 0,
             "bodega": 0
           },
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
