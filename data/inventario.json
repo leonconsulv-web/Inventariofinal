@@ -7335,7 +7335,16 @@
         }
       },
       {
-        "color": "Color #7",
+        "color": "Perla",
+        "stock": {
+          "G": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #8",
         "stock": {
           "G": {
             "exhibido": 0,
