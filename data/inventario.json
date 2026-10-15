@@ -1458,7 +1458,7 @@
         "color": "Beige",
         "stock": {
           "CH": {
-            "exhibido": 2,
+            "exhibido": 3,
             "bodega": 0
           }
         }
@@ -1545,10 +1545,10 @@
         }
       },
       {
-        "color": "Color #18",
+        "color": "Acero",
         "stock": {
           "CH": {
-            "exhibido": 0,
+            "exhibido": 2,
             "bodega": 0
           }
         }
