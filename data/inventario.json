@@ -1701,10 +1701,10 @@
         }
       },
       {
-        "color": "Color #16",
+        "color": "Beige",
         "stock": {
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
