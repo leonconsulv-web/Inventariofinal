@@ -7302,7 +7302,7 @@
         "color": "Negro ",
         "stock": {
           "G": {
-            "exhibido": 2,
+            "exhibido": 3,
             "bodega": 0
           }
         }
@@ -7329,7 +7329,7 @@
         "color": "Cemento",
         "stock": {
           "G": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -7353,10 +7353,10 @@
         }
       },
       {
-        "color": "Color #9",
+        "color": "Beige",
         "stock": {
           "G": {
-            "exhibido": 0,
+            "exhibido": 2,
             "bodega": 0
           }
         }
