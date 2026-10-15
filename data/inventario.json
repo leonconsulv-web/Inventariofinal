@@ -1692,7 +1692,16 @@
         }
       },
       {
-        "color": "Color #15",
+        "color": "Acero",
+        "stock": {
+          "M": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #16",
         "stock": {
           "M": {
             "exhibido": 0,
