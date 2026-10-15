@@ -3756,6 +3756,15 @@
             "bodega": 0
           }
         }
+      },
+      {
+        "color": "Color #18",
+        "stock": {
+          "38": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
       }
     ]
   },
