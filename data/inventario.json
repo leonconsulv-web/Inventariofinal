@@ -7333,6 +7333,15 @@
             "bodega": 0
           }
         }
+      },
+      {
+        "color": "Color #7",
+        "stock": {
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
       }
     ]
   },
