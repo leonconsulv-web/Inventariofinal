@@ -7344,7 +7344,16 @@
         }
       },
       {
-        "color": "Color #8",
+        "color": "Acero ",
+        "stock": {
+          "G": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #9",
         "stock": {
           "G": {
             "exhibido": 0,
