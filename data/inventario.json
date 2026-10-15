@@ -1536,7 +1536,16 @@
         }
       },
       {
-        "color": "Color #17",
+        "color": "Perla",
+        "stock": {
+          "CH": {
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #18",
         "stock": {
           "CH": {
             "exhibido": 0,
