@@ -8074,5 +8074,17 @@
     "precio_venta": 0.0,
     "categoria": "Chalecos",
     "ubicacion_venta": "Cambio sin costo ($0.00)"
+  },
+  {
+    "fecha": "2026-10-16 16:59:16",
+    "producto_id": "PROD_20260731_221128_097174",
+    "producto": "Polos XXL",
+    "talla": "XXG",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 210.0,
+    "precio_venta": 210.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
