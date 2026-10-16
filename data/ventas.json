@@ -8146,5 +8146,17 @@
     "precio_venta": 275.0,
     "categoria": "Chamarras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-16 17:23:34",
+    "producto_id": "PROD_20260801_230412_019357",
+    "producto": "Sin botón ",
+    "talla": "G",
+    "color": "Ladrillo",
+    "cantidad": 1,
+    "precio_sugerido": 289.0,
+    "precio_venta": 289.0,
+    "categoria": "Chalecos",
+    "ubicacion_venta": "Vitrina"
   }
 ]
