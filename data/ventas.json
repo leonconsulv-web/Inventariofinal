@@ -8134,5 +8134,17 @@
     "precio_venta": 245.0,
     "categoria": "Jeans",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-16 17:22:55",
+    "producto_id": "PROD_20260816_173532_941904",
+    "producto": "Sudaderas",
+    "talla": "UNI",
+    "color": "Varios",
+    "cantidad": 1,
+    "precio_sugerido": 199.0,
+    "precio_venta": 275.0,
+    "categoria": "Chamarras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
