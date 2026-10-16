@@ -8110,5 +8110,17 @@
     "precio_venta": 220.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-16 17:21:14",
+    "producto_id": "PROD_20260801_061207_448129",
+    "producto": "Waffle XG",
+    "talla": "XG",
+    "color": "Azul cielo",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
