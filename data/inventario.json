@@ -4048,7 +4048,7 @@
         "color": "Azul medio",
         "stock": {
           "28": {
-            "exhibido": 2,
+            "exhibido": 3,
             "bodega": 0
           },
           "30": {
@@ -4060,7 +4060,7 @@
             "bodega": 0
           },
           "34": {
-            "exhibido": 2,
+            "exhibido": 3,
             "bodega": 0
           },
           "36": {
@@ -4073,11 +4073,11 @@
         "color": "Azul oscuro",
         "stock": {
           "28": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           },
           "30": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           },
           "32": {
@@ -4085,7 +4085,7 @@
             "bodega": 0
           },
           "34": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           },
           "36": {
