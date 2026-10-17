@@ -7409,27 +7409,6 @@
     ]
   },
   {
-    "ID": "PROD_20260804_023045_467094",
-    "Categoria": "Niño",
-    "Producto": "Short",
-    "Precio_Sugerido": 50.0,
-    "Precio_Venta": 50.0,
-    "Tallas": [
-      "VARIAS"
-    ],
-    "Variantes": [
-      {
-        "color": "Varios",
-        "stock": {
-          "VARIAS": {
-            "exhibido": 9,
-            "bodega": 0
-          }
-        }
-      }
-    ]
-  },
-  {
     "ID": "PROD_20260804_170549_699167",
     "Categoria": "Sacos",
     "Producto": "Sacos",
