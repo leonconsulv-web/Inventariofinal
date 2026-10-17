@@ -8230,5 +8230,17 @@
     "precio_venta": 220.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-17 15:21:23",
+    "producto_id": "PROD_20260930_152130_643823",
+    "producto": "Malboro ",
+    "talla": "S",
+    "color": "Camel",
+    "cantidad": 1,
+    "precio_sugerido": 410.0,
+    "precio_venta": 400.0,
+    "categoria": "Chamarras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
