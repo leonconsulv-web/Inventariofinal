@@ -8206,5 +8206,17 @@
     "precio_venta": 269.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-17 15:17:42",
+    "producto_id": "PROD_20260930_152442_284172",
+    "producto": "Gamusa",
+    "talla": "XG",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 410.0,
+    "precio_venta": 445.0,
+    "categoria": "Chamarras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
