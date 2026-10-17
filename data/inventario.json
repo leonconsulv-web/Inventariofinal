@@ -2154,7 +2154,7 @@
             "bodega": 0
           },
           "XL": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -2163,7 +2163,7 @@
         "color": "Negro",
         "stock": {
           "CH": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "M": {
@@ -2196,7 +2196,7 @@
             "bodega": 0
           },
           "XL": {
-            "exhibido": 0,
+            "exhibido": 3,
             "bodega": 0
           }
         }
@@ -2217,7 +2217,7 @@
             "bodega": 0
           },
           "XL": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -2226,7 +2226,7 @@
         "color": "Rayada ",
         "stock": {
           "CH": {
-            "exhibido": 0,
+            "exhibido": 2,
             "bodega": 0
           },
           "M": {
@@ -2238,7 +2238,7 @@
             "bodega": 0
           },
           "XL": {
-            "exhibido": 0,
+            "exhibido": 4,
             "bodega": 0
           }
         }
@@ -2259,7 +2259,7 @@
             "bodega": 0
           },
           "XL": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -2322,7 +2322,7 @@
             "bodega": 0
           },
           "XL": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -2349,10 +2349,10 @@
         }
       },
       {
-        "color": "Color #12",
+        "color": "Calaveras ",
         "stock": {
           "CH": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "M": {
