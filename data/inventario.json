@@ -2142,7 +2142,7 @@
         "color": "Blanco ",
         "stock": {
           "CH": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "M": {
@@ -2184,7 +2184,7 @@
         "color": "Marino ",
         "stock": {
           "CH": {
-            "exhibido": 0,
+            "exhibido": 3,
             "bodega": 0
           },
           "M": {
@@ -2328,7 +2328,28 @@
         }
       },
       {
-        "color": "Color #11",
+        "color": "Azul rey",
+        "stock": {
+          "CH": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XL": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #12",
         "stock": {
           "CH": {
             "exhibido": 0,
