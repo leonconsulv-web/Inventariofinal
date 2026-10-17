@@ -2286,7 +2286,28 @@
         }
       },
       {
-        "color": "Color #9",
+        "color": "Estampadas",
+        "stock": {
+          "CH": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 3,
+            "bodega": 0
+          },
+          "XL": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #10",
         "stock": {
           "CH": {
             "exhibido": 0,
