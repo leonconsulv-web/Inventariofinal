@@ -4120,63 +4120,6 @@
     ]
   },
   {
-    "ID": "PROD_20260801_190451_318220",
-    "Categoria": "Bermudas",
-    "Producto": "Shorts ",
-    "Precio_Sugerido": 60.0,
-    "Precio_Venta": 60.0,
-    "Tallas": [
-      "CH",
-      "M",
-      "G",
-      "XG"
-    ],
-    "Variantes": [
-      {
-        "color": "Varios",
-        "stock": {
-          "CH": {
-            "exhibido": 5,
-            "bodega": 0
-          },
-          "M": {
-            "exhibido": 6,
-            "bodega": 0
-          },
-          "G": {
-            "exhibido": 11,
-            "bodega": 0
-          },
-          "XG": {
-            "exhibido": 6,
-            "bodega": 0
-          }
-        }
-      },
-      {
-        "color": "Mezclilla",
-        "stock": {
-          "CH": {
-            "exhibido": 0,
-            "bodega": 0
-          },
-          "M": {
-            "exhibido": 0,
-            "bodega": 0
-          },
-          "G": {
-            "exhibido": 2,
-            "bodega": 0
-          },
-          "XG": {
-            "exhibido": 0,
-            "bodega": 0
-          }
-        }
-      }
-    ]
-  },
-  {
     "ID": "PROD_20260801_190642_565357",
     "Categoria": "Camisas",
     "Producto": "Camisa económica ",
