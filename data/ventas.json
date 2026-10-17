@@ -8218,5 +8218,17 @@
     "precio_venta": 445.0,
     "categoria": "Chamarras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-17 15:18:45",
+    "producto_id": "PROD_20260801_051906_646266",
+    "producto": "Waffle Ch",
+    "talla": "CH",
+    "color": "Vino",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
