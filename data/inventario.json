@@ -1309,17 +1309,32 @@
   {
     "ID": "PROD_20260801_051906_646266",
     "Categoria": "Camisas",
-    "Producto": "Waffle Ch",
+    "Producto": "Waffle",
     "Precio_Sugerido": 220.0,
     "Precio_Venta": 220.0,
     "Tallas": [
-      "CH"
+      "CH",
+      "M",
+      "G",
+      "XL"
     ],
     "Variantes": [
       {
         "color": "Vino",
         "stock": {
           "CH": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XL": {
             "exhibido": 0,
             "bodega": 0
           }
@@ -1331,6 +1346,18 @@
           "CH": {
             "exhibido": 1,
             "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XL": {
+            "exhibido": 0,
+            "bodega": 0
           }
         }
       },
@@ -1339,6 +1366,18 @@
         "stock": {
           "CH": {
             "exhibido": 4,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XL": {
+            "exhibido": 0,
             "bodega": 0
           }
         }
@@ -1349,6 +1388,18 @@
           "CH": {
             "exhibido": 2,
             "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XL": {
+            "exhibido": 0,
+            "bodega": 0
           }
         }
       },
@@ -1358,6 +1409,18 @@
           "CH": {
             "exhibido": 1,
             "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XL": {
+            "exhibido": 0,
+            "bodega": 0
           }
         }
       },
@@ -1365,6 +1428,18 @@
         "color": "Blanco",
         "stock": {
           "CH": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XL": {
             "exhibido": 0,
             "bodega": 0
           }
@@ -1376,6 +1451,18 @@
           "CH": {
             "exhibido": 1,
             "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XL": {
+            "exhibido": 0,
+            "bodega": 0
           }
         }
       },
@@ -1384,6 +1471,18 @@
         "stock": {
           "CH": {
             "exhibido": 3,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XL": {
+            "exhibido": 0,
             "bodega": 0
           }
         }
@@ -1394,6 +1493,18 @@
           "CH": {
             "exhibido": 1,
             "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XL": {
+            "exhibido": 0,
+            "bodega": 0
           }
         }
       },
@@ -1403,6 +1514,18 @@
           "CH": {
             "exhibido": 4,
             "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XL": {
+            "exhibido": 0,
+            "bodega": 0
           }
         }
       },
@@ -1410,6 +1533,18 @@
         "color": "Azul rey",
         "stock": {
           "CH": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XL": {
             "exhibido": 0,
             "bodega": 0
           }
@@ -1421,6 +1556,18 @@
           "CH": {
             "exhibido": 2,
             "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XL": {
+            "exhibido": 0,
+            "bodega": 0
           }
         }
       },
@@ -1429,6 +1576,18 @@
         "stock": {
           "CH": {
             "exhibido": 1,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XL": {
+            "exhibido": 0,
             "bodega": 0
           }
         }
@@ -1439,6 +1598,18 @@
           "CH": {
             "exhibido": 2,
             "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XL": {
+            "exhibido": 0,
+            "bodega": 0
           }
         }
       },
@@ -1446,6 +1617,18 @@
         "color": "Crema",
         "stock": {
           "CH": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XL": {
             "exhibido": 0,
             "bodega": 0
           }
@@ -1457,6 +1640,18 @@
           "CH": {
             "exhibido": 1,
             "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XL": {
+            "exhibido": 0,
+            "bodega": 0
           }
         }
       },
@@ -1466,6 +1661,18 @@
           "CH": {
             "exhibido": 2,
             "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XL": {
+            "exhibido": 0,
+            "bodega": 0
           }
         }
       },
@@ -1474,6 +1681,18 @@
         "stock": {
           "CH": {
             "exhibido": 2,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XL": {
+            "exhibido": 0,
             "bodega": 0
           }
         }
