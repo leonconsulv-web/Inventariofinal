@@ -2221,6 +2221,27 @@
             "bodega": 0
           }
         }
+      },
+      {
+        "color": "Color #6",
+        "stock": {
+          "CH": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XL": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
       }
     ]
   },
