@@ -8410,5 +8410,17 @@
     "precio_venta": 220.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-18 18:38:47",
+    "producto_id": "PROD_20260803_195042_385394",
+    "producto": "Calvin permeable",
+    "talla": "G",
+    "color": "Oxford ",
+    "cantidad": 1,
+    "precio_sugerido": 410.0,
+    "precio_venta": 410.0,
+    "categoria": "Chamarras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
