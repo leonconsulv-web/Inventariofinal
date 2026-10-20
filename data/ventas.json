@@ -8530,5 +8530,17 @@
     "precio_venta": 138.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-20 16:02:49",
+    "producto_id": "PROD_20260801_214804_719643",
+    "producto": "Confort",
+    "talla": "34",
+    "color": "Azul medio",
+    "cantidad": 1,
+    "precio_sugerido": 275.0,
+    "precio_venta": 275.0,
+    "categoria": "Jeans",
+    "ubicacion_venta": "Vitrina"
   }
 ]
