@@ -8518,5 +8518,17 @@
     "precio_venta": 50.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Anticipo (Restan $245.00)"
+  },
+  {
+    "fecha": "2026-10-20 16:01:27",
+    "producto_id": "PROD_20260801_062018_927740",
+    "producto": "Deportiva",
+    "talla": "G",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 139.0,
+    "precio_venta": 138.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
