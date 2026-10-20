@@ -8506,5 +8506,17 @@
     "precio_venta": 249.0,
     "categoria": "Chamarras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-20 16:00:22",
+    "producto_id": "AP_20261020_160022",
+    "producto": "📑 Anticipo Apartado: Sin botón (1 pza) - Hueso - Talla G (Lázaro Pérez )",
+    "talla": "G",
+    "color": "Hueso",
+    "cantidad": 1,
+    "precio_sugerido": 50.0,
+    "precio_venta": 50.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Anticipo (Restan $245.00)"
   }
 ]
