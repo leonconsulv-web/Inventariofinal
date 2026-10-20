@@ -8494,5 +8494,17 @@
     "precio_venta": 45.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Anticipo (Restan $175.00)"
+  },
+  {
+    "fecha": "2026-10-20 15:58:48",
+    "producto_id": "PROD_20260816_173532_941904",
+    "producto": "Sudaderas",
+    "talla": "UNI",
+    "color": "Varios",
+    "cantidad": 1,
+    "precio_sugerido": 199.0,
+    "precio_venta": 249.0,
+    "categoria": "Chamarras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
