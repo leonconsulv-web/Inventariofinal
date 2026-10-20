@@ -8470,5 +8470,17 @@
     "precio_venta": 289.0,
     "categoria": "Chalecos",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-19 20:00:57",
+    "producto_id": "AP_20261019_200057",
+    "producto": "📑 Anticipo Apartado: Sin botón (1 pza) - Ladrillo - Talla G (Irvin Espinoza )",
+    "talla": "G",
+    "color": "Ladrillo",
+    "cantidad": 1,
+    "precio_sugerido": 45.0,
+    "precio_venta": 45.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Anticipo (Restan $245.00)"
   }
 ]
