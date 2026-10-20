@@ -8482,5 +8482,17 @@
     "precio_venta": 45.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Anticipo (Restan $245.00)"
+  },
+  {
+    "fecha": "2026-10-19 20:07:23",
+    "producto_id": "AP_20261019_200723",
+    "producto": "📑 Anticipo Apartado: T32 (1 pza) - Arena - Talla 32 (Irvin Espinoza )",
+    "talla": "32",
+    "color": "Arena",
+    "cantidad": 1,
+    "precio_sugerido": 45.0,
+    "precio_venta": 45.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Anticipo (Restan $175.00)"
   }
 ]
