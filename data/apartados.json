@@ -138,5 +138,15 @@
     "abonado": 45.0,
     "restante": 175.0,
     "estado": "Pendiente"
+  },
+  {
+    "id": "AP_20261020_160022",
+    "fecha": "2026-10-20 16:00:22",
+    "cliente": "Lázaro Pérez ",
+    "concepto": "Sin botón (1 pza) - Hueso - Talla G",
+    "total": 295.0,
+    "abonado": 50.0,
+    "restante": 245.0,
+    "estado": "Pendiente"
   }
 ]
