@@ -148,5 +148,15 @@
     "abonado": 50.0,
     "restante": 245.0,
     "estado": "Pendiente"
+  },
+  {
+    "id": "AP_20261020_200642",
+    "fecha": "2026-10-20 20:06:42",
+    "cliente": "Magdaleno morales",
+    "concepto": "Sin botón (1 pza) - Arena - Talla G",
+    "total": 295.0,
+    "abonado": 50.0,
+    "restante": 245.0,
+    "estado": "Pendiente"
   }
 ]
