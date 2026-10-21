@@ -8590,5 +8590,17 @@
     "precio_venta": 135.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-20 20:03:39",
+    "producto_id": "PROD_20260930_152442_284172",
+    "producto": "Gamusa",
+    "talla": "M",
+    "color": "Camel",
+    "cantidad": 1,
+    "precio_sugerido": 410.0,
+    "precio_venta": 410.0,
+    "categoria": "Chamarras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
