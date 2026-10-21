@@ -7929,5 +7929,62 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20261021_161856_219224",
+    "Categoria": "Chamarras",
+    "Producto": "Abrigos Ether ",
+    "Precio_Sugerido": 0.0,
+    "Precio_Venta": 0.0,
+    "Tallas": [
+      "S",
+      "M",
+      "G",
+      "XG"
+    ],
+    "Variantes": [
+      {
+        "color": "Verde ",
+        "stock": {
+          "S": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XG": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Ladrillo ",
+        "stock": {
+          "S": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "XG": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
