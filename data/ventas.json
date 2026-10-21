@@ -8614,5 +8614,17 @@
     "precio_venta": 50.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Anticipo (Restan $245.00)"
+  },
+  {
+    "fecha": "2026-10-20 20:08:49",
+    "producto_id": "PROD_20260801_064022_046291",
+    "producto": "T28",
+    "talla": "28",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 200.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Vitrina"
   }
 ]
