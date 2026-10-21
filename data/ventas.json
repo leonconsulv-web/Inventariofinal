@@ -8602,5 +8602,17 @@
     "precio_venta": 410.0,
     "categoria": "Chamarras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-20 20:06:42",
+    "producto_id": "AP_20261020_200642",
+    "producto": "📑 Anticipo Apartado: Sin botón (1 pza) - Arena - Talla G (Magdaleno morales)",
+    "talla": "G",
+    "color": "Arena",
+    "cantidad": 1,
+    "precio_sugerido": 50.0,
+    "precio_venta": 50.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Anticipo (Restan $245.00)"
   }
 ]
