@@ -8674,5 +8674,17 @@
     "precio_venta": 135.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-23 15:47:50",
+    "producto_id": "PROD_20261021_161737_316546",
+    "producto": "Ether",
+    "talla": "M",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 0.0,
+    "precio_venta": 469.0,
+    "categoria": "Chamarras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
