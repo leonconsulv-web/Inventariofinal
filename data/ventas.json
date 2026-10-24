@@ -8686,5 +8686,17 @@
     "precio_venta": 469.0,
     "categoria": "Chamarras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-23 20:33:38",
+    "producto_id": "PROD_20260803_200302_707583",
+    "producto": "🔄 Cambio de Producto: Entregado (Ether fury (Negro / Talla M)) ➔ Devuelto (Ether (Negro / Talla M))",
+    "talla": "M",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 469.0,
+    "precio_venta": 0.0,
+    "categoria": "Chamarras",
+    "ubicacion_venta": "Cambio sin costo ($0.00)"
   }
 ]
