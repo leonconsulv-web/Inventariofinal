@@ -8758,5 +8758,17 @@
     "precio_venta": 139.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-24 10:33:13",
+    "producto_id": "PROD_20260801_063347_259013",
+    "producto": "Hugo boss",
+    "talla": "XG",
+    "color": "Varios",
+    "cantidad": 1,
+    "precio_sugerido": 365.0,
+    "precio_venta": 359.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
