@@ -8794,5 +8794,17 @@
     "precio_venta": 175.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Abono (Restan $0.00)"
+  },
+  {
+    "fecha": "2026-10-24 14:07:00",
+    "producto_id": "PROD_20260804_000036_098761",
+    "producto": "Polo manga larga",
+    "talla": "M",
+    "color": "Verde cemento",
+    "cantidad": 1,
+    "precio_sugerido": 199.0,
+    "precio_venta": 190.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
