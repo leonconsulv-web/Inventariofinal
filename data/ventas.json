@@ -8722,5 +8722,17 @@
     "precio_venta": 200.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-24 10:13:31",
+    "producto_id": "AP_20261024_101331",
+    "producto": "📑 Anticipo Apartado: Medio cierre (1 pza) - Petróleo  - Talla M (Magdaleno Morales )",
+    "talla": "M",
+    "color": "Petróleo ",
+    "cantidad": 1,
+    "precio_sugerido": 100.0,
+    "precio_venta": 100.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Anticipo (Restan $239.00)"
   }
 ]
