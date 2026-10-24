@@ -8770,5 +8770,17 @@
     "precio_venta": 359.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-24 12:41:32",
+    "producto_id": "AP_20261019_200057",
+    "producto": "💵 Abono Apartado: Sin botón (1 pza) - Ladrillo - Talla G (Irvin Espinoza )",
+    "talla": "-",
+    "color": "-",
+    "cantidad": 1,
+    "precio_sugerido": 245.0,
+    "precio_venta": 245.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Abono (Restan $0.00)"
   }
 ]
