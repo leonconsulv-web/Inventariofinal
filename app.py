@@ -769,9 +769,6 @@ elif st.session_state.vista == "apartados":
 # ==========================================
 # VISTA 4: VER INVENTARIO EN PANTALLA
 # ==========================================
-# ==========================================
-# VISTA 4: VER INVENTARIO EN PANTALLA
-# ==========================================
 elif st.session_state.vista == "ver_inventario":
     st.subheader("Consulta General de Inventario")
 
@@ -807,11 +804,11 @@ elif st.session_state.vista == "ver_inventario":
 
         st.divider()
 
-        # Creamos pestañas para organizar la vista detallada y el resumen sin colores
+        # Creamos las pestañas para separar la vista con colores y el resumen por talla
         tab_det, tab_resumen = st.tabs(["📋 Inventario Detallado (con Colores)", "📊 Resumen General por Talla (Sin Colores)"])
 
         with tab_det:
-            busqueda = st.text_input("🔍 Buscar por Producto, Categoría, Color o Talla:", placeholder="Ej: Café, Chamarras, M...")
+            busqueda = st.text_input("🔍 Buscar por Producto, Categoría, Color o Talla:", placeholder="Ej: Café, Chamarras, M...", key="busqueda_inventario_detallado")
             
             if busqueda:
                 term = busqueda.lower()
