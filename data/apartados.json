@@ -135,9 +135,9 @@
     "cliente": "Irvin Espinoza ",
     "concepto": "T32 (1 pza) - Arena - Talla 32",
     "total": 220.0,
-    "abonado": 45.0,
-    "restante": 175.0,
-    "estado": "Pendiente"
+    "abonado": 220.0,
+    "restante": 0.0,
+    "estado": "Liquidado"
   },
   {
     "id": "AP_20261020_160022",
