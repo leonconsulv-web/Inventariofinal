@@ -8782,5 +8782,17 @@
     "precio_venta": 245.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Abono (Restan $0.00)"
+  },
+  {
+    "fecha": "2026-10-24 12:42:40",
+    "producto_id": "AP_20261019_200723",
+    "producto": "💵 Abono Apartado: T32 (1 pza) - Arena - Talla 32 (Irvin Espinoza )",
+    "talla": "-",
+    "color": "-",
+    "cantidad": 1,
+    "precio_sugerido": 175.0,
+    "precio_venta": 175.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Abono (Restan $0.00)"
   }
 ]
