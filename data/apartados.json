@@ -125,9 +125,9 @@
     "cliente": "Irvin Espinoza ",
     "concepto": "Sin botón (1 pza) - Ladrillo - Talla G",
     "total": 290.0,
-    "abonado": 45.0,
-    "restante": 245.0,
-    "estado": "Pendiente"
+    "abonado": 290.0,
+    "restante": 0.0,
+    "estado": "Liquidado"
   },
   {
     "id": "AP_20261019_200723",
