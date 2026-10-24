@@ -819,6 +819,53 @@ elif st.session_state.vista == "ver_inventario":
 
         st.dataframe(df_mostrar, use_container_width=True, height=450)
 
+
+import io
+
+st.divider()  # Línea separadora visual
+st.subheader("📊 Resumen de Inventario por Talla (Sin colores)")
+
+# Recorremos el inventario para agrupar por Categoría, Producto y Talla
+if 'inventario' in locals() or 'inventario' in globals():
+    filas = []
+    
+    for item in inventario:
+        categoria = item.get("Categoria", "")
+        producto = item.get("Producto", "")
+        
+        for variante in item.get("Variantes", []):
+            talla = variante.get("talla", "")
+            cantidad = int(variante.get("stock", 0))
+            
+            filas.append({
+                "Categoría": categoria,
+                "Producto": producto,
+                "Talla": talla,
+                "Cantidad Total": cantidad
+            })
+            
+    if filas:
+        df_bruto = pd.DataFrame(filas)
+        # Agrupamos sumando las cantidades por Producto y Talla (ignorando el color)
+        df_resumen = df_bruto.groupby(["Categoría", "Producto", "Talla"], as_index=False)["Cantidad Total"].sum()
+        
+        # Mostramos la tabla consolidada en la app
+        st.dataframe(df_resumen, use_container_width=True)
+        
+        # Botón para descargar el resumen agrupado en Excel
+        buffer = io.BytesIO()
+        with pd.ExcelWriter(buffer, engine='openpyxl') as writer:
+            df_resumen.to_excel(writer, sheet_name='Resumen_Tallas', index=False)
+            
+        st.download_button(
+            label="📥 Descargar Resumen en Excel",
+            data=buffer.getvalue(),
+            file_name="resumen_inventario_tallas.xlsx",
+            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        )
+    else:
+        st.info("No hay elementos registrados en el inventario.")
+
 # ==========================================
 # VISTA 5: CORTE DE CAJA Y VENTAS DIARIAS
 # ==========================================
