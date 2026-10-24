@@ -8710,5 +8710,17 @@
     "precio_venta": 430.0,
     "categoria": "Chamarras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-23 23:21:49",
+    "producto_id": "PROD_20260801_051906_646266",
+    "producto": "Waffle",
+    "talla": "M",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 200.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
