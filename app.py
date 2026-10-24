@@ -769,6 +769,9 @@ elif st.session_state.vista == "apartados":
 # ==========================================
 # VISTA 4: VER INVENTARIO EN PANTALLA
 # ==========================================
+# ==========================================
+# VISTA 4: VER INVENTARIO EN PANTALLA
+# ==========================================
 elif st.session_state.vista == "ver_inventario":
     st.subheader("Consulta General de Inventario")
 
@@ -804,67 +807,62 @@ elif st.session_state.vista == "ver_inventario":
 
         st.divider()
 
-        busqueda = st.text_input("🔍 Buscar por Producto, Categoría, Color o Talla:", placeholder="Ej: Café, Chamarras, M...")
-        
-        if busqueda:
-            term = busqueda.lower()
-            df_mostrar = df_inv[
-                df_inv["Producto"].str.lower().str.contains(term) |
-                df_inv["Categoría"].str.lower().str.contains(term) |
-                df_inv["Color"].str.lower().str.contains(term) |
-                df_inv["Talla"].str.lower().str.contains(term)
-            ]
-        else:
-            df_mostrar = df_inv
+        # Creamos pestañas para organizar la vista detallada y el resumen sin colores
+        tab_det, tab_resumen = st.tabs(["📋 Inventario Detallado (con Colores)", "📊 Resumen General por Talla (Sin Colores)"])
 
-        st.dataframe(df_mostrar, use_container_width=True, height=450)
-
-
-import io
-
-st.divider()  # Línea separadora visual
-st.subheader("📊 Resumen de Inventario por Talla (Sin colores)")
-
-# Recorremos el inventario para agrupar por Categoría, Producto y Talla
-if 'inventario' in locals() or 'inventario' in globals():
-    filas = []
-    
-    for item in inventario:
-        categoria = item.get("Categoria", "")
-        producto = item.get("Producto", "")
-        
-        for variante in item.get("Variantes", []):
-            talla = variante.get("talla", "")
-            cantidad = int(variante.get("stock", 0))
+        with tab_det:
+            busqueda = st.text_input("🔍 Buscar por Producto, Categoría, Color o Talla:", placeholder="Ej: Café, Chamarras, M...")
             
-            filas.append({
-                "Categoría": categoria,
-                "Producto": producto,
-                "Talla": talla,
-                "Cantidad Total": cantidad
-            })
+            if busqueda:
+                term = busqueda.lower()
+                df_mostrar = df_inv[
+                    df_inv["Producto"].str.lower().str.contains(term) |
+                    df_inv["Categoría"].str.lower().str.contains(term) |
+                    df_inv["Color"].str.lower().str.contains(term) |
+                    df_inv["Talla"].str.lower().str.contains(term)
+                ]
+            else:
+                df_mostrar = df_inv
+
+            st.dataframe(df_mostrar, use_container_width=True, height=450)
+
+        with tab_resumen:
+            st.markdown("### 📊 Total de Piezas por Producto y Talla (Libre de Colores)")
             
-    if filas:
-        df_bruto = pd.DataFrame(filas)
-        # Agrupamos sumando las cantidades por Producto y Talla (ignorando el color)
-        df_resumen = df_bruto.groupby(["Categoría", "Producto", "Talla"], as_index=False)["Cantidad Total"].sum()
-        
-        # Mostramos la tabla consolidada en la app
-        st.dataframe(df_resumen, use_container_width=True)
-        
-        # Botón para descargar el resumen agrupado en Excel
-        buffer = io.BytesIO()
-        with pd.ExcelWriter(buffer, engine='openpyxl') as writer:
-            df_resumen.to_excel(writer, sheet_name='Resumen_Tallas', index=False)
+            filas_resumen = []
+            for p in st.session_state.productos:
+                cat = p.get("Categoria", "")
+                prod = p.get("Producto", "")
+                tallas_acum = {}
+                for v in p.get("Variantes", []):
+                    for t, s in v.get("stock", {}).items():
+                        total_talla = s.get("exhibido", 0) + s.get("bodega", 0)
+                        tallas_acum[t] = tallas_acum.get(t, 0) + total_talla
+                
+                for t, cant in tallas_acum.items():
+                    filas_resumen.append({
+                        "Categoría": cat,
+                        "Producto": prod,
+                        "Talla": t,
+                        "Cantidad Total": cant
+                    })
             
-        st.download_button(
-            label="📥 Descargar Resumen en Excel",
-            data=buffer.getvalue(),
-            file_name="resumen_inventario_tallas.xlsx",
-            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-        )
-    else:
-        st.info("No hay elementos registrados en el inventario.")
+            if filas_resumen:
+                df_resumen = pd.DataFrame(filas_resumen)
+                st.dataframe(df_resumen, use_container_width=True, height=400)
+                
+                buffer = io.BytesIO()
+                with pd.ExcelWriter(buffer, engine='openpyxl') as writer:
+                    df_resumen.to_excel(writer, sheet_name='Resumen_Tallas', index=False)
+                    
+                st.download_button(
+                    label="📥 Descargar Resumen por Talla en Excel",
+                    data=buffer.getvalue(),
+                    file_name="resumen_inventario_tallas.xlsx",
+                    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                )
+            else:
+                st.info("No hay datos para mostrar.")
 
 # ==========================================
 # VISTA 5: CORTE DE CAJA Y VENTAS DIARIAS
