@@ -8698,5 +8698,17 @@
     "precio_venta": 0.0,
     "categoria": "Chamarras",
     "ubicacion_venta": "Cambio sin costo ($0.00)"
+  },
+  {
+    "fecha": "2026-10-23 20:41:23",
+    "producto_id": "PROD_20260930_152442_284172",
+    "producto": "Gamusa",
+    "talla": "G",
+    "color": "Gris",
+    "cantidad": 1,
+    "precio_sugerido": 410.0,
+    "precio_venta": 430.0,
+    "categoria": "Chamarras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
