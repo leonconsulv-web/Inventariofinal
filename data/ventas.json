@@ -8950,5 +8950,17 @@
     "precio_venta": 280.0,
     "categoria": "Chalecos",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-25 16:49:03",
+    "producto_id": "PROD_20260803_195630_771677",
+    "producto": "Repelente",
+    "talla": "S",
+    "color": "Azul marino",
+    "cantidad": 1,
+    "precio_sugerido": 389.0,
+    "precio_venta": 389.0,
+    "categoria": "Chamarras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
