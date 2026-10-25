@@ -8866,5 +8866,17 @@
     "precio_venta": 135.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-25 13:32:22",
+    "producto_id": "PROD_20260801_224121_661789",
+    "producto": "Medio cierre",
+    "talla": "M",
+    "color": "Chocolate ",
+    "cantidad": 1,
+    "precio_sugerido": 339.0,
+    "precio_venta": 339.0,
+    "categoria": "Suéteres",
+    "ubicacion_venta": "Vitrina"
   }
 ]
