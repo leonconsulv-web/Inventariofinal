@@ -8962,5 +8962,17 @@
     "precio_venta": 389.0,
     "categoria": "Chamarras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-25 16:49:46",
+    "producto_id": "PROD_20260801_220435_420453",
+    "producto": "Pants",
+    "talla": "CH",
+    "color": "Verde",
+    "cantidad": 1,
+    "precio_sugerido": 210.0,
+    "precio_venta": 200.0,
+    "categoria": "Pants",
+    "ubicacion_venta": "Vitrina"
   }
 ]
