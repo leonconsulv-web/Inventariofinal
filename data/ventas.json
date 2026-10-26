@@ -9010,5 +9010,17 @@
     "precio_venta": 210.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-26 13:25:00",
+    "producto_id": "PROD_20260803_200037_486671",
+    "producto": "🔄 Cambio de Producto: Entregado (Mercado (Marino / Talla S)) ➔ Devuelto (Repelente (Azul marino / Talla S))",
+    "talla": "S",
+    "color": "Marino",
+    "cantidad": 1,
+    "precio_sugerido": 0.0,
+    "precio_venta": 0.0,
+    "categoria": "Chamarras",
+    "ubicacion_venta": "Cambio sin costo ($0.00)"
   }
 ]
