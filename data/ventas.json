@@ -9022,5 +9022,17 @@
     "precio_venta": 0.0,
     "categoria": "Chamarras",
     "ubicacion_venta": "Cambio sin costo ($0.00)"
+  },
+  {
+    "fecha": "2026-10-26 13:58:41",
+    "producto_id": "PROD_20260801_224623_542700",
+    "producto": "Cierre completo",
+    "talla": "G",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 339.0,
+    "precio_venta": 339.0,
+    "categoria": "Suéteres",
+    "ubicacion_venta": "Vitrina"
   }
 ]
