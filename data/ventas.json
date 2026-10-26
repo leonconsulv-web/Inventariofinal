@@ -8998,5 +8998,17 @@
     "precio_venta": 380.0,
     "categoria": "Chamarras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-26 13:24:00",
+    "producto_id": "PROD_20260801_051906_646266",
+    "producto": "Waffle",
+    "talla": "G",
+    "color": "Azul marino ",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 210.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
