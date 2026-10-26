@@ -9034,5 +9034,17 @@
     "precio_venta": 339.0,
     "categoria": "Suéteres",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-26 14:00:57",
+    "producto_id": "AP_20261026_140057",
+    "producto": "📑 Anticipo Apartado: T34 (1 pza) - Casimir ($269) - Talla 34 (Miguel Ángel Cruz )",
+    "talla": "34",
+    "color": "Casimir ($269)",
+    "cantidad": 1,
+    "precio_sugerido": 50.0,
+    "precio_venta": 50.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Anticipo (Restan $219.00)"
   }
 ]
