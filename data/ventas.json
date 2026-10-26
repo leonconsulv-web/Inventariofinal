@@ -8986,5 +8986,17 @@
     "precio_venta": 200.0,
     "categoria": "Pants",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-25 19:11:07",
+    "producto_id": "PROD_20260803_195630_771677",
+    "producto": "Repelente",
+    "talla": "M",
+    "color": "Oxford ",
+    "cantidad": 1,
+    "precio_sugerido": 389.0,
+    "precio_venta": 380.0,
+    "categoria": "Chamarras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
