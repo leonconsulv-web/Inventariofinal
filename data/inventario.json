@@ -1323,7 +1323,7 @@
         "color": "Vino",
         "stock": {
           "CH": {
-            "exhibido": 0,
+            "exhibido": 2,
             "bodega": 0
           },
           "M": {
@@ -1575,7 +1575,7 @@
         "color": "Azul petróleo ",
         "stock": {
           "CH": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           },
           "M": {
