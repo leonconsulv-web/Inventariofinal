@@ -7950,7 +7950,7 @@
         }
       },
       {
-        "color": "Color #4",
+        "color": "Petróleo ",
         "stock": {
           "CH": {
             "exhibido": 0,
@@ -7961,7 +7961,7 @@
             "bodega": 0
           },
           "G": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "XG": {
