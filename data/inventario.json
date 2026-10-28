@@ -5737,7 +5737,7 @@
         "color": "Azul marino",
         "stock": {
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
@@ -5832,7 +5832,7 @@
             "bodega": 0
           },
           "G": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
