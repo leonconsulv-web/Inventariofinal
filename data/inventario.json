@@ -2480,7 +2480,7 @@
         "color": "Negro",
         "stock": {
           "28": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -2513,10 +2513,10 @@
         }
       },
       {
-        "color": "Azul mar",
+        "color": "Azul marino ",
         "stock": {
           "28": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
