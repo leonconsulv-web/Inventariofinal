@@ -9202,5 +9202,17 @@
     "precio_venta": 130.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-28 20:24:54",
+    "producto_id": "AP_20260924_193955",
+    "producto": "💵 Abono Apartado: Pacorro  (1 pza) - Camel  - Talla M (Paz)",
+    "talla": "-",
+    "color": "-",
+    "cantidad": 1,
+    "precio_sugerido": 50.0,
+    "precio_venta": 50.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Abono (Restan $269.00)"
   }
 ]
