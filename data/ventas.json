@@ -9166,5 +9166,17 @@
     "precio_venta": 130.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-10-28 20:22:23",
+    "producto_id": "PROD_20260801_062018_927740",
+    "producto": "Deportiva",
+    "talla": "CH",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 139.0,
+    "precio_venta": 135.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
