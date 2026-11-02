@@ -178,5 +178,15 @@
     "abonado": 100.0,
     "restante": 130.0,
     "estado": "Pendiente"
+  },
+  {
+    "id": "AP_20261101_185223",
+    "fecha": "2026-11-01 18:52:23",
+    "cliente": "Maria de Jesús ",
+    "concepto": "T38 (1 pza) - Oxford - Talla 38",
+    "total": 230.0,
+    "abonado": 100.0,
+    "restante": 130.0,
+    "estado": "Pendiente"
   }
 ]
