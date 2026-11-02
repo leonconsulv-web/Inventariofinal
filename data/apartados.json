@@ -168,5 +168,15 @@
     "abonado": 100.0,
     "restante": 239.0,
     "estado": "Pendiente"
+  },
+  {
+    "id": "AP_20261101_184934",
+    "fecha": "2026-11-01 18:49:34",
+    "cliente": "Maria de Jesús ",
+    "concepto": "T38 (1 pza) - Negro - Talla 38",
+    "total": 230.0,
+    "abonado": 100.0,
+    "restante": 130.0,
+    "estado": "Pendiente"
   }
 ]
