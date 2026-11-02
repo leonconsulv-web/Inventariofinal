@@ -9454,5 +9454,17 @@
     "precio_venta": 220.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-01 18:49:34",
+    "producto_id": "AP_20261101_184934",
+    "producto": "📑 Anticipo Apartado: T38 (1 pza) - Negro - Talla 38 (Maria de Jesús )",
+    "talla": "38",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 100.0,
+    "precio_venta": 100.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Anticipo (Restan $130.00)"
   }
 ]
