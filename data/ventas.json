@@ -9310,5 +9310,17 @@
     "precio_venta": 199.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-01 18:04:02",
+    "producto_id": "PROD_20260731_221128_097174",
+    "producto": "Polos XXL",
+    "talla": "XXG",
+    "color": "Rojo",
+    "cantidad": 1,
+    "precio_sugerido": 210.0,
+    "precio_venta": 210.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
