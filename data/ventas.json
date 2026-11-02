@@ -9466,5 +9466,17 @@
     "precio_venta": 100.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Anticipo (Restan $130.00)"
+  },
+  {
+    "fecha": "2026-11-01 18:52:23",
+    "producto_id": "AP_20261101_185223",
+    "producto": "📑 Anticipo Apartado: T38 (1 pza) - Oxford - Talla 38 (Maria de Jesús )",
+    "talla": "38",
+    "color": "Oxford",
+    "cantidad": 1,
+    "precio_sugerido": 100.0,
+    "precio_venta": 100.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Anticipo (Restan $130.00)"
   }
 ]
