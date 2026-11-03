@@ -2295,11 +2295,11 @@
         "color": "Verde",
         "stock": {
           "CH": {
-            "exhibido": 3,
+            "exhibido": 1,
             "bodega": 0
           },
           "M": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           },
           "G": {
@@ -2316,11 +2316,11 @@
         "color": "Rojo",
         "stock": {
           "CH": {
-            "exhibido": 3,
+            "exhibido": 1,
             "bodega": 0
           },
           "M": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           },
           "G": {
@@ -2337,11 +2337,11 @@
         "color": "Blanco",
         "stock": {
           "CH": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           },
           "M": {
-            "exhibido": 2,
+            "exhibido": 0,
             "bodega": 0
           },
           "G": {
@@ -2358,7 +2358,7 @@
         "color": "Perla",
         "stock": {
           "CH": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           },
           "M": {
@@ -2366,7 +2366,7 @@
             "bodega": 0
           },
           "G": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           },
           "XG": {
@@ -2379,19 +2379,19 @@
         "color": "Negro",
         "stock": {
           "CH": {
-            "exhibido": 2,
+            "exhibido": 1,
             "bodega": 0
           },
           "M": {
-            "exhibido": 2,
+            "exhibido": 0,
             "bodega": 0
           },
           "G": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           },
           "XG": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           }
         }
@@ -2421,19 +2421,19 @@
         "color": "Oxford",
         "stock": {
           "CH": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           },
           "M": {
-            "exhibido": 2,
+            "exhibido": 0,
             "bodega": 0
           },
           "G": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           },
           "XG": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           }
         }
