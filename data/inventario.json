@@ -2013,11 +2013,11 @@
             "bodega": 0
           },
           "G": {
-            "exhibido": 2,
+            "exhibido": 1,
             "bodega": 0
           },
           "XG": {
-            "exhibido": 2,
+            "exhibido": 1,
             "bodega": 0
           },
           "2XL": {
@@ -2034,7 +2034,7 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           },
           "G": {
@@ -2042,7 +2042,7 @@
             "bodega": 0
           },
           "XG": {
-            "exhibido": 2,
+            "exhibido": 0,
             "bodega": 0
           },
           "2XL": {
@@ -2055,11 +2055,11 @@
         "color": "Verde bandera",
         "stock": {
           "CH": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           },
           "M": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           },
           "G": {
@@ -2105,19 +2105,19 @@
         "color": "Negro",
         "stock": {
           "CH": {
-            "exhibido": 2,
-            "bodega": 0
-          },
-          "M": {
-            "exhibido": 3,
-            "bodega": 0
-          },
-          "G": {
             "exhibido": 1,
             "bodega": 0
           },
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
           "XG": {
-            "exhibido": 3,
+            "exhibido": 1,
             "bodega": 0
           },
           "2XL": {
@@ -2134,11 +2134,11 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 2,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
-            "exhibido": 2,
+            "exhibido": 1,
             "bodega": 0
           },
           "XG": {
@@ -2155,7 +2155,7 @@
         "color": "Blanca",
         "stock": {
           "CH": {
-            "exhibido": 2,
+            "exhibido": 1,
             "bodega": 0
           },
           "M": {
@@ -2163,7 +2163,7 @@
             "bodega": 0
           },
           "G": {
-            "exhibido": 2,
+            "exhibido": 1,
             "bodega": 0
           },
           "XG": {
@@ -2184,15 +2184,15 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 4,
+            "exhibido": 0,
             "bodega": 0
           },
           "G": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           },
           "XG": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           },
           "2XL": {
@@ -2209,7 +2209,7 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 2,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
@@ -2242,7 +2242,7 @@
             "bodega": 0
           },
           "XG": {
-            "exhibido": 2,
+            "exhibido": 1,
             "bodega": 0
           },
           "2XL": {
@@ -2259,7 +2259,7 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 2,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
