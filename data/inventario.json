@@ -66,7 +66,7 @@
         "color": "Verde olivo",
         "stock": {
           "S": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           },
           "M": {
@@ -444,11 +444,11 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           },
           "G": {
-            "exhibido": 3,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -495,7 +495,7 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           },
           "G": {
@@ -669,7 +669,7 @@
             "bodega": 0
           },
           "G": {
-            "exhibido": 2,
+            "exhibido": 1,
             "bodega": 0
           }
         }
