@@ -9718,5 +9718,17 @@
     "precio_venta": 0.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Cambio sin costo ($0.00)"
+  },
+  {
+    "fecha": "2026-11-04 15:06:41",
+    "producto_id": "PROD_20260801_220435_420453",
+    "producto": "Pants",
+    "talla": "G",
+    "color": "Azul marino",
+    "cantidad": 1,
+    "precio_sugerido": 210.0,
+    "precio_venta": 210.0,
+    "categoria": "Pants",
+    "ubicacion_venta": "Vitrina"
   }
 ]
