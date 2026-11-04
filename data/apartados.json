@@ -188,5 +188,15 @@
     "abonado": 100.0,
     "restante": 130.0,
     "estado": "Pendiente"
+  },
+  {
+    "id": "AP_20261104_131622",
+    "fecha": "2026-11-04 13:16:22",
+    "cliente": "Beatriz Guevara ",
+    "concepto": "Pants (1 pza) - Blanco - Talla M",
+    "total": 210.0,
+    "abonado": 25.0,
+    "restante": 185.0,
+    "estado": "Pendiente"
   }
 ]
