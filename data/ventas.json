@@ -9550,5 +9550,17 @@
     "precio_venta": 169.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-03 19:31:00",
+    "producto_id": "PROD_20260731_184657_367258",
+    "producto": "Polo",
+    "talla": "M",
+    "color": "Verde olivo",
+    "cantidad": 1,
+    "precio_sugerido": 135.0,
+    "precio_venta": 135.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
