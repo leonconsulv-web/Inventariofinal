@@ -9634,5 +9634,17 @@
     "precio_venta": 295.0,
     "categoria": "Chalecos",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-04 13:12:35",
+    "producto_id": "PROD_20260801_230412_019357",
+    "producto": "Sin botón",
+    "talla": "M",
+    "color": "Verde",
+    "cantidad": 1,
+    "precio_sugerido": 289.0,
+    "precio_venta": 295.0,
+    "categoria": "Chalecos",
+    "ubicacion_venta": "Vitrina"
   }
 ]
