@@ -9694,5 +9694,17 @@
     "precio_venta": 25.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Anticipo (Restan $185.00)"
+  },
+  {
+    "fecha": "2026-11-04 13:16:44",
+    "producto_id": "AP_20261104_131644",
+    "producto": "📑 Anticipo Apartado: Pants (1 pza) - Blanco - Talla G (Beatriz Guevara )",
+    "talla": "G",
+    "color": "Blanco",
+    "cantidad": 1,
+    "precio_sugerido": 25.0,
+    "precio_venta": 25.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Anticipo (Restan $185.00)"
   }
 ]
