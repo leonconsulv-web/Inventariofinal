@@ -264,5 +264,12 @@
     "entregado": "Waffle (Crema / Talla XL)",
     "diferencia": 0.0,
     "motivo": ""
+  },
+  {
+    "fecha": "2026-11-03 19:49:10",
+    "devuelto": "Waffle (Verde militar / Talla XL)",
+    "entregado": "Waffle (Rojo / Talla XL)",
+    "diferencia": 0.0,
+    "motivo": "Color"
   }
 ]
