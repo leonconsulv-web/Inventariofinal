@@ -3086,7 +3086,7 @@
         "color": "Casimir ($269)",
         "stock": {
           "36": {
-            "exhibido": 9,
+            "exhibido": 10,
             "bodega": 0
           }
         }
@@ -3479,7 +3479,7 @@
         "color": "Azul marino",
         "stock": {
           "40": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           }
         }
