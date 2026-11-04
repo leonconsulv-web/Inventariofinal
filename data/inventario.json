@@ -5768,7 +5768,7 @@
         "color": "Verde",
         "stock": {
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
@@ -5794,7 +5794,7 @@
         "color": "Perla",
         "stock": {
           "M": {
-            "exhibido": 3,
+            "exhibido": 2,
             "bodega": 0
           },
           "G": {
