@@ -9538,5 +9538,17 @@
     "precio_venta": 220.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-03 19:30:15",
+    "producto_id": "PROD_20260801_060159_648400",
+    "producto": "De vestir todas",
+    "talla": "M",
+    "color": "Marino ",
+    "cantidad": 1,
+    "precio_sugerido": 169.0,
+    "precio_venta": 169.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
