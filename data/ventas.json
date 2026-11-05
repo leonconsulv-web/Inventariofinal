@@ -9778,5 +9778,17 @@
     "precio_venta": 100.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Abono (Restan $139.00)"
+  },
+  {
+    "fecha": "2026-11-05 15:04:19",
+    "producto_id": "PROD_20260803_195042_385394",
+    "producto": "Calvin permeable",
+    "talla": "G",
+    "color": "Verde",
+    "cantidad": 1,
+    "precio_sugerido": 410.0,
+    "precio_venta": 400.0,
+    "categoria": "Chamarras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
