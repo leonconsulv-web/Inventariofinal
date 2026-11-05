@@ -9730,5 +9730,17 @@
     "precio_venta": 210.0,
     "categoria": "Pants",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-05 14:13:17",
+    "producto_id": "AP_20261020_200642",
+    "producto": "💵 Abono Apartado: Sin botón (1 pza) - Arena - Talla G (Magdaleno morales)",
+    "talla": "-",
+    "color": "-",
+    "cantidad": 1,
+    "precio_sugerido": 50.0,
+    "precio_venta": 50.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Abono (Restan $195.00)"
   }
 ]
