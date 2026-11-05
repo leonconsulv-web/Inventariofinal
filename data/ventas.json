@@ -9742,5 +9742,17 @@
     "precio_venta": 50.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Abono (Restan $195.00)"
+  },
+  {
+    "fecha": "2026-11-05 14:14:35",
+    "producto_id": "PROD_20260801_214804_719643",
+    "producto": "Confort",
+    "talla": "28",
+    "color": "Azul oscuro",
+    "cantidad": 1,
+    "precio_sugerido": 275.0,
+    "precio_venta": 270.0,
+    "categoria": "Jeans",
+    "ubicacion_venta": "Vitrina"
   }
 ]
