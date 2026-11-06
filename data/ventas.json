@@ -9814,5 +9814,17 @@
     "precio_venta": 220.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-06 14:06:34",
+    "producto_id": "AP_20261101_184934",
+    "producto": "💵 Abono Apartado: T38 (1 pza) - Negro - Talla 38 (Maria de Jesús )",
+    "talla": "-",
+    "color": "-",
+    "cantidad": 1,
+    "precio_sugerido": 130.0,
+    "precio_venta": 130.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Abono (Restan $0.00)"
   }
 ]
