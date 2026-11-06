@@ -9802,5 +9802,17 @@
     "precio_venta": 170.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-06 14:05:26",
+    "producto_id": "PROD_20260801_051906_646266",
+    "producto": "Waffle",
+    "talla": "CH",
+    "color": "Oxford",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
