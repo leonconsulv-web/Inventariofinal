@@ -175,9 +175,9 @@
     "cliente": "Maria de Jesús ",
     "concepto": "T38 (1 pza) - Negro - Talla 38",
     "total": 230.0,
-    "abonado": 100.0,
-    "restante": 130.0,
-    "estado": "Pendiente"
+    "abonado": 230.0,
+    "restante": 0.0,
+    "estado": "Liquidado"
   },
   {
     "id": "AP_20261101_185223",
