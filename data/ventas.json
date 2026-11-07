@@ -9862,5 +9862,17 @@
     "precio_venta": 130.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Abono (Restan $139.00)"
+  },
+  {
+    "fecha": "2026-11-07 17:14:20",
+    "producto_id": "PROD_20260801_051906_646266",
+    "producto": "Waffle",
+    "talla": "M",
+    "color": "Verde militar",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 130.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
