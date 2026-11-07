@@ -9838,5 +9838,17 @@
     "precio_venta": 130.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Abono (Restan $0.00)"
+  },
+  {
+    "fecha": "2026-11-07 14:29:36",
+    "producto_id": "PROD_20260801_051906_646266",
+    "producto": "Waffle",
+    "talla": "CH",
+    "color": "Verde olivo",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
