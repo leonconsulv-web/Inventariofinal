@@ -9910,5 +9910,17 @@
     "precio_venta": 0.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Cambio sin costo ($0.00)"
+  },
+  {
+    "fecha": "2026-11-07 17:40:11",
+    "producto_id": "PROD_20260801_065749_649710",
+    "producto": "🔄 Cambio de Producto: Entregado (T34 (Gris medio / Talla 34)) ➔ Devuelto (T32 (Gris medio / Talla 32))",
+    "talla": "34",
+    "color": "Gris medio",
+    "cantidad": 1,
+    "precio_sugerido": 0.0,
+    "precio_venta": 0.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Cambio sin costo ($0.00)"
   }
 ]
