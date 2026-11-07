@@ -10054,5 +10054,17 @@
     "precio_venta": 100.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Abono (Restan $85.00)"
+  },
+  {
+    "fecha": "2026-11-07 17:51:46",
+    "producto_id": "AP_20261104_131644",
+    "producto": "💵 Abono Apartado: Pants (1 pza) - Blanco - Talla G (Beatriz Guevara )",
+    "talla": "-",
+    "color": "-",
+    "cantidad": 1,
+    "precio_sugerido": 100.0,
+    "precio_venta": 100.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Abono (Restan $85.00)"
   }
 ]
