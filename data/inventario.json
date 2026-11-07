@@ -2864,7 +2864,7 @@
         "color": "Gris medio",
         "stock": {
           "32": {
-            "exhibido": 2,
+            "exhibido": 3,
             "bodega": 0
           }
         }
@@ -2939,7 +2939,7 @@
         "color": "Gris medio",
         "stock": {
           "34": {
-            "exhibido": 3,
+            "exhibido": 2,
             "bodega": 0
           }
         }
