@@ -2783,7 +2783,7 @@
         "color": "Petróleo ",
         "stock": {
           "32": {
-            "exhibido": 2,
+            "exhibido": 3,
             "bodega": 0
           }
         }
@@ -2930,7 +2930,7 @@
         "color": "Petróleo ",
         "stock": {
           "34": {
-            "exhibido": 3,
+            "exhibido": 2,
             "bodega": 0
           }
         }
