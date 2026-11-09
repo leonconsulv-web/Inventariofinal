@@ -10066,5 +10066,17 @@
     "precio_venta": 100.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Abono (Restan $85.00)"
+  },
+  {
+    "fecha": "2026-11-09 17:40:12",
+    "producto_id": "PROD_20260801_213034_736035",
+    "producto": "Vaquero",
+    "talla": "34",
+    "color": "Azul claro",
+    "cantidad": 1,
+    "precio_sugerido": 245.0,
+    "precio_venta": 245.0,
+    "categoria": "Jeans",
+    "ubicacion_venta": "Vitrina"
   }
 ]
