@@ -10198,5 +10198,17 @@
     "precio_venta": 389.0,
     "categoria": "Chamarras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-10 14:13:04",
+    "producto_id": "PROD_20260918_170924_479005",
+    "producto": "Pacorro chamarra",
+    "talla": "G",
+    "color": "Negro ",
+    "cantidad": 1,
+    "precio_sugerido": 369.0,
+    "precio_venta": 400.0,
+    "categoria": "Chamarras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
