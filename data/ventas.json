@@ -10234,5 +10234,17 @@
     "precio_venta": 170.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-10 14:32:36",
+    "producto_id": "PROD_20260801_174000_994264",
+    "producto": "Manga corta  XG-XXG",
+    "talla": "XG",
+    "color": "Varios",
+    "cantidad": 1,
+    "precio_sugerido": 215.0,
+    "precio_venta": 150.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
