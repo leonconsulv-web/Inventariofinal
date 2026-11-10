@@ -10210,5 +10210,17 @@
     "precio_venta": 400.0,
     "categoria": "Chamarras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-10 14:15:35",
+    "producto_id": "PROD_20260919_230224_850455",
+    "producto": "Deportiva manga larga",
+    "talla": "XG",
+    "color": "Roja",
+    "cantidad": 1,
+    "precio_sugerido": 0.0,
+    "precio_venta": 170.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
