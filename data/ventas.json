@@ -10114,5 +10114,17 @@
     "precio_venta": 130.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Abono (Restan $139.00)"
+  },
+  {
+    "fecha": "2026-11-10 14:05:14",
+    "producto_id": "PROD_20260803_200215_269736",
+    "producto": "Ether doble vista",
+    "talla": "G",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 499.0,
+    "precio_venta": 499.0,
+    "categoria": "Chamarras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
