@@ -10186,5 +10186,17 @@
     "precio_venta": 250.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-10 14:11:36",
+    "producto_id": "PROD_20260803_195630_771677",
+    "producto": "Repelente",
+    "talla": "M",
+    "color": "Tricolor",
+    "cantidad": 1,
+    "precio_sugerido": 389.0,
+    "precio_venta": 389.0,
+    "categoria": "Chamarras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
