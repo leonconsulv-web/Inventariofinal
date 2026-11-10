@@ -10090,5 +10090,17 @@
     "precio_venta": 245.0,
     "categoria": "Jeans",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-10 13:52:47",
+    "producto_id": "PROD_20260801_213340_891138",
+    "producto": "Vaquero 38-42",
+    "talla": "40",
+    "color": "Negro ",
+    "cantidad": 1,
+    "precio_sugerido": 300.0,
+    "precio_venta": 300.0,
+    "categoria": "Jeans",
+    "ubicacion_venta": "Vitrina"
   }
 ]
