@@ -10294,5 +10294,17 @@
     "precio_venta": 240.0,
     "categoria": "Chamarras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-11 17:58:30",
+    "producto_id": "AP_20260924_193955",
+    "producto": "💵 Abono Apartado: Pacorro  (1 pza) - Camel  - Talla M (Paz)",
+    "talla": "-",
+    "color": "-",
+    "cantidad": 1,
+    "precio_sugerido": 50.0,
+    "precio_venta": 50.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Abono (Restan $89.00)"
   }
 ]
