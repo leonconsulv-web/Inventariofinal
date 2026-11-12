@@ -10414,5 +10414,17 @@
     "precio_venta": 220.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-11 18:19:05",
+    "producto_id": "PROD_20260801_214804_719643",
+    "producto": "Confort",
+    "talla": "34",
+    "color": "Azul oscuro",
+    "cantidad": 1,
+    "precio_sugerido": 275.0,
+    "precio_venta": 260.0,
+    "categoria": "Jeans",
+    "ubicacion_venta": "Vitrina"
   }
 ]
