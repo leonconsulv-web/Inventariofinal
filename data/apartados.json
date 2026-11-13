@@ -208,5 +208,15 @@
     "abonado": 125.0,
     "restante": 85.0,
     "estado": "Pendiente"
+  },
+  {
+    "id": "AP_20261112_184901",
+    "fecha": "2026-11-12 18:49:01",
+    "cliente": "Pilar de Jesús ",
+    "concepto": "Cuello redondo (1 pza) - Arena - Talla M",
+    "total": 339.0,
+    "abonado": 80.0,
+    "restante": 259.0,
+    "estado": "Pendiente"
   }
 ]
