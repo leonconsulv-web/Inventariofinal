@@ -10450,5 +10450,17 @@
     "precio_venta": 210.0,
     "categoria": "Jeans",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-12 18:44:31",
+    "producto_id": "PROD_20260801_062018_927740",
+    "producto": "Deportiva",
+    "talla": "G",
+    "color": "Rojo",
+    "cantidad": 1,
+    "precio_sugerido": 139.0,
+    "precio_venta": 139.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
