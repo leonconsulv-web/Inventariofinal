@@ -10474,5 +10474,17 @@
     "precio_venta": 139.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-12 18:49:01",
+    "producto_id": "AP_20261112_184901",
+    "producto": "📑 Anticipo Apartado: Cuello redondo (1 pza) - Arena - Talla M (Pilar de Jesús )",
+    "talla": "M",
+    "color": "Arena",
+    "cantidad": 1,
+    "precio_sugerido": 80.0,
+    "precio_venta": 80.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Anticipo (Restan $259.00)"
   }
 ]
