@@ -3470,7 +3470,7 @@
         "color": "Negro",
         "stock": {
           "40": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
