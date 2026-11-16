@@ -8070,5 +8070,26 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20261116_124227_091684",
+    "Categoria": "Chamarras",
+    "Producto": "Pacorro gamusa ",
+    "Precio_Sugerido": 0.0,
+    "Precio_Venta": 0.0,
+    "Tallas": [
+      "UNITALLA"
+    ],
+    "Variantes": [
+      {
+        "color": "Negro",
+        "stock": {
+          "UNITALLA": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
