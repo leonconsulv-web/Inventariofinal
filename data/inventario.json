@@ -2939,7 +2939,7 @@
         "color": "Gris medio",
         "stock": {
           "34": {
-            "exhibido": 2,
+            "exhibido": 3,
             "bodega": 0
           }
         }
@@ -3020,7 +3020,7 @@
         "color": "Caqui",
         "stock": {
           "34": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -3038,7 +3038,7 @@
         "color": "Negro ",
         "stock": {
           "34": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -3065,7 +3065,7 @@
         "color": "Verde olivo ",
         "stock": {
           "34": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
