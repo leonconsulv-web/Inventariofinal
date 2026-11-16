@@ -7797,6 +7797,27 @@
         "color": "Verde",
         "stock": {
           "S": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "XG": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #9",
+        "stock": {
+          "S": {
             "exhibido": 0,
             "bodega": 0
           },
@@ -7809,7 +7830,7 @@
             "bodega": 0
           },
           "XG": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           }
         }
