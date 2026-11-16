@@ -10534,5 +10534,17 @@
     "precio_venta": 389.0,
     "categoria": "Chamarras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-15 19:31:40",
+    "producto_id": "PROD_20260801_174554_726937",
+    "producto": "Manga larga",
+    "talla": "34",
+    "color": "Varios",
+    "cantidad": 1,
+    "precio_sugerido": 269.0,
+    "precio_venta": 269.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
