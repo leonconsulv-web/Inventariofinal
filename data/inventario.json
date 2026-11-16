@@ -7415,7 +7415,7 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
@@ -7515,7 +7515,7 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
@@ -7533,7 +7533,32 @@
         }
       },
       {
-        "color": "Color #6",
+        "color": "Verde",
+        "stock": {
+          "CH": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XG": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "2XG": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #7",
         "stock": {
           "CH": {
             "exhibido": 0,
