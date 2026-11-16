@@ -10618,5 +10618,17 @@
     "precio_venta": 289.0,
     "categoria": "Chalecos",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-16 17:49:35",
+    "producto_id": "PROD_20261010_181417_207476",
+    "producto": "Pacorro",
+    "talla": "M",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 349.0,
+    "precio_venta": 349.0,
+    "categoria": "Chalecos",
+    "ubicacion_venta": "Vitrina"
   }
 ]
