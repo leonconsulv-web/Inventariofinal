@@ -10546,5 +10546,17 @@
     "precio_venta": 269.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-16 12:54:13",
+    "producto_id": "PROD_20261116_124227_091684",
+    "producto": "Pacorro gamusa ",
+    "talla": "UNITALLA",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 0.0,
+    "precio_venta": 375.0,
+    "categoria": "Chamarras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
