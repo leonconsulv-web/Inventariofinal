@@ -1478,7 +1478,7 @@
             "bodega": 0
           },
           "G": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "XL": {
@@ -1491,7 +1491,7 @@
         "color": "Oxford",
         "stock": {
           "CH": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "M": {
@@ -1512,7 +1512,7 @@
         "color": "Verde olivo",
         "stock": {
           "CH": {
-            "exhibido": 2,
+            "exhibido": 3,
             "bodega": 0
           },
           "M": {
@@ -1667,7 +1667,7 @@
             "bodega": 0
           },
           "G": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "XL": {
@@ -1688,7 +1688,7 @@
             "bodega": 0
           },
           "G": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           },
           "XL": {
