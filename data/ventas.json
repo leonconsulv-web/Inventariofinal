@@ -10930,5 +10930,17 @@
     "precio_venta": 0.0,
     "categoria": "Jeans",
     "ubicacion_venta": "Cambio sin costo ($0.00)"
+  },
+  {
+    "fecha": "2026-11-16 18:15:31",
+    "producto_id": "AP_20261116_181531",
+    "producto": "📑 Anticipo Apartado: T34 (1 pza) - Casimir ($269) - Talla 34 (Octavio Huerta )",
+    "talla": "34",
+    "color": "Casimir ($269)",
+    "cantidad": 1,
+    "precio_sugerido": 100.0,
+    "precio_venta": 100.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Anticipo (Restan $169.00)"
   }
 ]
