@@ -10762,5 +10762,17 @@
     "precio_venta": 269.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-16 18:02:28",
+    "producto_id": "PROD_20260803_202815_331728",
+    "producto": "Mezclilla",
+    "talla": "G",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 389.0,
+    "precio_venta": 389.0,
+    "categoria": "Chamarras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
