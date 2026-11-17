@@ -10822,5 +10822,17 @@
     "precio_venta": 150.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-16 18:05:44",
+    "producto_id": "PROD_20260731_200228_133616",
+    "producto": "Polo XL",
+    "talla": "XG",
+    "color": "Verde mar",
+    "cantidad": 1,
+    "precio_sugerido": 170.0,
+    "precio_venta": 150.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
