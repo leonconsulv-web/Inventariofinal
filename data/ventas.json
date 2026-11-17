@@ -10750,5 +10750,17 @@
     "precio_venta": 210.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-16 18:01:34",
+    "producto_id": "PROD_20260801_174554_726937",
+    "producto": "Manga larga",
+    "talla": "42",
+    "color": "Varios",
+    "cantidad": 1,
+    "precio_sugerido": 269.0,
+    "precio_venta": 269.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
