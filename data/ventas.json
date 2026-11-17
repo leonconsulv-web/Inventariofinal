@@ -10966,5 +10966,17 @@
     "precio_venta": 210.0,
     "categoria": "Jeans",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-17 14:12:50",
+    "producto_id": "PROD_20260801_215912_999189",
+    "producto": "Cargo",
+    "talla": "30",
+    "color": "Verde",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 210.0,
+    "categoria": "Jeans",
+    "ubicacion_venta": "Vitrina"
   }
 ]
