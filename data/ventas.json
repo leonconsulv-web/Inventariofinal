@@ -10978,5 +10978,17 @@
     "precio_venta": 210.0,
     "categoria": "Jeans",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-17 14:16:00",
+    "producto_id": "AP_20261104_131622",
+    "producto": "💵 Abono Apartado: Pants (1 pza) - Blanco - Talla M (Beatriz Guevara )",
+    "talla": "-",
+    "color": "-",
+    "cantidad": 1,
+    "precio_sugerido": 25.0,
+    "precio_venta": 25.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Abono (Restan $60.00)"
   }
 ]
