@@ -11026,5 +11026,17 @@
     "precio_venta": 220.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-18 18:11:20",
+    "producto_id": "AP_20261020_160022",
+    "producto": "💵 Abono Apartado: Sin botón (1 pza) - Hueso - Talla G (Lázaro Pérez )",
+    "talla": "-",
+    "color": "-",
+    "cantidad": 1,
+    "precio_sugerido": 245.0,
+    "precio_venta": 245.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Abono (Restan $0.00)"
   }
 ]
