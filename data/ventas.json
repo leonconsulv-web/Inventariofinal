@@ -11146,5 +11146,17 @@
     "precio_venta": 200.0,
     "categoria": "Pants",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-18 18:48:55",
+    "producto_id": "PROD_20260801_215912_999189",
+    "producto": "Cargo",
+    "talla": "32",
+    "color": "Caqui",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 200.0,
+    "categoria": "Jeans",
+    "ubicacion_venta": "Vitrina"
   }
 ]
