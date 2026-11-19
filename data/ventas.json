@@ -11038,5 +11038,17 @@
     "precio_venta": 245.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Abono (Restan $0.00)"
+  },
+  {
+    "fecha": "2026-11-18 18:13:23",
+    "producto_id": "PROD_20260731_184657_367258",
+    "producto": "Polo",
+    "talla": "M",
+    "color": "Vino",
+    "cantidad": 1,
+    "precio_sugerido": 135.0,
+    "precio_venta": 130.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
