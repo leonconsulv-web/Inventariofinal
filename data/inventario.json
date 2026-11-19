@@ -3140,7 +3140,7 @@
         "color": "Oxford",
         "stock": {
           "36": {
-            "exhibido": 1,
+            "exhibido": 0,
             "bodega": 0
           }
         }
