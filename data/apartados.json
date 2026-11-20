@@ -228,5 +228,15 @@
     "abonado": 269.0,
     "restante": 0.0,
     "estado": "Liquidado"
+  },
+  {
+    "id": "AP_20261119_184814",
+    "fecha": "2026-11-19 18:48:14",
+    "cliente": "Pablo Martínez ",
+    "concepto": "Sin botón (1 pza) - Chocolate oscuro - Talla G",
+    "total": 295.0,
+    "abonado": 50.0,
+    "restante": 245.0,
+    "estado": "Pendiente"
   }
 ]
