@@ -11206,5 +11206,17 @@
     "precio_venta": 220.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-19 18:27:19",
+    "producto_id": "AP_20261116_181531",
+    "producto": "💵 Abono Apartado: T34 (1 pza) - Casimir ($269) - Talla 34 (Octavio Huerta )",
+    "talla": "-",
+    "color": "-",
+    "cantidad": 1,
+    "precio_sugerido": 169.0,
+    "precio_venta": 169.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Abono (Restan $0.00)"
   }
 ]
