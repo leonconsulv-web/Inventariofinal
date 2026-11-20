@@ -11362,5 +11362,17 @@
     "precio_venta": 220.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-19 18:52:23",
+    "producto_id": "AP_20261112_184901",
+    "producto": "💵 Abono Apartado: Cuello redondo (1 pza) - Arena - Talla M (Pilar de Jesús )",
+    "talla": "-",
+    "color": "-",
+    "cantidad": 1,
+    "precio_sugerido": 100.0,
+    "precio_venta": 100.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Abono (Restan $159.00)"
   }
 ]
