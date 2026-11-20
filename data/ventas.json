@@ -11374,5 +11374,17 @@
     "precio_venta": 100.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Abono (Restan $159.00)"
+  },
+  {
+    "fecha": "2026-11-19 18:53:13",
+    "producto_id": "PROD_20260801_220930_603983",
+    "producto": "Pants XG",
+    "talla": "XG",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 250.0,
+    "precio_venta": 250.0,
+    "categoria": "Pants",
+    "ubicacion_venta": "Vitrina"
   }
 ]
