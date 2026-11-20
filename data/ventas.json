@@ -11254,5 +11254,17 @@
     "precio_venta": 370.0,
     "categoria": "Chamarras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-19 18:32:03",
+    "producto_id": "PROD_20260801_060159_648400",
+    "producto": "De vestir todas",
+    "talla": "XL",
+    "color": "Marino ",
+    "cantidad": 1,
+    "precio_sugerido": 169.0,
+    "precio_venta": 180.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
