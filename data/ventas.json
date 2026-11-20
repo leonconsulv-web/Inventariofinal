@@ -11278,5 +11278,17 @@
     "precio_venta": 220.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-19 18:33:33",
+    "producto_id": "PROD_20260801_051906_646266",
+    "producto": "Waffle",
+    "talla": "G",
+    "color": "Beige",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
