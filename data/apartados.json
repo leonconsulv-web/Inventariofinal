@@ -225,8 +225,8 @@
     "cliente": "Octavio Huerta ",
     "concepto": "T34 (1 pza) - Casimir ($269) - Talla 34",
     "total": 269.0,
-    "abonado": 100.0,
-    "restante": 169.0,
-    "estado": "Pendiente"
+    "abonado": 269.0,
+    "restante": 0.0,
+    "estado": "Liquidado"
   }
 ]
