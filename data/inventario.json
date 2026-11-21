@@ -4404,11 +4404,11 @@
         "color": "Negro",
         "stock": {
           "CH": {
-            "exhibido": 0,
+            "exhibido": 3,
             "bodega": 0
           },
           "M": {
-            "exhibido": 1,
+            "exhibido": 3,
             "bodega": 0
           },
           "G": {
@@ -4421,7 +4421,7 @@
         "color": "Perla",
         "stock": {
           "CH": {
-            "exhibido": 1,
+            "exhibido": 3,
             "bodega": 0
           },
           "M": {
@@ -4438,15 +4438,15 @@
         "color": "Oxford ",
         "stock": {
           "CH": {
-            "exhibido": 1,
+            "exhibido": 4,
             "bodega": 0
           },
           "M": {
-            "exhibido": 3,
+            "exhibido": 4,
             "bodega": 0
           },
           "G": {
-            "exhibido": 2,
+            "exhibido": 4,
             "bodega": 0
           }
         }
@@ -4459,11 +4459,11 @@
             "bodega": 0
           },
           "M": {
-            "exhibido": 3,
+            "exhibido": 4,
             "bodega": 0
           },
           "G": {
-            "exhibido": 3,
+            "exhibido": 4,
             "bodega": 0
           }
         }
