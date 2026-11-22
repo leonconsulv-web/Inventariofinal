@@ -11398,5 +11398,17 @@
     "precio_venta": 250.0,
     "categoria": "Chamarras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-22 13:35:33",
+    "producto_id": "PROD_20260801_062018_927740",
+    "producto": "Deportiva",
+    "talla": "CH",
+    "color": "Blanca",
+    "cantidad": 1,
+    "precio_sugerido": 139.0,
+    "precio_venta": 139.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
