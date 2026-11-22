@@ -11494,5 +11494,17 @@
     "precio_venta": 220.0,
     "categoria": "Pantalones de vestir",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-22 13:50:02",
+    "producto_id": "PROD_20260801_190642_565357",
+    "producto": "Camisa económica",
+    "talla": "M",
+    "color": "Blanco",
+    "cantidad": 1,
+    "precio_sugerido": 199.0,
+    "precio_venta": 199.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
