@@ -11614,5 +11614,17 @@
     "precio_venta": 200.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Anticipo (Restan $249.00)"
+  },
+  {
+    "fecha": "2026-11-22 14:20:03",
+    "producto_id": "AP_20261122_142003",
+    "producto": "📑 Anticipo Apartado: Waffle (1 pza) - Azul cielo - Talla XL (Lázaro Pérez )",
+    "talla": "XL",
+    "color": "Azul cielo",
+    "cantidad": 1,
+    "precio_sugerido": 50.0,
+    "precio_venta": 50.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Anticipo (Restan $170.00)"
   }
 ]
