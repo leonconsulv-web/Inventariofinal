@@ -238,5 +238,15 @@
     "abonado": 50.0,
     "restante": 245.0,
     "estado": "Pendiente"
+  },
+  {
+    "id": "AP_20261122_140036",
+    "fecha": "2026-11-22 14:00:36",
+    "cliente": "Daniel Galán ",
+    "concepto": "Ether (1 pza) - Negro - Talla G",
+    "total": 449.0,
+    "abonado": 200.0,
+    "restante": 249.0,
+    "estado": "Pendiente"
   }
 ]
