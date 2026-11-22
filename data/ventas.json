@@ -11578,5 +11578,17 @@
     "precio_venta": 299.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-22 13:57:05",
+    "producto_id": "PROD_20260801_174554_726937",
+    "producto": "Manga larga",
+    "talla": "40",
+    "color": "Blanco ($289)",
+    "cantidad": 1,
+    "precio_sugerido": 269.0,
+    "precio_venta": 260.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
