@@ -11590,5 +11590,17 @@
     "precio_venta": 260.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-22 13:58:02",
+    "producto_id": "PROD_20260801_051906_646266",
+    "producto": "Waffle",
+    "talla": "G",
+    "color": "Verde olivo",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
