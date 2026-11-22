@@ -248,5 +248,15 @@
     "abonado": 200.0,
     "restante": 249.0,
     "estado": "Pendiente"
+  },
+  {
+    "id": "AP_20261122_142003",
+    "fecha": "2026-11-22 14:20:03",
+    "cliente": "Lázaro Pérez ",
+    "concepto": "Waffle (1 pza) - Azul cielo - Talla XL",
+    "total": 220.0,
+    "abonado": 50.0,
+    "restante": 170.0,
+    "estado": "Pendiente"
   }
 ]
