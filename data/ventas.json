@@ -11602,5 +11602,17 @@
     "precio_venta": 220.0,
     "categoria": "Camisas",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-22 14:00:36",
+    "producto_id": "AP_20261122_140036",
+    "producto": "📑 Anticipo Apartado: Ether (1 pza) - Negro - Talla G (Daniel Galán )",
+    "talla": "G",
+    "color": "Negro",
+    "cantidad": 1,
+    "precio_sugerido": 200.0,
+    "precio_venta": 200.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Anticipo (Restan $249.00)"
   }
 ]
