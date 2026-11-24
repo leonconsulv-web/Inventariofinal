@@ -11638,5 +11638,17 @@
     "precio_venta": 520.0,
     "categoria": "Jeans",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-23 20:10:38",
+    "producto_id": "PROD_20260801_051906_646266",
+    "producto": "Waffle",
+    "talla": "M",
+    "color": "Perla",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 220.0,
+    "categoria": "Camisas",
+    "ubicacion_venta": "Vitrina"
   }
 ]
