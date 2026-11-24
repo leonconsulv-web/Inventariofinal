@@ -11710,5 +11710,17 @@
     "precio_venta": 245.0,
     "categoria": "Jeans",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-23 20:24:03",
+    "producto_id": "PROD_20260803_202815_331728",
+    "producto": "Mezclilla",
+    "talla": "S",
+    "color": "Azul oscuro",
+    "cantidad": 1,
+    "precio_sugerido": 389.0,
+    "precio_venta": 389.0,
+    "categoria": "Chamarras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
