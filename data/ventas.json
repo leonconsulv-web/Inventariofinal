@@ -11626,5 +11626,17 @@
     "precio_venta": 50.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Anticipo (Restan $170.00)"
+  },
+  {
+    "fecha": "2026-11-23 20:10:00",
+    "producto_id": "PROD_20260801_214804_719643",
+    "producto": "Confort",
+    "talla": "32",
+    "color": "Azul medio",
+    "cantidad": 2,
+    "precio_sugerido": 550.0,
+    "precio_venta": 520.0,
+    "categoria": "Jeans",
+    "ubicacion_venta": "Vitrina"
   }
 ]
