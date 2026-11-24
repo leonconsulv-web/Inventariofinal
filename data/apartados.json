@@ -258,5 +258,15 @@
     "abonado": 50.0,
     "restante": 170.0,
     "estado": "Pendiente"
+  },
+  {
+    "id": "AP_20261123_203129",
+    "fecha": "2026-11-23 20:31:29",
+    "cliente": "Evelia Lozano ",
+    "concepto": "Vaquero (1 pza) - Azul oscuro  - Talla 34",
+    "total": 245.0,
+    "abonado": 50.0,
+    "restante": 195.0,
+    "estado": "Pendiente"
   }
 ]
