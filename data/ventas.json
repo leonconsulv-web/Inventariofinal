@@ -11722,5 +11722,17 @@
     "precio_venta": 389.0,
     "categoria": "Chamarras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-23 20:24:43",
+    "producto_id": "PROD_20260919_230224_850455",
+    "producto": "Deportiva manga larga",
+    "talla": "M",
+    "color": "Blanca ",
+    "cantidad": 1,
+    "precio_sugerido": 0.0,
+    "precio_venta": 160.0,
+    "categoria": "Playeras",
+    "ubicacion_venta": "Vitrina"
   }
 ]
