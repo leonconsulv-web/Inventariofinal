@@ -11806,5 +11806,17 @@
     "precio_venta": 135.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-23 20:31:29",
+    "producto_id": "AP_20261123_203129",
+    "producto": "📑 Anticipo Apartado: Vaquero (1 pza) - Azul oscuro  - Talla 34 (Evelia Lozano )",
+    "talla": "34",
+    "color": "Azul oscuro ",
+    "cantidad": 1,
+    "precio_sugerido": 50.0,
+    "precio_venta": 50.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Anticipo (Restan $195.00)"
   }
 ]
