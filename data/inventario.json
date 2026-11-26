@@ -1112,7 +1112,16 @@
         }
       },
       {
-        "color": "Color #35",
+        "color": "Menta",
+        "stock": {
+          "XG": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #36",
         "stock": {
           "XG": {
             "exhibido": 0,
