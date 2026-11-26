@@ -8198,5 +8198,41 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20261126_161152_723178",
+    "Categoria": "Chamarras",
+    "Producto": "Tipo saco",
+    "Precio_Sugerido": 0.0,
+    "Precio_Venta": 0.0,
+    "Tallas": [
+      "S",
+      "M",
+      "G",
+      "XG"
+    ],
+    "Variantes": [
+      {
+        "color": "Varios",
+        "stock": {
+          "S": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XG": {
+            "exhibido": 3,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
