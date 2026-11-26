@@ -8452,5 +8452,104 @@
         }
       }
     ]
+  },
+  {
+    "ID": "PROD_20261126_174024_725173",
+    "Categoria": "Chalecos",
+    "Producto": "Chalecos",
+    "Precio_Sugerido": 299.0,
+    "Precio_Venta": 0.0,
+    "Tallas": [
+      "S",
+      "M",
+      "G",
+      "XG"
+    ],
+    "Variantes": [
+      {
+        "color": "Cafe",
+        "stock": {
+          "S": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XG": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Marino",
+        "stock": {
+          "S": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "XG": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Vino",
+        "stock": {
+          "S": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "XG": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Petroleo",
+        "stock": {
+          "S": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "XG": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      }
+    ]
   }
 ]
