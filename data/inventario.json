@@ -1340,10 +1340,10 @@
         }
       },
       {
-        "color": "Color #23",
+        "color": "Verde aguacate",
         "stock": {
           "XXG": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
