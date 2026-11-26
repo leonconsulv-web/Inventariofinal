@@ -777,14 +777,14 @@
         }
       },
       {
-        "color": "Color #46",
+        "color": "Piñon",
         "stock": {
           "S": {
             "exhibido": 0,
             "bodega": 0
           },
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
