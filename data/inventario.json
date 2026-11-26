@@ -5393,7 +5393,20 @@
         }
       },
       {
-        "color": "Color #8",
+        "color": "Crema",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #9",
         "stock": {
           "M": {
             "exhibido": 0,
