@@ -3470,7 +3470,7 @@
         "color": "Negro",
         "stock": {
           "40": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           }
         }
@@ -3489,6 +3489,15 @@
         "stock": {
           "40": {
             "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #8",
+        "stock": {
+          "40": {
+            "exhibido": 0,
             "bodega": 0
           }
         }
