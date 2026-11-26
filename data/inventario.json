@@ -5149,7 +5149,7 @@
             "bodega": 0
           },
           "G": {
-            "exhibido": 1,
+            "exhibido": 2,
             "bodega": 0
           },
           "XG": {
@@ -5233,7 +5233,7 @@
             "bodega": 0
           },
           "G": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "XG": {
@@ -5275,7 +5275,7 @@
             "bodega": 0
           },
           "G": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "XG": {
