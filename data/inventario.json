@@ -5380,7 +5380,20 @@
         }
       },
       {
-        "color": "Color #7",
+        "color": "Perla",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #8",
         "stock": {
           "M": {
             "exhibido": 0,
