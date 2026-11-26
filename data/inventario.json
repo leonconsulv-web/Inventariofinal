@@ -5938,7 +5938,7 @@
         "color": "Azul petróleo ",
         "stock": {
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
@@ -5977,7 +5977,7 @@
         "color": "Verde",
         "stock": {
           "M": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "G": {
@@ -5988,6 +5988,19 @@
       },
       {
         "color": "Negro",
+        "stock": {
+          "M": {
+            "exhibido": 1,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 0,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #8",
         "stock": {
           "M": {
             "exhibido": 0,
