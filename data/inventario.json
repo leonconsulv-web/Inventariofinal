@@ -5341,7 +5341,20 @@
         }
       },
       {
-        "color": "Color #4",
+        "color": "Chocolate",
+        "stock": {
+          "M": {
+            "exhibido": 0,
+            "bodega": 0
+          },
+          "G": {
+            "exhibido": 1,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #5",
         "stock": {
           "M": {
             "exhibido": 0,
