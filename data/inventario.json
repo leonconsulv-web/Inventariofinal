@@ -1280,7 +1280,7 @@
         "color": "Azul petróleo ",
         "stock": {
           "XXG": {
-            "exhibido": 2,
+            "exhibido": 3,
             "bodega": 0
           }
         }
@@ -1307,7 +1307,7 @@
         "color": "Cemento",
         "stock": {
           "XXG": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           }
         }
@@ -1334,7 +1334,16 @@
         "color": "Azul marino ",
         "stock": {
           "XXG": {
-            "exhibido": 1,
+            "exhibido": 2,
+            "bodega": 0
+          }
+        }
+      },
+      {
+        "color": "Color #23",
+        "stock": {
+          "XXG": {
+            "exhibido": 0,
             "bodega": 0
           }
         }
