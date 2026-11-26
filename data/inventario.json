@@ -5714,14 +5714,14 @@
         }
       },
       {
-        "color": "Color #7",
+        "color": "Chocolate",
         "stock": {
           "M": {
             "exhibido": 0,
             "bodega": 0
           },
           "G": {
-            "exhibido": 0,
+            "exhibido": 1,
             "bodega": 0
           },
           "XG": {
