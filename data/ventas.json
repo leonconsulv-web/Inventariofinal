@@ -11998,5 +11998,17 @@
     "precio_venta": 50.0,
     "categoria": "Apartados",
     "ubicacion_venta": "Abono (Restan $109.00)"
+  },
+  {
+    "fecha": "2026-11-26 18:29:39",
+    "producto_id": "PROD_20260801_215912_999189",
+    "producto": "Cargo",
+    "talla": "34",
+    "color": "Verde",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 200.0,
+    "categoria": "Jeans",
+    "ubicacion_venta": "Vitrina"
   }
 ]
