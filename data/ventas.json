@@ -11986,5 +11986,17 @@
     "precio_venta": 130.0,
     "categoria": "Playeras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-26 18:28:29",
+    "producto_id": "AP_20261112_184901",
+    "producto": "💵 Abono Apartado: Cuello redondo (1 pza) - Arena - Talla M (Pilar de Jesús )",
+    "talla": "-",
+    "color": "-",
+    "cantidad": 1,
+    "precio_sugerido": 50.0,
+    "precio_venta": 50.0,
+    "categoria": "Apartados",
+    "ubicacion_venta": "Abono (Restan $109.00)"
   }
 ]
