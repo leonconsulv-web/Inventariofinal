@@ -12034,5 +12034,17 @@
     "precio_venta": 390.0,
     "categoria": "Chamarras",
     "ubicacion_venta": "Vitrina"
+  },
+  {
+    "fecha": "2026-11-26 18:32:02",
+    "producto_id": "PROD_20260801_064643_767617",
+    "producto": "T30",
+    "talla": "30",
+    "color": "Casimir ($269)",
+    "cantidad": 1,
+    "precio_sugerido": 220.0,
+    "precio_venta": 260.0,
+    "categoria": "Pantalones de vestir",
+    "ubicacion_venta": "Vitrina"
   }
 ]
